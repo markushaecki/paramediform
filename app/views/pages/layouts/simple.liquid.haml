@@ -1,0 +1,86 @@
+---
+title: Layout [DE]
+published: false
+handle: simple_layout
+---
+!!!
+%html{lang: "{{ locale }}"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
+    %meta{charset: "utf-8"}/
+    %title {{ site.name }}
+    %meta{content: "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport"}/
+
+    {{ 'bootstrap.css' | stylesheet_tag }}
+    {{ 'application.css' | stylesheet_tag }}
+
+    /[if lt IE 9]
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+    {% inline_editor %}
+
+  %body
+    #header
+      .container
+        %ul.nav.navbar-nav.locales
+          - %w(de en).each do |locale|
+            %li{ class: "{% if locale == '#{locale}' %}active{% endif %}"}
+              {% if content_entry %}
+              = "{% link_to content_entry, locale: #{locale} %}"
+              = "{{ 'locales_#{locale}' | translate }}"
+              {% endlink_to %}
+              {% else %}
+              = "{% link_to page, locale: #{locale} %}"
+              = "{{ 'locales_#{locale}' | translate }}"
+              {% endlink_to %}
+              {% endif %}
+
+        .clearfix
+
+        %h1.text-center
+          %img{ src: "{{ 'logo.jpg' | theme_image_url }}" }
+
+        %nav.navbar.navbar-default{role: "navigation"}
+          / Brand and toggle get grouped for better mobile display
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+          / Collect the nav links, forms, and other content for toggling
+          .collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li{ class: '{% if page.handle == "home" %}active{% endif %}' }
+                {% link_to home %}
+              %li{ class: '{% if page.handle == "institutes" %}active{% endif %}' }
+                {% link_to institutes %}
+              %li{ class: '{% if page.handle == "news" %}active{% endif %}' }
+                {% link_to news %}
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                  Dropdown
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{href: "#"} Action
+                  %li
+                    %a{href: "#"} One more separated link
+          / /.navbar-collapse
+
+        {% block header %}
+        %p.lead {{ page.title }}
+        {% endblock %}
+
+    #content
+      .container
+        {% block content %}
+
+        {% endblock %}
+
+
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", type: "text/javascript"}
+    {{ 'bootstrap.min.js' | javascript_tag }}
+    :javascript
+      $(document).ready(function() {
+      });

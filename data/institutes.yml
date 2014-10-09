@@ -1,0 +1,25 @@
+- "Institut Aarau":
+    name:
+      en: "Aarau Institute"
+    _slug:
+      de: "aarau"
+      en: "aarau"
+    url: "http://localhost:3334"
+
+- "Institut Wetzikon":
+    name:
+      en: "Wetzikon Institute"
+    _slug:
+      de: "wetzikon"
+      en: "wetzikon"
+    url: "http://localhost:3334"
+
+# - "Sample 2":
+#     url: "Ut porro commodi voluptatibus. Nisi enim et optio mollitia nemo est. Est modi minus rem asperiores maiores libero quo."
+
+# - "Sample 3":
+#     url: "Impedit officiis atque rerum explicabo cupiditate ad. Dolorem enim suscipit ut. Vero ea velit enim. Perspiciatis voluptatum porro numquam tenetur ducimus."
+
+# - "Sample 4":
+#     url: "Ullam debitis in est qui sed non fuga neque. Aliquam provident accusantium earum quis aliquid ad. Eveniet corrupti quia qui."
+

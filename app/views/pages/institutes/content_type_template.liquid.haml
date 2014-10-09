@@ -1,0 +1,83 @@
+---
+title: Template of an institute [DE]
+
+# true if the page is published
+published: true
+
+# content type that this page is templatizing
+content_type: institutes
+
+listed: false
+
+handle: institute_layout
+---
+{% extends layouts/double-columns %}
+
+{% block content/main %}
+
+{% capture url %}{{institute.url}}/index.json{% endcapture %}
+{% consume data from url %}
+{% assign information = data.information %}
+{% endconsume %}
+
+.row
+  .col-sm-10.col-sm-offset-1.col-xs-offset-0.col-xs-12
+    %p.text-center
+      %img.img-responsive{ src: '{{ information.image }}' }
+
+.row
+  .col-sm-5.col-sm-offset-1.col-xs-offset-0.col-xs-6
+    %p {{ information.name }}
+    %p {{ information.street }}
+    %p {{ information.city }}
+  .col-sm-5.col-xs-6
+    .text-right
+      %p {{ "label_phone" | translate }} {{ information.phone }}
+      %p {{ "label_fax" | translate }} {{ information.fax }}
+      %p {{ information.email }}
+
+%br
+
+.row
+  .col-sm-10.col-sm-offset-1.col-xs-offset-0.col-xs-12
+    %ul.nav.nav-tabs
+      {% fetch_page institute_layout as root_page %}
+
+      %li{ class: "{% if page.handle == 'institute_layout' %}active{% endif %}" }
+        %a{ href: "{% path_to institute %}" } {{ "menu_institute_success_stories" | translate }}
+
+      {% for _page in root_page.children %}
+      {% if _page.listed? and _page.published? %}
+      / A bit of hack because we can not access the title of the child page
+      {% assign title = _page.handle | prepend: "menu_" %}
+      %li{ class: "{% if page.fullpath == _page.fullpath %}active{% endif %}" }
+        %a{ href: "{% path_to institute %}/{{ _page.slug }}" } {{ title | translate }}
+      {% endif %}
+      {% endfor %}
+
+    .tabbable
+      .tab-content
+        .tab-pane.active
+          %br
+          {% block tab_pane %}
+
+          / by default, we display the list of success stories
+          {% capture url %}{{ institute.url }}/{{ locale }}/success_stories/all.json{% endcapture %}
+          {% consume data from url %}
+          {% assign success_stories = data.success_stories %}
+          {% endconsume %}
+
+          .row
+            {% for success_story in success_stories %}
+            .col-sm-6.col-xs-12
+              .thumbnail
+                .images
+                  %img.pull-left{ src: '{{ success_story.before_image.url | resize: "75x75#" }}' }
+                  %img{ src: '{{ success_story.after_image.url | resize: "75x75#" }}' }
+                .caption
+                  %h5 {{ success_story.title }}
+            {% endfor %}
+
+          {% endblock %}
+
+{% endblock %}

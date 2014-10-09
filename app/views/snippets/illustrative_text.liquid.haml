@@ -1,0 +1,16 @@
+{% assign illustrative_text = news.illustrative_text %}
+
+.row
+  .col-xs-12
+    / IMAGE
+    %img.img-responsive{ src: '{{ illustrative_text.image.url }}' }
+
+%br
+
+.row
+  .col-xs-12
+    .text-justify
+      / TEXT
+      {{ illustrative_text.text }}
+
+%br

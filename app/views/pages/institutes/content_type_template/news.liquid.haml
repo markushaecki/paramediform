@@ -1,0 +1,106 @@
+---
+title: Aktuelles
+slug: aktuelles
+published: true
+listed: true
+position: 2
+handle: institute_news
+editable_elements:
+  "content/sidebar/news": "false"
+---
+{% extends parent %}
+
+{% block content/main/tab_pane %}
+
+{% if params.slug and params.type %}
+
+{% capture url %}{{ institute.url }}/{{ locale }}/news/{{ params.type }}.json?slug={{ params.slug }}{% endcapture %}
+{% consume data from url %}
+{% assign news = data.news_entry %}
+{% endconsume %}
+
+%ul.pager
+  %li.previous
+    %a{ href: "?page={{ params.page }}" } &larr; {{ "button_back" | translate }}
+
+{% if news.interview %}
+{% include interview with news %}
+{% elsif news.recipe %}
+{% include recipe with news %}
+{% elsif news.illustrative_text %}
+{% include illustrative_text with news %}
+{% else %}
+
+/ # UNSUPPORTED
+.well
+  %h2 Unsupported type of news
+
+{% endif %}
+
+{% else %}
+
+{% capture url %}{{ institute.url }}/{{ locale }}/news/all.json?page={{ params.page }}{% endcapture %}
+{% consume data from url %}
+{% assign news = data.news %}
+{% assign news_pagination = data.pagination %}
+{% endconsume %}
+
+%ul.media-list
+  {% for news_entry in news %}
+  .media
+    .pull-right
+      {{ news_entry.published_at | localized_date: '%d.%m.%Y' }}
+    .media-body
+      %h5.media-heading
+        %a{ href: "?slug={{ news_entry.slug }}&type={{ news_entry.type }}&page={{ params.page }}" } {{ news_entry.title }}
+      {% if news_entry.tags %}
+      .tags
+        %span.glyphicon.glyphicon-tags
+        {% for tag in news_entry.tags %}
+        %span.label.label-primary {{ tag }}
+        &nbsp;
+        {% endfor %}
+      {% endif %}
+      .text
+        {{ news_entry.text }}
+
+    %hr
+  {% endfor %}
+
+  {% if news_pagination %}
+  .text-center
+    %ul.pagination.pagination-sm
+      {% if news_pagination.previous_page %}
+      %li
+        %a{ href: "?page={{ news_pagination.previous_page }}" } &laquo;
+      {% else %}
+      %li.disabled
+        %span &laquo;
+      {% endif %}
+
+      {% for part in news_pagination.parts %}
+      {% if part.hellip_break %}
+      %li.disabled
+        %span &hellip;
+      {% elsif part.title == news_pagination.current_page %}
+      %li.active
+        %span {{ part.title }}
+      {% else %}
+      %li
+        %a{ href: "?page={{ part.title }}" } {{ part.title }}
+      {% endif %}
+      {% endfor %}
+
+      {% if news_pagination.next_page %}
+      %li
+        %a{ href: "?page={{ news_pagination.next_page }}" } &raquo;
+      {% else %}
+      %li.disabled
+        %span &raquo;
+      {% endif %}
+
+  {% endif %}
+
+{% endif %}
+
+{% endblock %}

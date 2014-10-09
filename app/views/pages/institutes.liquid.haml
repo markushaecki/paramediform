@@ -1,0 +1,45 @@
+---
+title: Institute
+published: true
+handle: institutes
+editable_elements:
+  "content/main/success_stories_title": "Erfolgsgeschichten"
+---
+{% extends layouts/double-columns %}
+
+{% block header %}
+
+{% for institute in contents.institutes %}
+%a{ href: '{% path_to institute %}' } {{ institute.name }}
+&nbsp;
+{% endfor %}
+
+{% endblock %}
+
+{% block content/main %}
+
+.text-center
+  %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
+
+%h4 {% editable_text success_stories_title, format: "raw", line_break: false, rows: 1 %}Erfolgsgeschichten{% endeditable_text %}
+
+.row
+  {% assign institutes = contents.institutes.all | sample: 4 %}
+  {% for institute in institutes %}
+
+  .col-sm-6
+    {% capture url %}{{ institute.url }}/{{ locale }}/success_stories/random.json{% endcapture %}
+    {% consume data from url %}
+    {% assign success_story = data.success_story %}
+    {% endconsume %}
+
+    .thumbnail
+      %img.pull-right{ src: '{{ success_story.before_image.url | resize: "100x100#" }}' }
+      %img.pull-left{ src: '{{ success_story.after_image.url | resize: "100x100#" }}' }
+      .clearfix
+      %h6.text-center {{ success_story.title }}
+
+  {% endfor %}
+
+
+{% endblock %}

@@ -6,3 +6,47 @@
 # hello_world:
 #   en: Hello world !
 #   fr: Bonjour le monde !
+
+locales_de:
+  de: Deutsch
+  en: German
+
+locales_en:
+  de: Englisch
+  en: English
+
+button_back:
+  de: Zurück
+  en: Back
+
+sidebar_contact_title:
+  de: Kontakt
+  en: Contact
+
+sidebar_institutes_title:
+  de: Institute
+  en: Institutes
+
+sidebar_news_title:
+  de: Aktuelles
+  en: News
+
+label_phone:
+  de: Telefon
+  en: Phone
+
+label_fax:
+  de: Fax
+  en: Fax
+
+menu_institute_success_stories:
+  de: Erfolge
+  en: Success stories
+
+menu_institute_team:
+  de: Team
+  en: Team
+
+menu_institute_news:
+  de: Aktuelles
+  en: News
