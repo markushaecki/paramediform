@@ -1,4 +1,26 @@
+$logo_margin: 2%;
+
 #header {
-  background: #fff7ec;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+}
+
+.small_navbar_height, .small_navbar_height li, .small_navbar_height li a{
+	height:1px;
+}
+
+.atmospereic{
+	position: absolute;
+	width: 100%;
+}
+
+.relative_position{
+	position: relative;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+.form-group{
+	margin-right: 10px;
 }

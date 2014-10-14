@@ -1,0 +1,140 @@
+# Logfile created on 2014-10-14 12:04:26 +0200 by logger.rb/1.2.8
+[0;97;49mStarted GET "/" at 2014-10-14 12:04:30 +0200[0m
+Detecting locale DE
+Found page "Willkommen" [index]
+[0;97;49mStarted GET "/" at 2014-10-14 12:05:06 +0200[0m
+Detecting locale DE
+Found page "Willkommen" [index]
+* Reloaded "content_entries" at 2014-10-14 12:05:34 +0200
+[0;97;49mStarted GET "/" at 2014-10-14 12:05:40 +0200[0m
+Detecting locale DE
+Found page "Willkommen" [index]
+[0;97;49mStarted GET "/" at 2014-10-14 12:05:42 +0200[0m
+Detecting locale DE
+Found page "Willkommen" [index]
+  Rendered liquid page template
+  Rendered liquid page template
+[0;32;49mCompleted 200 OK in 5926.7ms
+
+[0m
+[0;32;49mCompleted 200 OK in 3515.6ms
+
+[0m
+[0;97;49mStarted GET "/" at 2014-10-14 12:05:51 +0200[0m
+[0;97;49mStarted GET "/" at 2014-10-14 12:05:51 +0200[0m
+Detecting locale DE
+* Reloaded "content_entries" at 2014-10-14 12:05:51 +0200
+Detecting locale DE
+Found page "Willkommen" [index]
+Found page "Willkommen" [index]
+[0;97;49mStarted GET "/" at 2014-10-14 12:06:02 +0200[0m
+[0;97;49mStarted GET "/" at 2014-10-14 12:06:02 +0200[0m
+Detecting locale DE
+Detecting locale DE
+Found page "Willkommen" [index]
+* Reloaded "content_entries" at 2014-10-14 12:06:04 +0200
+Found page "Willkommen" [index]
+[0;97;49mStarted GET "/" at 2014-10-14 12:07:06 +0200[0m
+Detecting locale DE
+Found page "Willkommen" [index]
+[0;97;49mStarted GET "/" at 2014-10-14 12:07:08 +0200[0m
+Detecting locale DE
+Found page "Willkommen" [index]
+[0;97;49mStarted GET "/" at 2014-10-14 12:07:18 +0200[0m
+Detecting locale DE
+Found page "Willkommen" [index]
+[0;97;49mStarted GET "/" at 2014-10-14 12:07:49 +0200[0m
+Detecting locale DE
+Found page "Willkommen" [index]
+  Rendered liquid page template
+[0;32;49mCompleted 200 OK in 52.1ms
+
+[0m
+[0;97;49mStarted GET "/institutes" at 2014-10-14 12:07:55 +0200[0m
+Detecting locale DE
+Found page "Institute" [institutes]
+  Rendered liquid page template
+[0;32;49mCompleted 200 OK in 50.9ms
+
+[0m
+* Reloaded "content_types", "content_entries" at 2014-10-14 12:09:08 +0200
+* Reloaded "content_entries" at 2014-10-14 12:09:08 +0200
+(<unknown>): mapping values are not allowed in this context at line 49 column 41
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:370:in `parse'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:370:in `parse_stream'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:318:in `parse'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:245:in `load'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/base.rb:57:in `read_yaml'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_types_reader.rb:22:in `block in fetch_from_filesystem'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_types_reader.rb:21:in `each'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_types_reader.rb:21:in `fetch_from_filesystem'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_types_reader.rb:13:in `read'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:48:in `block (2 levels) in reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:40:in `each'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:40:in `block in reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter.rb:99:in `with_locale'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:39:in `reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_wagon-1.5.0.rc2/lib/locomotive/wagon/listen.rb:41:in `block in apply'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:282:in `call'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:282:in `_process_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:239:in `block in _wait_for_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:222:in `loop'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:222:in `_wait_for_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+
+
+(<unknown>): could not find expected ':' while scanning a simple key at line 7 column 1
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:370:in `parse'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:370:in `parse_stream'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:318:in `parse'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:245:in `load'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/base.rb:57:in `read_yaml'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_entries_reader.rb:22:in `block in fetch_from_filesystem'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_entries_reader.rb:21:in `each'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_entries_reader.rb:21:in `fetch_from_filesystem'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_entries_reader.rb:13:in `read'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:48:in `block (2 levels) in reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:40:in `each'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:40:in `block in reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter.rb:99:in `with_locale'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:39:in `reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_wagon-1.5.0.rc2/lib/locomotive/wagon/listen.rb:41:in `block in apply'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:282:in `call'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:282:in `_process_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:239:in `block in _wait_for_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:222:in `loop'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:222:in `_wait_for_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+
+
+* Reloaded "site", "content_types", "pages", "snippets", "content_entries", "translations" at 2014-10-14 12:09:08 +0200
+(<unknown>): mapping values are not allowed in this context at line 49 column 41
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:370:in `parse'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:370:in `parse_stream'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:318:in `parse'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/2.1.0/psych.rb:245:in `load'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/base.rb:57:in `read_yaml'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_types_reader.rb:22:in `block in fetch_from_filesystem'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_types_reader.rb:21:in `each'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_types_reader.rb:21:in `fetch_from_filesystem'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/file_system/content_types_reader.rb:13:in `read'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:48:in `block (2 levels) in reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:40:in `each'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:40:in `block in reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter.rb:99:in `with_locale'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_mounter-1.4.4/lib/locomotive/mounter/reader/runner.rb:39:in `reload'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/locomotivecms_wagon-1.5.0.rc2/lib/locomotive/wagon/listen.rb:41:in `block in apply'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:282:in `call'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:282:in `_process_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:239:in `block in _wait_for_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:222:in `loop'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:222:in `_wait_for_changes'
+	/Users/didier/Documents/rubymotion/WagonDesktop/build/MacOSX-10.7-Development/Wagon.app/Contents/Resources/static-wagon/lib/ruby/gems/2.1.0/gems/listen-2.7.11/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+
+
+* Reloaded "pages", "snippets" at 2014-10-14 12:09:08 +0200
+[0;97;49mStarted GET "/institutes" at 2014-10-14 12:09:09 +0200[0m
+Detecting locale DE
+Found page "Institute" [institutes]
+[0;31;49m[ERROR] undefined method `breitengrad' for #<Locomotive::Mounter::Models::ContentEntry:0x007f9460708c70> - ./app/views/pages/institutes.liquid.haml:8:in `Institute'
+[0m

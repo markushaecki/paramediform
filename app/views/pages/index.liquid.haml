@@ -4,6 +4,8 @@ published: true
 handle: home
 editable_elements:
   "content/institutes_title": "Uber 50 Institute in Ihrer Nahe"
+  "content/methology_title": "Abnehmen mit Paramediform"
+  "content/scinence_title": "Wissenschaftliche Hintergründe"
 ---
 {% extends layouts/simple %}
 
@@ -20,13 +22,34 @@ editable_elements:
 .row
   .col-sm-6.col-xs-12
     %h4 {{ success_story.title }}
+    %br
     .thumbnail
-      .images
-        %img.pull-left{ src: '{{ success_story.before_image.url | resize: "200x200#" }}' }
-        %img{ src: '{{ success_story.after_image.url | resize: "200x200#" }}' }
+      .success_story_images{:style => 'max-height:200px'}
+        %img.img-responsive.pull-left{ src: '{{ success_story.before_image.url }}' }
+        %img.img-responsive{ src: '{{ success_story.after_image.url }}' }
 
   .col-sm-6.col-xs-12
     %h4 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Uber 50 Institute in Ihrer Nahe{% endeditable_text %}
+    %br
+    .thumbnail
+      .images{:style => 'max-height:200px'}
+        %img.img-responsive{ src: "{{ 'map.png' | theme_image_url | resize: 'x200' }}" }
+	
+%br
+%br
+
+.row
+  .col-sm-6.col-xs-12
+    %h4 {% editable_text methology_title, format: "raw", line_break: false, rows: 1 %}Abnehmen mit Paramediform{% endeditable_text %}
+    %br
+    {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}	
+    %a{ href: '{{ home_url }}', :role => 'button'} Mehr informationen...
+		
+
+  .col-sm-6.col-xs-12
+    %h4 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}
+    %br
+    {% editable_text scinence_text, format: "raw", line_break: false, rows: 1 %}Ananas ist nicht nur lecker, sie enthält auch zahlreiche Vitalstoffe und Enzyme und fördert die Verdauung. Seefahrer brachten die Ananas im Jahre 1535 ...{% endeditable_text %}
 
 
 {% endblock %}

@@ -1,2 +1,41 @@
 @import "elements/header";
 @import "elements/content";
+
+$navbar-height: 25px;
+
+.navbar-form{
+	height: $navbar-height;
+	margin: 0px;
+}
+
+button.btn-default{
+	height: $navbar-height;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-left: 4px;
+}
+
+input.form-control{
+	height: $navbar-height;
+}
+
+.success_story_images{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.detailed_institute_info p{
+	margin:0px;
+}
+
+#institutes_map{
+	display: inline-block;
+	position: relative;
+}
+
+#institutes_map a{
+	position: absolute;
+	top:0px;
+	left:0px;
+	font-size: 30px;
+}
