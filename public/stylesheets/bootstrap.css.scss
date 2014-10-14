@@ -6,8 +6,16 @@
 // Core variables and mixins
 
 $icon-font-path: "/fonts/";
-
-$navbar-default-bg: #fed4e3;
+$navbar-default-link-color: white;
+$navbar-default-link-hover-color: #CBCBCB;
+$navbar-default-link-active-color: #CBCBCB;
+$navbar-default-bg: #F83CA4;
 $link-color: #c780a0;
+$navbar-default-toggle-hover-bg:           darken($navbar-default-bg, 6.5%);
+$navbar-default-toggle-icon-bar-bg:        darken($navbar-default-bg, 12%);
+$navbar-default-toggle-border-color:       darken($navbar-default-bg, 6.5%);
+$navbar-height: 25px;
+$well-bg: white;
+$well-border: $navbar-default-bg;
 
 @import "bootstrap/bootstrap"

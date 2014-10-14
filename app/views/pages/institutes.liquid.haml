@@ -9,6 +9,8 @@ editable_elements:
 
 {% block header %}
 
+{{ 'map.js' | javascript_tag }}
+
 {% for institute in contents.institutes %}
 %a{ href: '{% path_to institute %}' } {{ institute.name }}
 &nbsp;
@@ -19,7 +21,13 @@ editable_elements:
 {% block content/main %}
 
 .text-center
-  %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
+  %span#institutes_map
+    %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}", :style => 'max-height:360px' }
+    {% for institute in contents.institutes %}
+    %a{ href: '{% path_to institute %}', :title => '{{ institute.name }}', :breit => '{{ institute.breitengrad }}', :laeng => '{{ institute.laengengrad }}' } •
+    &nbsp;
+    {% endfor %}
+  
 
 %h4 {% editable_text success_stories_title, format: "raw", line_break: false, rows: 1 %}Erfolgsgeschichten{% endeditable_text %}
 
@@ -34,12 +42,11 @@ editable_elements:
     {% endconsume %}
 
     .thumbnail
-      %img.pull-right{ src: '{{ success_story.before_image.url | resize: "100x100#" }}' }
-      %img.pull-left{ src: '{{ success_story.after_image.url | resize: "100x100#" }}' }
+      %img.pull-right{ src: '{{ success_story.before_image.url }}' }
+      %img.pull-left{ src: '{{ success_story.after_image.url  }}' }
       .clearfix
       %h6.text-center {{ success_story.title }}
 
   {% endfor %}
-
-
+  
 {% endblock %}

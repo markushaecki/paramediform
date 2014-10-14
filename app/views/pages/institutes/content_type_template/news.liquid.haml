@@ -15,6 +15,7 @@ editable_elements:
 {% if params.slug and params.type %}
 
 {% capture url %}{{ institute.url }}/{{ locale }}/news/{{ params.type }}.json?slug={{ params.slug }}{% endcapture %}
+{{ url }}
 {% consume data from url %}
 {% assign news = data.news_entry %}
 {% endconsume %}

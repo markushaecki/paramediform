@@ -5,6 +5,8 @@
       de: "aarau"
       en: "aarau"
     url: "http://localhost:3334"
+    breitengrad: 47.39068015
+    laengengrad: 8.04343198863637
 
 - "Institut Wetzikon":
     name:
@@ -13,6 +15,8 @@
       de: "wetzikon"
       en: "wetzikon"
     url: "http://localhost:3334"
+    breitengrad: 47.3322054
+    laengengrad: 8.8083336
 
 # - "Sample 2":
 #     url: "Ut porro commodi voluptatibus. Nisi enim et optio mollitia nemo est. Est modi minus rem asperiores maiores libero quo."

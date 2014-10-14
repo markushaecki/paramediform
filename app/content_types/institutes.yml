@@ -41,3 +41,19 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+
+- breitengrad: # The lowercase, underscored name of the field
+    label: Breitengrad # Human readable name of the field
+    type: float
+    required: true
+    hint: Breitengrad Koordinaten gemäss: http://www.gpsies.com/coordinate.do
+    localized: false
+    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+
+- laengengrad: # The lowercase, underscored name of the field
+    label: Längengrad # Human readable name of the field
+    type: float
+    required: true
+    hint: Längengrad Koordinaten gemäss: http://www.gpsies.com/coordinate.do
+    localized: false
+    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
