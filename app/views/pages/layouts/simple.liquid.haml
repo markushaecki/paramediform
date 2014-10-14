@@ -14,7 +14,7 @@ handle: simple_layout
 
     {{ 'jquery.js' | javascript_tag }}
     {{ 'bootstrap.css' | stylesheet_tag }}
-    {{ 'bootstrap.min.js' | javascript_tag }} 
+    {{ 'bootstrap.min.js' | javascript_tag }}
     {{ 'application.css' | stylesheet_tag }}
     {{ 'application.js' | javascript_tag }}
 
@@ -45,7 +45,7 @@ handle: simple_layout
 
         %h1.text-center
           %img.img-responsive{ src: "{{ 'logo.png' | theme_image_url | resize: 'x120' }}" }
-	
+
         %nav.navbar.navbar-default{:role => "navigation"}
           .container
             .navbar-header
@@ -57,8 +57,8 @@ handle: simple_layout
             .collapse.navbar-collapse#bs-example-navbar-collapse-1
               %ul.nav.navbar-nav
                 %li.dropdown
-                  %a.dropdown-toggle{ href: "#", :data => {:toggle => "dropdown"}} 
-                    {{ 'navigation_loose_weight' | translate }} 
+                  %a.dropdown-toggle{ href: "#", :data => {:toggle => "dropdown"}}
+                    {{ 'navigation_loose_weight' | translate }}
                     %span.caret
                   %ul.dropdown-menu{:role => "menu"}
                     %li
@@ -69,14 +69,14 @@ handle: simple_layout
                       %a{ href: "#"} Something else here
                     %li.divider
                     %li
-                      %a{ href: "#"} Separated link				
+                      %a{ href: "#"} Separated link
                 %li{ class: '{% if page.handle == "news" %}active{% endif %}' }
                   {% link_to news %}
                 %li{ class: '{% if page.handle == "institutes" %}active{% endif %}' }
                   {% link_to institutes %}
                 %li.dropdown
-                  %a.dropdown-toggle{ href: "#", :data => {:toggle => "dropdown"}} 
-                    Dropdown 
+                  %a.dropdown-toggle{ href: "#", :data => {:toggle => "dropdown"}}
+                    Dropdown
                     %span.caret
                   %ul.dropdown-menu{:role => "menu"}
                     %li
