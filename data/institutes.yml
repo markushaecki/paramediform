@@ -4,7 +4,7 @@
     _slug:
       de: "aarau"
       en: "aarau"
-    url: "http://localhost:3334"
+    url: "http://localhost:3333"
 
 - "Institut Wetzikon":
     name:
@@ -12,7 +12,7 @@
     _slug:
       de: "wetzikon"
       en: "wetzikon"
-    url: "http://localhost:3334"
+    url: "http://localhost:3333"
 
 # - "Sample 2":
 #     url: "Ut porro commodi voluptatibus. Nisi enim et optio mollitia nemo est. Est modi minus rem asperiores maiores libero quo."
