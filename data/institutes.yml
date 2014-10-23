@@ -1,6 +1,6 @@
-- "Institut Aarau":
+- "Aarau":
     name:
-      en: "Aarau Institute"
+      en: "Aarau"
     _slug:
       de: "aarau"
       en: "aarau"
@@ -8,15 +8,435 @@
     breitengrad: 47.39068015
     laengengrad: 8.04343198863637
 
-- "Institut Wetzikon":
+- "Wetzikon":
     name:
-      en: "Wetzikon Institute"
+      en: "Wetzikon"
     _slug:
       de: "wetzikon"
       en: "wetzikon"
     url: "http://localhost:3333"
     breitengrad: 47.3322054
     laengengrad: 8.8083336
+
+- "Zug":
+    name:
+      en: "Zug"
+    _slug:
+      de: "zug"
+      en: "zug"
+    url: "http://localhost:3333"
+    breitengrad: 47.1702113
+    laengengrad: 8.5156091
+
+- "Oensingen":
+    name:
+      en: "Oensingen"
+    _slug:
+      de: "oensingen"
+      en: "oensingen"
+    url: "http://localhost:3333"
+    breitengrad: 47.286536
+    laengengrad: 7.7093199
+
+- "Baden":
+    name:
+      en: "Baden"
+    _slug:
+      de: "baden"
+      en: "baden"
+    url: "http://localhost:3333"
+    breitengrad: 47.449383
+    laengengrad: 8.291975
+
+- "Brugg":
+    name:
+      en: "Brugg"
+    _slug:
+      de: "brugg"
+      en: "brugg"
+    url: "http://localhost:3333"
+    breitengrad: 47.479555
+    laengengrad: 8.206539
+
+- "Lenzburg":
+    name:
+      en: "Lenzburg"
+    _slug:
+      de: "lenzburg"
+      en: "lenzburg"
+    url: "http://localhost:3333"
+    breitengrad: 47.388909
+    laengengrad: 8.181711
+
+- "Rheinfelden":
+    name:
+      en: "Rheinfelden"
+    _slug:
+      de: "rheinfelden"
+      en: "rheinfelden"
+    url: "http://localhost:3333"
+    breitengrad: 47.554754
+    laengengrad: 7.794804
+
+- "Wohlen":
+    name:
+      en: "Wohlen"
+    _slug:
+      de: "wohlen"
+      en: "wohlen"
+    url: "http://localhost:3333"
+    breitengrad: 47.349578
+    laengengrad: 8.277223
+
+- "Zofingen":
+    name:
+      en: "Zofingen"
+    _slug:
+      de: "zofingen"
+      en: "zofingen"
+    url: "http://localhost:3333"
+    breitengrad: 47.288506
+    laengengrad: 7.946803
+
+- "Liestal":
+    name:
+      en: "Liestal"
+    _slug:
+      de: "liestal"
+      en: "liestal"
+    url: "http://localhost:3333"
+    breitengrad: 47.482016
+    laengengrad: 7.735838
+
+- "Belp":
+    name:
+      en: "Belp"
+    _slug:
+      de: "belp"
+      en: "belp"
+    url: "http://localhost:3333"
+    breitengrad: 46.893705
+    laengengrad: 7.498431
+
+- "Bern":
+    name:
+      en: "Bern"
+    _slug:
+      de: "bern"
+      en: "bern"
+    url: "http://localhost:3333"
+    breitengrad: 46.949077
+    laengengrad: 7.442652
+
+- "Büren an der Aare":
+    name:
+      en: "Büren an der Aare"
+    _slug:
+      de: "bueren-an-der-Aare"
+      en: "bueren-an-der-Aare"
+    url: "http://localhost:3333"
+    breitengrad: 47.139517
+    laengengrad: 7.372124
+
+- "Burgdorf":
+    name:
+      en: "Burgdorf"
+    _slug:
+      de: "burgdorf"
+      en: "burgdorf"
+    url: "http://localhost:3333"
+    breitengrad: 47.057972
+    laengengrad: 7.626813
+
+- "Langenthal":
+    name:
+      en: "Langenthal"
+    _slug:
+      de: "langenthal"
+      en: "langenthal"
+    url: "http://localhost:3333"
+    breitengrad: 47.212596
+    laengengrad: 7.787873
+
+- "Langnau":
+    name:
+      en: "Langnau"
+    _slug:
+      de: "langnau"
+      en: "langnau"
+    url: "http://localhost:3333"
+    breitengrad: 46.941121
+    laengengrad: 7.783721
+
+- "Münsingen":
+    name:
+      en: "Münsingen"
+    _slug:
+      de: "muensingen"
+      en: "muensingen"
+    url: "http://localhost:3333"
+    breitengrad: 46.868718
+    laengengrad: 7.563380
+
+- "Riggisberg":
+    name:
+      en: "Riggisberg"
+    _slug:
+      de: "riggisberg"
+      en: "riggisberg"
+    url: "http://localhost:3333"
+    breitengrad: 46.814663
+    laengengrad: 7.476463
+
+- "Thun":
+    name:
+      en: "Thun"
+    _slug:
+      de: "thun"
+      en: "thun"
+    url: "http://localhost:3333"
+    breitengrad: 46.714510
+    laengengrad: 7.629230
+
+- "Düdingen":
+    name:
+      en: "Düdingen"
+    _slug:
+      de: "duedingen"
+      en: "duedingen"
+    url: "http://localhost:3333"
+    breitengrad: 46.848120
+    laengengrad: 7.191580
+
+- "Chur":
+    name:
+      en: "Chur"
+    _slug:
+      de: "chur"
+      en: "chur"
+    url: "http://localhost:3333"
+    breitengrad: 46.848105
+    laengengrad: 9.531342
+
+- "Luzern":
+    name:
+      en: "Lucerne"
+    _slug:
+      de: "luzern"
+      en: "lucerne"
+    url: "http://localhost:3333"
+    breitengrad: 47.053338
+    laengengrad: 8.307576
+
+- "Root":
+    name:
+      en: "Root"
+    _slug:
+      de: "root"
+      en: "root"
+    url: "http://localhost:3333"
+    breitengrad: 47.115674
+    laengengrad: 8.389160
+
+- "Gossau":
+    name:
+      en: "Gossau"
+    _slug:
+      de: "gossau"
+      en: "gossau"
+    url: "http://localhost:3333"
+    breitengrad: 47.420779
+    laengengrad: 9.249632
+
+- "Rapperswil":
+    name:
+      en: "Rapperswil"
+    _slug:
+      de: "rapperswil"
+      en: "rapperswil"
+    url: "http://localhost:3333"
+    breitengrad: 47.226395
+    laengengrad: 8.814867
+
+- "Wil":
+    name:
+      en: "Wil"
+    _slug:
+      de: "wil"
+      en: "wil"
+    url: "http://localhost:3333"
+    breitengrad: 47.464882
+    laengengrad: 9.047641
+
+- "Schaffhausen":
+    name:
+      en: "Schaffhausen"
+    _slug:
+      de: "schaffhausen"
+      en: "schaffhausen"
+    url: "http://localhost:3333"
+    breitengrad: 47.689994
+    laengengrad: 8.655627
+
+- "Seewen":
+    name:
+      en: "Seewen"
+    _slug:
+      de: "seewen"
+      en: "seewen"
+    url: "http://localhost:3333"
+    breitengrad: 47.025473
+    laengengrad: 8.633434
+
+- "Einsiedeln":
+    name:
+      en: "Einsiedeln"
+    _slug:
+      de: "einsiedeln"
+      en: "einsiedeln"
+    url: "http://localhost:3333"
+    breitengrad: 47.126700
+    laengengrad: 8.747305
+
+- "Olten":
+    name:
+      en: "Olten"
+    _slug:
+      de: "olten"
+      en: "olten"
+    url: "http://localhost:3333"
+    breitengrad: 47.353083
+    laengengrad: 7.902721
+
+- "Affoltern am Albis":
+    name:
+      en: "Affoltern am Albis"
+    _slug:
+      de: "affoltern-am-albis"
+      en: "affoltern-am-albis"
+    url: "http://localhost:3333"
+    breitengrad: 47.282021
+    laengengrad: 8.456648
+
+- "Andelfingen":
+    name:
+      en: "Andelfingen"
+    _slug:
+      de: "andelfingen"
+      en: "andelfingen"
+    url: "http://localhost:3333"
+    breitengrad: 47.594456
+    laengengrad: 8.678408
+
+- "Bülach":
+    name:
+      en: "Bülach"
+    _slug:
+      de: "buelach"
+      en: "buelach"
+    url: "http://localhost:3333"
+    breitengrad: 47.522162
+    laengengrad: 8.539909
+
+- "Fehraltorf":
+    name:
+      en: "Fehraltorf"
+    _slug:
+      de: "fehraltorf"
+      en: "fehraltorf"
+    url: "http://localhost:3333"
+    breitengrad: 47.394237
+    laengengrad: 8.740527
+
+- "Horgen":
+    name:
+      en: "Horgen"
+    _slug:
+      de: "horgen"
+      en: "horgen"
+    url: "http://localhost:3333"
+    breitengrad: 47.260166
+    laengengrad: 8.599056
+
+- "Meilen":
+    name:
+      en: "Meilen"
+    _slug:
+      de: "meilen"
+      en: "meilen"
+    url: "http://localhost:3333"
+    breitengrad: 47.269852
+    laengengrad: 8.641389
+
+- "Schlieren":
+    name:
+      en: "Schlieren"
+    _slug:
+      de: "schlieren"
+      en: "schlieren"
+    url: "http://localhost:3333"
+    breitengrad: 47.396218
+    laengengrad: 8.448974
+
+- "Uster":
+    name:
+      en: "Uster"
+    _slug:
+      de: "uster"
+      en: "uster"
+    url: "http://localhost:3333"
+    breitengrad: 47.345645
+    laengengrad: 8.720246
+
+- "Wädenswil":
+    name:
+      en: "Wädenswil"
+    _slug:
+      de: "waedenswil"
+      en: "waedenswil"
+    url: "http://localhost:3333"
+    breitengrad: 47.228664
+    laengengrad: 8.675111
+
+- "Wetzikon":
+    name:
+      en: "Wetzikon"
+    _slug:
+      de: "wetzikon"
+      en: "wetzikon"
+    url: "http://localhost:3333"
+    breitengrad: 47.332122
+    laengengrad: 8.808214
+
+- "Winterthur":
+    name:
+      en: "Winterthur"
+    _slug:
+      de: "winterthur"
+      en: "winterthur"
+    url: "http://localhost:3333"
+    breitengrad: 47.499165
+    laengengrad: 8.727779
+
+- "Zürich-Nord":
+    name:
+      en: "Zürich-Nord"
+    _slug:
+      de: "zuerich-nord"
+      en: "zuerich-nord"
+    url: "http://localhost:3333"
+    breitengrad: 47.412075
+    laengengrad: 8.546286
+
+- "Zürich-Seefeld":
+    name:
+      en: "Zürich-Seefeld"
+    _slug:
+      de: "zuerich-seefeld"
+      en: "zuerich-seefeld"
+    url: "http://localhost:3333"
+    breitengrad: 47.357202
+    laengengrad: 8.553168
 
 # - "Sample 2":
 #     url: "Ut porro commodi voluptatibus. Nisi enim et optio mollitia nemo est. Est modi minus rem asperiores maiores libero quo."

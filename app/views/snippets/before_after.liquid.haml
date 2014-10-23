@@ -1,0 +1,9 @@
+
+%div
+  .thumbnail
+    %img{ src: '{{ success_story.before_image.url | resize: "370x460#" }}', :style => "float: left;max-width:50%" }
+    %img{ src: '{{ success_story.after_image.url | resize: "370x460#" }}', :style => "float: left;max-width:50%" }
+    .clearfix
+    {% if display_text %}
+    %h4.text-center{:style => "{{ text_size }}"} {{ success_story.title }}
+    {% endif %}

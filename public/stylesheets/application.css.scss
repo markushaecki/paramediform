@@ -1,22 +1,30 @@
+@import "compass";
 @import "elements/header";
 @import "elements/content";
 
-$navbar-height: 25px;
+$navbar-default-bg: #F83CA4;
 
-.navbar-form{
-	height: $navbar-height;
-	margin: 0px;
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+ 	-ms-border-radius: $radius;
+	border-radius: $radius;
 }
 
-button.btn-default{
-	height: $navbar-height;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	margin-left: 4px;
+h1{
+	font-size: 26px !important;
 }
 
-input.form-control{
-	height: $navbar-height;
+h2{
+	font-size: 23px !important;
+}
+
+h3{
+	font-size: 20px !important;
+}
+
+h4{
+	font-size: 17px !important;
 }
 
 .success_story_images{
@@ -29,13 +37,100 @@ div.detailed_institute_info p{
 }
 
 #institutes_map{
-	display: inline-block;
 	position: relative;
+}
+
+#institutes_map img{
+	display: inline-block;
 }
 
 #institutes_map a{
 	position: absolute;
 	top:0px;
 	left:0px;
-	font-size: 30px;
+	font-size: 5px;
+	text-decoration: none;
+	color: #F83CA4;	
+}
+
+#institute_subnavigation a{
+	//line-height:40px;
+	//margin-right:5em
+}
+
+@media only screen and (min-width : 480px) {
+	#institutes_map a{
+		font-size: 7px;
+	}
+}
+
+@media only screen and (min-width : 768px) {
+	#institutes_map a{
+		font-size: 9px;
+	}
+	#institute_subnavigation a{
+		margin: 0px 0px;
+	}
+		
+}
+
+@media only screen and (min-width : 992px) {
+	#institutes_map a{
+		font-size: 11px;
+	}
+}
+
+.tooltipsy{
+    padding: 5px 10px;
+    max-width: 200px;
+    color: white;
+    //background-color: #f5f5b5;
+	background-color: $navbar-default-bg;
+    border: 1px solid darken($navbar-default-bg, 12%);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    text-shadow: none;
+	@include border-radius(5px);
+}
+
+#sidebar{
+	position: relative;
+}
+
+#bs-example-navbar-collapse-1 a{
+	font-size: 16px;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+.dropdown-menu a{
+	font-size: 14px !important;
+	font-weight: normal !important;
+	line-height: 1.42857 !important;
+}
+
+#logo_img{
+	//margin-top: 30px;
+	margin-top: 0px;
+}
+
+.navbar{
+	margin-bottom: 0px !important;
+}
+
+.navbar-toggle{
+	margin-right: 0px !important;
+	//background-color: white !important;
+}
+
+.thumbnail{
+	background-color: transparent !important;
+}
+
+.image_with_background{
+    border: 1px solid #CBCBCB;
+	padding: 10px;
+	@include border-radius(5px);
 }

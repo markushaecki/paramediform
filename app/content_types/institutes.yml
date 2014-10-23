@@ -46,7 +46,7 @@ fields:
     label: Breitengrad # Human readable name of the field
     type: float
     required: true
-    hint: "Breitengrad Koordinaten gemäss: http://www.gpsies.com/coordinate.do"
+    hint: "Breitengrad Koordinaten gemäss: http://www.evous.ch/GPS-Koordinaten-suchen,700053.html"
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
@@ -54,6 +54,6 @@ fields:
     label: Längengrad # Human readable name of the field
     type: float
     required: true
-    hint: "Längengrad Koordinaten gemäss: http://www.gpsies.com/coordinate.do"
+    hint: "Längengrad Koordinaten gemäss: http://www.evous.ch/GPS-Koordinaten-suchen,700053.html"
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)

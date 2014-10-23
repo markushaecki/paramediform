@@ -20,33 +20,35 @@ handle: double_columns_layout
       / contact block
       {% capture enable_contact %}{% editable_control "contact", options: "true=Yes,false=No", hint: "Tell if the contact block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_contact == "true" %}
-      .contact.well
-        %h4.text-center
-          %a{ href: '#' } {{ 'sidebar_contact_title' | translate }}
-        %h4.text-center
-          %span.glyphicon.glyphicon-earphone
-          &nbsp;
-          %span.glyphicon.glyphicon-envelope
-      {% endif %}
+      %a{ href: '#' }
+        .contact.well
+          %h4.text-center
+            {{ 'sidebar_contact_title' | translate }}
+          %h4.text-center{:style => "color:black;text-decoration: none"}
+            %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
+            %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
+        {% endif %}
 
       / institutes block
       {% capture enable_institutes %}{% editable_control "institutes", options: "true=Yes,false=No", hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_institutes == "true" %}
-      .institutes.well
-        %h4.text-center
-          %a{ href: '{% path_to institutes %}' } {{ 'sidebar_institutes_title' | translate }}
-        .text-center
-          IMAGE?
+      %a{ href: '{% path_to institutes %}'} 
+        .institutes.well
+          %h4.text-center
+            {{ 'sidebar_institutes_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x30' }}" }
       {% endif %}
 
       / news block
       {% capture enable_news %}{% editable_control "news", options: "true=Yes,false=No", hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_news == "true" %}
-      .news.well
-        %h4.text-center
-          %a{ href: '{% path_to news %}' } {{ 'sidebar_news_title' | translate }}
-        .text-center
-          IMAGE?
+      %a{ href: '{% path_to news %}' }
+        .news.well
+          %h4.text-center
+            {{ 'sidebar_news_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x30' }}" }
       {% endif %}
 
       {% endblock %}

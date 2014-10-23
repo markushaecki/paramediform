@@ -9,14 +9,15 @@ handle: simple_layout
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
     %meta{charset: "utf-8"}/
     %title {{ site.name }}
-    %meta{content: "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport"}/
+    %meta{content: "width=device-width, initial-scale=1, maximum-scale=10", name: "viewport"}/
     //%script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", type: "text/javascript"}
 
     {{ 'jquery.js' | javascript_tag }}
+    {{ 'application.css' | stylesheet_tag }}
     {{ 'bootstrap.css' | stylesheet_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
-    {{ 'application.css' | stylesheet_tag }}
     {{ 'application.js' | javascript_tag }}
+    {{ 'tooltipsy.js' | javascript_tag }}
 
     /[if lt IE 9]
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -27,27 +28,9 @@ handle: simple_layout
     #header
       %div.relative_position
         %img.atmospereic{ src: "{{ 'background.png' | theme_image_url }}" }
-      .container.relative_position
-        %ul.nav.navbar-nav.locales.small_navbar_height
-          - %w(de en).each do |locale|
-            %li{ class: "{% if locale == '#{locale}' %}active{% endif %}"}
-              {% if content_entry %}
-              = "{% link_to content_entry, locale: #{locale} %}"
-              = "{{ 'locales_#{locale}' | translate }}"
-              {% endlink_to %}
-              {% else %}
-              = "{% link_to page, locale: #{locale} %}"
-              = "{{ 'locales_#{locale}' | translate }}"
-              {% endlink_to %}
-              {% endif %}
-
-        .clearfix
-
-        %h1.text-center
-          %img.img-responsive{ src: "{{ 'logo.png' | theme_image_url | resize: 'x120' }}" }
-
-        %nav.navbar.navbar-default{:role => "navigation"}
-          .container
+      .container.relative_position{ :style => "width:100%"}		
+        %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
+          .container{ :style => "width:100%"}
             .navbar-header
               %button.navbar-toggle.collapsed{:type => "button", :data => {:toggle => 'collapse', :target => '#bs-example-navbar-collapse-1'}}
                 %span.sr-only Toggle navigation
@@ -74,30 +57,20 @@ handle: simple_layout
                   {% link_to news %}
                 %li{ class: '{% if page.handle == "institutes" %}active{% endif %}' }
                   {% link_to institutes %}
-                %li.dropdown
-                  %a.dropdown-toggle{ href: "#", :data => {:toggle => "dropdown"}}
-                    Dropdown
-                    %span.caret
-                  %ul.dropdown-menu{:role => "menu"}
-                    %li
-                      %a{ href: "#"} Action
-                    %li
-                      %a{ href: "#"} Another action
-                    %li
-                      %a{ href: "#"} Something else here
-                    %li.divider
-                    %li
-                      %a{ href: "#"} Separated link
               %form.navbar-form.navbar-right{:role => "search"}
                 .form-group
                   %input.form-control{:type => "text", :placeholder => "Wonach suchst du?"}
-                  %button.btn.btn-default{:type => "submit"} Suchen
+                  //%button.btn.btn-default{:type => "submit"} Suchen
+
+        %p.text-center
+          %img.img-responsive#logo_img{ src: "{{ 'logo.png' | theme_image_url | resize: 'x140' }}" }
+
         {% block header %}
         {% endblock %}
 
       #content
         .container{ :style => "max-width:1000px"}
-          %p.lead {{ page.title }}
+          //%p.lead
           {% block content %}
           {% endblock %}
 

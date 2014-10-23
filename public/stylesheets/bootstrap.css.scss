@@ -6,16 +6,18 @@
 // Core variables and mixins
 
 $icon-font-path: "/fonts/";
-$navbar-default-link-color: white;
-$navbar-default-link-hover-color: #CBCBCB;
-$navbar-default-link-active-color: #CBCBCB;
-$navbar-default-bg: #F83CA4;
-$link-color: #c780a0;
-$navbar-default-toggle-hover-bg:           darken($navbar-default-bg, 6.5%);
-$navbar-default-toggle-icon-bar-bg:        darken($navbar-default-bg, 12%);
-$navbar-default-toggle-border-color:       darken($navbar-default-bg, 6.5%);
-$navbar-height: 25px;
-$well-bg: white;
-$well-border: $navbar-default-bg;
+$link-color: #F83CA4;
+//$link-color: #646464;
+$navbar-default-link-color: $link-color;
+$navbar-default-link-hover-color: darken($link-color, 15%);
+$navbar-default-link-active-color: darken($link-color,25%);;
+$navbar-default-bg: rgba(255,255,255,0);;
+$navbar-default-toggle-hover-bg:           darken(white, 6.5%);
+$navbar-default-toggle-icon-bar-bg:        darken(white, 12%);
+$navbar-default-toggle-border-color:       darken(white, 6.5%);
+$well-bg: rgba(255,255,255,0);
+$well-border: #CBCBCB;
+$navbar-collapse-max-height: 1500px;
 
 @import "bootstrap/bootstrap"
+

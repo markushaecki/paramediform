@@ -3,7 +3,7 @@ title: Aktuelles
 slug: aktuelles
 published: true
 listed: true
-position: 2
+position: 3
 handle: institute_news
 editable_elements:
   "content/sidebar/news": "false"
@@ -15,7 +15,6 @@ editable_elements:
 {% if params.slug and params.type %}
 
 {% capture url %}{{ institute.url }}/{{ locale }}/news/{{ params.type }}.json?slug={{ params.slug }}{% endcapture %}
-{{ url }}
 {% consume data from url %}
 {% assign news = data.news_entry %}
 {% endconsume %}
@@ -28,7 +27,7 @@ editable_elements:
 {% include interview with news %}
 {% elsif news.recipe %}
 {% include recipe with news %}
-{% elsif news.illustrative_text %}
+{% elsif news.illustrative_text %}x
 {% include illustrative_text with news %}
 {% else %}
 
@@ -57,6 +56,7 @@ editable_elements:
       {% if news_entry.tags %}
       .tags
         %span.glyphicon.glyphicon-tags
+        &nbsp;
         {% for tag in news_entry.tags %}
         %span.label.label-primary {{ tag }}
         &nbsp;

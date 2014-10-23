@@ -11,41 +11,47 @@ editable_elements:
 
 {{ 'map.js' | javascript_tag }}
 
-{% for institute in contents.institutes %}
-%a{ href: '{% path_to institute %}' } {{ institute.name }}
-&nbsp;
-{% endfor %}
-
 {% endblock %}
 
 {% block content/main %}
 
-.text-center
-  %span#institutes_map
-    %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}", :style => 'max-height:360px' }
+.dropdown{:style => "position:absolute;z-index:2"}
+  %button.btn.btn-default.dropdown-toggle{:type => "button", :id => "dropdownMenu1", :data => {:toggle => "dropdown"}}
+    Institute  
+    %span.caret
+  %ul.dropdown-menu{:role => "menu", :aria => {:labelledby => "dropdownMenu1"}}
+    {% with_scope order_by: 'name.asc' %}
     {% for institute in contents.institutes %}
-    %a{ href: '{% path_to institute %}', :title => '{{ institute.name }}', :breit => '{{ institute.breitengrad }}', :laeng => '{{ institute.laengengrad }}' } •
-    &nbsp;
+    %li{:role => "presentation"}
+      %a{ href: '{% path_to institute %}/erfolgsgeschichten', :role => "menuitem", :tabindex => "-1" } {{ institute.name }}   
     {% endfor %}
-  
+    {% endwith_scope %}
+.text-center#institutes_map
+  %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
+  %br
+  %br
+  {% for institute in contents.institutes %}
+  %a{ href: '{% path_to institute %}/erfolgsgeschichten', :title => '{{ institute.name }}', :breit => '{{ institute.breitengrad }}', :laeng => '{{ institute.laengengrad }}' } 
+    .glyphicon.glyphicon-asterisk
+  {% endfor %}
+%p{:style => "color:lightgray"} Tipp: Klicke auf einen Stern um auf die gewünschte Institutsseite zu gelangen.
+%br
 
+%a{:name => "successstories"}
 %h4 {% editable_text success_stories_title, format: "raw", line_break: false, rows: 1 %}Erfolgsgeschichten{% endeditable_text %}
 
 .row
-  {% assign institutes = contents.institutes.all | sample: 4 %}
+  {% assign institutes = contents.institutes.all | sample: 6 %}
   {% for institute in institutes %}
 
-  .col-sm-6
+  .col-sm-6 
     {% capture url %}{{ institute.url }}/{{ locale }}/success_stories/random.json{% endcapture %}
     {% consume data from url %}
     {% assign success_story = data.success_story %}
     {% endconsume %}
-
-    .thumbnail
-      %img.pull-right{ src: '{{ success_story.before_image.url }}' }
-      %img.pull-left{ src: '{{ success_story.after_image.url  }}' }
-      .clearfix
-      %h6.text-center {{ success_story.title }}
+	
+    {% include before_after with display_text: true, text_size: "font-size:16px" %}
+    %br
 
   {% endfor %}
   

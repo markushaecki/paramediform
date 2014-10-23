@@ -20,36 +20,44 @@ editable_elements:
 {% endconsume %}
 
 .row
-  .col-sm-6.col-xs-12
-    %h4 {{ success_story.title }}
+  .col-xs-12
+    %h1 {% editable_text introduction_title, format: "raw", line_break: false, rows: 1 %}Abnehmen durch Paramediform{% endeditable_text %}
     %br
-    .thumbnail
-      .success_story_images{:style => 'max-height:200px'}
-        %img.img-responsive.pull-left{ src: '{{ success_story.before_image.url }}' }
-        %img.img-responsive{ src: '{{ success_story.after_image.url }}' }
+    %br
+    %p{:style => "font-size:18px"} {% editable_text introduction_text, format: "raw", line_break: false, rows: 1 %}Wir von Paramedifrom begleiten Sie bis zu Ihrem Wunschgewicht und darüber hinaus. Dank individuell zugeschnittenem Ernährungsplan, regelmässiger Betreuung und Kontrolle nehmen auch Sie ab, denn so ergings bereits tausenden vor Ihnen.{% endeditable_text %}	
+    %br
+    %br
+.row
+  .col-sm-6.col-xs-12
+    %h3 z.B: {{ success_story.title }}:
+    %br	
+    %a{ href: '{% path_to institutes %}#successstories'}
+      {% include before_after with display_text: false %}
 
   .col-sm-6.col-xs-12
-    %h4 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Uber 50 Institute in Ihrer Nahe{% endeditable_text %}
+    %h3 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Über 50 Institute in Ihrer Nähe{% endeditable_text %}
     %br
     .thumbnail
-      .images{:style => 'max-height:200px'}
-        %img.img-responsive{ src: "{{ 'map.png' | theme_image_url | resize: 'x200' }}" }
+      .images
+        %a{ href: '{% path_to institutes %}' }
+          %img.img-responsive{ src: "{{ 'map_front.png' | theme_image_url | resize: '739x460!' }}" }
 	
 %br
 %br
 
 .row
   .col-sm-6.col-xs-12
-    %h4 {% editable_text methology_title, format: "raw", line_break: false, rows: 1 %}Abnehmen mit Paramediform{% endeditable_text %}
+    %h3 {% editable_text methology_title, format: "raw", line_break: false, rows: 1 %}Die Methode funktioniert bei "praktisch" allen{% endeditable_text %}
     %br
-    {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}	
-    %a{ href: '{{ home_url }}', :role => 'button'} Mehr informationen...
-		
+    %p{:style => "font-size:18px"} {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}	
+    %br
+    %br
+    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'"} Mehr informationen...		
 
   .col-sm-6.col-xs-12
-    %h4 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}
+    %h3 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}
     %br
-    {% editable_text scinence_text, format: "raw", line_break: false, rows: 1 %}Ananas ist nicht nur lecker, sie enthält auch zahlreiche Vitalstoffe und Enzyme und fördert die Verdauung. Seefahrer brachten die Ananas im Jahre 1535 ...{% endeditable_text %}
+    %p{:style => "font-size:18px"} {% editable_text scinence_text, format: "raw", line_break: false, rows: 1 %}Ananas ist nicht nur lecker, sie enthält auch zahlreiche Vitalstoffe und Enzyme und fördert die Verdauung. Seefahrer brachten die Ananas im Jahre 1535 ...{% endeditable_text %}
 
 
 {% endblock %}

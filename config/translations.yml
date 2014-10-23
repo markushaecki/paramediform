@@ -32,8 +32,8 @@ sidebar_news_title:
   en: News
 
 label_phone:
-  de: Telefon
-  en: Phone
+  de: Tel
+  en: Tel
 
 label_fax:
   de: Fax
@@ -42,6 +42,10 @@ label_fax:
 menu_institute_success_stories:
   de: Erfolge
   en: Success stories
+
+menu_institute_success_stories_slug:
+  de: erfolgsgeschichten
+  en: success_stories
 
 menu_institute_team:
   de: Team
