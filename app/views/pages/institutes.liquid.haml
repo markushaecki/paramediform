@@ -49,8 +49,10 @@ editable_elements:
     {% consume data from url %}
     {% assign success_story = data.success_story %}
     {% endconsume %}
+
+    %a.non-link-style{ href: "{% path_to institute %}/erfolgsgeschichten?slug={{ success_story.slug }}&page={{ params.page }}" }
+      {% include before_after with display_text: true, text_size: "font-size:16px" %}
 	
-    {% include before_after with display_text: true, text_size: "font-size:16px" %}
     %br
 
   {% endfor %}

@@ -22,9 +22,9 @@ handle: double_columns_layout
       {% if enable_contact == "true" %}
       %a{ href: '#' }
         .contact.well
-          %h4.text-center
+          %h3.text-center
             {{ 'sidebar_contact_title' | translate }}
-          %h4.text-center{:style => "color:black;text-decoration: none"}
+          %h3.text-center{:style => "color:black;text-decoration: none"}
             %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
             %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
         {% endif %}
@@ -34,7 +34,7 @@ handle: double_columns_layout
       {% if enable_institutes == "true" %}
       %a{ href: '{% path_to institutes %}'} 
         .institutes.well
-          %h4.text-center
+          %h3.text-center
             {{ 'sidebar_institutes_title' | translate }}
           .text-center
             %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x30' }}" }
@@ -45,7 +45,7 @@ handle: double_columns_layout
       {% if enable_news == "true" %}
       %a{ href: '{% path_to news %}' }
         .news.well
-          %h4.text-center
+          %h3.text-center
             {{ 'sidebar_news_title' | translate }}
           .text-center
             %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x30' }}" }

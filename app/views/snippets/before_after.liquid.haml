@@ -1,9 +1,58 @@
 
 %div
+  {% if display_experience %}
+  %p.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+  {% endif %}
   .thumbnail
-    %img{ src: '{{ success_story.before_image.url | resize: "370x460#" }}', :style => "float: left;max-width:50%" }
-    %img{ src: '{{ success_story.after_image.url | resize: "370x460#" }}', :style => "float: left;max-width:50%" }
+    {% include success_picture with picture_url:success_story.before_image.url %}
+    {% include success_picture with picture_url:success_story.after_image.url %}	
     .clearfix
     {% if display_text %}
-    %h4.text-center{:style => "{{ text_size }}"} {{ success_story.title }}
+    {% if display_experience %}
+    {% include subnavigation_buttons %}
+    %span.story_title{:style => "text-weight:bold"}{{ success_story.experience_title }}
+    %br
+    %br
+    %table.round-corner-table{:style => "width:100%;background-color:#FFF6FC"}
+      %tr
+        %td  &nbsp;
+      %tr
+        %td.text-center{:style => "width:10%"}
+          %span.pink_text.glyphicon.glyphicon-play-circle
+        %td{:style => "width:35%"}
+          Programmstart:
+        %td{:style => "width:55%"}
+          {{ success_story.start_date | localized_date: '%d.%m.%Y' }} 
+      %tr
+        %td.text-center
+          %span.pink_text.glyphicon.glyphicon-time
+        %td
+          Programmdauer:
+        %td
+          {{ success_story.programm_duration }} Wochen
+      %tr
+        %td.text-center
+          %span.pink_text.glyphicon.glyphicon-dashboard
+        %td
+          Betreuungen:
+        %td
+          {{ success_story.number_of_consultations  }} Termine à 20 min
+      %tr{:style => "vertical-align:top"}
+        %td.text-center
+          %span.pink_text.glyphicon.glyphicon-eye-open
+        %td
+          Beobachtungen:
+        %td
+          {{ success_story.feeling_of_abdiction }} 
+      %tr
+        %td  &nbsp;
+    %br
+    {{ success_story.experience }}
+	
+    {% else %}
+    %table{:style => "height:6ex;margin-left:auto;margin-right:auto"}
+      %tr
+        %td.text-center
+          %span{:style => "{{ text_size }}"} {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }} 
+    {% endif %}
     {% endif %}

@@ -13,6 +13,11 @@ editable_elements:
 
 {% block content/main/tab_pane %}
 
+{% capture url %}{{ institute.url }}/{{ locale }}/success_stories/all.json{% endcapture %}
+{% consume data from url %}
+{% assign success_stories = data.success_stories %}
+{% endconsume %}
+
 {% if params.slug %}
 
 {% capture url %}{{ institute.url }}/{{ locale }}/success_stories/one.json?slug={{ params.slug }}{% endcapture %}
@@ -20,25 +25,18 @@ editable_elements:
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
 
-%ul.pager
-  %li.previous
-    %a{ href: "?page={{ params.page }}" } &larr; {{ "button_back" | translate }}
-
-{% include before_after with display_text: true, text_size: "font-size:14px" %}
+{% include generate_subnavigation with all:success_stories, this:success_story %}
+{% include before_after with display_text: true, text_size: "font-size:14px", display_experience: true %}
 
 {% else %}
 / by default, we display the list of success stories
-{% capture url %}{{ institute.url }}/{{ locale }}/success_stories/all.json{% endcapture %}
-{% consume data from url %}
-{% assign success_stories = data.success_stories %}
-{% endconsume %}
 .row
   {% for success_story in success_stories %}
   .col-sm-6.col-xs-12
-    %a{ href: "?slug={{ success_story.slug }}&page={{ params.page }}" }
+    %a.non-link-style{ href: "?slug={{ success_story.slug }}&page={{ params.page }}" }
       {% include before_after with display_text: true, text_size: "font-size:14px" %}
   {% endfor %}
-  
+
 {% endif %}
 
 {% endblock %}

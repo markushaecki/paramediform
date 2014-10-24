@@ -11,7 +11,32 @@ $(document).ready(function(e){
 			$('#sidebar').css("top", 60);
 		}		
 		$('#sidebar').width($('#sidebar').parent().width());
-	 });		 
+	 });	
+	 
+     // if they click on a boxed image, enlarge it
+     $('div.img-box a').click(function(event) {
+       event.preventDefault();
+       var box =
+         '<div id="lightbox">' +
+         '<p>Click to Close</p>' +
+         '<img src="' + $(this).attr('href') + '" alt="Enlarged" />' +
+         '</div>';
+       $('body').append(box);
+     });
+
+     // if they click an enlarged image, close it
+     $('body').on('click', '#lightbox',function(event) {
+       $('#lightbox').remove();
+     });	 
+	 
+     $('body').on('click', '#zoom-in',function(event) {
+       reload_with_zoom(1);
+	   return false;
+     });
+     $('body').on('click', '#zoom-out',function(event) {
+       reload_with_zoom(-1);
+	   return false;
+     });
 });
 
 $(document).scroll(function(e){
@@ -28,6 +53,22 @@ $(document).scroll(function(e){
 	}
 		
 });
+
+function reload_with_zoom(zoom){
+	var src = $("#google_map").attr("src");
+	var parts = src.split("&");
+	var i, l, original_size = 1, which_i = 0;
+	for (i = 0, l = parts.length; i < l; i += 1) {
+		if (parts[i].indexOf("zoom=") >= 0){
+			original_size = parseInt(parts[i].replace("zoom=", ""));
+			which_i = i;
+		}
+	}
+	var replace = "zoom=" + original_size.toString();
+	var rp_with = "zoom=" + (original_size+zoom).toString();
+	src = src.replace(replace, rp_with);
+	$("#google_map").attr("src", src);
+}
 
 function manage_atmospheric_image(){
 	var offset = $("#logo_img").offset();

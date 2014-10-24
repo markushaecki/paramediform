@@ -1,0 +1,15 @@
+%ul.pager{:style => "{{pagerstyle}}" }
+  %li.previous
+    {% if before_url != null %}
+    %a{ href: "{{ before_url }}" } &larr; {{ "button_before" | translate }}
+    {% else %}
+    %span{:style =>"width:120px;border:none"}
+    {% endif %}
+  %li
+    %a{ href: "{{ path }}" } {{ "button_back" | translate }}
+  %li.next
+    {% if after_url != null %}
+    %a{ href: "{{ after_url }}" } {{ "button_next" | translate }} &rarr;
+    {% else %}
+    %span{:style =>"width:120px;border:none"}
+    {% endif %}

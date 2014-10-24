@@ -19,6 +19,22 @@ button_back:
   de: Zurück
   en: Back
 
+button_before:
+  de: Rückwärts
+  en: Before
+
+button_next:
+  de: Vorwärts
+  en: Next
+
+zoom_out:
+  de: - zoom
+  en: - zoom
+
+zoom_in:
+  de: zoom +
+  en: zoom +
+
 sidebar_contact_title:
   de: Kontakt
   en: Contact

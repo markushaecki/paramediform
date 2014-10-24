@@ -12,19 +12,19 @@ $navbar-default-bg: #F83CA4;
 }
 
 h1{
-	font-size: 26px !important;
-}
-
-h2{
 	font-size: 23px !important;
 }
 
-h3{
+h2{
 	font-size: 20px !important;
 }
 
-h4{
+h3{
 	font-size: 17px !important;
+}
+
+h4{
+	font-size: 14px !important;
 }
 
 .success_story_images{
@@ -127,10 +127,53 @@ div.detailed_institute_info p{
 
 .thumbnail{
 	background-color: transparent !important;
+	padding: 10px !important;
 }
 
 .image_with_background{
     border: 1px solid #CBCBCB;
 	padding: 10px;
 	@include border-radius(5px);
+}
+
+.pink_text{
+	color:$navbar-default-bg;
+}
+
+.round-corner-table{
+	@include border-radius(10px);
+}
+
+#lightbox {
+  position: fixed;
+  top: 0px; left: 0px;
+  width: 100%; height: 100%;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#lightbox p {
+  background-color: $navbar-default-bg;
+  color: #fff;
+}
+
+//Correction to strengthen boarder of nav
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border-width: 2px !important;
+    border-color: #DDD #DDD transparent !important;
+}
+
+.nav-tabs > li {
+    margin-bottom: -2px !important;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #DDD !important;
 }
