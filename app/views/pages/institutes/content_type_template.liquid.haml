@@ -34,18 +34,20 @@ handle: institute_layout
     #contact_info
       %p.text-center.image_with_background
         %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&zoom=16&size=650x200&markers=color:red|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
-        %ul.pager{:style => "margin-top:0px;margin-bottom:0px" }
-          %li.previous
-            %a{ href: "", :id => "zoom-out" } - zoom 
-          %li.next
-            %a{ href: "", :id => "zoom-in" } zoom +
-
       .row.detailed_institute_info
-        .col-sm-6.col-xs-6
+        .col-sm-5.col-xs-12.col-md-4
           %p {{ information.name }}
           %p {{ information.street }}
           %p {{ information.city }}
-        .col-sm-6.col-xs-6
+        .col-sm-2.col-xs-12.col-md-4
+          %ul.pager{:style => "margin-top:0px;margin-bottom:0px" }
+            %li
+              %a{ href: "", :id => "zoom-out" }
+                %b - 
+            %li
+              %a{ href: "", :id => "zoom-in" }
+                %b +
+        .col-sm-5.col-xs-12.col-md-4
           .text-right
             %p {{ "label_phone" | translate }} {{ information.phone }}
             %p {{ "label_fax" | translate }} {{ information.fax }}
