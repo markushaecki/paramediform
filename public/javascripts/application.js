@@ -1,18 +1,21 @@
+$(window).load(function() {
+  manage_atmospheric_image();
+});
+
 $(document).ready(function(e){
-	manage_atmospheric_image()
 	$(window).resize(function() {
 		manage_atmospheric_image();
 		if($(window).width() < 768){
-			$('#sidebar').css("position", "relative");	
-			$('#sidebar').css("top", 0);	
+			$('#sidebar').css("position", "relative");
+			$('#sidebar').css("top", 0);
 		}
 	    if($(document).scrollTop() > 170 && $(window).width() > 767){
 			$('#sidebar').css("position", "fixed");
 			$('#sidebar').css("top", 60);
-		}		
+		}
 		$('#sidebar').width($('#sidebar').parent().width());
-	 });	
-	 
+	 });
+
      // if they click on a boxed image, enlarge it
      $('div.img-box a').click(function(event) {
        event.preventDefault();
@@ -27,8 +30,8 @@ $(document).ready(function(e){
      // if they click an enlarged image, close it
      $('body').on('click', '#lightbox',function(event) {
        $('#lightbox').remove();
-     });	 
-	 
+     });
+
      $('body').on('click', '#zoom-in',function(event) {
        reload_with_zoom(1);
 	   return false;
@@ -46,12 +49,12 @@ $(document).scroll(function(e){
 			$('#sidebar').css("top", 30);
 			$('#sidebar').width($('#sidebar').parent().width());
 	    } else {
-			$('#sidebar').css("position", "relative");	
-			$('#sidebar').css("top", 0);	
+			$('#sidebar').css("position", "relative");
+			$('#sidebar').css("top", 0);
 			$('#sidebar').width($('#sidebar').parent().width());
 	    }
 	}
-		
+
 });
 
 function reload_with_zoom(zoom){
@@ -72,10 +75,12 @@ function reload_with_zoom(zoom){
 
 function manage_atmospheric_image(){
 	var offset = $("#logo_img").offset();
-	var scale = (offset.top + $("#logo_img").height()) - 20;
+
+  var scale = (offset.top + $("#logo_img").height()) - 20;
 	var scale_ratio = scale / 150
-	
+
 	$(".atmospereic").height(300 * scale_ratio);
+
 	if($(window).width() < 1408){
 		var offset_right = $(window).width() - 1407*scale_ratio + (230 * (1 - $(window).width()/1440)) - (180-scale);
 		$(".atmospereic").css("right", offset_right);

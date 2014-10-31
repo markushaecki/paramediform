@@ -28,12 +28,12 @@ button_next:
   en: Next
 
 zoom_out:
-  de: - zoom
-  en: - zoom
+  de: "- zoom"
+  en: "- zoom"
 
 zoom_in:
-  de: zoom +
-  en: zoom +
+  de: "zoom +"
+  en: "zoom +"
 
 sidebar_contact_title:
   de: Kontakt
@@ -70,7 +70,7 @@ menu_institute_team:
 menu_institute_news:
   de: Aktuelles
   en: News
-  
+
 navigation_loose_weight:
   de: Abnehmen
   en: Weight loss
