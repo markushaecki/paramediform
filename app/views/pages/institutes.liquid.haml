@@ -31,7 +31,8 @@ editable_elements:
   %br
   %br
   {% for institute in contents.institutes %}
-  %a{ href: '{% path_to institute %}/erfolgsgeschichten', :title => '{{ institute.name }}', :breit => '{{ institute.breitengrad }}', :laeng => '{{ institute.laengengrad }}' } 
+  {% capture slug %}{% path_to institute %}/{{ 'menu_institute_success_stories_slug' | translate }}{% endcapture %}
+  %a{ href: "{{ slug }}", :title => '{{ institute.name }}', :breit => '{{ institute.breitengrad }}', :laeng => '{{ institute.laengengrad }}' } 
     .glyphicon.glyphicon-asterisk
   {% endfor %}
 %p{:style => "color:lightgray"} Tipp: Klicke auf einen Stern um auf die gewünschte Institutsseite zu gelangen.

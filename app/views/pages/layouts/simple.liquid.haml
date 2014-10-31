@@ -47,9 +47,11 @@ handle: simple_layout
                     %li
                       {% link_to home %}
                     %li
-                      %a{ href: "#"} Another action
+                      %a{ href: "{% path_to multiple_text_image %}" } Methode
                     %li
-                      %a{ href: "#"} Something else here
+                      %a{ href: "{% path_to people_chart %}"} Systemzentrale
+                    %li
+                      %a{ href: "{% path_to simple_text %}"} Beispiel
                     %li.divider
                     %li
                       %a{ href: "#"} Separated link
@@ -69,7 +71,7 @@ handle: simple_layout
         {% endblock %}
 
       #content
-        .container{ :style => "max-width:1000px"}
+        .container{ :style => "max-width:900px"}
           //%p.lead
           {% block content %}
           {% endblock %}

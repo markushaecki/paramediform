@@ -1,0 +1,42 @@
+---
+title: Methode
+slug: method
+published: true
+handle: multiple_text_image
+editable_elements:
+  "content/sidebar/contact": "false"
+---
+{% extends layouts/double-columns %}
+
+{% block content/main %}
+
+.paddingbox
+  %h2 Essen Sie sich schlank Paramediform hilft Ihnen dabei!
+
+  %p Wir von Paramedifrom begleiten Sie bis zu Ihrem Wunschgewicht und darüber hinaus. Dank individuell zugeschnittenem Ernährungsplan, regelmässiger Betreuung und Kontrolle nehmen auch Sie ab, denn so ergings bereits tausenden vor Ihnen.
+
+
+  %h3 Ganzheitliche Ernährung
+  .row
+    .col-xs-4
+      %img.img-responsive{ src: "{{ 'good-food.png' | theme_image_url }}" }
+    .col-xs-8
+      %p Nur eine gesunde Ernährung hilft langfristig. Eine optimal funktionierende Verdauung bedarf einer kompletten Ernährung. Vitalität des Körpers stärkt den Geist und Willen (Positiver Spiraleneffekt).
+  %h3 Individuell Abgestimmt
+  .row
+    .col-xs-4
+      %img.img-responsive{ src: "{{ 'individual.png' | theme_image_url }}" }
+    .col-xs-8
+      %p Jeder Mensch hat unterschiedliche Veranlagungen. Grundlagen aus wissenschalftlicher Auswertung unserer langjährig Erfahrungswerten
+  %h3 Mentale Stärke
+  .row
+    .col-xs-4
+      %img.img-responsive{ src: "{{ 'mental-strength.png' | theme_image_url }}" }
+    .col-xs-8
+      %p Geführtes Programm. Alternativen anstatt Verzichten. Hungern ist von Paramediform untersagt.
+
+
+
+
+
+{% endblock %}
