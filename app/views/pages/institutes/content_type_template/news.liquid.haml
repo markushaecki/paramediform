@@ -12,7 +12,7 @@ editable_elements:
 
 {% block content/main/tab_pane %}
 
-{% capture url %}{{ institute.url }}/{{ locale }}/news/all.json?page={{ params.page }}{% endcapture %}
+{% capture url %}{{ institute.url }}/{{ locale }}/news/all.json?page={{ params.page }}&tag={{ params.tag | encode }}{% endcapture %}
 {% consume data from url %}
 {% assign news = data.news %}
 {% assign news_pagination = data.pagination %}
@@ -25,9 +25,6 @@ editable_elements:
 {% assign this_news = data.news_entry %}
 {% endconsume %}
 
-//%ul.pager
-//  %li.previous
-//    %a{ href: "?page={{ params.page }}" } &larr; {{ "button_back" | translate }}
 {% include generate_subnavigation with all:news, this:this_news %}
 {% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
 
@@ -61,7 +58,7 @@ editable_elements:
         %span.glyphicon.glyphicon-tags
         &nbsp;
         {% for tag in news_entry.tags %}
-        %span.label.label-primary {{ tag }}
+        %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
         &nbsp;
         {% endfor %}
       {% endif %}
@@ -76,7 +73,7 @@ editable_elements:
     %ul.pagination.pagination-sm
       {% if news_pagination.previous_page %}
       %li
-        %a{ href: "?page={{ news_pagination.previous_page }}" } &laquo;
+        %a{ href: "?page={{ news_pagination.previous_page }}&tag={{ params.tag | encode }}" } &laquo;
       {% else %}
       %li.disabled
         %span &laquo;
@@ -91,13 +88,13 @@ editable_elements:
         %span {{ part.title }}
       {% else %}
       %li
-        %a{ href: "?page={{ part.title }}" } {{ part.title }}
+        %a{ href: "?page={{ part.title }}&tag={{ params.tag | encode }}" } {{ part.title }}
       {% endif %}
       {% endfor %}
 
       {% if news_pagination.next_page %}
       %li
-        %a{ href: "?page={{ news_pagination.next_page }}" } &raquo;
+        %a{ href: "?page={{ news_pagination.next_page }}&tag={{ params.tag | encode }}" } &raquo;
       {% else %}
       %li.disabled
         %span &raquo;
