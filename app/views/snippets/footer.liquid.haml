@@ -1,2 +1,4 @@
 .footer
-  %p &copy; Company {{ now | localized_date: '%Y' }}
+{% for page in site.pages %}
+%p {{ page.title }}
+{% endfor %}

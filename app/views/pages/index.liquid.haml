@@ -19,13 +19,33 @@ editable_elements:
 {% assign success_story = data.success_story %}
 {% endconsume %}
 
+//{% capture geocoding %}http://maps.googleapis.com/maps/api/geocode/json?address=Schanzweg-7-5000-Aarau{% endcapture %}
+//{% consume data from geocoding %}
+//{% assign geo_adress = data.results %}
+//{% endconsume %}
+//{{ geo_adress.first.geometry.location.lng }}{{ geo_adress.first.geometry.location.lng }}
 .row
   .col-xs-12
     %h1 {% editable_text introduction_title, format: "raw", line_break: false, rows: 1 %}Abnehmen durch Paramediform{% endeditable_text %}
     %br
     %br
-    %p{:style => "font-size:14px"} {% editable_text introduction_text, format: "raw", line_break: false, rows: 1 %}Wir von Paramedifrom begleiten Sie bis zu Ihrem Wunschgewicht und darüber hinaus. Dank individuell zugeschnittenem Ernährungsplan, regelmässiger Betreuung und Kontrolle nehmen auch Sie ab, denn so ergings bereits tausenden vor Ihnen.{% endeditable_text %}	
-    %br
+    .row
+      .col-sm-4.col-xs-12
+        %h3 Genug
+        %p{:style => "font-size:14px"} Nur wer genug isst kann langfristig abnehmen. Hungern kann man nicht über längere Zeit!
+
+        %br
+        %img.img-responsive{ src: "{{ 'enough.png' | theme_image_url | resize: '120x' }}" }
+      .col-sm-4.col-xs-12
+        %h3 Gediegen
+        %p{:style => "font-size:14px"} Das Essen ist ein zentraler Bestandteil unserer Lustempfindung. Essen muss eine Lust sein!
+        %br
+        %img.img-responsive{ src: "{{ 'enjoy.png' | theme_image_url | resize: 'x70' }}" }
+      .col-sm-4.col-xs-12
+        %h3 Gesund
+        %p{:style => "font-size:14px"} Nur eine gesunde ausgewogene Ernährung kann langfristig erfolgreich sein.
+        %br
+        %img.img-responsive{ src: "{{ 'healthy.png' | theme_image_url | resize: 'x80' }}" }
     %br
 .row
   .col-sm-6.col-xs-12
@@ -58,6 +78,7 @@ editable_elements:
     %h3 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}
     %br
     %p{:style => "font-size:14px"} {% editable_text scinence_text, format: "raw", line_break: false, rows: 1 %}Ananas ist nicht nur lecker, sie enthält auch zahlreiche Vitalstoffe und Enzyme und fördert die Verdauung. Seefahrer brachten die Ananas im Jahre 1535 ...{% endeditable_text %}
+	
 
 
 {% endblock %}
