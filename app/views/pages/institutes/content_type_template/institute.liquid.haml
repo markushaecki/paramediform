@@ -1,0 +1,32 @@
+---
+title: Institute
+published: true
+slug: institute
+listed: true
+position: 3
+handle: institute
+---
+{% extends parent %}
+
+{% block content/main/tab_pane %}
+
+{% capture url %}{{ institute.url }}/{{ locale }}/institute/all.json{% endcapture %}
+{% consume data from url %}
+{% assign institute_pictures = data.institute_pictures %}
+{% endconsume %}
+
+%h2 {{ information.institute_title }}
+%p {{ information.institute_description }}
+%br
+
+{% for institute_picture in institute_pictures %}
+.row
+  .col-xs-12  
+    .thumbnail
+      .img-box
+        %a{ href: '{{ institute_picture.picture.url }}' }
+          %img.img-responsive{ src: '{{ institute_picture.picture.url | resize: "510x" }}' }
+      %p{:style => "text-align: center;margin-top:10px;margin-bottom:0px"} {{ institute_picture.description }}
+{% endfor %}
+
+{% endblock %}
