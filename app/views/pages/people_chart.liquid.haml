@@ -17,16 +17,21 @@ editable_elements:
 
 
   {% for person in contents.people %}
-  %h3 {{ person.name }}
-  .row
-    .col-xs-4
-      %img.img-responsive{ src: "{{ person.picture.url | resize: 'x200'}}" }
-    .col-xs-8
-      %ul
-        %li{ :style => "list-style-type: none;"} {{ person.title }}
-        %li{ :style => "list-style-type: none;"} {{ person.email }}
-        %li{ :style => "list-style-type: none;"} ___________________________
-        %li{ :style => "list-style-type: none;"} "{{ person.keynote }}"
+  .thumbnail
+    .row
+      .col-xs-3
+        .img-box
+          %a{ href: "{{ person.picture.url }}", :style => "padding:0px" }
+            %img.img-responsive{ src: "{{ person.picture.url | resize: 'x250' }}", :style => "margin-left:0px;margin-right:10px" }
+      .col-xs-9
+        %ul.no-padding-left
+          %li{ :style => "list-style-type: none;"}
+            %h3{:style => "padding:0px"} {{ person.name }}
+          %li{ :style => "list-style-type: none;"} {{ person.title }}
+          %li{ :style => "list-style-type: none;"} {{ person.email }}
+          %li{ :style => "list-style-type: none;"}
+            %hr
+          %li{ :style => "list-style-type: none;"} "{{ person.keynote }}"
   {% endfor %}
 
 
