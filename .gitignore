@@ -1,5 +1,5 @@
 .sass-cache/
 log/
 log/wagon.log
-
+config/deploy.yml
 *.log
