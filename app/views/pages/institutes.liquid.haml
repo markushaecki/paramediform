@@ -15,15 +15,15 @@ editable_elements:
 
 {% block content/main %}
 
-.dropdown{:style => "position:absolute;z-index:2"}
-  %button.btn.btn-default.dropdown-toggle{:type => "button", :id => "dropdownMenu1", :data => {:toggle => "dropdown"}}
-    Institute  
+.dropdown{style: "position:absolute;z-index:2"}
+  %button.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
+    Institute
     %span.caret
-  %ul.dropdown-menu{:role => "menu", :aria => {:labelledby => "dropdownMenu1"}}
+  %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
     {% with_scope order_by: 'name.asc' %}
     {% for institute in contents.institutes %}
-    %li{:role => "presentation"}
-      %a{ href: '{% path_to institute %}/erfolgsgeschichten', :role => "menuitem", :tabindex => "-1" } {{ institute.name }}   
+    %li{role: "presentation"}
+      %a{ href: '{% path_to institute, with: institute_success_stories %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}
     {% endfor %}
     {% endwith_scope %}
 .text-center#institutes_map
@@ -31,30 +31,30 @@ editable_elements:
   %br
   %br
   {% for institute in contents.institutes %}
-  %a{ href: '{% path_to institute %}/erfolgsgeschichten', :title => '{{ institute.name }}', :breit => '{{ institute.breitengrad }}', :laeng => '{{ institute.laengengrad }}' } 
+  %a{ href: '{% path_to institute, with: institute_success_stories %}', title: '{{ institute.name }}', breit: '{{ institute.breitengrad }}', laeng: '{{ institute.laengengrad }}' }
     .glyphicon.glyphicon-asterisk
   {% endfor %}
-%p{:style => "color:lightgray"} Tipp: Klicke auf einen Stern um auf die gewünschte Institutsseite zu gelangen.
+%p{style: "color:lightgray"} Tipp: Klicke auf einen Stern um auf die gewünschte Institutsseite zu gelangen.
 %br
 
-%a{:name => "successstories"}
+%a{name: "successstories"}
 %h4 {% editable_text success_stories_title, format: "raw", line_break: false, rows: 1 %}Erfolgsgeschichten{% endeditable_text %}
 
 .row
   {% assign institutes = contents.institutes.all | sample: 6 %}
   {% for institute in institutes %}
 
-  .col-sm-6 
-    {% capture url %}{{ institute.url }}/{{ locale }}/success_stories/random.json{% endcapture %}
+  .col-sm-6
+    {% capture url %}{{ institute.url }}/{{ locale }}/success-stories/random.json{% endcapture %}
     {% consume data from url %}
     {% assign success_story = data.success_story %}
     {% endconsume %}
 
-    %a.non-link-style{ href: "{% path_to institute %}/erfolgsgeschichten?slug={{ success_story.slug }}&page={{ params.page }}" }
+    %a.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
       {% include before_after with display_text: true, text_size: "font-size:16px" %}
-	
+
     %br
 
   {% endfor %}
-  
+
 {% endblock %}

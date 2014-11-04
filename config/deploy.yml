@@ -13,3 +13,6 @@
 #   email: john@doe.net
 #   password: apassword
 #   # api_key: <your api key here>
+hosting:
+  host: pmf.locomotivehosting.com
+  api_key: e903c6b15667975c10c413008acd4f1058643b78

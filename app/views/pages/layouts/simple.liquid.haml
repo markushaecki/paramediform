@@ -28,7 +28,7 @@ handle: simple_layout
     #header
       %div.relative_position
         %img.atmospereic{ src: "{{ 'background.png' | theme_image_url }}" }
-      .container.relative_position{ :style => "width:100%"}		
+      .container.relative_position{ :style => "width:100%"}
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
           .container{ :style => "width:100%"}
             .navbar-header
@@ -63,7 +63,7 @@ handle: simple_layout
                   //%button.btn.btn-default{:type => "submit"} Suchen
 
         %p.text-center
-          %img.img-responsive#logo_img{ src: "{{ 'logo.png' | theme_image_url | resize: 'x140' }}" }
+          %img.img-responsive#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x140' }}" }
 
         {% block header %}
         {% endblock %}

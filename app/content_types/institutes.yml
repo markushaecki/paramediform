@@ -36,7 +36,7 @@ fields:
 
 - url: # The lowercase, underscored name of the field
     label: Url # Human readable name of the field
-    type: text
+    type: string
     required: false
     hint: Explanatory text displayed in the back office
     localized: false

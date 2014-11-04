@@ -43,7 +43,7 @@ handle: institute_layout
           %ul.pager{:style => "margin-top:0px;margin-bottom:0px" }
             %li
               %a{ href: "", :id => "zoom-out" }
-                %b - 
+                %b -
             %li
               %a{ href: "", :id => "zoom-in" }
                 %b +
@@ -65,10 +65,8 @@ handle: institute_layout
 
       {% for _page in root_page.children %}
       {% if _page.listed? and _page.published? %}
-      / A bit of hack because we can not access the title of the child page
-      {% assign title = _page.handle | prepend: "menu_" %}
       %li{ class: "{% if page.fullpath == _page.fullpath %}active{% endif %}" }
-        %a{ href: "{% path_to institute %}/{{ _page.slug }}" } {{ title | translate }}
+        %a{ href: "{% path_to institute, with: institute_layout %}/{{ _page.original_slug }}" } {{ _page.original_title }}
       {% endif %}
       {% endfor %}
 
@@ -76,7 +74,7 @@ handle: institute_layout
       .tab-content
         .tab-pane.active
           %br
-          {% block tab_pane %}			
+          {% block tab_pane %}
           {% endblock %}
 
 {% endblock %}

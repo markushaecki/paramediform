@@ -14,7 +14,7 @@ editable_elements:
 / Find a random institute
 {% assign institute = contents.institutes.all | sample: 1 %}
 
-{% capture url %}{{ institute.url }}/{{ locale }}/success_stories/random.json{% endcapture %}
+{% capture url %}{{ institute.url }}/{{ locale }}/success-stories/random.json{% endcapture %}
 {% consume data from url %}
 {% assign success_story = data.success_story %}
 {% endconsume %}
@@ -24,13 +24,13 @@ editable_elements:
     %h1 {% editable_text introduction_title, format: "raw", line_break: false, rows: 1 %}Abnehmen durch Paramediform{% endeditable_text %}
     %br
     %br
-    %p{:style => "font-size:14px"} {% editable_text introduction_text, format: "raw", line_break: false, rows: 1 %}Wir von Paramedifrom begleiten Sie bis zu Ihrem Wunschgewicht und darüber hinaus. Dank individuell zugeschnittenem Ernährungsplan, regelmässiger Betreuung und Kontrolle nehmen auch Sie ab, denn so ergings bereits tausenden vor Ihnen.{% endeditable_text %}	
+    %p{:style => "font-size:14px"} {% editable_text introduction_text, format: "raw", line_break: false, rows: 1 %}Wir von Paramedifrom begleiten Sie bis zu Ihrem Wunschgewicht und darüber hinaus. Dank individuell zugeschnittenem Ernährungsplan, regelmässiger Betreuung und Kontrolle nehmen auch Sie ab, denn so ergings bereits tausenden vor Ihnen.{% endeditable_text %}
     %br
     %br
 .row
   .col-sm-6.col-xs-12
     %h3 z.B: {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
-    %br	
+    %br
     %a{ href: '{% path_to institutes %}#successstories'}
       {% include before_after with display_text: false %}
 
@@ -41,7 +41,7 @@ editable_elements:
       .images
         %a{ href: '{% path_to institutes %}' }
           %img.img-responsive{ src: "{{ 'map_front.png' | theme_image_url | resize: '739x460!' }}" }
-	
+
 %br
 %br
 
@@ -49,10 +49,10 @@ editable_elements:
   .col-sm-6.col-xs-12
     %h3 {% editable_text methology_title, format: "raw", line_break: false, rows: 1 %}Die Methode funktioniert bei "praktisch" allen{% endeditable_text %}
     %br
-    %p{:style => "font-size:14px"} {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}	
+    %p{:style => "font-size:14px"} {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}
     %br
     %br
-    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'"} Mehr informationen...		
+    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'"} Mehr informationen...
 
   .col-sm-6.col-xs-12
     %h3 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}

@@ -13,14 +13,14 @@ editable_elements:
 
 {% block content/main/tab_pane %}
 
-{% capture url %}{{ institute.url }}/{{ locale }}/success_stories/all.json{% endcapture %}
+{% capture url %}{{ institute.url }}/{{ locale }}/success-stories/all.json{% endcapture %}
 {% consume data from url %}
 {% assign success_stories = data.success_stories %}
 {% endconsume %}
 
 {% if params.slug %}
 
-{% capture url %}{{ institute.url }}/{{ locale }}/success_stories/one.json?slug={{ params.slug }}{% endcapture %}
+{% capture url %}{{ institute.url }}/{{ locale }}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
 {% consume data from url %}
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
