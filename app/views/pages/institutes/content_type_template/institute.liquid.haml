@@ -4,7 +4,7 @@ published: true
 slug: institute
 listed: true
 position: 3
-handle: institute
+handle: institute_home
 ---
 {% extends parent %}
 
@@ -21,7 +21,7 @@ handle: institute
 
 {% for institute_picture in institute_pictures %}
 .row
-  .col-xs-12  
+  .col-xs-12
     .thumbnail
       .img-box
         %a{ href: '{{ institute_picture.picture.url }}' }

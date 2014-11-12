@@ -19,11 +19,13 @@ editable_elements:
 {% assign success_story = data.success_story %}
 {% endconsume %}
 
+{% comment %}
 //{% capture geocoding %}http://maps.googleapis.com/maps/api/geocode/json?address=Schanzweg-7-5000-Aarau{% endcapture %}
 //{% consume data from geocoding %}
 //{% assign geo_adress = data.results %}
 //{% endconsume %}
 //{{ geo_adress.first.geometry.location.lng }}{{ geo_adress.first.geometry.location.lng }}
+{% endcomment %}
 .row
   .col-xs-12
     %h1 {% editable_text introduction_title, format: "raw", line_break: false, rows: 1 %}Abnehmen durch Paramediform{% endeditable_text %}

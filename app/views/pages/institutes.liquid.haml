@@ -26,6 +26,7 @@ editable_elements:
       %a{ href: '{% path_to institute, with: institute_success_stories %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}
     {% endfor %}
     {% endwith_scope %}
+
 .text-center#institutes_map
   %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
   %br

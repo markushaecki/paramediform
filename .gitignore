@@ -3,3 +3,4 @@ log/
 log/wagon.log
 config/deploy.yml
 *.log
+.DS_Store
