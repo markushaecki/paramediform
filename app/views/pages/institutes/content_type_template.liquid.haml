@@ -33,7 +33,7 @@ handle: institute_layout
     %h1 Institut {{ institute.name }}
     #contact_info
       %p.text-center.image_with_background
-        %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&zoom=16&size=650x200&markers=color:red|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
+        %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
       .row.detailed_institute_info
         .col-sm-5.col-xs-12.col-md-4
           %p {{ information.name }}

@@ -27,10 +27,13 @@ handle: simple_layout
   %body
     #header
       %div.relative_position
-        %img.atmospereic{ src: "{{ 'background.png' | theme_image_url }}" }
-      .container.relative_position{ :style => "width:100%"}
+        %img.atmospereic{ src: "{{ 'atmospheric.png' | theme_image_url }}" }
+      .container.relative_position{ :style => "max-width:750px"}
+        %p.text-center
+          %img.img-responsive#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x120' }}", :style => "margin-top:50px" }
+          %p.text-center Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
-          .container{ :style => "width:100%"}
+          .container{ :style => "width:100%;margin-top:20px;margin-bottom:20px"}
             .navbar-header
               %button.navbar-toggle.collapsed{:type => "button", :data => {:toggle => 'collapse', :target => '#bs-example-navbar-collapse-1'}}
                 %span.sr-only Toggle navigation
@@ -38,7 +41,7 @@ handle: simple_layout
                 %span.icon-bar
                 %span.icon-bar
             .collapse.navbar-collapse#bs-example-navbar-collapse-1
-              %ul.nav.navbar-nav
+              %ul.nav.navbar-nav.nav-justified
                 %li.dropdown
                   %a.dropdown-toggle{ href: "#", :data => {:toggle => "dropdown"}}
                     {{ 'navigation_loose_weight' | translate }}
@@ -51,21 +54,15 @@ handle: simple_layout
                     %li
                       %a{ href: "{% path_to people_chart %}"} Systemzentrale
                     %li
-                      %a{ href: "{% path_to simple_text %}"} Beispiel
-                    %li.divider
-                    %li
-                      %a{ href: "#"} Separated link
+                      %a{ href: "{% path_to simple_text %}"} Tipp der Woche
                 %li{ class: '{% if page.handle == "news" %}active{% endif %}' }
                   {% link_to news %}
+                %li{ class: '{% if page.handle == "products" %}active{% endif %}' }
+                  {% link_to products %}
                 %li{ class: '{% if page.handle == "institutes" %}active{% endif %}' }
                   {% link_to institutes %}
-              %form.navbar-form.navbar-right{:role => "search"}
-                .form-group
-                  %input.form-control{:type => "text", :placeholder => "Wonach suchst du?"}
-                  //%button.btn.btn-default{:type => "submit"} Suchen
-
-        %p.text-center
-          %img.img-responsive#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x140' }}" }
+                %li{ class: '{% if page.handle == "enterprise" %}active{% endif %}' }
+                  {% link_to enterprise %}
 
         {% block header %}
         {% endblock %}

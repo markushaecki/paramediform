@@ -9,6 +9,10 @@ editable_elements:
 ---
 {% extends layouts/simple %}
 
+{% block header %}
+{{ 'map.js' | javascript_tag }}
+{% endblock %}
+
 {% block content %}
 
 / Find a random institute
@@ -28,42 +32,39 @@ editable_elements:
 {% endcomment %}
 .row
   .col-xs-12
-    %h1 {% editable_text introduction_title, format: "raw", line_break: false, rows: 1 %}Abnehmen durch Paramediform{% endeditable_text %}
-    %br
+    %h1.text-center {% editable_text introduction_title, format: "raw", line_break: false, rows: 1 %}Abnehmen mit Paramediform{% endeditable_text %}
     %br
     .row
-      .col-sm-4.col-xs-12
-        %h3 Genug
+      .col-sm-6.col-xs-12
+        %img.img-responsive{ src: "{{ 'frau2.png' | theme_image_url }}", :style => "float:right" }
+      .col-sm-5.col-md-3.col-xs-12
+        %h3 G enug
         %p{:style => "font-size:14px"} Nur wer genug isst kann langfristig abnehmen. Hungern kann man nicht über längere Zeit!
-
-        %br
-        %img.img-responsive{ src: "{{ 'enough.png' | theme_image_url | resize: '120x' }}" }
-      .col-sm-4.col-xs-12
-        %h3 Gediegen
+        %h3 G ediegen
         %p{:style => "font-size:14px"} Das Essen ist ein zentraler Bestandteil unserer Lustempfindung. Essen muss eine Lust sein!
-        %br
-        %img.img-responsive{ src: "{{ 'enjoy.png' | theme_image_url | resize: 'x70' }}" }
-      .col-sm-4.col-xs-12
-        %h3 Gesund
+        %h3 G esund
         %p{:style => "font-size:14px"} Nur eine gesunde ausgewogene Ernährung kann langfristig erfolgreich sein.
-        %br
-        %img.img-responsive{ src: "{{ 'healthy.png' | theme_image_url | resize: 'x80' }}" }
+      .col-sm-1.col-md-3.col-xs-12
+    %br
     %br
 .row
-  .col-sm-6.col-xs-12
-    %h3 z.B: {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
-    %br
+  .col-sm-12.col-xs-12
+    %h3 {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
     %a{ href: '{% path_to institutes %}#successstories'}
       {% include before_after with display_text: false %}
 
-  .col-sm-6.col-xs-12
+  .col-sm-12.col-xs-12
     %h3 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Über 50 Institute in Ihrer Nähe{% endeditable_text %}
-    %br
     .thumbnail
-      .images
-        %a{ href: '{% path_to institutes %}' }
-          %img.img-responsive{ src: "{{ 'map_front.png' | theme_image_url | resize: '739x460!' }}" }
-
+      .text-center#institutes_map
+        %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
+        %br
+        %br
+        {% for map_institute in contents.institutes %}
+        %a{ href: '{% path_to map_institute, with: institute_success_stories %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}' }
+          .glyphicon.glyphicon-asterisk
+        {% endfor %}
+	
 %br
 %br
 

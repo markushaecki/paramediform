@@ -76,7 +76,7 @@ function reload_with_zoom(zoom){
 function manage_atmospheric_image(){
 	var offset = $("#logo_img").offset();
 
-  var scale = (offset.top + $("#logo_img").height()) - 20;
+  var scale = (offset.top + $("#logo_img").height());
 	var scale_ratio = scale / 150
 
 	$(".atmospereic").height(300 * scale_ratio);

@@ -13,6 +13,7 @@ $logo_margin: 2%;
 .atmospereic{
 	position: absolute;
 	width: 100%;
+	opacity:0.3;
 }
 
 .relative_position{
@@ -21,10 +22,6 @@ $logo_margin: 2%;
 
 .img-responsive {
     margin: 0 auto;
-}
-
-.form-group{
-	margin-right: 10px;
 }
 
 #logo_img{
