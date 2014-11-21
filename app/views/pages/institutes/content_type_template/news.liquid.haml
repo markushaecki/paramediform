@@ -46,6 +46,14 @@ editable_elements:
 
 
 %ul.media-list
+  {% if params.tag %}
+  .tags
+    Diese Seite ist gefiltert nach:
+    %span.label.label-primary.tag {{ params.tag }}
+    %a{ href: "{{ path }}", :style => "float:right"} Filter entfernen
+  %br
+  {{ news_entry.slug }}
+  {% endif %}
   {% for news_entry in news %}
   .media
     .pull-right

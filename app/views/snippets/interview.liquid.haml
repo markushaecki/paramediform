@@ -23,7 +23,7 @@
 .tags
   %span.glyphicon.glyphicon-tags
   {% for tag in news.tags %}
-  %span.label.label-primary {{ tag }}
+  %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
   &nbsp;
   {% endfor %}
 {% endif %}

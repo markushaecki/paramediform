@@ -8,13 +8,20 @@ editable_elements:
 {% extends layouts/double-columns %}
 
 {% block header %}
-
 {{ 'map.js' | javascript_tag }}
-
 {% endblock %}
 
 {% block content/main %}
 
+
+.text-center#institutes_map
+  %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
+  %br
+  %br
+  {% for institute in contents.institutes %}
+  %a{ href: '{% path_to institute, with: institute_success_stories %}', title: '{{ institute.name }}', breit: '{{ institute.breitengrad }}', laeng: '{{ institute.laengengrad }}' }
+    .glyphicon.glyphicon-asterisk
+  {% endfor %}
 .dropdown{style: "position:absolute;z-index:2"}
   %button.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
     Institute
@@ -26,16 +33,7 @@ editable_elements:
       %a{ href: '{% path_to institute, with: institute_success_stories %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}
     {% endfor %}
     {% endwith_scope %}
-
-.text-center#institutes_map
-  %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
-  %br
-  %br
-  {% for institute in contents.institutes %}
-  %a{ href: '{% path_to institute, with: institute_success_stories %}', title: '{{ institute.name }}', breit: '{{ institute.breitengrad }}', laeng: '{{ institute.laengengrad }}' }
-    .glyphicon.glyphicon-asterisk
-  {% endfor %}
-%p{style: "color:lightgray"} Tipp: Klicke auf einen Stern um auf die gewünschte Institutsseite zu gelangen.
+%p{style: "color:lightgray;margin-left:100px"} Tipp: Klicke auf einen Stern um auf die gewünschte Institutsseite zu gelangen.
 %br
 
 %a{name: "successstories"}

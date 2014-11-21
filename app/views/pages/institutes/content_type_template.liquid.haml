@@ -29,17 +29,17 @@ handle: institute_layout
 
 
 .row
-  .col-sm-10.col-sm-offset-1.col-xs-offset-0.col-xs-12
-    %h1 Institut {{ institute.name }}
+  .col-sm-12.col-xs-offset-0.col-xs-12
+    %h1.title Institut {{ institute.name }}
     #contact_info
       %p.text-center.image_with_background
         %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
       .row.detailed_institute_info
-        .col-sm-5.col-xs-12.col-md-4
+        .col-sm-4.col-xs-12.col-md-4
           %p {{ information.name }}
           %p {{ information.street }}
           %p {{ information.city }}
-        .col-sm-2.col-xs-12.col-md-4
+        .col-sm-4.col-xs-12.col-md-4
           %ul.pager{:style => "margin-top:0px;margin-bottom:0px" }
             %li
               %a{ href: "", :id => "zoom-out" }
@@ -47,7 +47,7 @@ handle: institute_layout
             %li
               %a{ href: "", :id => "zoom-in" }
                 %b +
-        .col-sm-5.col-xs-12.col-md-4
+        .col-sm-4.col-xs-12.col-md-4
           .text-right
             %p {{ "label_phone" | translate }} {{ information.phone }}
             %p {{ "label_fax" | translate }} {{ information.fax }}
@@ -56,7 +56,7 @@ handle: institute_layout
 %br
 
 .row
-  .col-sm-10.col-sm-offset-1.col-xs-offset-0.col-xs-12
+  .col-sm-12.col-xs-offset-0.col-xs-12
     %ul.nav.nav-tabs
       {% fetch_page institute_layout as root_page %}
 
