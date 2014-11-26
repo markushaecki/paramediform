@@ -1,0 +1,36 @@
+---
+title: Texte simple
+published: false
+is_layout: true
+editable_elements:
+  "content/sidebar/contact": "false"
+---
+{% extends layouts/double-columns %}
+
+{% block content/main %}
+
+.paddingbox
+  - # The first 2 blocks give an idea about how they will be rendered.
+  - 2.times do |i|
+    {% block "Widget_#{i + 1}" %}
+    {% capture text %}{% editable_text text, format: html %}
+    %h2 Abnehmen mit Gartenbohne
+    %p Die Gartenbohne ist nur in Kulturform bekannt. Die ältesten Funde der Gartenbohne stammen aus Peru etwa 6000 v. Chr. und aus Chile etwa 2700 v. Chr. Die nächsten Funde sind aus der Zeit von 300 v. Chr. bis Christi Geburt, der Zeit der mittelamerikanischen Hochkulturen. Unter den Funden sind sowohl Samen, als auch Hülsen. Generell sind die Samen kleiner als die heutigen Samen, aber wesentlich variabler in Form, Farbe und Muster.
+    {% endeditable_text %}{% endcapture %}
+
+    {% capture image %}{% editable_file image %}/samples/simpletext/sample_top.jpg{% endeditable_file %}{% endcapture %}
+
+    {% include text_image with text: text, image: image %}
+
+    {% endblock %}
+
+  - 6.times do |i|
+    {% block "Widget_#{i + 3}" %}
+    {% capture text %}{% editable_text text, format: html %}{% endeditable_text %}{% endcapture %}
+    {% capture image %}{% editable_file image %}{% endeditable_file %}{% endcapture %}
+
+    {% include text_image with text: text, image: image %}
+
+    {% endblock %}
+
+{% endblock %}
