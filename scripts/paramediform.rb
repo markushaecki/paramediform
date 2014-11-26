@@ -22,7 +22,10 @@ class ParaMediFormCLI < Thor
 
   desc 'index_contents ENV', 'Copy the searchable contents from the institues to the corporate website. ENV can be either development (default) or production.'
   def index_contents(env = 'development')
+    require File.dirname(__FILE__) + '/lib/commands/index_contents_command.rb'
 
+    command = IndexContentsCommand.new(load_settings(env), engine_api, logger)
+    command.run
   rescue Exception => e
     handle_exception(e)
   end

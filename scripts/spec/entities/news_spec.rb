@@ -2,7 +2,15 @@ require File.dirname(__FILE__) + '/../../lib/entities/news.rb'
 
 describe 'News' do
 
-  let(:fetch_response) { [{ '_id' => 'someid', '_label' => 'Hello world', '_slug' => 'hello-world', 'interview' => '42' }] }
+  let(:fetch_response) { [
+    { '_id'           => 'someid',
+      '_label'        => 'Hello world',
+      '_slug'         => 'hello-world',
+      'interview'     => '42',
+      'published_at'  => '05.10.2014',
+      '_visible'      => 'true'
+    }
+  ] }
   let(:api) { instance_double('API', fetch: fetch_response) }
 
   before { News.api = api }

@@ -1,3 +1,6 @@
+require File.dirname(__FILE__) + '/../entities/institute.rb'
+require File.dirname(__FILE__) + '/../entities/news.rb'
+
 class BaseCommand < Struct.new(:settings, :api, :logger)
 
   def initialize(settings, api, logger)

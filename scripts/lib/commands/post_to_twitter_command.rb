@@ -1,5 +1,3 @@
-require File.dirname(__FILE__) + '/../entities/institute.rb'
-require File.dirname(__FILE__) + '/../entities/news.rb'
 require File.dirname(__FILE__) + '/base_command.rb'
 
 require 'twitter'
