@@ -13,18 +13,22 @@ $navbar-default-bg: #F83CA4;
 
 h1{
 	font-size: 23px !important;
+	margin-top: 0px !important;
 }
 
 h2{
 	font-size: 20px !important;
+	margin-top: 0px !important;
 }
 
 h3{
 	font-size: 17px !important;
+	margin-top: 0px !important;
 }
 
 h4{
 	font-size: 14px !important;
+	margin-top: 0px !important;
 }
 
 .success_story_images{
@@ -176,4 +180,8 @@ div.detailed_institute_info p{
 
 .nav-tabs {
     border-bottom: 2px solid #DDD !important;
+}
+
+.navbar-nav.nav-justified > li{
+    float:none;
 }

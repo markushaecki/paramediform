@@ -1,7 +1,7 @@
 {% if display_experience %}
 .img-box
   %a{ href: '{{ picture_url }}' }
-    %img{ src: '{{ picture_url | resize: "370x460#" }}', :style => "float:left;max-width:50%" }
+    %img{ src: '{{ picture_url | resize: "450x560#" }}', :style => "float:left;max-width:50%" }
 {% else %}
-%img{ src: '{{ picture_url | resize: "370x460#" }}', :style => "float:left;max-width:50%" }
+%img{ src: '{{ picture_url | resize: "450x560#" }}', :style => "float:left;max-width:50%" }
 {% endif %}

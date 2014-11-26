@@ -9,7 +9,7 @@ $(document).ready(function(e){
 			$('#sidebar').css("position", "relative");
 			$('#sidebar').css("top", 0);
 		}
-	    if($(document).scrollTop() > 170 && $(window).width() > 767){
+	    if($(document).scrollTop() > 150 && $(window).width() > 767){
 			$('#sidebar').css("position", "fixed");
 			$('#sidebar').css("top", 60);
 		}
@@ -21,7 +21,7 @@ $(document).ready(function(e){
        event.preventDefault();
        var box =
          '<div id="lightbox">' +
-         '<p>Click to Close</p>' +
+         '<p>Zum Schliessen Klicken</p>' +
          '<img src="' + $(this).attr('href') + '" alt="Enlarged" />' +
          '</div>';
        $('body').append(box);
@@ -44,7 +44,7 @@ $(document).ready(function(e){
 
 $(document).scroll(function(e){
 	if($(window).width() > 767){
-		if($(document).scrollTop() > 220){
+		if($(document).scrollTop() > 265){
 			$('#sidebar').css("position", "fixed");
 			$('#sidebar').css("top", 30);
 			$('#sidebar').width($('#sidebar').parent().width());
@@ -76,7 +76,7 @@ function reload_with_zoom(zoom){
 function manage_atmospheric_image(){
 	var offset = $("#logo_img").offset();
 
-  var scale = (offset.top + $("#logo_img").height()) - 20;
+  var scale = (offset.top + $("#logo_img").height());
 	var scale_ratio = scale / 150
 
 	$(".atmospereic").height(300 * scale_ratio);

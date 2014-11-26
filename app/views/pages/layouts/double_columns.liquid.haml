@@ -16,9 +16,13 @@ handle: double_columns_layout
   .col-sm-3.col-xs-12
     #sidebar
       {% block sidebar %}
+      %form{:role => "search"}
+        .form-group
+          %input.form-control{:type => "text", :placeholder => "Wonach suchst du?"}
+          //%button.btn.btn-default{:type => "submit"} Suchen
 
       / contact block
-      {% capture enable_contact %}{% editable_control "contact", options: "true=Yes,false=No", hint: "Tell if the contact block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_contact %}{% editable_control "contact", options: 'true=Yes,false=No', hint: "Tell if the contact block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_contact == "true" %}
       %a{ href: '#' }
         .contact.well
@@ -30,18 +34,18 @@ handle: double_columns_layout
         {% endif %}
 
       / institutes block
-      {% capture enable_institutes %}{% editable_control "institutes", options: "true=Yes,false=No", hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_institutes %}{% editable_control "institutes", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_institutes == "true" %}
-      %a{ href: '{% path_to institutes %}'} 
+      %a{ href: '{% path_to institutes %}'}
         .institutes.well
           %h3.text-center
             {{ 'sidebar_institutes_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x30' }}" }
+            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x20' }}" }
       {% endif %}
 
       / news block
-      {% capture enable_news %}{% editable_control "news", options: "true=Yes,false=No", hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_news %}{% editable_control "news", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_news == "true" %}
       %a{ href: '{% path_to news %}' }
         .news.well
