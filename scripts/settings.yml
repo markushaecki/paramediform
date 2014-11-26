@@ -1,0 +1,9 @@
+development:
+  corporate_url: 'http://pmf.locomotivehosting.dev:3000'
+  engine_api_key: '0f73b4fb54a5e1a892e28a5ed8347e73f2c2ca4b'
+
+  twitter:
+    consumer_key: ''
+    consumer_secret: ''
+    access_token: ''
+    access_token_secret: ''
