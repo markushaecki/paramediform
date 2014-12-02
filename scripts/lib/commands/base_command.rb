@@ -1,13 +1,10 @@
-require File.dirname(__FILE__) + '/../entities/institute.rb'
-require File.dirname(__FILE__) + '/../entities/news.rb'
-
 class BaseCommand < Struct.new(:settings, :api, :logger)
 
   def initialize(settings, api, logger)
     super
 
     # entities will use the api registered here
-    self.wire_api [Institute, News]
+    self.wire_api :institute, :news, :illustrative_text
   end
 
   def corporate_url
@@ -35,8 +32,10 @@ class BaseCommand < Struct.new(:settings, :api, :logger)
     raise e
   end
 
-  def wire_api(classes)
-    classes.each do |klass|
+  def wire_api(*entities)
+    entities.each do |name|
+      require File.dirname(__FILE__) + "/../entities/#{name}.rb"
+      klass = name.to_s.camelize.constantize
       klass.api = self.api
     end
   end

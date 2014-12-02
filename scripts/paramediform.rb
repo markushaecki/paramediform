@@ -2,6 +2,7 @@
 
 require 'yaml'
 require 'thor'
+require 'active_support/inflector'
 require 'locomotive/mounter'
 
 require File.dirname(__FILE__) + '/lib/simple_logger.rb'
@@ -12,25 +13,36 @@ class ParaMediFormCLI < Thor
 
   desc 'post_to_twitter ENV', 'Post once the news from the institutes to Twitter. ENV can be either development (default) or production.'
   def post_to_twitter(env = 'development')
-    require File.dirname(__FILE__) + '/lib/commands/post_to_twitter_command.rb'
-
-    command = PostToTwitterCommand.new(load_settings(env), engine_api, logger)
-    command.run
-  rescue Exception => e
-    handle_exception(e)
+    run :post_to_twitter, env
   end
 
   desc 'index_contents ENV', 'Copy the searchable contents from the institues to the corporate website. ENV can be either development (default) or production.'
   def index_contents(env = 'development')
-    require File.dirname(__FILE__) + '/lib/commands/index_contents_command.rb'
+    run :index_contents, env
+  end
 
-    command = IndexContentsCommand.new(load_settings(env), engine_api, logger)
-    command.run
+  private
+
+  def run(name, env)
+    require File.dirname(__FILE__) + "/lib/commands/#{name}_command.rb"
+
+    klass = "#{name.to_s.camelize}Command".constantize
+    command = klass.new(load_settings(env), engine_api, logger)
+
+    benchmark { command.run }
   rescue Exception => e
     handle_exception(e)
   end
 
-  private
+  def benchmark(&block)
+    start_at = Time.now.to_f
+
+    block.call
+
+    ellapsed_time = (Time.now.to_f - start_at) * 1000
+
+    logger.log "\n" + "Processed in #{ellapsed_time} ms".colorize(:green)
+  end
 
   def handle_exception(e)
     logger.error "Error: #{e.message}"

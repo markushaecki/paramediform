@@ -24,37 +24,13 @@ class News < Struct.new(:_id, :title, :slug, :type)
     self.api.update('content_types/news/entries', _id, { tweeted: true })
   end
 
-  def self.all(&block)
-    entries = self.api.fetch('content_types/news/entries', { where: '{"_visible":true}' })
-
-    if block_given?
-      entries.each do |attributes|
-        block.call(self.build(attributes))
-      end
-    else
-      [].tap do |list|
-        entries.each do |attributes|
-          if self.published_news?(attributes)
-            list << self.build(attributes)
-          end
-        end
-      end
-    end
-  end
-
   def self.untweeted
-    entries = self.api.fetch('content_types/news/entries', { where: '{"tweeted":false,"_visible":true}' })
-
-    [].tap do |list|
-      entries.each do |attributes|
-        if self.published_news?(attributes)
-          list << self.build(attributes)
-        end
-      end
-    end
+    self.all '{"tweeted":false,"_visible":true}'
   end
 
   def self.build(attributes)
+    return nil unless self.is_published_news?(attributes)
+
     self.new(
       attributes['_id'],
       attributes['_label'],
@@ -62,11 +38,9 @@ class News < Struct.new(:_id, :title, :slug, :type)
       detect_type(attributes))
   end
 
-  def self.published_news?(attributes)
-    date    = Date.strptime(attributes['published_at'], '%d.%m.%Y')
-    # visible = attributes['_visible'] == 'true'
-
-    date <= Date.today #&& visible
+  def self.is_published_news?(attributes)
+    date = Date.strptime(attributes['published_at'], '%d.%m.%Y')
+    date <= Date.today
   end
 
   def self.detect_type(attributes)

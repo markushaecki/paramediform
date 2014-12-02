@@ -8,6 +8,8 @@ class IndexContentsCommand < BaseCommand
     # open a session to the main site
     self.authenticate
 
+    # TODO: reset all the entries
+
     Institute.all.each do |institute|
       logger.log_action 'processing', institute.name
 
@@ -26,17 +28,21 @@ class IndexContentsCommand < BaseCommand
     # open a different session for the institute
     self.authenticate(institute.url)
 
-    News.all.each do |news|
-      logger.info "\t#{news.title}"
-
-      # TODO: based on the type, get the full news
-
-      # TODO: build a string storing all the searchable elements of the news
-
-      # TODO: build the url
-
-      # TODO: create the index_content document
+    IllustrativeText.all.each do |text|
+      logger.info "\t#{text.title}"
     end
+
+    # News.all.each do |news|
+    #   logger.info "\t#{news.title}"
+
+    #   # TODO: based on the type, get the full news
+
+    #   # TODO: build a string storing all the searchable elements of the news
+
+    #   # TODO: build the url
+
+    #   # TODO: create the index_content document
+    # end
   end
 
 end
