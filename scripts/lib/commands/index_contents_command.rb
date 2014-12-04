@@ -77,45 +77,6 @@ class IndexContentsCommand < BaseCommand
     end
   end
 
-  # def index_interviews(institute)
-  #   contents = []
-
-  #   # open a different session for the institute
-  #   self.authenticate(institute.url)
-
-  #   Interview.all.each do |interview|
-  #     # fetch the author
-  #     if interview.author_slug
-  #       interview.author = Person.find(interview.author_slug)
-  #     end
-
-  #     # fetch the questions/answers
-  #     if interview.question_slugs
-  #       interview.questions = interview.question_slugs.map do |slug|
-  #         InterviewQuestion.find(slug)
-  #       end
-  #     end
-
-  #     contents << build_indexed_content_from_news(institute, interview, :interview)
-  #   end
-
-  #   save(:interview, contents) # save all the contents
-  # end
-
-  # def index_illustrative_text(institute)
-  #   contents = []
-
-  #   # open a different session for the institute
-  #   self.authenticate(institute.url)
-
-  #   # get all the illustrative texts for that institute
-  #   IllustrativeText.all.each do |text|
-  #     contents << build_indexed_content_from_news(institute, text, :illustrative_text)
-  #   end
-
-  #   save(:illustrative_text, contents) # save all the contents
-  # end
-
   def save(type, collection)
     self.authenticate
 
