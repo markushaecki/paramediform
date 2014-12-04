@@ -21,10 +21,13 @@ handle: simple_layout
 
     /[if lt IE 9]
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0"></script>
 
     {% inline_editor %}
 
   %body
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0" async="async"></script>
     #header
       %div.relative_position
         %img.atmospereic{ src: "{{ 'atmospheric.png' | theme_image_url }}" }
