@@ -8,7 +8,8 @@ class IndexContentsCommand < BaseCommand
     # open a session to the main site
     self.authenticate
 
-    # TODO: reset all the entries
+    # reset all the entries
+    IndexedContent.destroy_all
 
     Institute.all.each do |institute|
       logger.log_action 'processing', institute.name
@@ -25,24 +26,129 @@ class IndexContentsCommand < BaseCommand
   end
 
   def index_news(institute)
-    # open a different session for the institute
+    # illustrative texts
+    self.index_illustrative_text(institute)
+
+    # interviews
+    index_interviews(institute)
+
+    # recipes
+    index_recipes(institute)
+  end
+
+  def index_recipes(institute)
+    _index_news(institute, :recipe) do
+      Recipe.all.map do |recipe|
+        # fetch the ingredients
+        if recipe.ingredient_slugs
+          recipe.ingredients = recipe.ingredient_slugs.map do |slug|
+            RecipeIngredient.find(slug)
+          end
+        end
+
+        recipe
+      end
+    end
+  end
+
+  def index_illustrative_text(institute)
+    _index_news(institute, :illustrative_text) do
+      IllustrativeText.all
+    end
+  end
+
+  def index_interviews(institute)
+    _index_news(institute, :interview) do
+      Interview.all.map do |interview|
+        # fetch the author
+        if interview.author_slug
+          interview.author = Person.find(interview.author_slug)
+        end
+
+        # fetch the questions/answers
+        if interview.question_slugs
+          interview.questions = interview.question_slugs.map do |slug|
+            InterviewQuestion.find(slug)
+          end
+        end
+
+        interview
+      end
+    end
+  end
+
+  # def index_interviews(institute)
+  #   contents = []
+
+  #   # open a different session for the institute
+  #   self.authenticate(institute.url)
+
+  #   Interview.all.each do |interview|
+  #     # fetch the author
+  #     if interview.author_slug
+  #       interview.author = Person.find(interview.author_slug)
+  #     end
+
+  #     # fetch the questions/answers
+  #     if interview.question_slugs
+  #       interview.questions = interview.question_slugs.map do |slug|
+  #         InterviewQuestion.find(slug)
+  #       end
+  #     end
+
+  #     contents << build_indexed_content_from_news(institute, interview, :interview)
+  #   end
+
+  #   save(:interview, contents) # save all the contents
+  # end
+
+  # def index_illustrative_text(institute)
+  #   contents = []
+
+  #   # open a different session for the institute
+  #   self.authenticate(institute.url)
+
+  #   # get all the illustrative texts for that institute
+  #   IllustrativeText.all.each do |text|
+  #     contents << build_indexed_content_from_news(institute, text, :illustrative_text)
+  #   end
+
+  #   save(:illustrative_text, contents) # save all the contents
+  # end
+
+  def save(type, collection)
+    self.authenticate
+
+    collection.each do |content|
+      begin
+        logger.log "\t[#{type}] saving....#{content.title}"
+        content.save
+      rescue Locomotive::Mounter::ApiWriteException => e
+        logger.warning e.message
+      end
+    end
+  end
+
+  protected
+
+  def _index_news(institute, type, &block)
     self.authenticate(institute.url)
 
-    IllustrativeText.all.each do |text|
-      logger.info "\t#{text.title}"
+    entities = block.call(institute)
+
+    contents = entities.map do |entity|
+      build_indexed_content_from_news(institute, entity, type)
     end
 
-    # News.all.each do |news|
-    #   logger.info "\t#{news.title}"
+    save(type, contents) # save all the contents
+  end
 
-    #   # TODO: based on the type, get the full news
+  def build_indexed_content_from_news(institute, entity, type)
+    attributes = { title: entity.title, institute: institute.slug, content: entity.content }
 
-    #   # TODO: build a string storing all the searchable elements of the news
-
-    #   # TODO: build the url
-
-    #   # TODO: create the index_content document
-    # end
+    IndexedContent.build(attributes).tap do |content|
+      content.url = news_url(institute.slug, entity.slug, type)
+    end
   end
 
 end

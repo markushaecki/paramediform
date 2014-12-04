@@ -19,4 +19,8 @@ class SimpleLogger
     self.log message, :white, :red
   end
 
+  def warning(message)
+    self.log message, :orange
+  end
+
 end

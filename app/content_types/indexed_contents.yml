@@ -5,7 +5,7 @@ name: Indexed Contents
 slug: indexed_contents
 
 # Explanatory text displayed in the back-office
-description: A description of the content type for the editors
+description: Indexed contents from the institutes. Do not edit them manually.
 
 # Slug of field used to identify entries by default, such as the title
 label_field_name: title

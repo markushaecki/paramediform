@@ -46,11 +46,4 @@ class PostToTwitterCommand < BaseCommand
     self.settings['twitter'][key.to_s]
   end
 
-  def news_url(institute_slug, slug, type)
-    url   = "#{self.corporate_url}/local-api/news-url.json"
-    query = { institute_slug: institute_slug, slug: slug, type: type }
-
-    HTTParty.get(url, query: query)['url']
-  end
-
 end

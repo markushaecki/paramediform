@@ -19,6 +19,21 @@ module Entities
         self.class.api
       end
 
+      def save
+        name = "content_types/#{self.class.resource_name}/entries"
+
+        begin
+          if resource_id = attributes[:_id]
+            api.update(name, resource_id, attributes)
+          else
+            api.create(name, attributes)
+          end
+          true
+        rescue Locomotive::Mounter::ApiWriteException => e
+          false
+        end
+      end
+
       module ClassMethods
 
         def all(where = nil, &block)
@@ -37,6 +52,21 @@ module Entities
           end
 
           list
+        end
+
+        def find(slug)
+          where   ||= %({"_slug": "#{slug}"})
+          entries = self.api.fetch("content_types/#{resource_name}/entries", { where: where })
+
+          if attributes = entries.first
+            self.build(attributes)
+          else
+            nil
+          end
+        end
+
+        def destroy_all
+          self.api.delete("/content_types/#{resource_name}/entries.json")
         end
 
         def build(attributes = {})
