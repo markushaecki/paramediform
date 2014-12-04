@@ -32,7 +32,7 @@ handle: double_columns_layout
             %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
             %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
         {% endif %}
-
+		
       / institutes block
       {% capture enable_institutes %}{% editable_control "institutes", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_institutes == "true" %}
@@ -53,6 +53,18 @@ handle: double_columns_layout
             {{ 'sidebar_news_title' | translate }}
           .text-center
             %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x30' }}" }
+      {% endif %}
+	  
+      / share block
+      {% capture enable_share %}{% editable_control "share", options: 'true=Yes,false=No', hint: "Tell if the share block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_share == "true" %}
+      .news.well
+        %h3.text-center
+          %a{ href: ''}
+            {{ 'sidebar_share_title' | translate }}
+        .text-center
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          .addthis_sharing_toolbox
       {% endif %}
 
       {% endblock %}
