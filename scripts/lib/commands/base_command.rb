@@ -1,34 +1,36 @@
 class BaseCommand < Struct.new(:settings, :api, :logger)
 
+  attr_accessor :section_urls
+
   def initialize(settings, api, logger)
     super
+
+    self.section_urls = {}
 
     # entities will use the api registered here
     self.wire_api :institute, :news, :illustrative_text,
       :indexed_content, :person,
       :interview, :interview_question,
-      :recipe, :recipe_ingredient
+      :recipe, :recipe_ingredient,
+      :success_story, :team_member
   end
 
   def corporate_url
     self.settings['corporate_url']
   end
 
-  def news_url(institute_slug, slug, type)
-    if @news_template.blank?
-      url   = "#{self.corporate_url}/local-api/news-url.json"
-      query = { institute_slug: institute_slug, slug: slug, type: type }
-
-      return HTTParty.get(url, query: query)['url'].tap do |news_url|
-        @news_template = news_url.gsub(institute_slug, ':institute_slug')
+  def institute_section_url(institute_slug, slug, type)
+    if template = self.section_urls[type]
+      template.gsub(':institute_slug', institute_slug)
+        .gsub(':slug', slug)
+        .gsub(':type', type.to_s)
+    else
+      _institute_section_url(institute_slug, slug, type).tap do |_url|
+        self.section_urls[type] = _url.gsub(institute_slug, ':institute_slug')
           .gsub(slug, ':slug')
           .gsub(type.to_s, ':type')
       end
     end
-
-    @news_template.gsub(':institute_slug', institute_slug)
-      .gsub(':slug', slug)
-      .gsub(':type', type.to_s)
   end
 
   def engine_api_key
@@ -61,4 +63,30 @@ class BaseCommand < Struct.new(:settings, :api, :logger)
     end
   end
 
+  protected
+
+  def _institute_section_url(institute_slug, slug, type)
+    url   = "#{self.corporate_url}/local-api/institute-section-url.json"
+    query = { institute_slug: institute_slug, slug: slug, type: type }
+
+    HTTParty.get(url, query: query)['url']
+  end
+
 end
+
+  # def news_url(institute_slug, slug, type)
+  #   if @news_template.blank?
+  #     url   = "#{self.corporate_url}/local-api/news-url.json"
+  #     query = { institute_slug: institute_slug, slug: slug, type: type }
+
+  #     return HTTParty.get(url, query: query)['url'].tap do |news_url|
+  #       @news_template = news_url.gsub(institute_slug, ':institute_slug')
+  #         .gsub(slug, ':slug')
+  #         .gsub(type.to_s, ':type')
+  #     end
+  #   end
+
+  #   @news_template.gsub(':institute_slug', institute_slug)
+  #     .gsub(':slug', slug)
+  #     .gsub(':type', type.to_s)
+  # end

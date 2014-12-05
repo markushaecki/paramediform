@@ -24,7 +24,7 @@ class PostToTwitterCommand < BaseCommand
     self.authenticate(institute.url)
 
     News.untweeted.each do |news|
-      news.url = news_url(institute.slug, news.slug, news.type)
+      news.url = institute_section_url(institute.slug, news.slug, news.type)
 
       logger.log_action "\ttweeting", %("#{news.message}")
 

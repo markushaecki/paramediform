@@ -18,10 +18,22 @@ class IndexContentsCommand < BaseCommand
       self.index_news(institute)
 
       # Index all the success stories
-      # TODO
+      self.index_success_stories(institute)
 
       # Index all the team members
-      # TODO
+      self.index_team_members(institute)
+    end
+  end
+
+  def index_team_members(institute)
+    _index_collection(institute, :team_member) do
+      TeamMember.all
+    end
+  end
+
+  def index_success_stories(institute)
+    _index_collection(institute, :success_story) do
+      SuccessStory.all
     end
   end
 
@@ -37,7 +49,7 @@ class IndexContentsCommand < BaseCommand
   end
 
   def index_recipes(institute)
-    _index_news(institute, :recipe) do
+    _index_collection(institute, :recipe) do
       Recipe.all.map do |recipe|
         # fetch the ingredients
         if recipe.ingredient_slugs
@@ -52,13 +64,13 @@ class IndexContentsCommand < BaseCommand
   end
 
   def index_illustrative_text(institute)
-    _index_news(institute, :illustrative_text) do
+    _index_collection(institute, :illustrative_text) do
       IllustrativeText.all
     end
   end
 
   def index_interviews(institute)
-    _index_news(institute, :interview) do
+    _index_collection(institute, :interview) do
       Interview.all.map do |interview|
         # fetch the author
         if interview.author_slug
@@ -92,23 +104,23 @@ class IndexContentsCommand < BaseCommand
 
   protected
 
-  def _index_news(institute, type, &block)
+  def _index_collection(institute, type, &block)
     self.authenticate(institute.url)
 
     entities = block.call(institute)
 
     contents = entities.map do |entity|
-      build_indexed_content_from_news(institute, entity, type)
+      build_indexed_content(institute, entity, type)
     end
 
     save(type, contents) # save all the contents
   end
 
-  def build_indexed_content_from_news(institute, entity, type)
+  def build_indexed_content(institute, entity, type)
     attributes = { title: entity.title, institute: institute.slug, content: entity.content }
 
     IndexedContent.build(attributes).tap do |content|
-      content.url = news_url(institute.slug, entity.slug, type)
+      content.url = institute_section_url(institute.slug, entity.slug, type)
     end
   end
 
