@@ -16,9 +16,9 @@ handle: double_columns_layout
   .col-sm-3.col-xs-12
     #sidebar
       {% block sidebar %}
-      %form{:role => "search"}
+      %form{:action => '{% path_to search %}', :role => "search"}
         .form-group
-          %input.form-control{:type => "text", :placeholder => "Wonach suchst du?"}
+          %input.form-control{name: 'q', :type => "text", :placeholder => "Wonach suchst du?"}
           //%button.btn.btn-default{:type => "submit"} Suchen
 
       / contact block
@@ -32,7 +32,7 @@ handle: double_columns_layout
             %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
             %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
         {% endif %}
-		
+
       / institutes block
       {% capture enable_institutes %}{% editable_control "institutes", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_institutes == "true" %}
@@ -54,7 +54,7 @@ handle: double_columns_layout
           .text-center
             %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x30' }}" }
       {% endif %}
-	  
+
       / share block
       {% capture enable_share %}{% editable_control "share", options: 'true=Yes,false=No', hint: "Tell if the share block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_share == "true" %}
