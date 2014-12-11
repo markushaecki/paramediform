@@ -18,7 +18,14 @@
 	a, p, h1, h2, h3, h4, h5, h6{
 		padding: 10px;
 	}
-} 
+}
+
+.highlighted {
+	em {
+		font-weight: bold;
+		font-style: normal;
+	}
+}
 
 .img_center_vertically{
 	position: absolute;

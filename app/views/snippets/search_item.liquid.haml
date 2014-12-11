@@ -1,0 +1,41 @@
+{% comment %}
+/ input:
+/   - slug
+/   - highlighted_title
+/   - highlighted_content
+{% endcomment %}
+
+{% with_scope _slug: slug %}
+{% assign indexed_content = contents.indexed_contents.first %}
+{% endwith_scope %}
+.media-body
+  %h4.media-heading
+    %a{ href: '{{ indexed_content.url }}' }
+      {% if highlighted_title.size > 0 %}
+      %span.highlighted
+        {{ highlighted_title }}
+      {% else %}
+      {{ indexed_content.title }}
+      {% endif %}
+  .media-content
+    {% if highlighted_content.size > 0 %}
+    %span.highlighted
+      {{ highlighted_content | default: '' }}
+    {% else %}
+    {{ indexed_content.content | truncate: 100 }}
+    {% endif %}
+    %br
+    / %code
+    /   {{ result }}
+%hr
+
+{% comment %}
+/ .media
+/   .media-body
+/     %h5.media-heading
+/       %a{ href: "?slug={{ news_entry.slug }}&type={{ news_entry.type }}&page={{ params.page }}" } {{ content.title }}
+/     .text
+/       {{ content.content }}
+
+/   %hr
+{% endcomment %}

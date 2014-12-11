@@ -1,0 +1,29 @@
+%ul.pagination.pagination-sm
+  {% if pagination.previous_page %}
+  %li
+    %a{ href: "?page={{ pagination.previous_page }}{{ other_params }}" } &laquo;
+  {% else %}
+  %li.disabled
+    %span &laquo;
+  {% endif %}
+
+  {% for part in pagination.parts %}
+  {% if part.hellip_break %}
+  %li.disabled
+    %span &hellip;
+  {% elsif part.title == pagination.current_page %}
+  %li.active
+    %span {{ part.title }}
+  {% else %}
+  %li
+    %a{ href: "?page={{ part.title }}{{ other_params }}" } {{ part.title }}
+  {% endif %}
+  {% endfor %}
+
+  {% if pagination.next_page %}
+  %li
+    %a{ href: "?page={{ pagination.next_page }}{{ other_params }}" } &raquo;
+  {% else %}
+  %li.disabled
+    %span &raquo;
+  {% endif %}
