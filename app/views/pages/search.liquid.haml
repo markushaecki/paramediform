@@ -50,13 +50,20 @@ handle: search
 
 {% else %}
 
+{% assign page = params.page | default: 0 | plus: 0 %}
+
+{% comment %}
+%p {{ search.total_entries }}
+%p {{ search.total_pages }}
+%p {{ page }}
+{% endcomment %}
+
 .media-list
   {% for result in search.results %}
   {% include 'search_item' with slug: result._slug, highlighted_title: result.highlighted.title, highlighted_content: result.highlighted.content %}
   {% endfor %}
 
-  {% assign page = params.page | default: 0 | plus: 0 %}
-
+  {% comment %}
   %p.text-center
     {% if page > 0 %}
     %a.btn.btn-default{ href: "?page={{ params.page | minus: 1 }}&q={{ params.q }}" }
@@ -66,6 +73,7 @@ handle: search
     %a.btn.btn-default{ href: "?page={{ params.page | plus: 1 }}&q={{ params.q }}" }
       Next
     {% endif %}
+  {% endcomment %}
 
 {% endif %}
 

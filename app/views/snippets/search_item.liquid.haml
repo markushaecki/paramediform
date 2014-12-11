@@ -25,17 +25,4 @@
     {{ indexed_content.content | truncate: 100 }}
     {% endif %}
     %br
-    / %code
-    /   {{ result }}
 %hr
-
-{% comment %}
-/ .media
-/   .media-body
-/     %h5.media-heading
-/       %a{ href: "?slug={{ news_entry.slug }}&type={{ news_entry.type }}&page={{ params.page }}" } {{ content.title }}
-/     .text
-/       {{ content.content }}
-
-/   %hr
-{% endcomment %}
