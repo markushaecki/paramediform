@@ -1,0 +1,25 @@
+{% assign before_url = null %}
+{% assign after_url = null %}
+{% assign before = true %}
+{% for one in all %}
+
+{% if one.interview %}
+{% assign onetype = "interview" %}
+{% elsif one.illustrative_text %}
+{% assign onetype = "illustrative_text" %}
+{% elsif one.recipe %}
+{% assign onetype = "recipe" %}
+{% endif %}
+
+{% if one._slug == this._slug %}
+{% assign before = false %}	
+{% else %}
+{% if before %}
+{% assign before_url = "?slug=" | append: one._slug | append: "&type=" | append: onetype | append: "&page=" | append: params.page %}
+{% else %}
+{% if after_url == null %}
+{% assign after_url = "?slug=" | append: one._slug | append: "&type=" | append: onetype | append: "&page=" | append: params.page %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor %}

@@ -13,8 +13,9 @@ handle: search
 
 %h2.text-center
   We are sorry, no results found for "{{ params.q }}".
+%br
 
-{% paginate contents.indexed_contents by 2 %}
+{% paginate contents.indexed_contents by 10 %}
 .media-list
   {% include 'search_item' with slug: contents.indexed_contents.first._slug, highlighted_title: '<em>locomotive</em>CMS', highlighted_content: 'Lorem <em>ipsum</em> lodor.' %}
 

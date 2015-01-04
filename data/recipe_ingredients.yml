@@ -1,0 +1,20 @@
+- "Ingredient 1":
+    amount: "42"
+    unit: "g"
+    recipe: recipe-1 # Slug of the target entry
+
+- "Ingredient 2":
+    amount: "42"
+    unit: "g"
+    recipe: recipe-1 # Slug of the target entry
+
+- "Ingredient 3":
+    amount: "42"
+    unit: "g"
+    recipe: recipe-2 # Slug of the target entry
+
+- "Ingredient 4":
+    amount: "42"
+    unit: "g"
+    recipe: recipe-3 # Slug of the target entry
+

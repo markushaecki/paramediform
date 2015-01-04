@@ -51,7 +51,6 @@ editable_elements:
     Diese Seite ist gefiltert nach:
     %span.label.label-primary.tag {{ params.tag }}
     %a{ href: "{{ path }}", :style => "float:right"} Filter entfernen
-  %br
   {{ news_entry.slug }}
   {% endif %}
   {% for news_entry in news %}
@@ -59,10 +58,10 @@ editable_elements:
     .pull-right
       {{ news_entry.published_at | localized_date: '%d.%m.%Y' }}
     .media-body
-      %h5.media-heading
+      %h5
         %a{ href: "?slug={{ news_entry.slug }}&type={{ news_entry.type }}&page={{ params.page }}" } {{ news_entry.title }}
       {% if news_entry.tags %}
-      .tags
+      .tags{:style => "margin:7px 7px;"}
         %span.glyphicon.glyphicon-tags
         &nbsp;
         {% for tag in news_entry.tags %}
@@ -73,11 +72,15 @@ editable_elements:
       .text
         {{ news_entry.text }}
 
-    %hr
+    %hr{:style => "margin-bottom:0px"}
   {% endfor %}
 
   {% if news_pagination %}
+  {% if params.tag == blank %}
+  {% capture tag_params %}{% endcapture %}
+  {% else %}
   {% capture tag_params %}&tag={{ params.tag | encode }}{% endcapture %}
+  {% endif %}
   .text-center
     {% include pagination with pagination: news_pagination, other_params: tag_params %}
 

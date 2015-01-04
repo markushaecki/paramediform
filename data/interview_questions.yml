@@ -1,0 +1,16 @@
+- "Question 1":
+    answer: "Eligendi consequatur natus nesciunt. Iste occaecati nihil qui culpa. Aut voluptas nisi dolores illum ab similique."
+    interview: interview-1 # Slug of the target entry
+
+- "Question 2":
+    answer: "Voluptatem sit deleniti quo quae. Nobis quos vero expedita quas atque. Sit facilis aliquam veniam tenetur culpa cum. Delectus est est officia."
+    interview: interview-1 # Slug of the target entry
+
+- "Question 3":
+    answer: "Possimus explicabo quae vero ipsum harum qui. Quisquam nihil rem dolorum qui quasi ullam. Consectetur quis rem consequatur eum ut et. Ratione et nam sit rerum omnis. Voluptatem numquam eos dolores explicabo."
+    interview: interview-2 # Slug of the target entry
+
+- "Question 4":
+    answer: "Molestias quaerat vitae laborum cumque labore. Exercitationem dicta deserunt ducimus minima debitis cum. Et ut occaecati doloribus enim. Non sint aut ducimus voluptatem corrupti autem doloribus. Dolores qui modi nobis similique omnis."
+    interview: interview-3 # Slug of the target entry
+

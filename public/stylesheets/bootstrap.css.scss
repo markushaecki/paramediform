@@ -19,6 +19,8 @@ $well-bg: rgba(255,255,255,0);
 $well-border: #CBCBCB;
 $navbar-collapse-max-height: 1500px;
 $dropdown-link-hover-bg: #FFE6F0;
-
+$navbar-default-toggle-hover-bg: #FFE3E9;
+$navbar-default-toggle-icon-bar-bg: $link-color;
+$navbar-default-toggle-border-color: $link-color;
 @import "bootstrap/bootstrap"
 

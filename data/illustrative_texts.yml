@@ -1,0 +1,16 @@
+- "Illustrative text 1":
+    text: "Enim aspernatur doloremque et velit rem. Voluptatem quas dolores pariatur placeat. Fuga sit voluptas consequatur est quia officiis quae recusandae. Omnis atque enim in eum cum."
+    image: "/samples/illustrative_image.png" # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Illustrative text 2":
+    text: "Laudantium et recusandae quo quis qui et et. Laboriosam reiciendis quia nulla dolorem sint corporis et. Nihil tempora quia et."
+    image: "/samples/illustrative_image.png" # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Illustrative text 3":
+    text: "Beatae totam debitis dolor. Ut sit ut qui. Libero repellendus et quia soluta ducimus suscipit optio. Harum amet qui dolores non. Aut quaerat at quae itaque aperiam."
+    image: "/samples/illustrative_image.png" # Path to a file in the public/samples folder or to a remote and external file.
+
+- "Illustrative text 4":
+    text: "Quibusdam voluptate aspernatur eos cum et. Quasi facilis possimus qui est. Ipsa laborum sed dolorem rerum. Et corrupti odit velit error."
+    image: "/samples/illustrative_image.png" # Path to a file in the public/samples folder or to a remote and external file.
+

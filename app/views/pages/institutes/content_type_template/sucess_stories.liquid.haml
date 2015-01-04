@@ -27,7 +27,7 @@ editable_elements:
 {% endconsume %}
 
 {% include generate_subnavigation with all:success_stories, this:success_story %}
-{% include before_after with display_text: true, text_size: "font-size:14px", display_experience: true %}
+{% include before_after_detail %}
 
 {% else %}
 / by default, we display the list of success stories
@@ -35,7 +35,7 @@ editable_elements:
   {% for success_story in success_stories %}
   .col-sm-6.col-xs-12
     %a.non-link-style{ href: "?slug={{ success_story.slug }}&page={{ params.page }}" }
-      {% include before_after with display_text: true, text_size: "font-size:14px" %}
+      {% include before_after_overview %}
   {% endfor %}
 
 {% endif %}

@@ -44,6 +44,17 @@ handle: double_columns_layout
             %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x20' }}" }
       {% endif %}
 
+      / selbststaendigkeit block
+      {% capture enable_news %}{% editable_control "news", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_news == "true" %}
+      %a{ href: '{% path_to news %}' }
+        .news.well
+          %h3.text-center
+            {{ 'sidebar_selbststaendigkeit_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x30' }}" }
+      {% endif %}
+
       / news block
       {% capture enable_news %}{% editable_control "news", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_news == "true" %}

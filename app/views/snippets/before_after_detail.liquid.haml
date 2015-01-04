@@ -1,14 +1,9 @@
-
 %div
-  {% if display_experience %}
   %p.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
-  {% endif %}
-  .thumbnail
+  .thumbnail{:style => "padding:20px !important"}
     {% include success_picture with picture_url:success_story.before_image.url %}
     {% include success_picture with picture_url:success_story.after_image.url %}	
     .clearfix
-    {% if display_text %}
-    {% if display_experience %}
     {% include subnavigation_buttons %}
     %span.story_title{:style => "text-weight:bold"}{{ success_story.experience_title }}
     %br
@@ -48,11 +43,3 @@
         %td  &nbsp;
     %br
     {{ success_story.experience }}
-	
-    {% else %}
-    %table{:style => "height:6ex;margin-left:auto;margin-right:auto"}
-      %tr
-        %td.text-center
-          %span{:style => "{{ text_size }}"} {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }} 
-    {% endif %}
-    {% endif %}

@@ -11,8 +11,89 @@ editable_elements:
 
 {% block content/main %}
 
-.paddingbox
-  %h2 Todo!
+{% if params.slug and params.type %}
 
+{% with_scope _slug: params.slug, published_at.lt: today %}
+{% assign this_news = contents.news.first %}
+{% endwith_scope %}
+
+{% include generate_main_subnavigation with all:contents.news, this:this_news %}
+{% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
+
+{% if this_news.interview %}
+{% include interview with news:this_news %}
+{% elsif this_news.recipe %}
+{% include recipe with news:this_news %}
+{% elsif this_news.illustrative_text %}
+{% include illustrative_text with news:this_news %}
+{% else %}
+
+/ # UNSUPPORTED
+.well
+  %h2 Unsupported type of news
+
+{% endif %}
+
+{% else %}
+
+{% assign current_page = params.page | default: 1 %}
+{% with_scope order_by: 'published_at desc', published_at.lt: today, tags.in: params.tag %}
+{% assign all_news = contents.news %}
+{% endwith_scope %}
+
+{% paginate all_news by 10 %}
+
+
+%br
+%ul.media-list
+  {% if params.tag %}
+  .tags
+    Diese Seite ist gefiltert nach:
+    %span.label.label-primary.tag {{ params.tag }}
+    %a{ href: "{{ path }}", :style => "float:right"} Filter entfernen
+  {{ news_entry._slug }}
+  {% endif %}
+  {% for news_entry in paginate.collection %}
+  {% if news_entry.interview %}
+  {% assign type = "interview" %}
+  {% elsif news_entry.illustrative_text %}
+  {% assign type = "illustrative_text" %}
+  {% elsif news_entry.recipe %}
+  {% assign type = "recipe" %}
+  {% endif %}
+  .media
+    .pull-right
+      {{ news_entry.published_at | localized_date: '%d.%m.%Y' }}
+    .media-body
+      %h5
+        %a{ href: "?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}" } {{ news_entry.title }}
+      {% if news_entry.tags %}
+      .tags{:style => "margin:7px 7px;"}
+        %span.glyphicon.glyphicon-tags
+        &nbsp;
+        {% for tag in news_entry.tags %}
+        %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
+        &nbsp;
+        {% endfor %}
+      {% endif %}
+      .text
+        {{ news_entry.text }}
+
+    %hr{:style => "margin-bottom:0px"}
+  {% endfor %}
+  
+  {% if paginate.total_pages != 1 %}
+  {% if params.tag == blank %}
+  {% capture tag_params %}{% endcapture %}
+  {% else %}
+  {% capture tag_params %}&tag={{ params.tag | encode }}{% endcapture %}
+  {% endif %}
+  .text-center
+    {% include pagination with pagination: paginate, other_params: tag_params %}
+  {% endif %}
+  
+{% endpaginate %}
+
+{% endif %}
 
 {% endblock %}

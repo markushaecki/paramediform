@@ -17,18 +17,18 @@ handle: institute_team
 
 %ul.media-list
   {% for member in team_members %}
-  .thumbnail
-    .media
-      .pull-left
-        .img-box
-          %a{ href: '{{ member.picture.url }}' }
-            %img.media-object{ src: '{{ member.picture.url | resize: "100x120#" }}' }
-      .media-body
-        %h5.media-heading {{ member.name }}
-        {{ member.title }}
-        %br
-        %br
-        %p{:style => "color:gray"} "{{ member.keynote }}"
+  .media
+    .pull-left
+      .img-box
+        %a{ href: '{{ member.picture.url }}' }
+          %img.media-object{ src: '{{ member.picture.url | resize: "100x120#" }}' }
+    .media-body
+      %h5.media-heading {{ member.name }}
+      {{ member.title }}
+      %br
+      %br
+      %p{:style => "color:gray"} "{{ member.keynote }}"
+  %hr
   {% endfor %}
 
 {% endblock %}

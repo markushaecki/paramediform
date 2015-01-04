@@ -145,7 +145,7 @@ div.detailed_institute_info p{
 }
 
 .round-corner-table{
-	@include border-radius(10px);
+	@include border-radius(7px);
 }
 
 #lightbox {
@@ -184,4 +184,8 @@ div.detailed_institute_info p{
 
 .navbar-nav.nav-justified > li{
     float:none;
+}
+
+ul.dropdown-menu{
+	text-align: center;
 }

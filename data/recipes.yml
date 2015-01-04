@@ -1,0 +1,16 @@
+- "Recipe 1":
+    image: "/samples/recipe.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    preparation: "Rerum enim dolorem adipisci atque illo et. Perspiciatis qui atque blanditiis ex et eaque natus ut. Sit quae et soluta et dicta nemo minima qui."
+
+- "Recipe 2":
+    image: "/samples/recipe.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    preparation: "Voluptas necessitatibus deserunt molestias. Dolorem vel fugiat animi non. Reiciendis cumque ad omnis ut nisi doloribus ut. Et voluptatem eos assumenda sit ea sed."
+
+- "Recipe 3":
+    image: "/samples/recipe.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    preparation: "Asperiores et debitis nam voluptatibus cupiditate quisquam recusandae. Odio expedita quia sint qui deserunt atque. Repudiandae velit corrupti repellendus veniam quae magni."
+
+- "Recipe 4":
+    image: "/samples/recipe.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    preparation: "Accusantium corrupti officia dolore esse blanditiis aut. Est adipisci doloremque quos recusandae dolor. Animi voluptatem molestiae ipsam. Officia ex blanditiis fuga mollitia et. Alias est temporibus aspernatur reprehenderit delectus hic beatae."
+

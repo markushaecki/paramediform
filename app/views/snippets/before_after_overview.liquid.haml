@@ -1,0 +1,9 @@
+%div
+  .thumbnail{:style => "padding-bottom:0px !important"}
+    {% include success_picture with picture_url:success_story.before_image.url %}
+    {% include success_picture with picture_url:success_story.after_image.url %}	
+    .clearfix
+    %table{:style => "height:6ex;margin-left:auto;margin-right:auto"}
+      %tr
+        %td.text-center
+          %span{:style => "font-size:14px"} {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }} 
