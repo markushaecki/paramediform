@@ -12,7 +12,7 @@ editable_elements:
 
 {% block content/main/tab_pane %}
 
-{% capture url %}{{ institute.url }}/{{locale}}/news/all.json?page={{ params.page }}&tag={{ params.tag | encode }}{% endcapture %}
+{% capture url %}{{ institute.url }}/news/all.json?page={{ params.page }}&tag={{ params.tag | encode }}{% endcapture %}
 {% consume data from url %}
 {% assign news = data.news %}
 {% assign news_pagination = data.pagination %}
@@ -20,7 +20,7 @@ editable_elements:
 
 {% if params.slug and params.type %}
 
-{% capture url %}{{ institute.url }}/{{locale}}/news/{{ params.type }}.json?slug={{ params.slug }}{% endcapture %}
+{% capture url %}{{ institute.url }}/news/{{ params.type }}.json?slug={{ params.slug }}{% endcapture %}
 {% consume data from url %}
 {% assign this_news = data.news_entry %}
 {% endconsume %}
