@@ -170,16 +170,16 @@ div.detailed_institute_info p{
 
 //Correction to strengthen boarder of nav
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    border-width: 2px !important;
+    border-width: 1px !important;
     border-color: #DDD #DDD transparent !important;
 }
 
 .nav-tabs > li {
-    margin-bottom: -2px !important;
+    margin-bottom: -1px !important;
 }
 
 .nav-tabs {
-    border-bottom: 2px solid #DDD !important;
+    border-bottom: 1px solid #DDD !important;
 }
 
 .navbar-nav.nav-justified > li{

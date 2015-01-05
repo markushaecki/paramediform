@@ -77,7 +77,7 @@ editable_elements:
         {% endfor %}
       {% endif %}
       .text
-        {{ news_entry.text }}
+        {{ news_entry.text | truncate: 170 }}
 
     %hr{:style => "margin-bottom:0px"}
   {% endfor %}
