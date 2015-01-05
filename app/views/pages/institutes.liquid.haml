@@ -45,7 +45,7 @@ editable_elements:
   {% for institute in institutes %}
 
   .col-sm-6
-    {% capture url %}{{ institute.url }}/{{ locale }}/success-stories/random.json{% endcapture %}
+    {% capture url %}{{ institute.url }}/success-stories/random.json{% endcapture %}
     {% consume data from url %}
     {% assign success_story = data.success_story %}
     {% endconsume %}

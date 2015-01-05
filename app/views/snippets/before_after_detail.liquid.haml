@@ -1,8 +1,12 @@
 %div
   %p.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
   .thumbnail{:style => "padding:20px !important"}
-    {% include success_picture with picture_url:success_story.before_image.url %}
-    {% include success_picture with picture_url:success_story.after_image.url %}	
+    .img-box
+      %a{ href: '{{ success_story.before_image.url }}' }
+        %img{ src: '{{ success_story.before_image.url | resize: "450x560#" }}', :style => "float:left;max-width:50%" }
+    .img-box
+      %a{ href: '{{ success_story.after_image.url }}' }
+        %img{ src: '{{ success_story.after_image.url | resize: "450x560#" }}', :style => "float:left;max-width:50%" }  
     .clearfix
     {% include subnavigation_buttons %}
     %span.story_title{:style => "text-weight:bold"}{{ success_story.experience_title }}

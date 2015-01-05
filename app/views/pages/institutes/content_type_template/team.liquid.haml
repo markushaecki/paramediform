@@ -10,7 +10,7 @@ handle: institute_team
 
 {% block content/main/tab_pane %}
 
-{% capture url %}{{ institute.url }}/{{ locale }}/team-members/all.json{% endcapture %}
+{% capture url %}{{ institute.url }}/team-members/all.json{% endcapture %}
 {% consume data from url %}
 {% assign team_members = data.team_members %}
 {% endconsume %}
