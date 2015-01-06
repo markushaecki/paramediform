@@ -45,33 +45,9 @@ handle: simple_layout
                 %span.icon-bar
             .collapse.navbar-collapse#bs-example-navbar-collapse-1
               %ul.nav.navbar-nav.nav-justified
-                %li.dropdown
-                  %a.dropdown-toggle{ href: "#", :data => {:toggle => "dropdown"}}
-                    {{ 'navigation_loose_weight' | translate }}
-                    %span.caret
-                  %ul.dropdown-menu{:role => "menu"}
-                    %li
-                      {% link_to home %}
-
-                    {% nav site, exclude: '^(layouts)', depth: 2, no_wrapper: true, bootstrap: true %}
-
-                    {% comment %}
-                    %li
-                      %a{ href: "{% path_to multiple_text_image %}" } Methode
-                    %li
-                      %a{ href: "{% path_to people_chart %}"} Systemzentrale
-                    %li
-                      %a{ href: "{% path_to simple_text %}"} Tipp der Woche
-                    {% endcomment %}
-
-                %li{ class: '{% if page.handle == "news" %}active{% endif %}' }
-                  {% link_to news %}
-                %li{ class: '{% if page.handle == "products" %}active{% endif %}' }
-                  {% link_to products %}
-                %li{ class: '{% if page.handle == "institutes" %}active{% endif %}' }
-                  {% link_to institutes %}
-                %li{ class: '{% if page.handle == "enterprise" %}active{% endif %}' }
-                  {% link_to enterprise %}
+                %li{ class: '{% if page.handle == "home" %}active{% endif %}' }
+                  {% link_to home %}
+                {% nav site, exclude: '^(layouts)', depth: 2, no_wrapper: true, bootstrap: true %}
 
         {% block header %}
         {% endblock %}
