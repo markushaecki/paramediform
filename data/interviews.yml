@@ -2,7 +2,6 @@
     description: "Nulla harum voluptas velit. Cupiditate nobis et laboriosam rerum. Laboriosam deserunt unde quae recusandae harum. Dicta sequi voluptatum modi rerum veniam."
     image: null # Path to a file in the public/samples folder or to a remote and external file.
     person: john-doe # Slug of the target entry
-    tags: ['Das sagt der Artz', 'Tipps']
 
 - "Interview 2":
     description: "Quibusdam aut quos consequatur doloribus autem recusandae nihil consequatur. Vero aut consequuntur non. Accusantium laborum quo magni esse qui sunt aliquid. Quos ut inventore et."

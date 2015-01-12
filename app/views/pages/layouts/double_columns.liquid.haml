@@ -41,7 +41,7 @@ handle: double_columns_layout
           %h3.text-center
             {{ 'sidebar_institutes_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x20' }}" }
+            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x40' }}", style: 'height: 20px' }
       {% endif %}
 
       / selbststaendigkeit block
@@ -52,7 +52,7 @@ handle: double_columns_layout
           %h3.text-center
             {{ 'sidebar_selbststaendigkeit_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x30' }}" }
+            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px' }
       {% endif %}
 
       / news block
@@ -63,7 +63,7 @@ handle: double_columns_layout
           %h3.text-center
             {{ 'sidebar_news_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x30' }}" }
+            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px' }
       {% endif %}
 
       / share block

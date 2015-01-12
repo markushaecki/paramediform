@@ -1,5 +1,5 @@
 # Human readable name of this type
-name: Illustrative texts
+name: Illustrierte Nachricht
 
 # Lowercase, underscored handle used to access this type
 slug: illustrative_texts
@@ -28,37 +28,15 @@ order_by: manually
 # A list describing each field
 fields:
 - title: # The lowercase, underscored name of the field
-    label: Title # Human readable name of the field
+    label: Referenz Titel # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: Dieser Titel wird lediglich dazu verwendet um diese Illustration einer Nachricht zuortnen zu können.
     localized: false
-
-- text: # The lowercase, underscored name of the field
-    label: Text # Human readable name of the field
-    type: text
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - image: # The lowercase, underscored name of the field
-    label: Image # Human readable name of the field
+    label: Illustration # Human readable name of the field
     type: file
     required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-
-- tags: # The lowercase, underscored name of the field
-    label: Tags # Human readable name of the field
-    type: tags
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-
-- published_at: # The lowercase, underscored name of the field
-    label: Published at # Human readable name of the field
-    type: date
-    required: false
-    hint: Explanatory text displayed in the back office
+    hint: Dieses Bild wird mit dem Text zusammen angezeigt und untermalt damit die Stimmung welche der Text hervorrufen soll.
     localized: false

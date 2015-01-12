@@ -8,7 +8,21 @@ handle: simple_layout
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
     %meta{charset: "utf-8"}/
-    %title {{ site.name }}
+    %meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }}"}/
+    {% if page.meta_description %}
+    %meta{name:"description", content:"{{ page.meta_description }}"}/
+    {% else %}
+    %meta{name:"description", content:"{{ site.meta_description }}"}/
+    {% endif %}
+
+    %title
+      {{ page.title }} - {{ site.name }} |
+      {% if page.seo_title %}
+      {{ page.seo_title }}
+      {% else %}
+      {{ site.seo_title }}
+      {% endif %}
+
     %meta{content: "width=device-width, initial-scale=1, maximum-scale=10", name: "viewport"}/
     //%script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", type: "text/javascript"}
 

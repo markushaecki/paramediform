@@ -3,14 +3,14 @@ title: Team
 published: true
 slug: team
 listed: true
-position: 2
+position: 3
 handle: institute_team
 ---
 {% extends parent %}
 
 {% block content/main/tab_pane %}
 
-{% capture url %}{{ institute.url }}/team-members/all.json{% endcapture %}
+{% capture url %}{{ institute.url }}/{{locale}}/team-members/all.json{% endcapture %}
 {% consume data from url %}
 {% assign team_members = data.team_members %}
 {% endconsume %}
@@ -18,16 +18,19 @@ handle: institute_team
 %ul.media-list
   {% for member in team_members %}
   .media
-    .pull-left
-      .img-box
-        %a{ href: '{{ member.picture.url }}' }
-          %img.media-object{ src: '{{ member.picture.url | resize: "100x120#" }}' }
     .media-body
-      %h5.media-heading {{ member.name }}
-      {{ member.title }}
-      %br
-      %br
-      %p{:style => "color:gray"} "{{ member.keynote }}"
+      .col-sm-12.col-xs-12
+        .pull-left{:style => "margin-right:20px"}
+          .img-box
+            %a{ href: '{{ member.picture.url }}' }
+              %img.media-object{ src: '{{ member.picture.url | resize: "100x120#" }}' }
+              %br
+        %h4.media-heading {{ member.name }}
+        {{ member.title }}
+        {% if member.keynote != '' and member.keynote != null %}
+        %hr{:style => "margin: 10px 0px"}
+        %p{:style => "color:gray;margin-bottom:0px"} "{{ member.keynote }}"
+        {% endif %}
   %hr
   {% endfor %}
 

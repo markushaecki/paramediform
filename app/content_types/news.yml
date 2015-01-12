@@ -1,5 +1,5 @@
 # Human readable name of this type
-name: News
+name: Nachricht
 
 # Lowercase, underscored handle used to access this type
 slug: news
@@ -34,25 +34,19 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: true
 
-- description: # The lowercase, underscored name of the field
-    label: Description # Human readable name of the field
-    type: string
+- text: # The lowercase, underscored name of the field
+    label: Text # Human readable name of the field
+    type: text
     required: false
     hint: Explanatory text displayed in the back office
     localized: false
+    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - published_at: # The lowercase, underscored name of the field
     label: Published at # Human readable name of the field
     type: date
     required: false
     hint: Explanatory text displayed in the back office
-    localized: false
-
-- tweeted:
-    label: Tweeted?
-    type: boolean
-    required: false
-    hint: Tell if this news has been posted or no on Twitter
     localized: false
 
 - tags: # The lowercase, underscored name of the field
@@ -69,13 +63,12 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
 
-- text: # The lowercase, underscored name of the field
-    label: Text # Human readable name of the field
-    type: text
+- tweeted:
+    label: Tweeted?
+    type: boolean
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Tell if this news has been posted or no on Twitter
     localized: false
-    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - interview: # The lowercase, underscored name of the field
     label: Interview # Human readable name of the field

@@ -1,5 +1,5 @@
 # Human readable name of this type
-name: Recipe Ingredients
+name: Zutaten
 
 # Lowercase, underscored handle used to access this type
 slug: recipe_ingredients

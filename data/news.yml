@@ -3,7 +3,6 @@
       en: "News 1: Interview"
     _slug:
       en: "news-1-interview-en"
-    description: "Qui excepturi non et."
     social_media: "Non neque quos animi ea dignissimos."
     text: "Eaque ut perferendis ipsa voluptatem et autem ab. Esse sequi voluptas minus dicta aliquam. Quam pariatur fugiat qui officia qui ut."
     interview: interview-1
@@ -15,7 +14,6 @@
       en: "News 1: Interview"
     _slug:
       en: "news-1-interview-en"
-    description: "Qui excepturi non et."
     social_media: "Non neque quos animi ea dignissimos."
     text: "Eaque ut perferendis ipsa voluptatem et autem ab. Esse sequi voluptas minus dicta aliquam. Quam pariatur fugiat qui officia qui ut."
     interview: interview-2
@@ -27,7 +25,6 @@
       en: "News 2: Recipe"
     _slug:
       en: "news-2-recipe-en"
-    description: "Sed est magni dolorem placeat dicta eveniet corporis eum."
     social_media: "Et a aspernatur ratione autem non et quae."
     text: "Et sint perspiciatis repellat provident voluptatem ipsam est enim. Sint dolorum aut fugiat. Aspernatur ipsa maxime ex sit dolores quae animi. Voluptatibus rerum porro facilis et consequuntur eum corporis sed."
     tags: ['Tipps', 'Schwitzen', 'Das sagt der Artz']
@@ -39,7 +36,6 @@
       en: "News 3: Illustrative Text"
     _slug:
       en: "news-3-illustrative-text-en"
-    description: "Sed est magni dolorem placeat dicta eveniet corporis eum."
     social_media: "Et a aspernatur ratione autem non et quae."
     text: "Et sint perspiciatis repellat provident voluptatem ipsam est enim. Sint dolorum aut fugiat. Aspernatur ipsa maxime ex sit dolores quae animi. Voluptatibus rerum porro facilis et consequuntur eum corporis sed."
     tags: ['Text']
@@ -51,7 +47,6 @@
       en: "News 4"
     _slug:
       en: "news-4-en"
-    description: "Sapiente accusantium et omnis distinctio eum alias et."
     social_media: "Tenetur ea laboriosam et."
     text: "Consequatur magni perferendis amet. Reprehenderit et possimus ut repudiandae vitae omnis nisi odio. Quasi quod eos esse. Rerum in tempora similique illo reiciendis vero veniam."
     tags: ['Tipps', 'Vitamine']
@@ -63,7 +58,6 @@
       en: "News 5"
     _slug:
       en: "news-5-en"
-    description: "Ut sit harum libero dolorum sit beatae."
     social_media: "Amet asperiores et unde vel officiis veritatis."
     text: "Reiciendis repellendus et est ut soluta pariatur. Ut dolores debitis vel quae. Doloremque eos aut nihil."
     tags: ['Erfahrungsbericht']

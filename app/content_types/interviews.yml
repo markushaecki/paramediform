@@ -1,5 +1,5 @@
 # Human readable name of this type
-name: Interviews
+name: Interview
 
 # Lowercase, underscored handle used to access this type
 slug: interviews
@@ -49,13 +49,6 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
 
-- tags: # The lowercase, underscored name of the field
-    label: Tags # Human readable name of the field
-    type: tags
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-
 - person: # The lowercase, underscored name of the field
     label: Person # Human readable name of the field
     type: belongs_to
@@ -72,10 +65,3 @@ fields:
     localized: false
     class_name: interview_questions
     inverse_of: interview
-
-- published_at: # The lowercase, underscored name of the field
-    label: Published at # Human readable name of the field
-    type: date
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false

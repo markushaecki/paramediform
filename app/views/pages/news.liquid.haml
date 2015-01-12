@@ -17,9 +17,6 @@ editable_elements:
 {% assign this_news = contents.news.first %}
 {% endwith_scope %}
 
-{% include generate_main_subnavigation with all:contents.news, this:this_news %}
-{% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
-
 {% if this_news.interview %}
 {% include interview with news:this_news %}
 {% elsif this_news.recipe %}
@@ -33,6 +30,9 @@ editable_elements:
   %h2 Unsupported type of news
 
 {% endif %}
+
+{% include generate_main_subnavigation with all:contents.news, this:this_news %}
+{% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
 
 {% else %}
 
@@ -95,5 +95,6 @@ editable_elements:
 {% endpaginate %}
 
 {% endif %}
+
 
 {% endblock %}

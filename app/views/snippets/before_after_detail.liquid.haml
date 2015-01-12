@@ -3,15 +3,13 @@
   .thumbnail{:style => "padding:20px !important"}
     .img-box
       %a{ href: '{{ success_story.before_image.url }}' }
-        %img{ src: '{{ success_story.before_image.url | resize: "450x560#" }}', :style => "float:left;max-width:50%" }
+        %img{ src: '{{ success_story.before_image.url | resize: "960x1280#" }}', :style => "float:left;max-width:50%" }
     .img-box
       %a{ href: '{{ success_story.after_image.url }}' }
-        %img{ src: '{{ success_story.after_image.url | resize: "450x560#" }}', :style => "float:left;max-width:50%" }  
+        %img{ src: '{{ success_story.after_image.url | resize: "960x1280#" }}', :style => "float:left;max-width:50%" }  
     .clearfix
     {% include subnavigation_buttons %}
-    %span.story_title{:style => "text-weight:bold"}{{ success_story.experience_title }}
-    %br
-    %br
+    .story_title{:style => "text-weight:bold;margin-bottom:20px"}{{ success_story.experience_title }}
     %table.round-corner-table{:style => "width:100%;background-color:#FFF6FC"}
       %tr
         %td  &nbsp;

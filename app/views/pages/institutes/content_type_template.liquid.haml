@@ -22,7 +22,7 @@ handle: institute_layout
 
 {% block content/main %}
 
-{% capture url %}{{institute.url}}/index.json{% endcapture %}
+{% capture url %}{{institute.url}}/{{locale}}/index.json{% endcapture %}
 {% consume data from url %}
 {% assign information = data.information %}
 {% endconsume %}
@@ -32,7 +32,7 @@ handle: institute_layout
     %h1.title Institut {{ institute.name }}
     #contact_info
       %p.text-center.image_with_background
-        %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
+        %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&scale=2&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
       .row.detailed_institute_info
         .col-sm-4.col-xs-12.col-md-4
           %p {{ information.name }}
@@ -48,9 +48,15 @@ handle: institute_layout
                 %b +
         .col-sm-4.col-xs-12.col-md-4
           .text-right
+            {% if information.phone != '' and information.phone != null %}
             %p {{ "label_phone" | translate }} {{ information.phone }}
+            {% endif %}
+            {% if information.fax != '' and information.fax != null %}
             %p {{ "label_fax" | translate }} {{ information.fax }}
+            {% endif %}
+            {% if information.email != '' and information.email != null %}
             %p {{ information.email }}
+            {% endif %}
 
 %br
 
