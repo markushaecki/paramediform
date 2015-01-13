@@ -1,22 +1,22 @@
 ---
-title: Systemzentrale
-slug: systemzentrale
-published: true
-handle: people_chart
-editable_elements:
-  "content/sidebar/contact": "false"
+title: Auflistung von Personen
+published: false
+is_layout: true
 ---
 {% extends layouts/double-columns %}
-
 {% block content/main %}
+
+{% capture group %}{% editable_text group, format: "raw", line_break: false, rows: 1 %}Beirat{% endeditable_text %}{% endcapture%}
+{% with_scope tags.in:group %}
+{% assign people_in_group = contents.people %}
+{% endwith_scope %}
 
 .paddingbox
   %h2 Systemzentrale
 
   %p Die sechsköpfige ParaMediForm-Systemzentrale unterstützt Ihre Franchisenehmerinnen und Franchisenehmer und verwaltet das Netzwerk. Die Partnerinnen und Partner werden regelmässig geschult und die Systemzentrale stellt Ihre zentralen Dienste zur Verfügung. <br><br> Neben der Betreuung der Systemmitglieder wird das Franchisesystem stetig weiterentwickelt. Die Systemzentrale leitet selber ein Pilotinstitut, wodurch praxisnah, Neuerungen auf dem Markt getestet werden können. <br><br> Im weiteren werden die Systemmitglieder in Sachen Werbung, Kundenakquisition, Kundenberatung und Institutsführung unterstützt. Das Telefon der Systemzentrale wird von Montag bis Freitag von 8:00 bis 17:30 bedient: +41 62 888 88 28
 
-
-  {% for person in contents.people %}
+  {% for person in people_in_group %}
   .thumbnail
     .row
       .col-xs-3

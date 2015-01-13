@@ -1,5 +1,5 @@
 %div
-  %p.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+  %h2.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
   .thumbnail{:style => "padding:20px !important"}
     .img-box
       %a{ href: '{{ success_story.before_image.url }}' }

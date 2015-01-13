@@ -31,3 +31,4 @@ locales: [de,en]
 seo_title: "ParaMediForm"
 meta_keywords: "ParaMediForm, abnehmen, individuell abnehmen, gesund abnehmen, gesund ernähren, gute Ernährung"
 meta_description: "Willkommen bei ParaMediForm Schweiz, dem Institut für Gesundheit und Wohlbefinden."
+# This is a strange last line to fix an error...

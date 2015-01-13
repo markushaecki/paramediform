@@ -1,5 +1,5 @@
 # Human readable name of this type
-name: Interviewte Personen
+name: Personen
 
 # Lowercase, underscored handle used to access this type
 slug: people
@@ -36,23 +36,7 @@ fields:
 
 - title: # The lowercase, underscored name of the field
     label: Title # Human readable name of the field
-    type: text
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
-
-- keynote: # The lowercase, underscored name of the field
-    label: Leitmotiv # Human readable name of the field
-    type: text
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
-
-- email: # The lowercase, underscored name of the field
-    label: E-Mail Adresse # Human readable name of the field
-    type: email
+    type: string
     required: false
     hint: Explanatory text displayed in the back office
     localized: false
@@ -65,3 +49,25 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
 
+- email: # The lowercase, underscored name of the field
+    label: E-Mail Adresse # Human readable name of the field
+    type: email
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false
+    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+
+- tags: # The lowercase, underscored name of the field
+    label: Gruppenzugehörigkeit # Human readable name of the field
+    type: tags
+    required: false
+    hint: Hier soll definiert werden welchen Gruppen die Person zugehört. Damit kann sie auf den verschiedenen Seiten wie zum Beispiel in der Beiratsseite gelistet werden.
+    localized: false
+
+- keynote: # The lowercase, underscored name of the field
+    label: Leitmotiv # Human readable name of the field
+    type: text
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false
+    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)

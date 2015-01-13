@@ -47,8 +47,9 @@ handle: simple_layout
         %img.atmospereic{ src: "{{ 'atmospheric.png' | theme_image_url }}" }
       .container.relative_position{ :style => "max-width:750px"}
         %p.text-center
-          %img.img-responsive#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x120' }}", :style => "margin-top:50px" }
-          %p.text-center Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
+          %a{ href: "/index", :style => "text-decoration:none;color:black" }
+            %img.img-responsive#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x120' }}", :style => "margin-top:50px" }
+            %p.text-center Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
           .container{ :style => "width:100%;margin-top:20px;margin-bottom:20px"}
             .navbar-header
@@ -59,8 +60,6 @@ handle: simple_layout
                 %span.icon-bar
             .collapse.navbar-collapse#bs-example-navbar-collapse-1
               %ul.nav.navbar-nav.nav-justified
-                %li{ class: '{% if page.handle == "home" %}active{% endif %}' }
-                  {% link_to home %}
                 {% nav site, exclude: '^(layouts)', depth: 2, no_wrapper: true, bootstrap: true %}
 
         {% block header %}
