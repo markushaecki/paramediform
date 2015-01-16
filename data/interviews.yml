@@ -1,20 +1,9 @@
-- "Interview 1":
-    description: "Nulla harum voluptas velit. Cupiditate nobis et laboriosam rerum. Laboriosam deserunt unde quae recusandae harum. Dicta sequi voluptatum modi rerum veniam."
+- "Gesunde Ernaehrung":
+    description: "Test...."
     image: null # Path to a file in the public/samples folder or to a remote and external file.
-    person: john-doe # Slug of the target entry
+    person: walter-haecki # Slug of the target entry
 
-- "Interview 2":
+- "Metabolisches Syndrom":
     description: "Quibusdam aut quos consequatur doloribus autem recusandae nihil consequatur. Vero aut consequuntur non. Accusantium laborum quo magni esse qui sunt aliquid. Quos ut inventore et."
     image: null # Path to a file in the public/samples folder or to a remote and external file.
-    person: jane-doe # Slug of the target entry
-
-- "Interview 3":
-    description: "Beatae modi animi quibusdam earum aut ut excepturi vitae. Dignissimos deleniti sunt assumenda id corporis sed non. Non voluptatum rerum sequi. Eius harum sit aut aut quam ea facere."
-    image: null # Path to a file in the public/samples folder or to a remote and external file.
-    person: john-doe # Slug of the target entry
-
-- "Interview 4":
-    description: "Voluptatem dolores omnis occaecati culpa aut et. Nulla reprehenderit repellat et neque unde velit iusto deleniti. Sit qui error eligendi. Eius debitis dolores mollitia. Sed vel officiis voluptas quia ipsam molestiae."
-    image: null # Path to a file in the public/samples folder or to a remote and external file.
-    person: null # Slug of the target entry
-
+    person: walter-haecki # Slug of the target entry

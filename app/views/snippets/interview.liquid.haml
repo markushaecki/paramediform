@@ -1,44 +1,17 @@
 {% assign interview = news.interview %}
 
-{% if interview.person %}
+{% include news_header %}
 
-/ PERSON
-.media
-  .pull-left
-    %img.media-object{ src: "{{ interview.person.picture.url | resize: '90x90#' }}" }
-  .media-body
-    %h4 {{ interview.person.name }}
-    %p {{ interview.person.title }}
-
-%br
-
-{% endif %}
-
-/ TAGS + DATE
-
-.pull-right
-  {{ news.published_at | localized_date: '%d.%m.%Y' }}
-
-{% if news.tags %}
-.tags
-  %span.glyphicon.glyphicon-tags
-  {% for tag in news.tags %}
-  %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
-  &nbsp;
-  {% endfor %}
-{% endif %}
-
-%hr.clearfix
-
-/ QUESTIONS + ANSWERS
-
-{% for question in interview.questions %}
-
-%h5 {{ question.question }}
-
-.text.text-justify
-  {{ question.answer }}
-
-%hr
-
-{% endfor %}
+.row
+  .col-sm-4.col-xs-12
+    %br
+    {% if interview.person %}
+    {% include interview_person with person:interview.person %}
+    {% endif %}
+  .col-sm-8.col-xs-12
+    {% for question in interview.questions %}
+    %h5 {{ question.question }}
+    .text.text-justify
+      {{ question.answer }}
+    %hr
+    {% endfor %}

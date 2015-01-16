@@ -1,28 +1,28 @@
 {% assign recipe = news.recipe %}
+{% include news_header %}
+.thumbnail
+  .img-box
+    %a{ href: '{{ recipe.image.url }}' }
+      %img.img-responsive{ src: '{{ recipe.image.url | resize: "900x140#" }}' }
 .row
-  .col-sm-6.col-xs-12
-    / IMAGE
-    %img.img-responsive{ src: '{{ recipe.image.url }}' }
   .col-sm-6.col-xs-12
     / INGREDIENTS
     %table.table
       %thead
         %tr
-          %th Amount
-          %th Ingredient
+          %th{:style => "padding:2px 8px;text-align:right"} Amount
+          %th{:style => "padding:2px 8px"} Ingredient
       %tbody
         {% for ingredient in recipe.ingredients %}
         %tr
-          %td
+          %td{:style => "padding:2px 8px;text-align:right"}
             {{ ingredient.amount }} {{ ingredient.unit }}
-          %td
+          %td{:style => "padding:2px 8px"}
             {{ ingredient.name }}
         {% endfor %}
-
-.row
-  .col-sm-12
+  .col-sm-6.col-xs-12
     .text-justify
       / PREPARATION
+      %br
       {{ recipe.preparation }}
-
 %br

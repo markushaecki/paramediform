@@ -1,34 +1,26 @@
-- "Aktuelles 1: Interview":
+- "Gesunde Ernährung":
     title:
-      en: "News 1: Interview"
+      en: "wholesome feeding"
     _slug:
-      en: "news-1-interview-en"
+      en: "wholesome-feeding"
     social_media: "Non neque quos animi ea dignissimos."
-    text: "Eaque ut perferendis ipsa voluptatem et autem ab. Esse sequi voluptas minus dicta aliquam. Quam pariatur fugiat qui officia qui ut."
-    interview: interview-1
+    text: "Wie wirkt sich Übergewicht auf den Körper aus? Wie nimmt man dauerhaft ab? Dr. med. Walter Häcki nimmt Stellung aus der Sicht des Mediziners."
+    interview: gesunde-ernaehrung
     tags: ['Das sagt der Artz', 'Tipps']
-    published_at: '2014-10-01'
+    published_at: '2014-11-01'
 
-- "Aktuelles 1: Interview":
-    title:
-      en: "News 1: Interview"
-    _slug:
-      en: "news-1-interview-en"
+- "Metabolisches Syndrom":
     social_media: "Non neque quos animi ea dignissimos."
-    text: "Eaque ut perferendis ipsa voluptatem et autem ab. Esse sequi voluptas minus dicta aliquam. Quam pariatur fugiat qui officia qui ut."
-    interview: interview-2
-    tags: ['Das sagt der Artz', 'Tipptopps']
-    published_at: '2014-10-01'
+    text: "Wir leiden heute unter körperlicher Inaktivität verbunden mit Übergewicht. Gleichzeitig steht uns Essen im Überfluss zur Verfügung. Diese Kombination zu wenig Bewegung und zu viel Essen, was zu Übergewicht führen kann, sind in der Regel die Vorboten für das Metabolische Syndrom, welches oftmals leider schon in der Jugend beginnt. Dr. med Walter Häcki nimmt aus Sicht des Mediziners dazu Stellung."
+    interview: metabolisches-syndrom
+    tags: ['Das sagt der Artz']
+    published_at: '2014-10-23'
 
-- "Aktuelles 2: Rezept":
-    title:
-      en: "News 2: Recipe"
-    _slug:
-      en: "news-2-recipe-en"
+- "Pouleteintopf mit Reis":
     social_media: "Et a aspernatur ratione autem non et quae."
-    text: "Et sint perspiciatis repellat provident voluptatem ipsam est enim. Sint dolorum aut fugiat. Aspernatur ipsa maxime ex sit dolores quae animi. Voluptatibus rerum porro facilis et consequuntur eum corporis sed."
-    tags: ['Tipps', 'Schwitzen', 'Das sagt der Artz']
-    recipe: recipe-1
+    text: "Als Eintopf werden allgemein sättigende Suppen oft bäuerlichen Ursprungs bezeichnet, die als vollständige Mahlzeit dienen."
+    tags: ['Rezept der Woche']
+    recipe: pouleteintopf-mit-reis
     published_at: '2014-10-05'
 
 - "Aktuelles 3: Illustrative Text":

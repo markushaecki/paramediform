@@ -31,14 +31,14 @@ fields:
     label: Name # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: Name des Institutes (lediglich die Ortsbezeichnung)
     localized: true
 
 - url: # The lowercase, underscored name of the field
     label: Url # Human readable name of the field
     type: string
-    required: false
-    hint: Explanatory text displayed in the back office
+    required: true
+    hint: die URL ist stehts institute-Ortsbezeichnung.paramediform.ch Wobei es sich bei Ortsbezeichnung natürlich einen Platzhalter handelt.
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
@@ -46,7 +46,7 @@ fields:
     label: Breitengrad # Human readable name of the field
     type: float
     required: true
-    hint: "Breitengrad Koordinaten gemäss: http://www.evous.ch/GPS-Koordinaten-suchen,700053.html"
+    hint: "Breitengrad Koordinaten des Institutes gemäss: http://www.evous.ch/GPS-Koordinaten-suchen,700053.html Es muss lediglich die Adresse eingegeben werden."
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
@@ -54,6 +54,6 @@ fields:
     label: Längengrad # Human readable name of the field
     type: float
     required: true
-    hint: "Längengrad Koordinaten gemäss: http://www.evous.ch/GPS-Koordinaten-suchen,700053.html"
+    hint: "Längengrad Koordinaten des Institutes gemäss: http://www.evous.ch/GPS-Koordinaten-suchen,700053.html Es muss lediglich die Adresse eingegeben werden."
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)

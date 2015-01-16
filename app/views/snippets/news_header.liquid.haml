@@ -1,0 +1,14 @@
+/ TAGS + DATE
+%h2 {{ news.title }}
+.pull-right
+  {{ news.published_at | localized_date: '%d.%m.%Y' }}
+{% if news.tags %}
+.tags
+  %span.glyphicon.glyphicon-tags
+  {% for tag in news.tags %}
+  %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
+  &nbsp;
+  {% endfor %}
+{% endif %}
+%br
+%p.text-justify {{ news.text }}

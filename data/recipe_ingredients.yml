@@ -1,7 +1,37 @@
-- "Ingredient 1":
-    amount: "42"
+- "Pouletgeschnetzeltes":
+    amount: "600"
     unit: "g"
-    recipe: recipe-1 # Slug of the target entry
+    recipe: pouleteintopf-mit-reis
+
+- "Tomaten":
+    amount: "2"
+    unit: ""
+    recipe: pouleteintopf-mit-reis
+
+- "Rüebli":
+    amount: "4"
+    unit: ""
+    recipe: pouleteintopf-mit-reis
+
+- "kleine Zucchetti":
+    amount: "2"
+    unit: ""
+    recipe: pouleteintopf-mit-reis
+
+- "Zwiebel":
+    amount: "1"
+    unit: ""
+    recipe: pouleteintopf-mit-reis
+
+- "Knoblauchzehen":
+    amount: "2"
+    unit: ""
+    recipe: pouleteintopf-mit-reis
+
+- "Peperoni":
+    amount: "2"
+    unit: ""
+    recipe: pouleteintopf-mit-reis
 
 - "Ingredient 2":
     amount: "42"

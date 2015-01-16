@@ -28,53 +28,53 @@ order_direction: desc
 # A list describing each field
 fields:
 - title: # The lowercase, underscored name of the field
-    label: Title # Human readable name of the field
+    label: Titel # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: Überschrift der neuen Nachricht. 
     localized: true
 
 - text: # The lowercase, underscored name of the field
     label: Text # Human readable name of the field
     type: text
-    required: false
-    hint: Explanatory text displayed in the back office
+    required: true
+    hint: Dieser Text wird sowohl in der Übersicht als auch im Artikel selbst angezeigt.
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - published_at: # The lowercase, underscored name of the field
-    label: Published at # Human readable name of the field
+    label: Publikationsdatum # Human readable name of the field
     type: date
-    required: false
-    hint: Explanatory text displayed in the back office
+    required: true
+    hint: Mit dem Publikationsdatum wird gesteuert wann etwas veröffentlicht wird. Damit können Artikel terminiert werden so dass z.B die Neujahrsansprache bereits vor Weihnachten geschrieben aber erst am 1. Januar publiziert werden kann.
     localized: false
 
 - tags: # The lowercase, underscored name of the field
     label: Tags # Human readable name of the field
     type: tags
-    required: false
-    hint: Explanatory text displayed in the back office
+    required: true
+    hint: Mit diesen Tags wird der Artikel charakterisiert und dem User die Möglichkeit gegeben ähnliche Artikel zu finden.
     localized: false
 
 - social_media: # The lowercase, underscored name of the field
     label: Social media # Human readable name of the field
     type: string
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Text a max. 140 Zeichen über diesen Artikel welcher über den Paramediform Twitter Account verschickt werden.
     localized: false
 
 - tweeted:
     label: Tweeted?
     type: boolean
     required: false
-    hint: Tell if this news has been posted or no on Twitter
+    hint: Sagt aus ob die Nachricht getwittert wurde.
     localized: false
 
 - interview: # The lowercase, underscored name of the field
     label: Interview # Human readable name of the field
     type: belongs_to
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Falls es sich um ein neues Intwerview handelt soll das Interview hier referenziert werden.
     localized: false
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: interviews
@@ -83,16 +83,16 @@ fields:
     label: Recipe # Human readable name of the field
     type: belongs_to
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Falls es sich um ein neues Rezept handelt soll das Interview hier referenziert werden.
     localized: false
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: recipes
 
 - illustrative_text: # The lowercase, underscored name of the field
-    label: Illustrative text # Human readable name of the field
+    label: Illustrierter Text # Human readable name of the field
     type: belongs_to
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Falls es sich um einen illustrierten Text handelt soll das Interview hier referenziert werden.
     localized: false
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: illustrative_texts

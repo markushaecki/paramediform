@@ -5,7 +5,7 @@ name: Frage Antwort
 slug: interview_questions
 
 # Explanatory text displayed in the back-office
-description: A description of the content type for the editors
+description: Hier werden die Fragen und zugehörigen Antworten festgelegt und dem Interview zugewiesen
 
 # Slug of field used to identify entries by default, such as the title
 label_field_name: question
@@ -28,25 +28,25 @@ order_by: manually
 # A list describing each field
 fields:
 - question: # The lowercase, underscored name of the field
-    label: Question # Human readable name of the field
+    label: Frage # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: Die Frage welche gestellt wird.
     localized: false
 
 - answer: # The lowercase, underscored name of the field
     label: Answer # Human readable name of the field
     type: text
-    required: false
-    hint: Explanatory text displayed in the back office
+    required: true
+    hint: Die zugehörige Antwort zur oben gestellten Frage.
     localized: false
     text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - interview: # The lowercase, underscored name of the field
     label: Interview # Human readable name of the field
     type: belongs_to
-    required: false
-    hint: Explanatory text displayed in the back office
+    required: true
+    hint: Hier soll das Frage-Antwortpaar dem Interview zugeordnet werden. Falls noch kein entsprechendes Interview erstellt wurde soll dies erst in einem neuen Browser gemacht werden bevor dieser Eintrag gespeichert werden kann.
     localized: false
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: interviews

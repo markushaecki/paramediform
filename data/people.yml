@@ -17,7 +17,7 @@
     keynote: "Wir warten unser Leben lang auf den außergewöhnlichen Menschen, statt die gewöhnlichen um uns her in solche zu verwandeln."
     email: "rita.mueller@paramediform.ch"
     picture: "/samples/people/rita.jpg" # Path to a file in the public/samples folder or to a remote and external file.
-    tags: ['Beirat', 'Gruppe']
+    tags: ['Beira', 'Gruppe']
 
 - "Manuela Diener":
     title: "Partnermanagement"
@@ -39,3 +39,11 @@
     email: "monika.bachmann@paramediform.ch"
     picture: "/samples/people/monika.jpg" # Path to a file in the public/samples folder or to a remote and external file.
     tags: ['Beirat', 'Gruppe']
+
+- "Dr. med. Walter Häcki":
+    _slug: walter-haecki
+    title: "Spezialist für Magen- und Darmkrankheiten"
+    keynote: "Für eine optimale Verdauung braucht der Magen die richtige Ernährung. "
+    email: "whaecki@paramediform.ch"
+    picture: "/samples/people/walter.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    tags: ['Systemzentrale', 'Verwaltungsrat']

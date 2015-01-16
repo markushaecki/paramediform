@@ -17,20 +17,8 @@ handle: institute_team
 
 %ul.media-list
   {% for member in team_members %}
-  .media
-    .media-body
-      .col-sm-12.col-xs-12
-        .pull-left{:style => "margin-right:20px"}
-          .img-box
-            %a{ href: '{{ member.picture.url }}' }
-              %img.media-object{ src: '{{ member.picture.url | resize: "100x120#" }}' }
-              %br
-        %h4.media-heading {{ member.name }}
-        {{ member.title }}
-        {% if member.keynote != '' and member.keynote != null %}
-        %hr{:style => "margin: 10px 0px"}
-        %p{:style => "color:gray;margin-bottom:0px"} "{{ member.keynote }}"
-        {% endif %}
+  %br
+  {% include person with person:member %}
   %hr
   {% endfor %}
 

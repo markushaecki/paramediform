@@ -6,33 +6,34 @@ is_layout: true
 {% extends layouts/double-columns %}
 {% block content/main %}
 
-{% capture group %}{% editable_text group, format: "raw", line_break: false, rows: 1 %}Beirat{% endeditable_text %}{% endcapture%}
+{% capture group %}{% editable_text "Gruppenzugehörigkeit", format: "raw", line_break: false, rows: 1 %}Hello{% endeditable_text %}{% endcapture%}
 {% with_scope tags.in:group %}
 {% assign people_in_group = contents.people %}
 {% endwith_scope %}
 
 .paddingbox
-  %h2 Systemzentrale
-
-  %p Die sechsköpfige ParaMediForm-Systemzentrale unterstützt Ihre Franchisenehmerinnen und Franchisenehmer und verwaltet das Netzwerk. Die Partnerinnen und Partner werden regelmässig geschult und die Systemzentrale stellt Ihre zentralen Dienste zur Verfügung. <br><br> Neben der Betreuung der Systemmitglieder wird das Franchisesystem stetig weiterentwickelt. Die Systemzentrale leitet selber ein Pilotinstitut, wodurch praxisnah, Neuerungen auf dem Markt getestet werden können. <br><br> Im weiteren werden die Systemmitglieder in Sachen Werbung, Kundenakquisition, Kundenberatung und Institutsführung unterstützt. Das Telefon der Systemzentrale wird von Montag bis Freitag von 8:00 bis 17:30 bedient: +41 62 888 88 28
-
-  {% for person in people_in_group %}
-  .thumbnail
-    .row
-      .col-xs-3
-        .img-box
-          %a{ href: "{{ person.picture.url }}", :style => "padding:0px" }
-            %img.img-responsive{ src: "{{ person.picture.url | resize: 'x250' }}", :style => "margin-left:0px;margin-right:10px" }
-      .col-xs-9
-        %ul.no-padding-left
-          %li{ :style => "list-style-type: none;"}
-            %h3{:style => "padding:0px"} {{ person.name }}
-          %li{ :style => "list-style-type: none;"} {{ person.title }}
-          %li{ :style => "list-style-type: none;"} {{ person.email }}
-          %li{ :style => "list-style-type: none;"}
-            %hr
-          %li{ :style => "list-style-type: none;"} "{{ person.keynote }}"
-  {% endfor %}
-
+  %h1{:style => "padding-left:0"} {% editable_text "Titel der Gruppe", format: "raw", line_break: false, rows: 1 %}Gruppentitel{% endeditable_text %}
+  {% editable_text "Gruppenbeschreibung" %}Hier wird beschrieben wie die Gruppe funktioniert und wie sie {% endeditable_text %}
+  %br
+  %ul.media-list
+    {% for person in people_in_group %}
+    .media
+      .media-body
+        .col-sm-12.col-xs-12
+          .pull-left{:style => "margin-right:20px"}
+            .img-box
+              %a{ href: '{{ person.picture.url }}' }
+                %img.img-responsive.media-object{ src: '{{ person.picture.url | resize: "130x180#" }}' }
+                %br
+          %h4.media-heading{:style => "padding-bottom:0;padding-top:18px"} {{ person.name }}
+          {{ person.title }}
+          %br
+          {{ person.email }}
+          {% if person.keynote != '' and person.keynote != null %}
+          %hr{:style => "margin: 10px 0px"}
+          %p{:style => "color:gray;margin-bottom:0px"} "{{ person.keynote }}"
+          {% endif %}
+    %hr
+    {% endfor %}
 
 {% endblock %}

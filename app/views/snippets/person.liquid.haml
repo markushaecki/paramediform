@@ -1,0 +1,14 @@
+.media
+  .media-body
+    .col-sm-12.col-xs-12
+      .pull-left{:style => "margin-right:20px"}
+        .img-box
+          %a{ href: '{{ person.picture.url }}' }
+            %img.img-responsive.media-object{ src: '{{ person.picture.url | resize: "130x180#" }}' }
+            %br
+      %h4.media-heading{:style => "padding-bottom:0"} {{ person.name }}
+      {{ person.title }}
+      {% if person.keynote != '' and person.keynote != null %}
+      %hr{:style => "margin: 10px 0px"}
+      %p{:style => "color:gray;margin-bottom:0px"} "{{ person.keynote }}"
+      {% endif %}

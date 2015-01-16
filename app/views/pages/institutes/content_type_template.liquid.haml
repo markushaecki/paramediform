@@ -34,11 +34,7 @@ handle: institute_layout
       %p.text-center.image_with_background
         %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&scale=2&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
       .row.detailed_institute_info
-        .col-sm-4.col-xs-12.col-md-4
-          %p {{ information.name }}
-          %p {{ information.street }}
-          %p {{ information.city }}
-        .col-sm-4.col-xs-12.col-md-4
+        .col-sm-12.col-xs-12
           %ul.pager{:style => "margin-top:0px;margin-bottom:0px" }
             %li
               %a{ href: "", :id => "zoom-out" }
@@ -46,7 +42,11 @@ handle: institute_layout
             %li
               %a{ href: "", :id => "zoom-in" }
                 %b +
-        .col-sm-4.col-xs-12.col-md-4
+        .col-sm-6.col-xs-6.col-md-6{:style => "padding-right:0"}
+          %p {{ information.name }}
+          %p {{ information.street }}
+          %p {{ information.city }}
+        .col-sm-6.col-xs-6.col-md-6{:style => "padding-left:0"}
           .text-right
             {% if information.phone != '' and information.phone != null %}
             %p {{ "label_phone" | translate }} {{ information.phone }}
@@ -57,12 +57,11 @@ handle: institute_layout
             {% if information.email != '' and information.email != null %}
             %p {{ information.email }}
             {% endif %}
-
 %br
 
 .row
   .col-sm-12.col-xs-offset-0.col-xs-12
-    %ul.nav.nav-tabs
+    %ul.nav.nav-pills
       {% fetch_page institute_layout as root_page %}
 
       /%li{ class: "{% if page.handle == 'institute_layout' %}active{% endif %}" }

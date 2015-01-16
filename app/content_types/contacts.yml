@@ -1,0 +1,129 @@
+# Human readable name of this type
+name: kontakt
+
+# Lowercase, underscored handle used to access this type
+slug: contacts
+
+# Explanatory text displayed in the back-office
+description: Kontaktanfragen welche über die Homepage eintreffen.
+
+# Slug of field used to identify entries by default, such as the title
+label_field_name: surname
+
+# Valid values: manually, created_at, updated_at, or the slug of any field
+order_by: manually
+
+# Valid values: asc (ascending) and desc (descending). Set to asc by default.
+# order_direction: asc
+
+# Specify a field slug to group entries by that field in the back-office.
+# group_by: <your field>
+
+# Activate public 'create' API (e.g for a contact form)
+public_submission_enabled: true
+
+# Array of emails to be notified of new entries made with the public API
+# public_submission_accounts: ['john@example.com']
+
+# A list describing each field
+fields:
+- subject: # The lowercase, underscored name of the field
+    label: Thema # Human readable name of the field
+    type: select
+    select_options: ["Ich möchte eine kostenlose Beratung!", "Terminvereinbarung", "Fragen zur ParaMediForm-Methode", "Rückmeldung", "Anderes Thema"]
+    required: true
+    hint: Anrede
+    localized: false
+
+- salutation: # The lowercase, underscored name of the field
+    label: Anrede # Human readable name of the field
+    type: select
+    select_options: ["Frau","Herr"]
+    required: true
+    hint: Anrede
+    localized: false
+
+- surname: # The lowercase, underscored name of the field
+    label: Vorname # Human readable name of the field
+    type: string
+    required: true
+    hint: Vorname
+    localized: false
+
+- lastname: # The lowercase, underscored name of the field
+    label: Nachname # Human readable name of the field
+    type: string
+    required: true
+    hint: Vorname
+    localized: false
+
+- address: # The lowercase, underscored name of the field
+    label: Adresse # Human readable name of the field
+    type: string
+    required: true
+    hint: Adresse
+    localized: false
+
+- housenumber: # The lowercase, underscored name of the field
+    label: Hausnummer # Human readable name of the field
+    type: string
+    required: true
+    hint: Hausnummer
+    localized: false
+
+- zipcode: # The lowercase, underscored name of the field
+    label: PLZ # Human readable name of the field
+    type: string
+    required: true
+    hint: Postleitzahl
+    localized: false
+
+- place: # The lowercase, underscored name of the field
+    label: Ort # Human readable name of the field
+    type: string
+    required: true
+    hint: Ort
+    localized: false
+
+- phone: # The lowercase, underscored name of the field
+    label: Telefonnummer # Human readable name of the field
+    type: string
+    required: true
+    hint: Handy oder Festnetz
+    localized: false
+
+- email: # The lowercase, underscored name of the field
+    label: E-Mail Adresse # Human readable name of the field
+    type: string
+    required: true
+    hint: E-Mail Adresse
+    localized: false
+
+- existing_customer:
+    label: Ich bin oder war bereits Kundin oder Kunde bei ParaMediForm. # Human readable name of the field
+    type: boolean
+    required: false
+    hint: Ich bin oder war bereits Kundin oder Kunde bei ParaMediForm.
+    localized: false
+
+- message:
+    label: Nachricht
+    type: text
+    required: false
+    hint: Additional information on the reason of contact.
+    localized: false
+
+- type_of_contact: # The lowercase, underscored name of the field
+    label: Kontaktaufnahme # Human readable name of the field
+    type: select
+    select_options: ["Bitte kontaktieren sie mich per E-Mail","Bitte kontaktieren sie mich per Telefon"]
+    required: false
+    hint: Anrede
+    localized: false
+
+- newsletter:
+    label: Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm. # Human readable name of the field
+    type: boolean
+    required: false
+    hint: Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm.
+    localized: false

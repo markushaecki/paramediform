@@ -1,6 +1,6 @@
-- "Recipe 1":
+- "Pouleteintopf mit Reis":
     image: "/samples/recipe.jpg" # Path to a file in the public/samples folder or to a remote and external file.
-    preparation: "Rerum enim dolorem adipisci atque illo et. Perspiciatis qui atque blanditiis ex et eaque natus ut. Sit quae et soluta et dicta nemo minima qui."
+    preparation: "Gemüse in kleine Streifen schneiden. Zwiebel und Knoblauch hacken. Alles in einem grossen Topf andünsten. Poulet anbraten und zum Gemüse geben. Alles weich kochen und dazu Reis servieren (2-4 EL pro Person). (Rezept für 4 Personen)"
 
 - "Recipe 2":
     image: "/samples/recipe.jpg" # Path to a file in the public/samples folder or to a remote and external file.

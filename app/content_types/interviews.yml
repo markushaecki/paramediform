@@ -31,14 +31,14 @@ fields:
     label: Title # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: Die Überschrift des Interviews
     localized: false
 
 - description: # The lowercase, underscored name of the field
     label: Description # Human readable name of the field
     type: text
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Eine kurze Einleitung zum Intwerview.
     localized: false
     text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
@@ -46,22 +46,22 @@ fields:
     label: Image # Human readable name of the field
     type: file
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Ein Bild welches dem Interview eine Stimmung verleiten soll. (Optional!)
     localized: false
 
 - person: # The lowercase, underscored name of the field
-    label: Person # Human readable name of the field
+    label: Interviewte Person # Human readable name of the field
     type: belongs_to
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Die Person welche die Fragen beantwortet. Die Person muss zuerst separat angelegt werden. (Optional!)
     localized: false
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: people
 
 - questions:
-    label: questions
+    label: Frage Antwort Liste
     type: has_many
-    hint: List of questions
+    hint: Liste der Fragen und Antworten zum
     localized: false
     class_name: interview_questions
     inverse_of: interview

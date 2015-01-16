@@ -31,29 +31,29 @@ fields:
     label: Name # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: Vor und Nachname der Person
     localized: true
-
-- title: # The lowercase, underscored name of the field
-    label: Title # Human readable name of the field
-    type: string
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - picture: # The lowercase, underscored name of the field
     label: Bild # Human readable name of the field
     type: file
-    required: false
-    hint: Explanatory text displayed in the back office
+    required: true
+    hint: Ein Portrait der Person im Möglichst im jpg Format BxH 520x720
     localized: false
+
+- title: # The lowercase, underscored name of the field
+    label: Titel # Human readable name of the field
+    type: string
+    required: false
+    hint: Der Titel beschreibt die Funktion oder Ausbildung welche die Person auszeichnet.
+    localized: false
+    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - email: # The lowercase, underscored name of the field
     label: E-Mail Adresse # Human readable name of the field
     type: email
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: E-Mail Adresse über welche die Person direkt zu erreichen ist.
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
@@ -68,6 +68,6 @@ fields:
     label: Leitmotiv # Human readable name of the field
     type: text
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Das Leitmotiv ist ein Satz welcher etwas interessantes oder lustiges aussagt und hinter welchem die entsprechende Person vollkommen dahinter stehen kann.
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)

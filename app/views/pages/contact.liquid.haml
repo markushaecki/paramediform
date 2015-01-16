@@ -1,0 +1,77 @@
+---
+title: Kontakt
+published: true
+slug: kontakt
+listed: true
+position: 5
+---
+{% extends parent %}
+
+{% block content/main/tab_pane %}
+{% model_form 'contacts', class: 'form-horizontal', success: '/welcome', error: '/error' %}
+%legend Thema
+.row{:style => "margin-bottom: 20px"}
+  .col-sm-6.col-xs-12
+    .radio
+      %label
+        %input{:type => "radio", :name => "content[subject]", :value => "Ich möchte eine kostenlose Beratung!"} Möchte eine kostenlose Beratung!
+    .radio
+      %label
+        %input{:type => "radio", :name => "content[subject]", :value => "Terminvereinbarung"} Terminvereinbarung
+    .radio
+      %label
+        %input{:type => "radio", :name => "content[subject]", :value => "Fragen zur ParaMediForm-Methode"} Fragen zur Methode
+  .col-sm-6.col-xs-12
+    .radio
+      %label
+        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Rückmeldung
+    .radio
+      %label
+        %input{:type => "radio", :name => "content[subject]", :value => "Anderes Thema"} Anderes Thema
+
+%legend Absender
+.row
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[surname]", :placeholder => "Vorname"}
+    %br
+    %input{:class => "form-control", :type => "text", :name => "content[address]", :placeholder => "Adresse"}
+    %br
+    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :placeholder => "PLZ"}
+    %br
+    %input{:class => "form-control", :type => "text", :name => "content[phone]", :placeholder => "Telefon"}
+    %br
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[lastname]", :placeholder => "Nachname"}
+    %br
+    %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :placeholder => "Hausnummer"}
+    %br
+    %input{:class => "form-control", :type => "text", :name => "content[place]", :placeholder => "Ort"}
+    %br
+    %input{:class => "form-control", :type => "text", :name => "content[email]", :placeholder => "E-Mail"}
+    %br
+  .col-sm-12.col-xs-12
+    .checkbox
+      %label
+        %input{:type => "checkbox", :name => "content[existing_customer]"} Ich bin oder war bereits Kundin oder Kunde bei ParaMediForm.
+    %br
+%legend Nachricht
+%textarea{:class => "form-control", :name => "content[message]", :value => "{{customer_message.name}}" } {{customer_message.message}}
+%br
+%legend Kontaktaufnahme
+.radio
+  %label
+    %input{:type => "radio", :name => "content[type_of_contact]", :value => "E-Mail"} Bitte kontaktieren sie mich per E-Mail
+.radio
+  %label
+    %input{:type => "radio", :name => "content[type_of_contact]", :value => "Telefon"} Bitte kontaktieren sie mich per Telefon
+%br
+.checkbox
+  %label
+    %input{:type => "checkbox", :name => "content[newsletter]", :checked => "yes"} Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm.
+%br
+%br
+.text-center
+  %button{ :class => "btn btn-primary", :type => "submit"} Senden
+{% endmodel_form %}
+  
+{% endblock %}

@@ -182,10 +182,19 @@ div.detailed_institute_info p{
     border-bottom: 1px solid #DDD !important;
 }
 
+.nav-pills a{
+	font-size: 15px;
+}
+
 .navbar-nav.nav-justified > li{
     float:none;
 }
 
 ul.dropdown-menu{
 	text-align: center;
+}
+
+legend{
+	font-size: 14px !important;
+	color: gray !important;
 }
