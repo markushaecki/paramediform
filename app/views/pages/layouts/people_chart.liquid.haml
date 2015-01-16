@@ -6,9 +6,9 @@ is_layout: true
 {% extends layouts/double-columns %}
 {% block content/main %}
 
-{% capture group %}{% editable_text "Gruppenzugehörigkeit", format: "raw", line_break: false, rows: 1 %}Hello{% endeditable_text %}{% endcapture%}
-{% with_scope tags.in:group %}
-{% assign people_in_group = contents.people %}
+{% capture group %}{% editable_text "Gruppenzugehörigkeit", format: "raw", line_break: false, rows: 1 %}Beirat{% endeditable_text %}{% endcapture%}
+{% with_scope tags:group %}
+{% assign people_in_group = contents.people.all %}
 {% endwith_scope %}
 
 .paddingbox

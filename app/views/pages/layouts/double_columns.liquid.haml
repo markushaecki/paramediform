@@ -24,7 +24,7 @@ handle: double_columns_layout
       / contact block
       {% capture enable_contact %}{% editable_control "contact", options: 'true=Yes,false=No', hint: "Tell if the contact block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
       {% if enable_contact == "true" %}
-      %a{ href: '#' }
+      %a{ href: '{% path_to contact_form %}' }
         .contact.well
           %h3.text-center
             {{ 'sidebar_contact_title' | translate }}

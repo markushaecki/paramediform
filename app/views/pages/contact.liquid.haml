@@ -1,20 +1,19 @@
 ---
 title: Kontakt
-published: true
 slug: kontakt
-listed: true
-position: 5
+published: true
+handle: contact_form
 ---
-{% extends parent %}
+{% extends layouts/double-columns %}
 
-{% block content/main/tab_pane %}
+{% block content/main %}
 {% model_form 'contacts', class: 'form-horizontal', success: '/welcome', error: '/error' %}
+%h2 Hiermit kontaktieren Sie die Systemzentrale:
+%br
+
 %legend Thema
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
-    .radio
-      %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Ich möchte eine kostenlose Beratung!"} Möchte eine kostenlose Beratung!
     .radio
       %label
         %input{:type => "radio", :name => "content[subject]", :value => "Terminvereinbarung"} Terminvereinbarung

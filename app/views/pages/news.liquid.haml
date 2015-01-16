@@ -38,12 +38,16 @@ editable_elements:
 {% else %}
 
 {% assign current_page = params.page | default: 1 %}
-{% with_scope order_by: 'published_at desc', published_at.lt: today, tags.in: params.tag %}
-{% assign all_news = contents.news %}
-{% endwith_scope %}
-
+{% if params.tag == empty %}
+{% with_scope order_by: 'published_at desc', published_at.lt: today %}
+{% assign news = contents.news.all %}
 {% paginate all_news by 10 %}
-
+{% endwith_scope %}
+{% else %}
+{% with_scope order_by: 'published_at desc', published_at.lt: today, tags: params.tag %}       {% assign news = contents.news.all %}
+{% paginate all_news by 10 %}
+{% endwith_scope %}
+{% endif %}
 
 %br
 %ul.media-list
