@@ -8,7 +8,9 @@ handle: contact_form
 
 {% block content/main %}
 
-{% if contact.errors %}
+{% if contact %}
+
+{% if contact.errors.size > 0 %}
 .alert.alert-warning
   %strong The following errors occured:
   %ul
@@ -20,9 +22,17 @@ handle: contact_form
       {{ 'contact_label_is_required' | translate }}
     {% endunless %}
     {% endfor %}
+
+{% else %}
+
+.alert.alert-success
+  %strong Hi {{ contact.surname }} {{ contact.lastname }}, your form has been correctly submitted.
+
 {% endif %}
 
-{% model_form 'contacts', class: 'form-horizontal', success: '/welcome' %}
+{% endif %}
+
+{% model_form 'contacts', class: 'form-horizontal' %}
 %h2 Hiermit kontaktieren Sie die Systemzentrale:
 %br
 
