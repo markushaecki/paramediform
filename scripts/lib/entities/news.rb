@@ -1,6 +1,7 @@
 require 'date'
 require File.dirname(__FILE__) + '/extensions/api.rb'
 
+# social_media
 class News < Struct.new(:_id, :title, :slug, :type)
 
   include Entities::Extensions::Api
@@ -15,13 +16,14 @@ class News < Struct.new(:_id, :title, :slug, :type)
     # post to Twitter
     begin
       twitter_client.update(self.message)
+
+      # toggle the tweeted flag so that the news does not get tweeted twice
+      self.api.update('content_types/news/entries', _id, { tweeted: true })
+
       true
     rescue Exception => e
       raise Exception.new('Unable to update the message on Twitter')
     end
-
-    # toggle the tweeted flag so that the news does not get tweeted twice
-    self.api.update('content_types/news/entries', _id, { tweeted: true })
   end
 
   def self.untweeted
@@ -33,7 +35,7 @@ class News < Struct.new(:_id, :title, :slug, :type)
 
     self.new(
       attributes['_id'],
-      attributes['_label'],
+      attributes['social_media'],
       attributes['_slug'],
       detect_type(attributes))
   end

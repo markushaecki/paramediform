@@ -12,10 +12,24 @@ class PostToTwitterCommand < BaseCommand
     # open a session to the main site
     self.authenticate
 
-    Institute.all.each do |institute|
-      logger.log_action 'processing', institute.name
+    tweet_all_untweeted_news_from_corporate
 
-      self.tweet_all_untweeted_news(institute)
+    if false # do not tweet institute news
+      Institute.all.each do |institute|
+        logger.log_action 'processing', institute.name
+
+        self.tweet_all_untweeted_news(institute)
+      end
+    end
+  end
+
+  def tweet_all_untweeted_news_from_corporate
+    News.untweeted.each do |news|
+      news.url = corporate_url + "/aktuelles?slug=#{news.slug}&type=#{news.type}"
+
+      logger.log_action "\ttweeting", %("#{news.message}")
+
+      news.post!(twitter_client)
     end
   end
 
@@ -43,7 +57,11 @@ class PostToTwitterCommand < BaseCommand
   end
 
   def twitter_config(key)
-    self.settings['twitter'][key.to_s]
+    if _config = self.settings['twitter']
+      _config[key.to_s]
+    else
+      raise 'Missing twitter section in the settings.yml file'
+    end
   end
 
 end
