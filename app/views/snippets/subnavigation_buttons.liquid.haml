@@ -1,15 +1,20 @@
-%ul.pager{:style => "{{pagerstyle}}" }
-  %li.previous
+.row
+  .col-sm-4.col-xs-12.text-center
     {% if before_url != null %}
-    %a{ href: "{{ before_url }}" } &larr; {{ "button_before" | translate }}
-    {% else %}
-    %span{:style =>"width:120px;border:none"}
+    %div{:style => "margin-bottom:10px"}
+      %ul.pager{:style => "{{pagerstyle}};display: inline" }
+        %li
+          %a{ href: "{{ before_url }}" } &larr; {{ "button_before" | translate }}
     {% endif %}
-  %li
-    %a{ href: "{{ path }}" } {{ "button_back" | translate }}
-  %li.next
+  .col-sm-4.col-xs-12.text-center
+    %div{:style => "margin-bottom:10px"}
+      %ul.pager{:style => "{{pagerstyle}}; display: inline" }
+        %li
+          %a{ href: "{{ path }}" } {{ "button_back" | translate }}
+  .col-sm-4.col-xs-12.text-center
     {% if after_url != null %}
-    %a{ href: "{{ after_url }}" } {{ "button_next" | translate }} &rarr;
-    {% else %}
-    %span{:style =>"width:120px;border:none"}
+    %div{:style => "margin-bottom:10px"}
+      %ul.pager{:style => "{{pagerstyle}}; display: inline" }
+        %li
+          %a{ href: "{{ after_url }}" } {{ "button_next" | translate }} &rarr;
     {% endif %}

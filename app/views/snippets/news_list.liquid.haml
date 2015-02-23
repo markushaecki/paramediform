@@ -1,0 +1,48 @@
+{% paginate contents.news by 10 %}
+%ul.media-list
+  {% if params.tag %}
+  %div.text-center
+    .tags.text-center{:style => "margin-bottom:5px"}
+      %a.label.label-primary.tag{ href: "{{ path }}" } {{ params.tag }} X
+  {% endif %}
+  
+  {% for news_entry in paginate.collection %}
+  {% if news_entry.interview %}
+  {% assign type = "interview" %}
+  {% elsif news_entry.illustrative_text %}
+  {% assign type = "illustrative_text" %}
+  {% elsif news_entry.recipe %}
+  {% assign type = "recipe" %}
+  {% endif %}
+  .media
+    .pull-right
+      {{ news_entry.published_at | localized_date: '%d.%m.%Y' }}
+    .media-body
+      %h5
+        %a{ href: "?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}" } {{ news_entry.title }}
+      {% if news_entry.tags %}
+      .tags{:style => "margin:7px 7px;"}
+        %span.glyphicon.glyphicon-tags
+        &nbsp;
+        {% for tag in news_entry.tags %}
+        %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
+        &nbsp;
+        {% endfor %}
+      {% endif %}
+      .text
+        {{ news_entry.text | truncate: 170 }}
+
+    %hr{:style => "margin-bottom:0px"}
+  {% endfor %}
+  
+  {% if paginate.total_pages != 1 %}
+  {% if params.tag == blank %}
+  {% capture tag_params %}{% endcapture %}
+  {% else %}
+  {% capture tag_params %}&tag={{ params.tag | encode }}{% endcapture %}
+  {% endif %}
+  .text-center
+    {% include pagination with pagination: paginate, other_params: tag_params %}
+  {% endif %}
+  
+{% endpaginate %}

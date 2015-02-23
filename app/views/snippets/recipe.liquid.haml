@@ -1,5 +1,4 @@
 {% assign recipe = news.recipe %}
-{% include news_header %}
 .thumbnail
   .img-box
     %a{ href: '{{ recipe.image.url }}' }
@@ -21,8 +20,7 @@
             {{ ingredient.name }}
         {% endfor %}
   .col-sm-6.col-xs-12
-    .text-justify
-      / PREPARATION
-      %br
-      {{ recipe.preparation }}
+    / PREPARATION
+    %br
+    {{ recipe.preparation }}
 %br

@@ -25,7 +25,9 @@ editable_elements:
 {% assign this_news = data.news_entry %}
 {% endconsume %}
 
-{% include generate_subnavigation with all:news, this:this_news %}
+{% include news_header %}
+
+{% include generate_main_subnavigation with all:contents.news, this:this_news %}
 {% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
 
 {% if this_news.interview %}
@@ -44,14 +46,11 @@ editable_elements:
 
 {% else %}
 
-
 %ul.media-list
   {% if params.tag %}
-  .tags
-    Diese Seite ist gefiltert nach:
-    %span.label.label-primary.tag {{ params.tag }}
-    %a{ href: "{{ path }}", :style => "float:right"} Filter entfernen
-  {{ news_entry.slug }}
+  %div.text-center
+    .tags.text-center{:style => "margin-bottom:5px"}
+      %a.label.label-primary.tag{ href: "{{ path }}" } {{ params.tag }} X
   {% endif %}
   {% for news_entry in news %}
   .media

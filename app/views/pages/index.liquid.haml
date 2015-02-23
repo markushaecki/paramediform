@@ -53,13 +53,31 @@ editable_elements:
       .col-sm-1.col-md-3.col-xs-12
     %br
     %br
+	
 .row
-  .col-sm-12.col-xs-12
+  .col-sm-6.col-xs-12
+    %h3 {% editable_text methology_title, format: "raw", line_break: false, rows: 1 %}Die Methode funktioniert bei "praktisch" allen{% endeditable_text %}
+    %br
+    %p{:style => "font-size:14px"} {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}
+    %br
+    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'", :style => "float:right"} Mehr Info...
+
+  .col-sm-6.col-xs-12
+    %h3 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}
+    %br
+    %p{:style => "font-size:14px"} {% editable_text scinence_text, format: "raw", line_break: false, rows: 1 %}Ananas ist nicht nur lecker, sie enthält auch zahlreiche Vitalstoffe und Enzyme und fördert die Verdauung. Seefahrer brachten die Ananas im Jahre 1535 ...{% endeditable_text %}
+    %br
+    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'", :style => "float:right"} Mehr Info...
+%br
+%br
+
+.row
+  .col-sm-6.col-xs-12
     %h3 {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
     %a{ href: '{% path_to institutes %}#successstories'}
       {% include before_after_front %}
 
-  .col-sm-12.col-xs-12
+  .col-sm-6.col-xs-12
     %h3 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Über 50 Institute in Ihrer Nähe{% endeditable_text %}
     .thumbnail
       .text-center#institutes_map
@@ -71,22 +89,7 @@ editable_elements:
           .glyphicon.glyphicon-asterisk
         {% endfor %}
 	
-%br
-%br
 
-.row
-  .col-sm-6.col-xs-12
-    %h3 {% editable_text methology_title, format: "raw", line_break: false, rows: 1 %}Die Methode funktioniert bei "praktisch" allen{% endeditable_text %}
-    %br
-    %p{:style => "font-size:14px"} {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}
-    %br
-    %br
-    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'"} Mehr informationen...
-
-  .col-sm-6.col-xs-12
-    %h3 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}
-    %br
-    %p{:style => "font-size:14px"} {% editable_text scinence_text, format: "raw", line_break: false, rows: 1 %}Ananas ist nicht nur lecker, sie enthält auch zahlreiche Vitalstoffe und Enzyme und fördert die Verdauung. Seefahrer brachten die Ananas im Jahre 1535 ...{% endeditable_text %}
 
 
 

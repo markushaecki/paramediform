@@ -20,7 +20,7 @@
 		overflow : false,
 		// this function is called after content is columnized
 		doneFunc : function(){},
-		// if the content should be columnized into a
+		// if the content should be columnized into a 
 		// container node other than it's own node
 		target : false,
 		// re-columnizing when images reload might make things
@@ -119,7 +119,7 @@
 		 * is a text node, then it will try to split that text node. otherwise
 		 * it will leave the node in $pullOutHere and return with a height
 		 * smaller than targetHeight.
-		 *
+		 * 
          * Returns a boolean on whether we did some splitting successfully at a text point
          * (so we know we don't need to split a real element). return false if the caller should
          * split a node if possible to end this column.
@@ -207,7 +207,7 @@
 		}
 
 		/**
-		 * Split up an element, which is more complex than splitting text. We need to create
+		 * Split up an element, which is more complex than splitting text. We need to create 
 		 * two copies of the element with it's contents divided between each
 		 */
 		function split($putInHere, $pullOutHere, $parentColumn, targetHeight){
@@ -258,7 +258,7 @@
 					}else if($clone.is("img") || $cloneMe.hasClass(prefixTheClassName("dontsplit"))){
 						//
 						// it's either an image that's too tall, or an unsplittable node
-						// that's too tall. leave it in the pullOutHere and we'll add it to the
+						// that's too tall. leave it in the pullOutHere and we'll add it to the 
 						// next column
 						$clone.remove();
 					}else{
@@ -418,7 +418,7 @@
 			}
 
 			//
-			// We loop as we try and workout a good height to use. We know it initially as an average
+			// We loop as we try and workout a good height to use. We know it initially as an average 
 			// but if the last column is higher than the first ones (which can happen, depending on split
 			// points) we need to raise 'adjustment'. We try this over a few iterations until we're 'solid'.
 			//
@@ -497,7 +497,7 @@
 					}
 				}
 				if(options.overflow && !scrollHorizontally){
-					var IE6 = false;
+					var IE6 = false /*@cc_on || @_jscript_version < 5.7 @*/;
 					var IE7 = (document.all) && (navigator.appVersion.indexOf("MSIE 7.") != -1);
 					if(IE6 || IE7){
 						var html = "";

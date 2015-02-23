@@ -8,6 +8,7 @@
       %a{ href: '{{ success_story.after_image.url }}' }
         %img{ src: '{{ success_story.after_image.url | resize: "960x1280#" }}', :style => "float:left;max-width:50%" }  
     .clearfix
+    %br
     {% include subnavigation_buttons %}
     .story_title{:style => "text-weight:bold;margin-bottom:20px"}{{ success_story.experience_title }}
     %table.round-corner-table{:style => "width:100%;background-color:#FFF6FC"}
