@@ -1,0 +1,54 @@
+---
+title: Aktuelles
+slug: aktuelles
+published: true
+handle: news
+listed: true
+position: 2
+editable_elements:
+  "content/sidebar/contact": "false"
+---
+{% extends layouts/double-columns %}
+
+{% block content/main %}
+
+{% if params.slug and params.type %}
+
+{% with_scope _slug: params.slug, published_at.lt: today %}
+{% assign this_news = contents.news.first %}
+{% endwith_scope %}
+
+{% include news_header %}
+
+{% include generate_main_subnavigation with all:contents.news, this:this_news %}
+{% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
+
+{% if this_news.interview %}
+{% include interview with news:this_news %}
+{% elsif this_news.recipe %}
+{% include recipe with news:this_news %}
+{% elsif this_news.illustrative_text %}
+{% include illustrative_text with news:this_news %}
+{% else %}
+
+/ # UNSUPPORTED
+.well
+  %h2 Unsupported type of news
+
+{% endif %}
+
+{% else %}
+
+{% assign current_page = params.page | default: 1 %}
+{% if params.tag == null %}
+{% with_scope order_by: 'published_at desc', published_at.lt: today %}
+{% include news_list %}
+{% endwith_scope %}
+{% else %}
+{% with_scope order_by: 'published_at desc', published_at.lt: today, tags: params.tag %}
+{% include news_list %}
+{% endwith_scope %}
+{% endif %}
+
+{% endif %}
+{% endblock %}
