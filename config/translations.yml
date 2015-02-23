@@ -87,3 +87,12 @@ navigation_loose_weight:
   de: Abnehmen
   en: Weight loss
 
+contact_label_is_required:
+  de: ist erforderlich
+  en: is required
+
+contact_labels_salutation:
+  de: Anrede
+  en: Title
+
+

@@ -21,6 +21,13 @@ class ParaMediFormCLI < Thor
     run :index_contents, env
   end
 
+  desc 'push_all', 'Deploy all the institutes (but without the data) to the Engine'
+  def push_all
+    require File.dirname(__FILE__) + "/lib/commands/push_all_command.rb"
+    command = PushAllCommand.new(load_settings('institute_path'), logger)
+    run_cmd(command)
+  end
+
   private
 
   def run(name, env)
@@ -29,6 +36,10 @@ class ParaMediFormCLI < Thor
     klass = "#{name.to_s.camelize}Command".constantize
     command = klass.new(load_settings(env), engine_api, logger)
 
+    run_cmd(command)
+  end
+
+  def run_cmd(command)
     benchmark { command.run }
   rescue Exception => e
     handle_exception(e)

@@ -9,12 +9,15 @@ handle: contact_form
 {% block content/main %}
 
 {% if contact.errors %}
-.alert.alert-success
+.alert.alert-warning
   %strong The following errors occured:
   %ul
     {% for error in contact.errors %}
-    {% unless error[0] == '_slug '%}
-    %li {{error[0] | capitalize}} -  {{error[1]}}
+    {% unless error[0] == '_slug' %}
+    %li
+      {{ error[0] | prepend: 'contact_labels_' | translate }}
+      &nbsp;
+      {{ 'contact_label_is_required' | translate }}
     {% endunless %}
     {% endfor %}
 {% endif %}
