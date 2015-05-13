@@ -19,7 +19,7 @@ class ParaMediFormCLI < Thor
     run :post_to_twitter, env
   end
 
-  desc 'index_contents ENV', 'Copy the searchable contents from the institues to the corporate website. ENV can be either development (default) or production.'
+  desc 'index_contents ENV', 'Copy the searchable contents from the institutes to the corporate website. ENV can be either development (default) or production.'
   def index_contents(env = 'development')
     run :index_contents, env
   end
