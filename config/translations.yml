@@ -95,4 +95,6 @@ contact_labels_salutation:
   de: Anrede
   en: Title
 
-
+following_errors_occured:
+  de: Nachfolgende Fehler sind aufgetreten
+  en: The following errors occured

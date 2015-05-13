@@ -6,13 +6,17 @@ handle: contact_form
 ---
 {% extends layouts/double-columns %}
 
+{% block header %}
+{{ 'jquery.steps.min.js' | javascript_tag }}
+{% endblock %}
+
 {% block content/main %}
 
 {% if contact %}
 
 {% if contact.errors.size > 0 %}
 .alert.alert-warning
-  %strong The following errors occured:
+  %strong {{ 'following_errors_occured' | translate }}:
   %ul
     {% for error in contact.errors %}
     {% unless error[0] == '_slug' %}
@@ -64,22 +68,24 @@ handle: contact_form
 .row
   .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[surname]", :placeholder => "Vorname"}
-    %br
-    %input{:class => "form-control", :type => "text", :name => "content[address]", :placeholder => "Adresse"}
-    %br
-    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :placeholder => "PLZ"}
-    %br
-    %input{:class => "form-control", :type => "text", :name => "content[phone]", :placeholder => "Telefon"}
-    %br
   .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[lastname]", :placeholder => "Nachname"}
-    %br
+.row
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[address]", :placeholder => "Adresse"}
+  .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :placeholder => "Hausnummer"}
-    %br
+.row
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :placeholder => "PLZ"}
+  .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[place]", :placeholder => "Ort"}
-    %br
+.row
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[phone]", :placeholder => "Telefon"}
+  .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[email]", :placeholder => "E-Mail"}
-    %br
+.row
   .col-sm-12.col-xs-12
     .checkbox
       %label

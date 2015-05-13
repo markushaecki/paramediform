@@ -194,7 +194,18 @@ ul.dropdown-menu{
 	text-align: center;
 }
 
+input.form-control{
+	margin-bottom:15px;
+}
+
+form.form-horizontal{
+	padding:20px;
+	border: 1px solid #CBCBCB;
+	@include border-radius(5px);
+}
+
 legend{
 	font-size: 14px !important;
-	color: gray !important;
+	color: #F83CA4 !important;
+	border-bottom: 1px solid #F83CA4 !important;
 }

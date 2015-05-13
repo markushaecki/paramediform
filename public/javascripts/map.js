@@ -1,14 +1,25 @@
 $(window).load(function() {
-  arrange_institute_links();
+	arrange_institute_links();
+	$("#indicator").activity(false);
+	$("#institutes_map a div").css("color", "#F83CA4");
 });
 
 $(document).ready(function() {
-  $("#institutes_map a").each(function() {
+ 	$("#institutes_map a").each(function() {
 		$(this).tooltipsy({
 		    alignTo: 'cursor',
 		    offset: [10, 10],
 		});
-  });
+	});
+	
+	setTimeout(function() {
+		var width = $("#institutes_map_img").width();
+		var height = $("#institutes_map_img").height();	
+		$("#indicator").css("top",height/2);
+		$("#indicator").css("left",width/2);
+		$("#indicator").activity();
+	}, 100);
+	$("#institutes_map a div").css("color", "white");
 
 	$(window).resize(function() {
 		arrange_institute_links();

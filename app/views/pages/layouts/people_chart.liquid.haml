@@ -2,6 +2,7 @@
 title: Auflistung von Personen
 published: false
 is_layout: true
+position: 10
 ---
 {% extends layouts/double-columns %}
 {% block header %}
@@ -16,7 +17,7 @@ is_layout: true
 
 .paddingbox
   %h1{:style => "padding-left:0"} {% editable_text "Titel der Gruppe", format: "raw", line_break: false, rows: 1 %}Gruppentitel{% endeditable_text %}
-  #column {% editable_text "Gruppenbeschreibung" %}Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie  {% endeditable_text %}
+  #column {% editable_text "Gruppenbeschreibung" %}Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie {% endeditable_text %}
   %br
   %ul.media-list
     {% for person in people_in_group %}

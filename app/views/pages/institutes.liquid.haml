@@ -11,13 +11,15 @@ editable_elements:
 
 {% block header %}
 {{ 'map.js' | javascript_tag }}
+{{ 'jquery.activity-indicator.min.js' | javascript_tag }}
 {% endblock %}
 
 {% block content/main %}
 
 
 .text-center#institutes_map
-  %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
+  %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
+  %span.text-center#indicator{:style => "top:100px;display:inline"}
   %br
   %br
   {% for institute in contents.institutes %}

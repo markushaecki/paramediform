@@ -7,14 +7,29 @@ position: 5
 ---
 {% extends parent %}
 
+{% block header %}
+{{ 'jquery.steps.min.js' | javascript_tag }}
+{% endblock %}
+
 {% block content/main/tab_pane %}
-{% model_form 'contacts', class: 'form-horizontal', success: '/welcome', error: '/error' %}
+{% if contact.errors %}
+.alert.alert-warning
+  %strong {{ 'following_errors_occured' | translate }}:
+  %ul
+    {% for error in contact.errors %}
+    {% unless error[0] == '_slug' %}
+    %li
+      {{ error[0] | prepend: 'contact_labels_' | translate }}
+      &nbsp;
+      {{ 'contact_label_is_required' | translate }}
+    {% endunless %}
+    {% endfor %}
+{% endif %}
+
+{% model_form 'contacts', class: 'form-horizontal', success: '/welcome' %}
 %legend Thema
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
-    .radio
-      %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Ich möchte eine kostenlose Beratung!"} Möchte eine kostenlose Beratung!
     .radio
       %label
         %input{:type => "radio", :name => "content[subject]", :value => "Terminvereinbarung"} Terminvereinbarung
@@ -32,23 +47,32 @@ position: 5
 %legend Absender
 .row
   .col-sm-6.col-xs-12
+    %select{ class: 'form-control', name: 'content[salutation]', placeholder: "Anrede" }
+      {% for option in contents.contacts.salutation_options %}
+      %option {{ option }}
+      {% endfor %}
+    %br
+.row
+  .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[surname]", :placeholder => "Vorname"}
-    %br
-    %input{:class => "form-control", :type => "text", :name => "content[address]", :placeholder => "Adresse"}
-    %br
-    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :placeholder => "PLZ"}
-    %br
-    %input{:class => "form-control", :type => "text", :name => "content[phone]", :placeholder => "Telefon"}
-    %br
   .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[lastname]", :placeholder => "Nachname"}
-    %br
+.row
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[address]", :placeholder => "Adresse"}
+  .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :placeholder => "Hausnummer"}
-    %br
+.row
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :placeholder => "PLZ"}
+  .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[place]", :placeholder => "Ort"}
-    %br
+.row
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[phone]", :placeholder => "Telefon"}
+  .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[email]", :placeholder => "E-Mail"}
-    %br
+.row
   .col-sm-12.col-xs-12
     .checkbox
       %label
@@ -74,5 +98,5 @@ position: 5
   %button{ :class => "btn btn-primary", :type => "submit"} Senden
 %br
 {% endmodel_form %}
-  
+
 {% endblock %}
