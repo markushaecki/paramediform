@@ -16,8 +16,12 @@ position: 10
 {% endwith_scope %}
 
 .paddingbox
-  %h1{:style => "padding-left:0"} {% editable_text "Titel der Gruppe", format: "raw", line_break: false, rows: 1 %}Gruppentitel{% endeditable_text %}
-  #column {% editable_text "Gruppenbeschreibung" %}Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie Hier wird beschrieben wie die Gruppe funktioniert und wie sie {% endeditable_text %}
+  %h1{:style => "padding-left:0"} {% editable_text "Titel der Gruppe", format: "raw", line_break: false, rows: 1 %}Franchisingbeirat: Gemeinsam Synergien nutzen{% endeditable_text %}
+  .textheader 
+  %b {% editable_text "Gruppenkurzbeschreibung" %}Der Beirat besteht aus mehreren demokratisch gewählten Institutsleitern und vertritt in der Systemzentrale die Interesse der einzelnen Institute.{% endeditable_text %}
+  %br
+  %br
+  #column {% editable_text "Gruppenbeschreibung" %}Der regelmässige Austausch von Informationen zwischen der Franchise-Zentrale und Franchisenehmerinnen und Franchisenehmer gehört zum Wesen eines funktionierenden Franchise-Systems. Die Bereitschaft zur Wahrung der Interessen und Belange der Franchisepartnerinnen und Franchisepartner durch ihre Einbindung bei Fragen von grundsätzlicher Bedeutung stellt ein wesentliches Element einer gelebten Partnerschaft dar. ParaMediForm hat einen Franchisebeirat mit ausgewählten Institutsleiterinnen gegründet. Das Ziel ist die Zusammenarbeit der Systemzentrale und der Partnerinnen und Partner zu stärken, damit u.a. flexibel auf die jeweiligen Marktbedürfnisse eingegangen werden kann.Dadurch entsteht ein konstruktiver Dialog über die Ziele der Unternehmung und die Weiterentwicklung des Systems und Kooperation der Partnerinnen und Partner kann sichergestellt werden. Auf Trends im Markt kann reagiert und somit die Marktchancen erhöht werden. In einem speziellen Turnus werden die Beiratsmitglieder gewählt.{% endeditable_text %}
   %br
   %ul.media-list
     {% for person in people_in_group %}

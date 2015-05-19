@@ -30,7 +30,7 @@ position: 5
         .contact.well
           %h3.text-center
             {{ 'sidebar_contact_title' | translate }}
-          %h3.text-center{:style => "color:black;text-decoration: none"}
+          %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
             %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
             %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
         {% endif %}
@@ -43,7 +43,29 @@ position: 5
           %h3.text-center
             {{ 'sidebar_institutes_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x40' }}", style: 'height: 20px' }
+            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x80' }}", style: 'height: 40px' }
+      {% endif %}
+
+      / paravita block
+      {% capture enable_paravita %}{% editable_control "paravita", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_paravita == "true" %}
+      %a{ href: '{% path_to institutes %}'}
+        .institutes.well
+          %h3.text-center
+            {{ 'sidebar_paravita_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px' }
+      {% endif %}
+
+      / parapan block
+      {% capture enable_parapan %}{% editable_control "parapan", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_paravita == "true" %}
+      %a{ href: '{% path_to institutes %}'}
+        .institutes.well
+          %h3.text-center
+            {{ 'sidebar_parapan_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_parapan.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px' }
       {% endif %}
 
       / selbststaendigkeit block
@@ -54,7 +76,7 @@ position: 5
           %h3.text-center
             {{ 'sidebar_selbststaendigkeit_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px' }
+            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x90' }}", style: 'height: 45px' }
       {% endif %}
 
       / news block
