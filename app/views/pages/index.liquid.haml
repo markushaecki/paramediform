@@ -11,6 +11,7 @@ editable_elements:
 
 {% block header %}
 {{ 'map.js' | javascript_tag }}
+{{ 'jquery.activity-indicator.min.js' | javascript_tag }}
 {% endblock %}
 
 {% block content %}
@@ -80,8 +81,9 @@ editable_elements:
   .col-sm-6.col-xs-12
     %h3 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Über 50 Institute in Ihrer Nähe{% endeditable_text %}
     .thumbnail
-      .text-center#institutes_map
-        %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
+      .text-center#institutes_map{:style => "position:relative"}
+        %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
+        %span.text-center#indicator{:style => "position:absolute"}
         %br
         %br
         {% for map_institute in contents.institutes %}

@@ -18,7 +18,7 @@ $(document).ready(function() {
 		$("#indicator").css("top",height/2);
 		$("#indicator").css("left",width/2);
 		$("#indicator").activity();
-	}, 100);
+	}, 150);
 	$("#institutes_map a div").css("color", "white");
 
 	$(window).resize(function() {

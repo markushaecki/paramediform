@@ -5,6 +5,7 @@ $(window).load(function() {
 $(document).ready(function(e){
 	$(window).resize(function() {
 		manage_atmospheric_image();
+		/*
 		if($(window).width() < 768){
 			$('#sidebar').css("position", "relative");
 			$('#sidebar').css("top", 0);
@@ -13,6 +14,7 @@ $(document).ready(function(e){
 			$('#sidebar').css("position", "fixed");
 			$('#sidebar').css("top", 60);
 		}
+		*/
 		$('#sidebar').width($('#sidebar').parent().width());
 	 });
 
@@ -42,6 +44,7 @@ $(document).ready(function(e){
      });
 });
 
+/*
 $(document).scroll(function(e){
 	if($(window).width() > 767){
 		if($(document).scrollTop() > 265){
@@ -56,6 +59,7 @@ $(document).scroll(function(e){
 	}
 
 });
+*/
 
 function reload_with_zoom(zoom){
 	var src = $("#google_map").attr("src");

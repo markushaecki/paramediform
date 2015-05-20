@@ -68,9 +68,15 @@ div.detailed_institute_info p{
 	}
 }
 
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width : 280px) {
 	#institutes_map a{
 		font-size: 7px;
+	}
+}
+
+@media only screen and (min-width : 480px) {
+	#institutes_map a{
+		font-size: 11px;
 	}
 }
 
@@ -235,4 +241,8 @@ legend{
    -webkit-column-gap: 30px;
       -moz-column-gap: 30px;
            column-gap: 30px;
+}
+
+#indicator{
+	color:#F83CA4;
 }

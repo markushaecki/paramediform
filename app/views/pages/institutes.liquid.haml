@@ -17,9 +17,9 @@ editable_elements:
 {% block content/main %}
 
 
-.text-center#institutes_map
+.text-center#institutes_map{:style => "position:relative"}
   %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
-  %span.text-center#indicator{:style => "top:100px;display:inline"}
+  %span.text-center#indicator{:style => "position:absolute"}
   %br
   %br
   {% for institute in contents.institutes %}
