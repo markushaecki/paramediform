@@ -1,4 +1,4 @@
-{% paginate contents.news by 10 %}
+{% paginate contents.news by 3 %}
 %ul.media-list
   {% if params.tag %}
   %div.text-center
@@ -31,8 +31,12 @@
       {% endif %}
       .text
         {{ news_entry.text | truncate: 170 }}
-
+    {% unless forloop.last %}
     %hr{:style => "margin-bottom:0px"}
+    {% endunless %}
+    {% if forloop.last %}
+    %br
+    {% endif %}
   {% endfor %}
   
   {% if paginate.total_pages != 1 %}

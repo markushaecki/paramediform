@@ -5,9 +5,6 @@ is_layout: true
 position: 10
 ---
 {% extends layouts/double-columns %}
-{% block header %}
-{{ 'columnizetext.js' | javascript_tag }}
-{% endblock %}
 {% block content/main %}
 
 {% capture group %}{% editable_text "Gruppenzugehörigkeit", format: "raw", line_break: false, rows: 1 %}Beirat{% endeditable_text %}{% endcapture%}

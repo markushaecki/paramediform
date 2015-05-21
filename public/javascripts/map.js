@@ -4,13 +4,16 @@ $(window).load(function() {
 	$("#institutes_map a div").css("color", "#F83CA4");
 });
 
-$(document).ready(function() {
- 	$("#institutes_map a").each(function() {
-		$(this).tooltipsy({
-		    alignTo: 'cursor',
-		    offset: [10, 10],
+$(document).ready(function() {	
+    if($(window).width() > 767){
+	 	$("#institutes_map a").each(function() {
+			$(this).tooltipsy({
+			    alignTo: 'cursor',
+			    offset: [10, 10],
+			});
 		});
-	});
+	}
+	
 	
 	setTimeout(function() {
 		var width = $("#institutes_map_img").width();

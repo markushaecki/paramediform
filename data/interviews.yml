@@ -7,3 +7,8 @@
     description: "Quibusdam aut quos consequatur doloribus autem recusandae nihil consequatur. Vero aut consequuntur non. Accusantium laborum quo magni esse qui sunt aliquid. Quos ut inventore et."
     image: null # Path to a file in the public/samples folder or to a remote and external file.
     person: walter-haecki # Slug of the target entry
+
+- "interview-1":
+    description: "Quibusdam aut quos consequatur doloribus autem recusandae nihil consequatur. Vero aut consequuntur non. Accusantium laborum quo magni esse qui sunt aliquid. Quos ut inventore et."
+    image: null # Path to a file in the public/samples folder or to a remote and external file.
+    person: walter-haecki # Slug of the target entry

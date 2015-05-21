@@ -20,15 +20,17 @@ editable_elements:
 
 {% include news_header %}
 
-{% include generate_main_subnavigation with all:contents.news, this:this_news %}
-{% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
-
 {% if this_news.interview %}
 {% include interview with news:this_news %}
 {% elsif this_news.recipe %}
 {% include recipe with news:this_news %}
 {% elsif this_news.illustrative_text %}
 {% include illustrative_text with news:this_news %}
+%br
+%hr
+{% include generate_main_subnavigation with all:contents.news, this:this_news %}
+{% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
+
 {% else %}
 
 / # UNSUPPORTED
@@ -51,4 +53,5 @@ editable_elements:
 {% endif %}
 
 {% endif %}
+
 {% endblock %}

@@ -53,7 +53,7 @@ sidebar_share_title:
 
 sidebar_selbststaendigkeit_title:
   de: Ausbildung
-  en: Education
+  en: Education 
 
 sidebar_paravita_title:
   de: Vitamine
@@ -102,6 +102,42 @@ contact_label_is_required:
 contact_labels_salutation:
   de: Anrede
   en: Title
+
+contact_labels_subject:
+  de: Angabe zum Thema
+  en: Theme
+
+contact_labels_surname:
+  de: Angabe zum Vornamen
+  en: Surname
+
+contact_labels_lastname:
+  de: Angabe zum Nachname
+  en: Lastname
+
+contact_labels_address:
+  de: Angabe zur Adresse
+  en: Address
+
+contact_labels_housenumber:
+  de: Angabe zur Hausnummer
+  en: House number
+
+contact_labels_zipcode:
+  de: Angabe zur Postleitzahl
+  en: Zip code
+
+contact_labels_place:
+  de: Angabe zum Wohnort
+  en: Place
+
+contact_labels_phone:
+  de: Angabe zur Telefonnummer
+  en: Phone
+
+contact_labels_email:
+  de: Angabe zur Emailadresse
+  en: Email
 
 following_errors_occured:
   de: Nachfolgende Fehler sind aufgetreten

@@ -1,12 +1,11 @@
 - "Illustrative text 1":
-    image: "/samples/illustrative_image.png" # Path to a file in the public/samples folder or to a remote and external file.
+    image: "/images/good-food.png" # Path to a file in the public/samples folder or to a remote and external file.
 
 - "Illustrative text 2":
-    image: "/samples/illustrative_image.png" # Path to a file in the public/samples folder or to a remote and external file.
+    image: "/images/good-food.png" # Path to a file in the public/samples folder or to a remote and external file.
 
 - "Illustrative text 3":
-    image: "/samples/illustrative_image.png" # Path to a file in the public/samples folder or to a remote and external file.
+    image: "/images/good-food.png" # Path to a file in the public/samples folder or to a remote and external file.
 
 - "Illustrative text 4":
-    image: "/samples/illustrative_image.png" # Path to a file in the public/samples folder or to a remote and external file.
-
+    image: "/images/good-food.png" # Path to a file in the public/samples folder or to a remote and external file.

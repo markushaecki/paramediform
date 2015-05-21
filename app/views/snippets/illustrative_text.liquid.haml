@@ -2,13 +2,12 @@
 
 .row
   .col-xs-12
-    %img.img-responsive{ src: '{{ illustrative_text.image.url }}' }
-
-%br
-
-.row
-  .col-xs-12
-    .text-justify
-      {{ news.text }}
-
-%br
+    .thumbnail
+      .img-box
+        %a{ href: '{{ illustrative_text.image.url }}' }
+          %img.img-responsive{ src: '{{ illustrative_text.image.url | resize: "900x240#" }}' }    
+#column
+  .row
+    .col-xs-12
+      .text-justify
+        {{ news.text }}
