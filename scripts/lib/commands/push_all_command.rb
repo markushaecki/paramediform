@@ -16,7 +16,8 @@ class PushAllCommand < Struct.new(:institute_path, :logger)
     logger.wait_spinner('Pushing to', name) do
       `cd #{institute_path}; wagon push #{name}; cd -`
     end
-    logger.success 'done'
+    
+    logger.success 'done:'
   end
 
   def deploy_envs

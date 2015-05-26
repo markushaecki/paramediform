@@ -73,12 +73,12 @@ editable_elements:
 %br
 
 .row
-  .col-sm-6.col-xs-12
+  .col-sm-12.col-xs-12
     %h3 {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
     %a{ href: '{% path_to institutes %}#successstories'}
       {% include before_after_front %}
 
-  .col-sm-6.col-xs-12
+  .col-sm-12.col-xs-12
     %h3 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Über 50 Institute in Ihrer Nähe{% endeditable_text %}
     .thumbnail
       .text-center#institutes_map{:style => "position:relative"}

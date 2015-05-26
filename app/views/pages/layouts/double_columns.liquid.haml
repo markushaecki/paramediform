@@ -2,7 +2,6 @@
 title: Double columns
 published: false
 handle: double_columns_layout
-is_layout: true
 position: 5
 ---
 {% extends layouts/simple %}
@@ -59,7 +58,7 @@ position: 5
 
       / parapan block
       {% capture enable_parapan %}{% editable_control "parapan", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_paravita == "true" %}
+      {% if enable_parapan == "true" %}
       %a{ href: '{% path_to institutes %}'}
         .institutes.well
           %h3.text-center
@@ -69,8 +68,8 @@ position: 5
       {% endif %}
 
       / selbststaendigkeit block
-      {% capture enable_news %}{% editable_control "news", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_news == "true" %}
+      {% capture enable_selbststaendigkeit %}{% editable_control "selbststaendigkeit", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_selbststaendigkeit == "true" %}
       %a{ href: '{% path_to news %}' }
         .news.well
           %h3.text-center

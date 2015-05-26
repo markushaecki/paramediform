@@ -29,6 +29,21 @@ $(document).ready(function(e){
        $('body').append(box);
      });
 
+     $('div.doubleimg-box a').click(function(event) {
+       event.preventDefault();
+       var box =
+         '<div id="lightbox">' +
+         '<p>Zum Schliessen Klicken</p>' +
+         '<div style="float:right;width:50%">' +
+         '<img class="img-responsive" src="' + $(this).attr('nachsrc') + '" alt="Vergrössert Nach Abnehmen" style="float:left;max-width:100%" />' +
+         '</div>' +
+         '<div style="float:left;width:50%">' +
+         '<img class="img-responsive" src="' + $(this).attr('vorsrc') + '" alt="Vergrössert Vor Abnehmen" style="float:right;max-width:100%" />' +
+         '</div>' +
+         '</div>';
+       $('body').append(box);
+     });
+
      // if they click an enlarged image, close it
      $('body').on('click', '#lightbox',function(event) {
        $('#lightbox').remove();
