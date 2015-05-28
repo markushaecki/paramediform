@@ -50,14 +50,14 @@ position: 1
     {% inline_editor %}
 
   %body
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0" async="async"></script>
+    / Go to www.addthis.com/dashboard to customize your tools
+    %script{:async => "async", :src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0", :type => "text/javascript"}	
     #header
       %div.relative_position
         %img.atmospereic{ src: "{{ 'atmospheric.png' | theme_image_url }}" }
       .container.relative_position{ :style => "max-width:750px"}
         %p.text-center
-          %a{ href: "/index", :style => "text-decoration:none;color:black" }
+          %a{ href: "/index", :style => "text-decoration:none;color:black", :accesskey => "1" }
             %img.img-responsive#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x120' }}", :style => "margin-top:50px" }
             %p.text-center Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
@@ -81,7 +81,7 @@ position: 1
           {% block content %}
           {% endblock %}
 
-    {% include footer %}
+          {% include footer %}
 
     :javascript
       $(document).ready(function() {

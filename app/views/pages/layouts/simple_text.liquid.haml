@@ -10,13 +10,16 @@ position: 11
 
 {% block content/main %}
 
-.paddingbox
-
-  {% include text_header %}
-
-  - 8.times do |i|
-    {% block "Bild-Text-#{i + 1}" %}
-    {% include text_image %}
-    {% endblock %}
+.textpadding
+  {% include site_header %}
+  {% capture image %}{% editable_file bild_tag %}/samples/simpletext/sample_top.jpg{% endeditable_file %}{% endcapture %}
+  {% if image.size > 0 %}
+  .thumbnail{:style => "margin-bottom:10px; margin-top:10px;"}
+    .img-box
+      %a{ href: "{{ image }}", :style => "padding:0px" }
+        %img.img-responsive{ src: "{{ image | resize: '900x200#' }}" }
+  {% endif %}
+  %p
+    {% editable_text "Text", format:raw %}Die Gartenbohne ist nur in Kulturform bekannt. Die ältesten Funde der Gartenbohne stammen aus Peru etwa 6000 v. Chr. und aus Chile etwa 2700 v. Chr. Die nächsten Funde sind aus der Zeit von 300 v. Chr. bis Christi Geburt, der Zeit der mittelamerikanischen Hochkulturen. Unter den Funden sind sowohl Samen, als auch Hülsen. Generell sind die Samen kleiner als die heutigen Samen, aber wesentlich variabler in Form, Farbe und Muster.{% endeditable_text %}
 
 {% endblock %}

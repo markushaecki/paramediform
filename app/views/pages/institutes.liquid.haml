@@ -46,18 +46,16 @@ editable_elements:
 .row
   {% assign institutes = contents.institutes.all | sample: 20 %}
   {% for institute in institutes %}
-
-  .col-sm-6
-    {% capture url %}{{ institute.url }}/success-stories/random.json{% endcapture %}
-    {% consume data from url %}
-    {% assign success_story = data.success_story %}
-    {% endconsume %}
-
+  {% capture url %}{{ institute.url }}/success-stories/random.json{% endcapture %}
+  {% consume data from url %}
+  {% assign success_story = data.success_story %}
+  {% endconsume %}
+  {% if success_story.prename != null %}
+  .col-sm-6.col-xs-12
     %a.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
       {% include before_after_overview %}
-
     %br
-
+  {% endif %}
   {% endfor %}
 
 {% endblock %}

@@ -10,16 +10,8 @@ editable_elements:
 
 {% block content/main %}
 
-.paddingbox
-  %h2
-    {% editable_text title, format: raw, rows: 1 %}
-    Essen Sie sich schlank Paramediform hilft Ihnen dabei!
-    {% endeditable_text %}
-
-  {% editable_text text, format: html %}
-  %p Wir von Paramedifrom begleiten Sie bis zu Ihrem Wunschgewicht und darüber hinaus. Dank individuell zugeschnittenem Ernährungsplan, regelmässiger Betreuung und Kontrolle nehmen auch Sie ab, denn so ergings bereits tausenden vor Ihnen.
-  {% endeditable_text %}
-
+.textpadding
+  {% include site_header %}
   - 2.times do |i|
     {% block "Widget_#{i + 1}" %}
 

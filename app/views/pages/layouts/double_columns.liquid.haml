@@ -13,17 +13,28 @@ position: 5
     #main
       {% block main %}
       {% endblock %}
-
+      {% block sidebar %}
+      / share block
+      {% capture enable_share %}{% editable_control "Mitteilen", options: 'true=Yes,false=No', hint: "Gibt dem Benuzer die Option den Artikel über Social Media mit den Freunden zu teilen" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_share == "true" %}
+      .share_hidden
+        .text-center
+          %h3.text-center{ :style => "color:#F83CA4" }
+            {{ 'sidebar_share_title' | translate }}:
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          .addthis_sharing_toolbox
+          %br
+      {% endif %}xx
+      
   .col-sm-3.col-xs-12
     #sidebar
-      {% block sidebar %}
       %form{:action => '{% path_to search %}', :role => "search"}
         .form-group
           %input.form-control{name: 'q', :type => "text", :placeholder => "Wonach suchst du?"}
           //%button.btn.btn-default{:type => "submit"} Suchen
 
       / contact block
-      {% capture enable_contact %}{% editable_control "contact", options: 'true=Yes,false=No', hint: "Tell if the contact block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_contact %}{% editable_control "contact", options: 'true=Yes,false=No', hint: "Zeigt Link zum Kontaktformular der Systemzentrale an" %}true{% endeditable_control %}{% endcapture %}
       {% if enable_contact == "true" %}
       %a{ href: '{% path_to contact_form %}' }
         .contact.well
@@ -32,10 +43,10 @@ position: 5
           %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
             %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
             %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
-        {% endif %}
-
+      {% endif %}
+      
       / institutes block
-      {% capture enable_institutes %}{% editable_control "institutes", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_institutes %}{% editable_control "Institute", options: 'true=Yes,false=No', hint: "Link zur Übersicht über alle Institute" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_institutes == "true" %}
       %a{ href: '{% path_to institutes %}'}
         .institutes.well
@@ -46,7 +57,7 @@ position: 5
       {% endif %}
 
       / paravita block
-      {% capture enable_paravita %}{% editable_control "paravita", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_paravita %}{% editable_control "Paravita", options: 'true=Yes,false=No', hint: "Zeigt einen Link zu den Paravita Produkten an. " %}false{% endeditable_control %}{% endcapture %}
       {% if enable_paravita == "true" %}
       %a{ href: '{% path_to institutes %}'}
         .institutes.well
@@ -57,9 +68,9 @@ position: 5
       {% endif %}
 
       / parapan block
-      {% capture enable_parapan %}{% editable_control "parapan", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_parapan %}{% editable_control "Parapan", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Parapan Webseite an." %}false{% endeditable_control %}{% endcapture %}
       {% if enable_parapan == "true" %}
-      %a{ href: '{% path_to institutes %}'}
+      %a{ href: 'http://parapan.locomotivehosting.com'}
         .institutes.well
           %h3.text-center
             {{ 'sidebar_parapan_title' | translate }}
@@ -68,7 +79,7 @@ position: 5
       {% endif %}
 
       / selbststaendigkeit block
-      {% capture enable_selbststaendigkeit %}{% editable_control "selbststaendigkeit", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}true{% endeditable_control %}{% endcapture %}
       {% if enable_selbststaendigkeit == "true" %}
       %a{ href: '{% path_to news %}' }
         .news.well
@@ -79,7 +90,7 @@ position: 5
       {% endif %}
 
       / news block
-      {% capture enable_news %}{% editable_control "news", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_news %}{% editable_control "Aktuelles", options: 'true=Yes,false=No', hint: "Link zur Seite Aktuelles" %}true{% endeditable_control %}{% endcapture %}
       {% if enable_news == "true" %}
       %a{ href: '{% path_to news %}' }
         .news.well
@@ -88,19 +99,29 @@ position: 5
           .text-center
             %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px' }
       {% endif %}
-
-      / share block
-      {% capture enable_share %}{% editable_control "share", options: 'true=Yes,false=No', hint: "Tell if the share block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_share == "true" %}
-      .news.well
-        %h3.text-center
-          %a{ href: ''}
-            {{ 'sidebar_share_title' | translate }}
-        .text-center
-          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-          .addthis_sharing_toolbox
+      
+      / vorhernachher block
+      {% capture enable_beforeafter %}{% editable_control "Vorher/Nachher", options: 'true=Yes,false=No', hint: "Link zu Vorher/Nachher Bilder" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_beforeafter == "true" %}
+      %a{ href: '{% path_to institutes %}#successstories' }
+        .news.well
+          %h3.text-center
+            {{ 'sidebar_beforeafter_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_vorhernachher.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px' }
       {% endif %}
 
-      {% endblock %}
+      / Kochbuch block
+      {% capture enable_kochbuch %}{% editable_control "Kochbuch", options: 'true=Yes,false=No', hint: "Link zum Bestellen von Kochbuch" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_kochbuch == "true" %}
+      %a{ href: '' }
+        .well
+          %h3.text-center
+            {{ 'sidebar_kochbuch_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_kochbuch.png' | theme_image_url | resize: 'x160' }}", style: 'height: 80px' }
+      {% endif %}
+      
+  {% endblock %}
 
 {% endblock %}
