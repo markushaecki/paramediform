@@ -22,9 +22,10 @@ position: 5
           %h3.text-center{ :style => "color:#F83CA4" }
             {{ 'sidebar_share_title' | translate }}:
           <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          %script{:async => "async", :src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0", :type => "text/javascript"}	
           .addthis_sharing_toolbox
           %br
-      {% endif %}xx
+      {% endif %}
       
   .col-sm-3.col-xs-12
     #sidebar

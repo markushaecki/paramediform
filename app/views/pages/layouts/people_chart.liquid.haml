@@ -7,13 +7,22 @@ position: 10
 {% extends layouts/double-columns %}
 {% block content/main %}
 
-{% capture group %}{% editable_text "Gruppenzugehörigkeit", hint: "Alle Personen welche der hier angegebenen Gruppe zugehören, werden auf dieser Seite aufgelistet.", format: "raw", line_break: false, rows: 1 %}Beirat{% endeditable_text %}{% endcapture%}
+{% capture group %}{% editable_text "Gruppenzugehörigkeit", hint: "Alle Personen welche der hier angegebenen Gruppe zugehören, werden auf dieser Seite aufgelistet.", format: "raw", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture%}
 {% with_scope tags:group %}
 {% assign people_in_group = contents.people.all %}
 {% endwith_scope %}
 
 .textpadding
   {% include site_header %}
+  - 3.times do |i|
+    {% capture title %}{% editable_text "Titel #{i + 1}", format:raw, priority:"#{27 - i*3}", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture %}
+    {% if title.size > 0 %}
+    %h3.textpadding{:style => "margin-bottom:0"} {{ title }}
+    {% endif %}
+    {% capture text %}{% editable_text "Text #{i + 1}", format:raw, priority:"#{26 - i*3}" %}{% endeditable_text %}{% endcapture %}
+    {% if text.size > 0 %}
+    .paddingactive {{ text }}
+    {% endif %}
   %br
   %ul.media-list
     {% for person in people_in_group %}
@@ -35,5 +44,5 @@ position: 10
           {% endif %}
     %hr
     {% endfor %}
-
+  {% include site_footer %}
 {% endblock %}
