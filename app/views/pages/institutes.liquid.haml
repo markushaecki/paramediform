@@ -43,7 +43,7 @@ editable_elements:
     Institute
     %span.caret
   %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
-    {% with_scope order_by: 'name.asc' %}
+    {% with_scope order_by: 'name asc' %}
     {% for institute in contents.institutes %}
     %li{role: "presentation"}
       %a{ href: '{% path_to institute, with: institute_success_stories %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}

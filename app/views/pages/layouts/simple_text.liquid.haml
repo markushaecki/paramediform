@@ -10,7 +10,6 @@ position: 11
 
 .textpadding
   {% include site_header %}
-  
   - 8.times do |i|
     {% capture title %}{% editable_text "Titel #{i + 1}", format:raw, priority:"#{27 - i*3}", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture %}
     {% if title.size > 0 %}

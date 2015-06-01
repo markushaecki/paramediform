@@ -5,8 +5,6 @@ published: true
 listed: true
 position: 4
 handle: institute_news
-editable_elements:
-  "content/sidebar/news": "false"
 ---
 {% extends parent %}
 
@@ -18,31 +16,17 @@ editable_elements:
 {% assign news_pagination = data.pagination %}
 {% endconsume %}
 
-{% if params.slug and params.type %}
+{% if params.slug %}
 
-{% capture url %}{{ institute.url }}/{{locale}}/news/{{ params.type }}.json?slug={{ params.slug }}{% endcapture %}
+{% capture url %}{{ institute.url }}/{{locale}}/news/one.json?slug={{ params.slug }}{% endcapture %}
 {% consume data from url %}
 {% assign this_news = data.news_entry %}
 {% endconsume %}
 
-{% include news_header %}
-
-{% include generate_main_subnavigation with all:contents.news, this:this_news %}
+{% include institute_news %}
+%br
+{% include generate_main_subnavigation with all:news, this:this_news %}
 {% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
-
-{% if this_news.interview %}
-{% include interview with news:this_news %}
-{% elsif this_news.recipe %}
-{% include recipe with news:this_news %}
-{% elsif this_news.illustrative_text %}
-{% include illustrative_text with news:this_news %}
-{% else %}
-
-/ # UNSUPPORTED
-.well
-  %h2 Unsupported type of news
-
-{% endif %}
 
 {% else %}
 
@@ -58,7 +42,7 @@ editable_elements:
       {{ news_entry.published_at | localized_date: '%d.%m.%Y' }}
     .media-body
       %h5
-        %a{ href: "?slug={{ news_entry.slug }}&type={{ news_entry.type }}&page={{ params.page }}" } {{ news_entry.title }}
+        %a{ href: "?slug={{ news_entry.slug }}&page={{ params.page }}" } {{ news_entry.title }}
       {% if news_entry.tags %}
       .tags{:style => "margin:7px 7px;"}
         %span.glyphicon.glyphicon-tags

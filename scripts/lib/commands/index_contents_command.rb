@@ -42,7 +42,7 @@ class IndexContentsCommand < BaseCommand
     self.index_illustrative_text(institute)
 
     # interviews
-    index_interviews(institute)
+    #index_interviews(institute)
 
     # recipes
     #index_recipes(institute)

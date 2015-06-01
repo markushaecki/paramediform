@@ -1,13 +1,16 @@
 {% assign interview = news.interview %}
-#column
+.tripplecolumn
   {% if interview.person %}
   {% include interview_person with person:interview.person %}
   {% endif %}
   {% for question in interview.questions %}
-  %h5 {{ question.question }}
+  %h5{:style => "padding-bottom:10px"} {{ question.question }}
   .text
     {{ question.answer }}
   {% unless forloop.last %}
   %hr
   {% endunless %}
   {% endfor %}
+%br
+%hr
+%br

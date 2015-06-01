@@ -5,14 +5,13 @@ published: true
 listed: true
 position: 1
 handle: institute_success_stories
-editable_elements:
-  "content/sidebar/news": "false"
 ---
 
 {% extends parent %}
 
 {% comment %}
-{% capture url %}{{ institute.url }}/{{locale}}/success-stories/all.json{% endcapture %}
+{% capture url %}{{ institute.url }}/{{locale}}}
+/success-stories/all.json{% endcapture %}
 {% consume data from url %}
 {% assign success_stories = data.success_stories %}
 {% endconsume %}
@@ -45,18 +44,30 @@ editable_elements:
 {% endcomment %}
 
 
-{% if params.slug %}
 {% block share_meta_tags %}	
-{% capture url %}{{ institute.url }}/{{locale}}/success-stories/all.json{% endcapture %}
+{% if params.slug %}
+{% capture url %}{{ institute.url }}/{{locale}}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
 {% consume data from url %}
-{% assign success_stories = data.success_stories %}
+{% assign success_story = data.success_story.first %}
 {% endconsume %}
-%meta{:content => "Erfolgsgeschichten: {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat' | append: success_story.lost_weight | append: ' Kg abgenommen' }}", :property => "og:title"}
-%meta{:content => "{{ success_story.experience }}", :property => "og:description"}
+%meta{:content => "Bravo! {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat ' | append: success_story.lost_weight | append: ' Kg abgenommen' }}", :property => "og:title"}
+%meta{:content => "{{ success_story.experience | strip_html }}", :property => "og:description"}
 %meta{:content => "website", :property => "og:type"}
-%meta{:content => "http://{{ host }}{{ success_story.after_image.url }}", :property => "og:image"}
+%meta{:content => "{{ success_story.after_image.url }}", :property => "og:image"}
 %meta{:content => "320", :property => "og:image:width"}
 %meta{:content => "640", :property => "og:image:height"}
 %meta{:content => "{{ url }}", :property => "og:url"}
-{% endblock %}
 {% endif %}
+{% endblock %}
+
+{% block title %}
+{% if params.slug %}
+{% capture url %}{{ institute.url }}/{{locale}}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
+{% consume data from url %}
+{% assign success_story = data.success_story.first %}
+{% endconsume %}
+%title
+  Bravo! {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat ' | append: success_story.lost_weight | append: ' Kg abgenommen' }}
+{% endif %}
+{% endblock %}
+

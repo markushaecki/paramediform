@@ -16,6 +16,7 @@ position: 1
     %meta{name:"description", content:"{{ site.meta_description }}"}/
     {% endif %}
 
+    {% block title %}
     %title
       {{ page.title }} - {{ site.name }} |
       {% if page.seo_title %}
@@ -23,6 +24,7 @@ position: 1
       {% else %}
       {{ site.seo_title }}
       {% endif %}
+    {% endblock %}
 
     %meta{content: "width=device-width, initial-scale=1, maximum-scale=10", name: "viewport"}/
     //%script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", type: "text/javascript"}

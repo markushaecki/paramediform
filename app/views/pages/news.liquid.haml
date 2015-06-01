@@ -28,14 +28,16 @@ editable_elements:
 {% include illustrative_text with news:this_news %}
 %br
 %hr
+{% with_scope published_at.lt: today %}
 {% include generate_main_subnavigation with all:contents.news, this:this_news %}
 {% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
+{% endwith_scope %}
 
 {% else %}
 
 / # UNSUPPORTED
 .well
-  %h2 Unsupported type of news
+  %h2 Nachricht konnte nicht gefunden werden.
 
 {% endif %}
 

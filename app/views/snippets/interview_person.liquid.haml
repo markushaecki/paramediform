@@ -1,10 +1,9 @@
 .media
   .media-body
-    .col-sm-12.col-xs-12
-      .img-box
-        %a{ href: '{{ person.picture.url }}' }
-          %img.img-responsive.media-object{ src: '{{ person.picture.url | resize: "130x180#" }}' }
-          %br
-      %h4.media-heading.text-center{:style => "padding-bottom:0"} {{ person.name }}
-      .text-center {{ person.title }}
-      %br
+    .img-box
+      %a{ href: '{{ person.picture.url }}' }
+        %img.img-responsive.media-object{ src: '{{ person.picture.url | resize: "130x180#" }}' }
+        %br
+    %h4.media-heading.text-center{:style => "padding-bottom:0;font-style:italic"} {{ person.name }}
+    .text-center{:style => "font-style:italic"} {{ person.title }}
+    %br

@@ -9,6 +9,8 @@
 {% assign onetype = "illustrative_text" %}
 {% elsif one.recipe %}
 {% assign onetype = "recipe" %}
+{% else %}
+{% assign onetype = "" %}
 {% endif %}
 
 {% if one._slug == this._slug %}
