@@ -66,15 +66,16 @@ div.detailed_institute_info p{
 	.nav > li > a{
 		padding: 10px 5px !important;
 	}
-	#column{
-	   -webkit-column-count: 1;
-	      -moz-column-count: 1;
-	           column-count: 1;
+	.columnize{
+	    -webkit-column-count: 1;
+	       -moz-column-count: 1;
+	            column-count: 1;
 
-	   -webkit-column-gap: 10px;
-	      -moz-column-gap: 10px;
-	           column-gap: 10px;
+	    -webkit-column-gap: 20px;
+	       -moz-column-gap: 20px;
+	            column-gap: 20px;
 	}
+	
 }
 
 @media only screen and (min-width : 280px) {
@@ -86,6 +87,16 @@ div.detailed_institute_info p{
 @media only screen and (min-width : 480px) {
 	#institutes_map a{
 		font-size: 9px;
+	}
+	
+	.columnize{
+	    -webkit-column-count: 2;
+	       -moz-column-count: 2;
+	            column-count: 2;
+
+	    -webkit-column-gap: 20px;
+	       -moz-column-gap: 20px;
+	            column-gap: 20px;
 	}
 }
 
@@ -99,6 +110,7 @@ div.detailed_institute_info p{
 	.share_hidden{
 		display: none;
 	}
+	
 }
 
 @media only screen and (min-width : 992px) {
@@ -252,16 +264,6 @@ legend{
             column-gap: 20px;
 }
 
-.tripplecolumn{
-    -webkit-column-count: 3;
-       -moz-column-count: 3;
-            column-count: 3;
-
-    -webkit-column-gap: 20px;
-       -moz-column-gap: 20px;
-            column-gap: 20px;
-}
-
 #indicator{
 	color:#F83CA4;
 }
@@ -277,4 +279,13 @@ legend{
 
 .textpadding h1, .textpadding h3, .textpadding div.paddingactive, img.textpadding{
 	padding-bottom: 15px;
+}
+
+.label{
+	display:inline-block !important;
+	margin-bottom: 4px !important;
+}
+
+.footer a{
+	color: gray;
 }

@@ -10,12 +10,11 @@ handle: institute_success_stories
 {% extends parent %}
 
 {% comment %}
-{% capture url %}{{ institute.url }}/{{locale}}}
-/success-stories/all.json{% endcapture %}
+{% block content/main/tab_pane %}
+{% capture url %}{{ institute.url }}/{{locale}}/success-stories/all.json{% endcapture %}
 {% consume data from url %}
 {% assign success_stories = data.success_stories %}
 {% endconsume %}
-{% block content/main/tab_pane %}
 
 {% if params.slug %}
 
