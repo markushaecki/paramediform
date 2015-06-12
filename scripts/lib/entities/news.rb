@@ -22,7 +22,7 @@ class News < Struct.new(:_id, :title, :slug, :type)
 
       true
     rescue Exception => e
-      raise Exception.new('Unable to update the message on Twitter')
+      raise Exception.new("Unable to update the message on Twitter, reason: #{e.message}")
     end
   end
 

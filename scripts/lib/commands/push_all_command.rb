@@ -1,6 +1,6 @@
-class PushAllCommand < Struct.new(:institute_path, :logger)
+class PushAllCommand < Struct.new(:institute_path, :options, :logger)
 
-  def initialize(institute_path, logger)
+  def initialize(institute_path, options, logger)
     super
     self.institute_path = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', institute_path))
   end
@@ -14,7 +14,7 @@ class PushAllCommand < Struct.new(:institute_path, :logger)
 
   def push_to(name)
     logger.wait_spinner('Pushing to', name) do
-      `cd #{institute_path}; wagon push #{name}; cd -`
+      `cd #{institute_path}; wagon push #{name} #{'-f' if options[:force]}; cd -`
     end
     logger.success 'done'
   end
