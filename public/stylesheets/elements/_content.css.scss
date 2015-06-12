@@ -4,11 +4,6 @@
   //background-color:#FFF6FF;
 }
 
-#main{
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
 .non-link-style{
 	color: inherit !important;
 	text-decoration: none !important;
@@ -22,6 +17,7 @@
 .paddingbox{
 	a, p, h1, h2, h3, h4, h5, h6{
 		padding: 10px;
+		margin: 0px !important;
 	}
 }
 

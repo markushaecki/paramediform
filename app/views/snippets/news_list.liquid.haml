@@ -31,8 +31,12 @@
       {% endif %}
       .text
         {{ news_entry.text | truncate: 170 }}
-
+    {% unless forloop.last %}
     %hr{:style => "margin-bottom:0px"}
+    {% endunless %}
+    {% if forloop.last %}
+    %br
+    {% endif %}
   {% endfor %}
   
   {% if paginate.total_pages != 1 %}

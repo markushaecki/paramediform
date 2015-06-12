@@ -25,11 +25,13 @@ class PostToTwitterCommand < BaseCommand
 
   def tweet_all_untweeted_news_from_corporate
     News.untweeted.each do |news|
-      news.url = corporate_url + "/aktuelles?slug=#{news.slug}&type=#{news.type}"
+      if news.published_at.past?
+        news.url = corporate_url + "/aktuelles?slug=#{news.slug}&type=#{news.type}"
 
-      logger.log_action "\ttweeting", %("#{news.message}")
+        logger.log_action "\ttweeting", %("#{news.message}")
 
-      news.post!(twitter_client)
+        news.post!(twitter_client)
+      end    
     end
   end
 

@@ -41,19 +41,35 @@ sidebar_contact_title:
 
 sidebar_institutes_title:
   de: Institute
-  en: Institutes
+  en: Institutes 
 
 sidebar_news_title:
   de: Aktuelles
   en: News
 
 sidebar_share_title:
-  de: Mitteilen auf
-  en: Share on
+  de: Weiterempfehlen
+  en: Share
 
 sidebar_selbststaendigkeit_title:
-  de: Selbstständig
-  en: Own Institute
+  de: Ausbildung
+  en: Education 
+
+sidebar_paravita_title:
+  de: Vitamine
+  en: Vitamin
+
+sidebar_parapan_title:
+  de: Parapan
+  en: Parapan
+
+sidebar_beforeafter_title:
+  de: Beispiele
+  en: Successes
+
+sidebar_kochbuch_title:
+  de: Kochbuch
+  en: Cookbook
 
 label_phone:
   de: Tel
@@ -95,6 +111,46 @@ contact_labels_salutation:
   de: Anrede
   en: Title
 
+contact_labels_subject:
+  de: Angabe zum Thema
+  en: Theme
+
+contact_labels_surname:
+  de: Angabe zum Vornamen
+  en: Surname
+
+contact_labels_lastname:
+  de: Angabe zum Nachname
+  en: Lastname
+
+contact_labels_address:
+  de: Angabe zur Adresse
+  en: Address
+
+contact_labels_housenumber:
+  de: Angabe zur Hausnummer
+  en: House number
+
+contact_labels_zipcode:
+  de: Angabe zur Postleitzahl
+  en: Zip code
+
+contact_labels_place:
+  de: Angabe zum Wohnort
+  en: Place
+
+contact_labels_phone:
+  de: Angabe zur Telefonnummer
+  en: Phone
+
+contact_labels_email:
+  de: Angabe zur Emailadresse
+  en: Email
+
 following_errors_occured:
   de: Nachfolgende Fehler sind aufgetreten
   en: The following errors occured
+
+sidebar_kinder_title:
+  de: Für Kinder
+  en: For Children

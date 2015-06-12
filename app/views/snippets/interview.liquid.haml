@@ -1,13 +1,16 @@
 {% assign interview = news.interview %}
-.row
-  .col-sm-4.col-xs-12
-    {% if interview.person %}
-    {% include interview_person with person:interview.person %}
-    {% endif %}
-  .col-sm-8.col-xs-12
-    {% for question in interview.questions %}
-    %h5 {{ question.question }}
-    .text.text-justify
-      {{ question.answer }}
-    %hr
-    {% endfor %}
+.columnize
+  {% if interview.person %}
+  {% include interview_person with person:interview.person %}
+  {% endif %}
+  {% for question in interview.questions %}
+  %h5{:style => "padding-bottom:10px"} {{ question.question }}
+  .text
+    {{ question.answer }}
+  {% unless forloop.last %}
+  %hr
+  {% endunless %}
+  {% endfor %}
+%br
+%hr
+%br

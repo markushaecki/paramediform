@@ -9,10 +9,7 @@ class BaseCommand < Struct.new(:settings, :api, :logger)
 
     # entities will use the api registered here
     self.wire_api :institute, :news, :illustrative_text,
-      :indexed_content, :person,
-      :interview, :interview_question,
-      :recipe, :recipe_ingredient,
-      :success_story, :team_member
+      :indexed_content, :success_story, :team_member
   end
 
   def corporate_url

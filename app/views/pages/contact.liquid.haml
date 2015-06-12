@@ -39,6 +39,26 @@ handle: contact_form
 {% model_form 'contacts', class: 'form-horizontal' %}
 %h2 Hiermit kontaktieren Sie die Systemzentrale:
 %br
+.row
+  .col-sm-7.col-xs-12
+    %img.img-responsive{ src: "{{ 'systemzentrale.png' | theme_image_url }}" }
+    %br
+  .col-sm-5.col-xs-12
+    ParaMediForm
+    %br
+    Villa Hünerwadel
+    %br
+    Schützenmattstrasse 3
+    %br
+    5600 Lenzburg
+    %br
+    %br
+    Telefon +41 62 888 88 28
+    %br
+    Fax +41 62 888 88 20
+    %br
+    %br
+
 
 %legend Thema
 .row{:style => "margin-bottom: 20px"}
@@ -111,5 +131,5 @@ handle: contact_form
   %button{ :class => "btn btn-primary", :type => "submit"} Senden
 %br
 {% endmodel_form %}
-
+%hr
 {% endblock %}

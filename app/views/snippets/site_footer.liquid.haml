@@ -1,0 +1,4 @@
+{% capture text %}{% editable_text "Frei gestaltbares Textelement", priority:"0" %}{% endeditable_text %}{% endcapture %}
+{% if text.size > 0 %}
+.paddingactive {{ text }}
+{% endif %}

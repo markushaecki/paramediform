@@ -47,4 +47,3 @@
     amount: "42"
     unit: "g"
     recipe: recipe-3 # Slug of the target entry
-

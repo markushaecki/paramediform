@@ -14,12 +14,24 @@ editable_elements:
 {{ 'jquery.activity-indicator.min.js' | javascript_tag }}
 {% endblock %}
 
+{% block share_meta_tags %}	
+%meta{:content => "Erfolgsgeschichten: Wie schlank sein zur Gewohnheit wird.", :property => "og:title"}
+%meta{:content => "website", :property => "og:type"}
+%meta{:content => "http://{{ host }}{{ 'sidebar_vorhernachher.png' | theme_image_url }}", :property => "og:image"}
+%meta{:content => "200", :property => "og:image:width"}
+%meta{:content => "200", :property => "og:image:height"}
+%meta{:content => "{{ url }}", :property => "og:url"}
+%meta{:content => "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme", :property => "og:site_name"}
+%meta{:content => "{{ page.seo_description }}", :property => "og:description"}
+{% endblock %}
+
+
 {% block content/main %}
 
 
-.text-center#institutes_map
+.text-center#institutes_map{:style => "position:relative"}
   %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
-  %span.text-center#indicator{:style => "top:100px;display:inline"}
+  %span.text-center#indicator{:style => "position:absolute"}
   %br
   %br
   {% for institute in contents.institutes %}
@@ -31,7 +43,7 @@ editable_elements:
     Institute
     %span.caret
   %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
-    {% with_scope order_by: 'name.asc' %}
+    {% with_scope order_by: 'name asc' %}
     {% for institute in contents.institutes %}
     %li{role: "presentation"}
       %a{ href: '{% path_to institute, with: institute_success_stories %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}
@@ -44,20 +56,18 @@ editable_elements:
 %h4 {% editable_text success_stories_title, format: "raw", line_break: false, rows: 1 %}Erfolgsgeschichten{% endeditable_text %}
 
 .row
-  {% assign institutes = contents.institutes.all | sample: 6 %}
+  {% assign institutes = contents.institutes.all | sample: 20 %}
   {% for institute in institutes %}
-
-  .col-sm-6
-    {% capture url %}{{ institute.url }}/success-stories/random.json{% endcapture %}
-    {% consume data from url %}
-    {% assign success_story = data.success_story %}
-    {% endconsume %}
-
+  {% capture url %}{{ institute.url }}/success-stories/random.json{% endcapture %}
+  {% consume data from url %}
+  {% assign success_story = data.success_story %}
+  {% endconsume %}
+  {% if success_story.prename != null %}
+  .col-sm-6.col-xs-12
     %a.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
       {% include before_after_overview %}
-
     %br
-
+  {% endif %}
   {% endfor %}
 
 {% endblock %}

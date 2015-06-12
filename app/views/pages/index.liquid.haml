@@ -11,17 +11,28 @@ editable_elements:
 
 {% block header %}
 {{ 'map.js' | javascript_tag }}
+{{ 'jquery.activity-indicator.min.js' | javascript_tag }}
 {% endblock %}
 
 {% block content %}
 
-/ Find a random institute
-{% assign institute = contents.institutes.all | sample: 1 %}
+/ Find a random institute with valid successstory
+/{% assign institute = contents.institutes.all | sample: 1 %}
+{% assign institutes = contents.institutes.all | sample: 20 %}
+{% assign institute = "" %}
 
-{% capture url %}{{ institute.url }}/{{locale}}/success-stories/random.json{% endcapture %}
+{% for possibleinstitute in institutes %}
+{% if institute == "" %}
+{% capture url %}{{ possibleinstitute.url }}/success-stories/random.json{% endcapture %}
 {% consume data from url %}
 {% assign success_story = data.success_story %}
 {% endconsume %}
+{% if success_story.prename != null %}
+{% assign institute = possibleinstitute %}
+{% endif %}
+{% endif %}
+{% endfor %}
+
 
 {% comment %}
 //{% capture geocoding %}http://maps.googleapis.com/maps/api/geocode/json?address=Schanzweg-7-5000-Aarau{% endcapture %}
@@ -72,16 +83,17 @@ editable_elements:
 %br
 
 .row
-  .col-sm-6.col-xs-12
+  .col-sm-12.col-xs-12
     %h3 {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
-    %a{ href: '{% path_to institutes %}#successstories'}
+    %a.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
       {% include before_after_front %}
 
-  .col-sm-6.col-xs-12
+  .col-sm-12.col-xs-12
     %h3 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Über 50 Institute in Ihrer Nähe{% endeditable_text %}
     .thumbnail
-      .text-center#institutes_map
-        %img.img-responsive{ src: "{{ 'map.png' | theme_image_url }}" }
+      .text-center#institutes_map{:style => "position:relative"}
+        %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
+        %span.text-center#indicator{:style => "position:absolute"}
         %br
         %br
         {% for map_institute in contents.institutes %}

@@ -2,7 +2,6 @@
 title: Double columns
 published: false
 handle: double_columns_layout
-is_layout: true
 position: 5
 ---
 {% extends layouts/simple %}
@@ -14,52 +13,86 @@ position: 5
     #main
       {% block main %}
       {% endblock %}
-
+      {% block sidebar %}
+      / share block
+      {% capture enable_share %}{% editable_control "Mitteilen", options: 'true=Yes,false=No', hint: "Gibt dem Benuzer die Option den Artikel über Social Media mit den Freunden zu teilen" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_share == "true" %}
+      .share_hidden
+        .text-center
+          %h3.text-center{ :style => "color:#F83CA4" }
+            {{ 'sidebar_share_title' | translate }}:
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          %script{:async => "async", :src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0", :type => "text/javascript"}	
+          .addthis_sharing_toolbox
+          %br
+      {% endif %}
+      
   .col-sm-3.col-xs-12
     #sidebar
-      {% block sidebar %}
       %form{:action => '{% path_to search %}', :role => "search"}
         .form-group
           %input.form-control{name: 'q', :type => "text", :placeholder => "Wonach suchst du?"}
           //%button.btn.btn-default{:type => "submit"} Suchen
 
       / contact block
-      {% capture enable_contact %}{% editable_control "contact", options: 'true=Yes,false=No', hint: "Tell if the contact block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_contact %}{% editable_control "contact", options: 'true=Yes,false=No', hint: "Zeigt Link zum Kontaktformular der Systemzentrale an" %}true{% endeditable_control %}{% endcapture %}
       {% if enable_contact == "true" %}
       %a{ href: '{% path_to contact_form %}' }
         .contact.well
           %h3.text-center
             {{ 'sidebar_contact_title' | translate }}
-          %h3.text-center{:style => "color:black;text-decoration: none"}
+          %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
             %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
             %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
-        {% endif %}
-
+      {% endif %}
+      
       / institutes block
-      {% capture enable_institutes %}{% editable_control "institutes", options: 'true=Yes,false=No', hint: "Tell if the institutes block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
+      {% capture enable_institutes %}{% editable_control "Institute", options: 'true=Yes,false=No', hint: "Link zur Übersicht über alle Institute" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_institutes == "true" %}
       %a{ href: '{% path_to institutes %}'}
         .institutes.well
           %h3.text-center
             {{ 'sidebar_institutes_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x40' }}", style: 'height: 20px' }
+            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x80' }}", style: 'height: 40px' }
+      {% endif %}
+
+      / paravita block
+      {% capture enable_paravita %}{% editable_control "Paravita", options: 'true=Yes,false=No', hint: "Zeigt einen Link zu den Paravita Produkten an. " %}false{% endeditable_control %}{% endcapture %}
+      {% if enable_paravita == "false" %}
+      %a{ href: '{% path_to institutes %}'}
+        .institutes.well
+          %h3.text-center
+            {{ 'sidebar_paravita_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px' }
+      {% endif %}
+
+      / parapan block
+      {% capture enable_parapan %}{% editable_control "Parapan", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Parapan Webseite an." %}false{% endeditable_control %}{% endcapture %}
+      {% if enable_parapan == "false" %}
+      %a{ href: 'http://parapan.locomotivehosting.com'}
+        .institutes.well
+          %h3.text-center
+            {{ 'sidebar_parapan_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_parapan.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px' }
       {% endif %}
 
       / selbststaendigkeit block
-      {% capture enable_news %}{% editable_control "news", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_news == "true" %}
+      {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_selbststaendigkeit == "false" %}
       %a{ href: '{% path_to news %}' }
         .news.well
           %h3.text-center
             {{ 'sidebar_selbststaendigkeit_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px' }
+            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px' }
       {% endif %}
 
       / news block
-      {% capture enable_news %}{% editable_control "news", options: 'true=Yes,false=No', hint: "Tell if the news block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_news == "true" %}
+      {% capture enable_news %}{% editable_control "Aktuelles", options: 'true=Yes,false=No', hint: "Link zur Seite Aktuelles" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_news == "false" %}
       %a{ href: '{% path_to news %}' }
         .news.well
           %h3.text-center
@@ -67,19 +100,40 @@ position: 5
           .text-center
             %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px' }
       {% endif %}
-
-      / share block
-      {% capture enable_share %}{% editable_control "share", options: 'true=Yes,false=No', hint: "Tell if the share block in the sidebar is displayed or not %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_share == "true" %}
-      .news.well
-        %h3.text-center
-          %a{ href: ''}
-            {{ 'sidebar_share_title' | translate }}
-        .text-center
-          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-          .addthis_sharing_toolbox
+      
+      / vorhernachher block
+      {% capture enable_beforeafter %}{% editable_control "Vorher/Nachher", options: 'true=Yes,false=No', hint: "Link zu Vorher/Nachher Bilder" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_beforeafter == "false" %}
+      %a{ href: '{% path_to institutes %}#successstories' }
+        .news.well
+          %h3.text-center
+            {{ 'sidebar_beforeafter_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_vorhernachher.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px' }
       {% endif %}
 
-      {% endblock %}
+      / Kochbuch block
+      {% capture enable_kochbuch %}{% editable_control "Kochbuch", options: 'true=Yes,false=No', hint: "Link zum Bestellen von Kochbuch" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_kochbuch == "false" %}
+      %a{ href: '' }
+        .well
+          %h3.text-center
+            {{ 'sidebar_kochbuch_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_kochbuch.png' | theme_image_url | resize: 'x160' }}", style: 'height: 80px' }
+      {% endif %}
+
+      / Kochbuch block
+      {% capture enable_kinder %}{% editable_control "Kinderprogramm", options: 'true=Yes,false=No', hint: "Link zum Kinderprogramm Parolino" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_kinder == "false" %}
+      %a{ href: '/abnehmen/parolino-das-kinderprogramm' }
+        .well
+          %h3.text-center
+            {{ 'sidebar_kinder_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_parolino.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px' }
+      {% endif %}
+      
+  {% endblock %}
 
 {% endblock %}

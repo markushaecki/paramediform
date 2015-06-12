@@ -5,6 +5,7 @@ $(window).load(function() {
 $(document).ready(function(e){
 	$(window).resize(function() {
 		manage_atmospheric_image();
+		/*
 		if($(window).width() < 768){
 			$('#sidebar').css("position", "relative");
 			$('#sidebar').css("top", 0);
@@ -13,6 +14,7 @@ $(document).ready(function(e){
 			$('#sidebar').css("position", "fixed");
 			$('#sidebar').css("top", 60);
 		}
+		*/
 		$('#sidebar').width($('#sidebar').parent().width());
 	 });
 
@@ -23,6 +25,21 @@ $(document).ready(function(e){
          '<div id="lightbox">' +
          '<p>Zum Schliessen Klicken</p>' +
          '<img src="' + $(this).attr('href') + '" alt="Enlarged" />' +
+         '</div>';
+       $('body').append(box);
+     });
+
+     $('div.doubleimg-box a').click(function(event) {
+       event.preventDefault();
+       var box =
+         '<div id="lightbox">' +
+         '<p>Zum Schliessen Klicken</p>' +
+         '<div style="float:right;width:50%">' +
+         '<img class="img-responsive" src="' + $(this).attr('nachsrc') + '" alt="Vergrössert Nach Abnehmen" style="float:left;max-width:100%" />' +
+         '</div>' +
+         '<div style="float:left;width:50%">' +
+         '<img class="img-responsive" src="' + $(this).attr('vorsrc') + '" alt="Vergrössert Vor Abnehmen" style="float:right;max-width:100%" />' +
+         '</div>' +
          '</div>';
        $('body').append(box);
      });
@@ -42,6 +59,7 @@ $(document).ready(function(e){
      });
 });
 
+/*
 $(document).scroll(function(e){
 	if($(window).width() > 767){
 		if($(document).scrollTop() > 265){
@@ -56,6 +74,7 @@ $(document).scroll(function(e){
 	}
 
 });
+*/
 
 function reload_with_zoom(zoom){
 	var src = $("#google_map").attr("src");
