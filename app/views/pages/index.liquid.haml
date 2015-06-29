@@ -42,47 +42,6 @@ editable_elements:
 //{{ geo_adress.first.geometry.location.lng }}{{ geo_adress.first.geometry.location.lng }}
 {% endcomment %}
 .row
-  .col-xs-12
-    %h1.text-center {% editable_text introduction_title, format: "raw", line_break: false, rows: 1 %}Abnehmen mit Paramediform{% endeditable_text %}
-    %br
-    .row
-      .col-sm-6.col-xs-12
-        %img.img-responsive{ src: "{{ 'frau2.png' | theme_image_url }}", :style => "float:right" }
-      .col-sm-5.col-md-3.col-xs-12
-        %h2
-          %span{:style => "color:#C37635"} G
-          %span enug
-        %p{:style => "font-size:14px"} Nur wer genug isst kann langfristig abnehmen. Hungern kann man nicht über längere Zeit!
-        %h2
-          %span G
-          %span ediegen
-        %p{:style => "font-size:14px"} Das Essen ist ein zentraler Bestandteil unserer Lustempfindung. Essen muss eine Lust sein!
-        %h2
-          %span{:style => "color:#177910"} G
-          %span esund
-        %p{:style => "font-size:14px"} Nur eine gesunde ausgewogene Ernährung kann langfristig erfolgreich sein.
-      .col-sm-1.col-md-3.col-xs-12
-    %br
-    %br
-	
-.row
-  .col-sm-6.col-xs-12
-    %h3 {% editable_text methology_title, format: "raw", line_break: false, rows: 1 %}Die Methode funktioniert bei "praktisch" allen{% endeditable_text %}
-    %br
-    %p{:style => "font-size:14px"} {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}
-    %br
-    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'", :style => "float:right"} Mehr Info...
-
-  .col-sm-6.col-xs-12
-    %h3 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}
-    %br
-    %p{:style => "font-size:14px"} {% editable_text scinence_text, format: "raw", line_break: false, rows: 1 %}Ananas ist nicht nur lecker, sie enthält auch zahlreiche Vitalstoffe und Enzyme und fördert die Verdauung. Seefahrer brachten die Ananas im Jahre 1535 ...{% endeditable_text %}
-    %br
-    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'", :style => "float:right"} Mehr Info...
-%br
-%br
-
-.row
   .col-sm-12.col-xs-12
     %h3 {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
     %a.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }

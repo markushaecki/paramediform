@@ -49,6 +49,14 @@ fields:
     localized: false
     text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
+- activity:
+    label: Aktivität
+    type: belongs_to
+    required: true
+    hint: Trage hier "sichtbar" oder "versteckt" ein.
+    localized: false
+    class_name: activity    
+
 - ingredients:
     label: ingredients
     type: has_many

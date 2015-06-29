@@ -27,6 +27,34 @@ position: 5
 {% endif %}
 
 {% model_form 'contacts', class: 'form-horizontal', success: '/welcome' %}
+%h2 Hiermit kontaktieren Sie das Institut {{ institute.name }}:
+%br
+.row
+  .col-sm-6.col-xs-12
+    %img.img-responsive{ src: '{{ information.image | resize: "645x" }}' }
+    %br
+  .col-sm-6.col-xs-12
+    ParaMediForm {{ institute.name }}
+    %br
+    {{ information.street }}
+    %br
+    {{ information.city }}
+    %br
+    %br
+    {% if information.phone != '' and information.phone != null %}
+    {{ "label_phone" | translate }} {{ information.phone }}
+    %br
+    {% endif %}
+    {% if information.fax != '' and information.fax != null %}
+    {{ "label_fax" | translate }} {{ information.fax }}
+    %br
+    {% endif %}
+    {% if information.email != '' and information.email != null %}
+    {{ information.email }}
+    %br
+    {% endif %}
+    %br
+
 %legend Thema
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12

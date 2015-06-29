@@ -59,7 +59,7 @@ position: 5
 
       / paravita block
       {% capture enable_paravita %}{% editable_control "Paravita", options: 'true=Yes,false=No', hint: "Zeigt einen Link zu den Paravita Produkten an. " %}false{% endeditable_control %}{% endcapture %}
-      {% if enable_paravita == "false" %}
+      {% if enable_paravita == "true" %}
       %a{ href: '{% path_to institutes %}'}
         .institutes.well
           %h3.text-center
@@ -70,7 +70,7 @@ position: 5
 
       / parapan block
       {% capture enable_parapan %}{% editable_control "Parapan", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Parapan Webseite an." %}false{% endeditable_control %}{% endcapture %}
-      {% if enable_parapan == "false" %}
+      {% if enable_parapan == "true" %}
       %a{ href: 'http://parapan.locomotivehosting.com'}
         .institutes.well
           %h3.text-center
@@ -80,8 +80,8 @@ position: 5
       {% endif %}
 
       / selbststaendigkeit block
-      {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_selbststaendigkeit == "false" %}
+      {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
+      {% if enable_selbststaendigkeit == "true" %}
       %a{ href: '{% path_to news %}' }
         .news.well
           %h3.text-center
@@ -92,7 +92,7 @@ position: 5
 
       / news block
       {% capture enable_news %}{% editable_control "Aktuelles", options: 'true=Yes,false=No', hint: "Link zur Seite Aktuelles" %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_news == "false" %}
+      {% if enable_news == "true" %}
       %a{ href: '{% path_to news %}' }
         .news.well
           %h3.text-center
@@ -102,8 +102,8 @@ position: 5
       {% endif %}
       
       / vorhernachher block
-      {% capture enable_beforeafter %}{% editable_control "Vorher/Nachher", options: 'true=Yes,false=No', hint: "Link zu Vorher/Nachher Bilder" %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_beforeafter == "false" %}
+      {% capture enable_beforeafter %}{% editable_control "Vorher/Nachher", options: 'true=Yes,false=No', hint: "Link zu Vorher/Nachher Bilder" %}false{% endeditable_control %}{% endcapture %}
+      {% if enable_beforeafter == "true" %}
       %a{ href: '{% path_to institutes %}#successstories' }
         .news.well
           %h3.text-center
@@ -113,8 +113,8 @@ position: 5
       {% endif %}
 
       / Kochbuch block
-      {% capture enable_kochbuch %}{% editable_control "Kochbuch", options: 'true=Yes,false=No', hint: "Link zum Bestellen von Kochbuch" %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_kochbuch == "false" %}
+      {% capture enable_kochbuch %}{% editable_control "Kochbuch", options: 'true=Yes,false=No', hint: "Link zum Bestellen von Kochbuch" %}false{% endeditable_control %}{% endcapture %}
+      {% if enable_kochbuch == "true" %}
       %a{ href: '' }
         .well
           %h3.text-center
@@ -124,8 +124,8 @@ position: 5
       {% endif %}
 
       / Kochbuch block
-      {% capture enable_kinder %}{% editable_control "Kinderprogramm", options: 'true=Yes,false=No', hint: "Link zum Kinderprogramm Parolino" %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_kinder == "false" %}
+      {% capture enable_kinder %}{% editable_control "Kinderprogramm", options: 'true=Yes,false=No', hint: "Link zum Kinderprogramm Parolino" %}false{% endeditable_control %}{% endcapture %}
+      {% if enable_kinder == "true" %}
       %a{ href: '/abnehmen/parolino-das-kinderprogramm' }
         .well
           %h3.text-center

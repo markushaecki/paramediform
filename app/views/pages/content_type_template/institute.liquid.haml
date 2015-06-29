@@ -21,15 +21,16 @@ handle: institute_home
       %img.img-responsive{ src: '{{ information.image | resize: "645x" }}' }
       %br
       %h2 {{ information.institute_title }}
-      %p {{ information.institute_description }}
+      %p{:style => "margin:0 0 20px"} {{ information.institute_description }} Hallo wie geht es euch denn so. Hallo wie geht es euch denn so, hallo wie geht es euch denn so... Hallo wie geht es euch denn so.
       {% for institute_picture in institute_pictures %}
-      %br
-      %br
       .row
         .col-xs-12
           .img-box
             %a{ href: '{{ institute_picture.picture.url }}' }
               %img.img-responsive{ src: '{{ institute_picture.picture.url | resize: "630x" }}' }
           %p{:style => "text-align: center;margin-top:10px;margin-bottom:0px"} {{ institute_picture.description }}
+          {% unless forloop.last %}
+          %br
+          {% endunless %}
       {% endfor %}
 {% endblock %}

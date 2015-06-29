@@ -5,7 +5,7 @@
     .tags.text-center{:style => "margin-bottom:5px"}
       %a.label.label-primary.tag{ href: "{{ path }}" } {{ params.tag }} X
   {% endif %}
-  
+  {% assign hideit = 0 %}
   {% for news_entry in paginate.collection %}
   {% if news_entry.interview %}
   {% assign type = "interview" %}
@@ -13,7 +13,11 @@
   {% assign type = "illustrative_text" %}
   {% elsif news_entry.recipe %}
   {% assign type = "recipe" %}
+  {% if news_entry.recipe.activity.attr == "versteckt" %}
+  {% assign hideit = 1 %}
   {% endif %}
+  {% endif %}
+  {% if hideit == 0 %}
   .media
     .pull-right
       {{ news_entry.published_at | localized_date: '%d.%m.%Y' }}
@@ -37,6 +41,7 @@
     {% if forloop.last %}
     %br
     {% endif %}
+  {% endif %}
   {% endfor %}
   
   {% if paginate.total_pages != 1 %}
