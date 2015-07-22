@@ -5,8 +5,8 @@
     .tags.text-center{:style => "margin-bottom:5px"}
       %a.label.label-primary.tag{ href: "{{ path }}" } {{ params.tag }} X
   {% endif %}
-  {% assign hideit = 0 %}
   {% for news_entry in paginate.collection %}
+  {% assign hideit = 0 %}
   {% if news_entry.interview %}
   {% assign type = "interview" %}
   {% elsif news_entry.illustrative_text %}

@@ -33,6 +33,7 @@ fields:
     required: true
     hint: Dieser Titel wird lediglich dazu verwendet um diese Illustration einer Nachricht zuortnen zu können.
     localized: false
+    searchable: true
 
 - image: # The lowercase, underscored name of the field
     label: Illustration # Human readable name of the field

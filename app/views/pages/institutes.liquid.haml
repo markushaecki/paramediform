@@ -14,7 +14,7 @@ editable_elements:
 {{ 'jquery.activity-indicator.min.js' | javascript_tag }}
 {% endblock %}
 
-{% block share_meta_tags %}	
+{% block share_meta_tags %}
 %meta{:content => "Erfolgsgeschichten: Wie schlank sein zur Gewohnheit wird.", :property => "og:title"}
 %meta{:content => "website", :property => "og:type"}
 %meta{:content => "http://{{ host }}{{ 'sidebar_vorhernachher.png' | theme_image_url }}", :property => "og:image"}
@@ -49,6 +49,7 @@ editable_elements:
       %a{ href: '{% path_to institute, with: institute_success_stories %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}
     {% endfor %}
     {% endwith_scope %}
+	
 %p{style: "color:lightgray;margin-left:100px"} Tipp: Klicke auf einen Stern um auf die gewünschte Institutsseite zu gelangen.
 %br
 

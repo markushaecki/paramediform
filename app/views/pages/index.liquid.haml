@@ -2,16 +2,13 @@
 title: Willkommen
 published: true
 handle: home
-editable_elements:
-  "content/institutes_title": "Uber 50 Institute in Ihrer Nahe"
-  "content/methology_title": "Abnehmen mit Paramediform"
-  "content/scinence_title": "Wissenschaftliche Hintergründe"
 ---
 {% extends layouts/simple %}
 
 {% block header %}
 {{ 'map.js' | javascript_tag }}
 {{ 'jquery.activity-indicator.min.js' | javascript_tag }}
+{{ 'fadeimages.js' | javascript_tag }}
 {% endblock %}
 
 {% block content %}
@@ -23,7 +20,7 @@ editable_elements:
 
 {% for possibleinstitute in institutes %}
 {% if institute == "" %}
-{% capture url %}{{ possibleinstitute.url }}/success-stories/random.json{% endcapture %}
+{% capture url %}{{ possibleinstitute.url }}/success-stories/random.json?frontsite=true{% endcapture %}
 {% consume data from url %}
 {% assign success_story = data.success_story %}
 {% endconsume %}
@@ -41,27 +38,81 @@ editable_elements:
 //{% endconsume %}
 //{{ geo_adress.first.geometry.location.lng }}{{ geo_adress.first.geometry.location.lng }}
 {% endcomment %}
+{% assign years = now | date: "%Y" | minus: 1992 %}
+
+%h1.text-center Erfolgreich abnehmen seit {{ years }} Jahre in {{ contents.institutes.size }} Instituten
+%br
 .row
+  .col-sm-6.col-xs-12
+    .thumbnail{:style => "margin-bottom:5px !important"}
+      %img.img-responsive{ src: "{{ 'beratung.jpg' | theme_image_url }}" }
+    .fixed_title
+      %h3 Individuelle Beratung
+  .col-sm-6.col-xs-12
+    .thumbnail{:style => "margin-bottom:5px !important"}
+      %a#rezepturl{ href: '' }
+        %img.img-responsive#rezeptbild{ src: ""}
+    .fixed_title
+      %h3 Essen was der Körper braucht!
+.row
+  .col-sm-6.col-xs-12
+    %div
+      .thumbnail{:style => "margin-bottom:5px !important"}
+        %a#success_link.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
+          %img#before_img{ src: '{{ success_story.before_image.url | resize: "518x800#" }}', :style => "float:left;max-width:50%" }
+          %img#after_img{ src: '{{ success_story.after_image.url | resize: "518x800#" }}', :style => "float:left;max-width:50%" }
+        .clearfix
+    .fixed_title
+      %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+  .col-sm-6.col-xs-12
+    .thumbnail{:style => "margin-bottom:5px !important"}
+      %img.img-responsive{ src: "{{ 'stoffwechseltypen.jpg' | theme_image_url }}" }
+    .fixed_title
+      %h3 Welchen Stoffwechseltyp bist du?
+%br
   .col-sm-12.col-xs-12
-    %h3 {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
-    %a.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
-      {% include before_after_front %}
-
-  .col-sm-12.col-xs-12
-    %h3 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Über 50 Institute in Ihrer Nähe{% endeditable_text %}
-    .thumbnail
-      .text-center#institutes_map{:style => "position:relative"}
-        %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
-        %span.text-center#indicator{:style => "position:absolute"}
-        %br
-        %br
-        {% for map_institute in contents.institutes %}
-        %a{ href: '{% path_to map_institute, with: institute_success_stories %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}' }
-          .glyphicon.glyphicon-asterisk
-        {% endfor %}
-	
+    .text-center#institutes_map{:style => "position:relative"}
+      %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
+      %span.text-center#indicator{:style => "position:absolute"}
+      %br
+      %br
+      {% for map_institute in contents.institutes %}
+      %a{ href: '{% path_to map_institute, with: institute_success_stories %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}', :style => "font-size:7px" }
+        .glyphicon.glyphicon-asterisk
+      {% endfor %}
+    %h3.text-center {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe{% endeditable_text %}
 
 
-
+%div.hidden
+  {% for news_entry in contents.news %}
+  {% assign hideit = 1 %}
+  {% if news_entry.recipe %}
+  {% assign type = "recipe" %}
+  {% if news_entry.recipe.activity.attr != "versteckt" %}
+  {% assign hideit = 0 %}
+  {% endif %}
+  {% endif %}
+  {% if hideit == 0 %}
+  %p.news_p
+    %span.news_url aktuelles?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}
+    %span.img_url {{ news_entry.recipe.image.url }}
+  {% endif %}
+  {% endfor %}
+  
+  {% assign institutes = contents.institutes.all | sample: 40 %}
+  {% for institute in institutes %}
+  {% capture url %}{{ institute.url }}/success-stories/random.json?frontsite=true{% endcapture %}
+  {% consume data from url %}
+  {% assign success_story = data.success_story %}
+  {% endconsume %}
+  {% if success_story.prename != null %}
+  %p.success_p
+    %span.success_url {% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}
+    %span.before_url {{ success_story.before_image.url | resize: "518x800#" }}
+    %span.after_url {{ success_story.after_image.url | resize: "518x800#" }}
+    %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+  {% endif %}
+  {% endfor %}
+  
 
 {% endblock %}

@@ -3,17 +3,12 @@ title: Institut
 published: true
 slug: institute
 listed: true
-position: 2
+position: 3
 handle: institute_home
 ---
 {% extends parent %}
 
 {% block content/main/tab_pane %}
-
-{% capture url %}{{ institute.url }}/{{locale}}/institute/all.json{% endcapture %}
-{% consume data from url %}
-{% assign institute_pictures = data.institute_pictures %}
-{% endconsume %}
 
 .row
   .col-xs-12
@@ -22,7 +17,7 @@ handle: institute_home
       %br
       %h2 {{ information.institute_title }}
       %p{:style => "margin:0 0 20px"} {{ information.institute_description }} Hallo wie geht es euch denn so. Hallo wie geht es euch denn so, hallo wie geht es euch denn so... Hallo wie geht es euch denn so.
-      {% for institute_picture in institute_pictures %}
+      {% for institute_picture in information.institute_pictures %}
       .row
         .col-xs-12
           .img-box

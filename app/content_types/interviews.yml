@@ -33,6 +33,7 @@ fields:
     required: true
     hint: "Referenztitel (wird auf der Webseite nicht dargestellt)"
     localized: false
+    searchable: true
 
 - image: # The lowercase, underscored name of the field
     label: Image # Human readable name of the field
@@ -57,3 +58,4 @@ fields:
     localized: false
     class_name: interview_questions
     inverse_of: interview
+    searchable: true

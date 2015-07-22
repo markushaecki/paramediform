@@ -57,9 +57,24 @@ handle: contact_form
     %br
     Fax +41 62 888 88 20
     %br
-    %br
-
-
+    %br 
+.row
+  .col-sm-9.col-xs-12
+    %p{:style => "margin-top:7px"} ...oder kontaktieren Sie direkt das Institut in ihrer Region:
+  .col-sm-3.col-xs-12
+    .dropdown
+      %button.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
+        Institute
+        %span.caret
+      %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
+        {% with_scope order_by: 'name asc' %}
+        {% for institute in contents.institutes %}
+        %li{role: "presentation"}
+          %a{ href: '{% path_to institute %}/kontakt', role: "menuitem", tabindex: "-1" } {{ institute.name }}
+        {% endfor %}
+        {% endwith_scope %}
+%br
+	
 %legend Thema
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
@@ -72,10 +87,10 @@ handle: contact_form
   .col-sm-6.col-xs-12
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Rückmeldung
+        %input{:type => "radio", :name => "content[subject]", :value => "Paravita Beratung"} Paravita Beratung
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Anderes Thema"} Anderes Thema
+        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Rückmeldung
 
 %legend Absender
 .row

@@ -14,18 +14,6 @@ position: 5
       {% block main %}
       {% endblock %}
       {% block sidebar %}
-      / share block
-      {% capture enable_share %}{% editable_control "Mitteilen", options: 'true=Yes,false=No', hint: "Gibt dem Benuzer die Option den Artikel über Social Media mit den Freunden zu teilen" %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_share == "true" %}
-      .share_hidden
-        .text-center
-          %h3.text-center{ :style => "color:#F83CA4" }
-            {{ 'sidebar_share_title' | translate }}:
-          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-          %script{:async => "async", :src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0", :type => "text/javascript"}	
-          .addthis_sharing_toolbox
-          %br
-      {% endif %}
       
   .col-sm-3.col-xs-12
     #sidebar
@@ -35,8 +23,6 @@ position: 5
           //%button.btn.btn-default{:type => "submit"} Suchen
 
       / contact block
-      {% capture enable_contact %}{% editable_control "contact", options: 'true=Yes,false=No', hint: "Zeigt Link zum Kontaktformular der Systemzentrale an" %}true{% endeditable_control %}{% endcapture %}
-      {% if enable_contact == "true" %}
       %a{ href: '{% path_to contact_form %}' }
         .contact.well
           %h3.text-center
@@ -44,7 +30,6 @@ position: 5
           %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
             %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
             %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
-      {% endif %}
       
       / institutes block
       {% capture enable_institutes %}{% editable_control "Institute", options: 'true=Yes,false=No', hint: "Link zur Übersicht über alle Institute" %}false{% endeditable_control %}{% endcapture %}

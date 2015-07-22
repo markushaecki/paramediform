@@ -3,7 +3,7 @@
 {% assign before = true %}
 {% for one in all %}
 {% if one.slug == this.slug %}
-{% assign before = false %}	
+{% assign before = false %}
 {% else %}
 {% if before %}
 {% assign before_url = "?slug=" | append: one.slug | append: "&type=" | append: one.type | append: "&page=" | append: params.page %}

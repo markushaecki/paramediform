@@ -28,8 +28,8 @@ position: 1
 
     %meta{content: "width=device-width, initial-scale=1, maximum-scale=10", name: "viewport"}/
     //%script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", type: "text/javascript"}
-	
-    {% block share_meta_tags %}	
+
+    {% block share_meta_tags %}
     %meta{:content => "{{ page.seo_title }}", :property => "og:title"}/
     %meta{:content => "website", :property => "og:type"}/
     %meta{:content => "http://{{ host }}{{ 'Logo.png' | theme_image_url }}", :property => "og:image"}/
@@ -50,14 +50,14 @@ position: 1
   %body
     #header
       %div.relative_position
-        %img.atmospereic{ src: "{{ 'atmospheric.png' | theme_image_url }}" }
+        /%img.atmospere{ src: "{{ 'hintergrundbild.png' | theme_image_url }}" }
       .container.relative_position{ :style => "max-width:750px"}
         %p.text-center
           %a{ href: "/index", :style => "text-decoration:none;color:black", :accesskey => "1" }
-            %img.img-responsive#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x120' }}", :style => "margin-top:50px" }
-            %p.text-center Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
+            %img#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x100' }}", :style => "margin-top:30px" }
+            %p.text-center{:style => "font-size:10px"} Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
-          .container{ :style => "width:100%;margin-top:20px;margin-bottom:20px"}
+          .container{ :style => "width:100%;margin-top:10px;margin-bottom:20px"}
             .navbar-header
               %button.navbar-toggle.collapsed{:type => "button", :data => {:toggle => 'collapse', :target => '#bs-example-navbar-collapse-1'}}
                 %span.sr-only Toggle navigation
