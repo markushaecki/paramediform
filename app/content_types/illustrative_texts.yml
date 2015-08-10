@@ -50,3 +50,12 @@ fields:
     required: false
     hint: Dieses Bild wird mit dem Text zusammen angezeigt und untermalt damit die Stimmung welche der Text hervorrufen soll.
     localized: false
+
+- news:
+    label: News
+    type: has_many
+    hint: News referencing this illustrative text
+    localized: false
+    class_name: news
+    inverse_of: illustrative_text
+    ui_enabled: false

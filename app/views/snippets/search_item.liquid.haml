@@ -51,11 +51,14 @@
     {% endif %}
     %br
 
-{% else if result.content_type_slug == 'illustrative_texts' %}
+{% elsif result.content_type_slug == 'illustrative_texts' %}
+
+{% with_scope _slug: result._slug %}{% assign illustrative_text = contents.illustrative_texts.first %}{% endwith_scope %}
+{% assign news = illustrative_text.news.first %}
 
 .media-body
   %h4.media-heading
-    %a{ href: '{% path_to news %}?type=illustrative_text&slug={{ result._slug }}' }
+    %a{ href: '{% path_to "news" %}?type=illustrative_text&slug={{ news._slug }}' }
       {% if highlighted_title.size > 0 %}
       %span.highlighted {{ result.highlighted.title }}
       {% else %}
@@ -69,24 +72,28 @@
     {% endif %}
     %br
 
-{% else if result.content_type_slug == 'interviews' %}
+{% elsif result.content_type_slug == 'interviews' %}
+
+{% with_scope _slug: result._slug %}{% assign interview = contents.interviews.first %}{% endwith_scope %}
+{% assign news = interview.news.first %}
 
 .media-body
   %h4.media-heading
-    %a{ href: '{% path_to news %}?type=interview&slug={{ result._slug }}' }
+    %a{ href: '{% path_to "news" %}?type=interview&slug={{ news._slug }}' }
       {% if result.highlighted.title.size > 0 %}
       %span.highlighted {{ result.highlighted.title }}
       {% else %}
       {{ result.title }}
       {% endif %}
 
-{% else if result.content_type_slug == 'interview_questions' %}
+{% elsif result.content_type_slug == 'interview_questions' %}
 
-{% with_scope _slug: result._slug %}{% assign question = contents.interview_questions.first %}{% endwith_scope %}
+{% with_scope _slug: result._slug %}{% assign interview = contents.interview_questions.first.interview %}{% endwith_scope %}
+{% assign news = interview.news.first %}
 
 .media-body
   %h4.media-heading
-    %a{ href: '{% path_to news %}?type=interview&slug={{ question.interview._slug }}' }
+    %a{ href: '{% path_to "news" %}?type=interview&slug={{ news._slug }}' }
       {% if result.highlighted.question.size > 0 %}
       %span.highlighted {{ result.highlighted.question }}
       {% else %}
@@ -100,11 +107,14 @@
     {% endif %}
     %br
 
-{% else if result.content_type_slug == 'recipes' %}
+{% elsif result.content_type_slug == 'recipes' %}
+
+{% with_scope _slug: result._slug %}{% assign recipe = contents.recipes.first %}{% endwith_scope %}
+{% assign news = recipe.news.first %}
 
 .media-body
   %h4.media-heading
-    %a{ href: '{% path_to news %}?type=recipe&slug={{ result._slug }}' }
+    %a{ href: '{% path_to "news" %}?type=recipe&slug={{ news._slug }}' }
       {% if result.highlighted.title.size > 0 %}
       %span.highlighted {{ result.highlighted.title }}
       {% else %}
@@ -118,13 +128,14 @@
     {% endif %}
     %br
 
-{% else if result.content_type_slug == 'recipe_ingredients' %}
+{% elsif result.content_type_slug == 'recipe_ingredients' %}
 
-{% with_scope _slug: result._slug %}{% assign ingredient = contents.recipe_ingredients.first %}{% endwith_scope %}
+{% with_scope _slug: result._slug %}{% assign recipe = contents.recipe_ingredients.first.recipe %}{% endwith_scope %}
+{% assign news = recipe.news.first %}
 
 .media-body
   %h4.media-heading
-    %a{ href: '{% path_to news %}?type=recipe&slug={{ ingredient.recipe._slug }}' }
+    %a{ href: '{% path_to "news" %}?type=recipe&slug={{ news._slug }}' }
       {% if result.highlighted.name.size > 0 %}
       %span.highlighted {{ result.highlighted.name }}
       {% else %}
@@ -134,3 +145,5 @@
 {% endif %}
 
 %hr
+
+{% endif %}

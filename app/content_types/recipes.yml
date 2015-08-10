@@ -57,7 +57,7 @@ fields:
     required: true
     hint: Trage hier "sichtbar" oder "versteckt" ein.
     localized: false
-    class_name: activity    
+    class_name: activity
 
 - ingredients:
     label: ingredients
@@ -66,3 +66,12 @@ fields:
     localized: false
     class_name: recipe_ingredients
     inverse_of: recipe
+
+- news:
+    label: News
+    type: has_many
+    hint: News referencing this recipe
+    localized: false
+    class_name: news
+    inverse_of: recipe
+    ui_enabled: false
