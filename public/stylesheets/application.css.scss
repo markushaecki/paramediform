@@ -287,11 +287,16 @@ legend{
 }
 
 body{
-	background-image: url("/images/hintergrundbild2.png");
+	background-image: url("/images/hintergrundbild.png");
 	background-repeat: repeat-x;
 }
 
 .fixed_title{
 	text-align: center;
 	height: 35px;
+}
+
+.vspacer{
+	margin-top: 10px !important;
+	margin-bottom: 35px !important;
 }

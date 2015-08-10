@@ -9,12 +9,12 @@
     %table.table
       %thead
         %tr
-          %th{:style => "padding:2px 8px;text-align:right"} Amount
-          %th{:style => "padding:2px 8px"} Ingredient
+          %th{:style => "padding:2px 8px;text-align:center"} Menge
+          %th{:style => "padding:2px 8px"} Zutat
       %tbody
         {% for ingredient in recipe.ingredients %}
         %tr
-          %td{:style => "padding:2px 8px;text-align:right"}
+          %td{:style => "padding:2px 8px;text-align:center"}
             {{ ingredient.amount }} {{ ingredient.unit }}
           %td{:style => "padding:2px 8px"}
             {{ ingredient.name }}
@@ -23,4 +23,3 @@
     / PREPARATION
     %br
     {{ recipe.preparation }}
-%br

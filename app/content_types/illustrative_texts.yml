@@ -35,6 +35,15 @@ fields:
     localized: false
     searchable: true
 
+- text: # The lowercase, underscored name of the field
+    label: Text # Human readable name of the field
+    type: text
+    required: true
+    hint: Dieser Text ist der eingeltiche Inhalt der Nachricht. Er bedarf keiner Einleitung mehr.
+    localized: false
+    searchable: true
+    text_formatting: html
+
 - image: # The lowercase, underscored name of the field
     label: Illustration # Human readable name of the field
     type: file

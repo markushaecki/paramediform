@@ -44,22 +44,22 @@ handle: institute_layout
                 %b +
         .col-sm-6.col-xs-6.col-md-6{:style => "padding-right:0"}
           %p ParaMediForm {{ institute.name }}
-          %p {{ information.street }}
-          %p {{ information.city }}
+          %p {{ institute.street }} {{ institute.streetnumber }}
+          %p {{ institute.zip }} {{ institute.city }}
         .col-sm-6.col-xs-6.col-md-6{:style => "padding-left:0"}
           .text-right
-            {% if information.phone != '' and information.phone != null %}
-            %p {{ "label_phone" | translate }} {{ information.phone }}
+            {% if institute.phone != '' and institute.phone != null %}
+            %p {{ "label_phone" | translate }} {{ institute.phone }}
             {% endif %}
-            {% if information.fax != '' and information.fax != null %}
-            %p {{ "label_fax" | translate }} {{ information.fax }}
+            {% if institute.fax != '' and institute.fax != null %}
+            %p {{ "label_fax" | translate }} {{ institute.fax }}
             {% endif %}
-            {% if information.email != '' and information.email != null %}
-            %p {{ information.email }}
+            {% if institute.email != '' and institute.email != null %}
+            %p {{ institute.email }}
             {% endif %}
 %br
 
-.row
+.row#institutetap
   .col-sm-12.col-xs-offset-0.col-xs-12
     %ul.nav.nav-pills
       {% fetch_page institute_layout as root_page %}

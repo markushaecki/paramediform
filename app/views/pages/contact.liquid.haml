@@ -70,7 +70,7 @@ handle: contact_form
         {% with_scope order_by: 'name asc' %}
         {% for institute in contents.institutes %}
         %li{role: "presentation"}
-          %a{ href: '{% path_to institute %}/kontakt', role: "menuitem", tabindex: "-1" } {{ institute.name }}
+          %a{ href: "/{{ institute._slug }}/kontakt#institutetap", role: "menuitem", tabindex: "-1" } {{ institute.name }}
         {% endfor %}
         {% endwith_scope %}
 %br

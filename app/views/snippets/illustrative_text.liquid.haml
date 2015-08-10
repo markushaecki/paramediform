@@ -5,9 +5,9 @@
     .thumbnail
       .img-box
         %a{ href: '{{ illustrative_text.image.url }}' }
-          %img.img-responsive{ src: '{{ illustrative_text.image.url | resize: "900x240#" }}' }    
+          %img.img-responsive{ src: '{{ illustrative_text.image.url | resize: "900x400#" }}' }    
 .columnize
   .row
     .col-xs-12
       .text-justify
-        {{ news.text }}
+        {{ illustrative_text.text }}

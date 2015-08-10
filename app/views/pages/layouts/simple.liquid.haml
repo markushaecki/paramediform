@@ -46,7 +46,6 @@ position: 1
 
     /[if lt IE 9]
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-
   %body
     #header
       %div.relative_position
@@ -54,7 +53,7 @@ position: 1
       .container.relative_position{ :style => "max-width:750px"}
         %p.text-center
           %a{ href: "/index", :style => "text-decoration:none;color:black", :accesskey => "1" }
-            %img#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x100' }}", :style => "margin-top:30px" }
+            %img#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: '200x100#' }}", :style => "margin-top:30px" }
             %p.text-center{:style => "font-size:10px"} Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
           .container{ :style => "width:100%;margin-top:10px;margin-bottom:20px"}

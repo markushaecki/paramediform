@@ -9,10 +9,13 @@
   {% assign hideit = 0 %}
   {% if news_entry.interview %}
   {% assign type = "interview" %}
+  {% assign preview_image = news_entry.interview.person.picture %}
   {% elsif news_entry.illustrative_text %}
   {% assign type = "illustrative_text" %}
+  {% assign preview_image = news_entry.illustrative_text.image %}
   {% elsif news_entry.recipe %}
   {% assign type = "recipe" %}
+  {% assign preview_image = news_entry.recipe.image %}
   {% if news_entry.recipe.activity.attr == "versteckt" %}
   {% assign hideit = 1 %}
   {% endif %}
@@ -22,7 +25,7 @@
     .pull-right
       {{ news_entry.published_at | localized_date: '%d.%m.%Y' }}
     .media-body
-      %h5
+      %h5{:style => "margin-top:0"}
         %a{ href: "?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}" } {{ news_entry.title }}
       {% if news_entry.tags %}
       .tags{:style => "margin:7px 7px;"}
@@ -33,6 +36,8 @@
         &nbsp;
         {% endfor %}
       {% endif %}
+      .thumbnail{:style => "width:85px;float:left;margin-right:20px"}
+        %img.img-responsive{ src: '{{ preview_image | resize: "80x80#" }}' }
       .text
         {{ news_entry.text | truncate: 170 }}
     {% unless forloop.last %}

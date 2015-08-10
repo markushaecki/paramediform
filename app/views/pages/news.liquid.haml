@@ -22,13 +22,6 @@ handle: news
 {% include recipe with news:this_news %}
 {% elsif this_news.illustrative_text %}
 {% include illustrative_text with news:this_news %}
-%br
-%hr
-{% with_scope published_at.lt: today %}
-{% include generate_main_subnavigation with all:contents.news, this:this_news %}
-{% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
-{% endwith_scope %}
-
 {% else %}
 
 / # UNSUPPORTED
@@ -36,6 +29,15 @@ handle: news
   %h2 Nachricht konnte nicht gefunden werden.
 
 {% endif %}
+%hr
+.row
+  .col-sm-4.col-xs-12.text-center
+  .col-sm-4.col-xs-12.text-center
+    %div{:style => "margin-bottom:10px"}
+      %ul.pager{:style => "margin-top:0px; display: inline" }
+        %li
+          %a{ href: "{{ path }}" } {{ "button_back" | translate }}
+  .col-sm-4.col-xs-12.text-center
 
 {% else %}
 

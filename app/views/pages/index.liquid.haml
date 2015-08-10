@@ -40,12 +40,13 @@ handle: home
 {% endcomment %}
 {% assign years = now | date: "%Y" | minus: 1992 %}
 
-%h1.text-center Erfolgreich abnehmen seit {{ years }} Jahre in {{ contents.institutes.size }} Instituten
+%h1.text-center Erfolgreich abnehmen seit {{ years }} Jahren in {{ contents.institutes.size }} Instituten
 %br
 .row
   .col-sm-6.col-xs-12
-    .thumbnail{:style => "margin-bottom:5px !important"}
-      %img.img-responsive{ src: "{{ 'beratung.jpg' | theme_image_url }}" }
+    %a{ href:'/abnehmen/individuelle-beratung'}    
+      .thumbnail{:style => "margin-bottom:5px !important"}
+        %img.img-responsive{ src: "{{ 'beratung.jpg' | theme_image_url }}" }
     .fixed_title
       %h3 Individuelle Beratung
   .col-sm-6.col-xs-12
@@ -65,8 +66,9 @@ handle: home
     .fixed_title
       %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
   .col-sm-6.col-xs-12
-    .thumbnail{:style => "margin-bottom:5px !important"}
-      %img.img-responsive{ src: "{{ 'stoffwechseltypen.jpg' | theme_image_url }}" }
+    %a{ href:'/abnehmen/stoffwechseltypen'}    
+      .thumbnail{:style => "margin-bottom:5px !important"}
+        %img.img-responsive{ src: "{{ 'stoffwechseltypen.jpg' | theme_image_url }}" }
     .fixed_title
       %h3 Welchen Stoffwechseltyp bist du?
 %br
@@ -95,7 +97,7 @@ handle: home
   {% if hideit == 0 %}
   %p.news_p
     %span.news_url aktuelles?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}
-    %span.img_url {{ news_entry.recipe.image.url }}
+    %span.img_url {{ news_entry.recipe.image.url | resize: "700x525#" }}
   {% endif %}
   {% endfor %}
   
@@ -108,8 +110,8 @@ handle: home
   {% if success_story.prename != null %}
   %p.success_p
     %span.success_url {% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}
-    %span.before_url {{ success_story.before_image.url | resize: "518x800#" }}
-    %span.after_url {{ success_story.after_image.url | resize: "518x800#" }}
+    %span.before_url {{ success_story.before_image.url | resize: "354x547#" }}
+    %span.after_url {{ success_story.after_image.url | resize: "354x547#" }}
     %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
   {% endif %}
   {% endfor %}

@@ -19,7 +19,7 @@ handle: multiple_text_image
     {% if image.size > 0 %}
     %img.textpadding.img-responsive{ src: "{{ image | resize: '200x' }}",:style => "float:left;margin-right:20px" }
     {% endif %}
-    {% capture text %}{% editable_text "Text #{i + 1}", priority:"#{25 - i*3}", format:raw %}{% endeditable_text %}{% endcapture %}
+    {% capture text %}{% editable_text "Text #{i + 1}", priority:"#{25 - i*3}" %}{% endeditable_text %}{% endcapture %}
     {% if text.size > 0 %}
     .paddingactive {{ text }}
     {% endif %}

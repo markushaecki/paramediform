@@ -45,7 +45,7 @@ position: 5
       / paravita block
       {% capture enable_paravita %}{% editable_control "Paravita", options: 'true=Yes,false=No', hint: "Zeigt einen Link zu den Paravita Produkten an. " %}false{% endeditable_control %}{% endcapture %}
       {% if enable_paravita == "true" %}
-      %a{ href: '{% path_to institutes %}'}
+      %a{ href: '/produkte/paravita'}
         .institutes.well
           %h3.text-center
             {{ 'sidebar_paravita_title' | translate }}
@@ -64,10 +64,21 @@ position: 5
             %img{ src: "{{ 'sidebar_parapan.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px' }
       {% endif %}
 
+      / parapan block
+      {% capture enable_methode %}{% editable_control "Methode", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Methode an." %}false{% endeditable_control %}{% endcapture %}
+      {% if enable_methode == "true" %}
+      %a{ href: '/aktuelles?tag=Die%20Methode'}
+        .institutes.well
+          %h3.text-center
+            {{ 'sidebar_method_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px' }
+      {% endif %}
+
       / selbststaendigkeit block
       {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_selbststaendigkeit == "true" %}
-      %a{ href: '{% path_to news %}' }
+      %a{ href: '/unternehmen/selbststaendigkeit' }
         .news.well
           %h3.text-center
             {{ 'sidebar_selbststaendigkeit_title' | translate }}

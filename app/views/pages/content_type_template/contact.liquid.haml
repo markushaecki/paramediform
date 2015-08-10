@@ -36,21 +36,21 @@ position: 6
   .col-sm-6.col-xs-12
     ParaMediForm {{ institute.name }}
     %br
-    {{ information.street }}
+    {{ institute.street }} {{ institute.streetnumber }}
     %br
-    {{ information.city }}
+    {{ institute.zip }} {{ institute.city }}
     %br
     %br
-    {% if information.phone != '' and information.phone != null %}
-    {{ "label_phone" | translate }} {{ information.phone }}
-    %br
-    {% endif %}
-    {% if information.fax != '' and information.fax != null %}
-    {{ "label_fax" | translate }} {{ information.fax }}
+    {% if institute.phone != '' and institute.phone != null %}
+    {{ "label_phone" | translate }} {{ institute.phone }}
     %br
     {% endif %}
-    {% if information.email != '' and information.email != null %}
-    {{ information.email }}
+    {% if institute.fax != '' and institute.fax != null %}
+    {{ "label_fax" | translate }} {{ institute.fax }}
+    %br
+    {% endif %}
+    {% if institute.email != '' and institute.email != null %}
+    {{ institute.email }}
     %br
     {% endif %}
     %br

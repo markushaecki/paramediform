@@ -1,17 +1,27 @@
-%br
 {% assign interview = news.interview %}
+{% if interview.image %}
+.thumbnail
+  .img-box
+    %a{ href: '{{ interview.image.url }}' }
+      %img.img-responsive{ src: '{{ interview.image.url | resize: "900x380#" }}' }
+{% endif %}
+%br
 .columnize
   {% if interview.person %}
+  {% unless interview.image %}
   {% include interview_person with person:interview.person %}
+  %hr
+  {% endunless %}
   {% endif %}
   {% for question in interview.questions %}
   %h5{:style => "padding-bottom:10px"} {{ question.question }}
   .text
     {{ question.answer }}
+  {% if forloop.first and interview.person and interview.image %}
+  %hr
+  {% include interview_person with person:interview.person %}
+  {% endif %}
   {% unless forloop.last %}
   %hr
   {% endunless %}
   {% endfor %}
-%br
-%hr
-%br

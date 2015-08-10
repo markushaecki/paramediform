@@ -56,12 +56,16 @@ sidebar_selbststaendigkeit_title:
   en: Education 
 
 sidebar_paravita_title:
-  de: Vitamine
-  en: Vitamin
+  de: Mikronährstoffe
+  en: Micronutrient
 
 sidebar_parapan_title:
   de: Parapan
   en: Parapan
+
+sidebar_method_title:
+  de: Die Methode
+  en: Method
 
 sidebar_beforeafter_title:
   de: Beispiele

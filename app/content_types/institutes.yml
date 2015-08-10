@@ -42,6 +42,55 @@ fields:
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
+- street: # The lowercase, underscored name of the field
+    label: Strasse # Human readable name of the field
+    type: string
+    required: false
+    hint: Strasse inkl. Nummer
+    localized: false
+
+- streetnumber: # The lowercase, underscored name of the field
+    label: Strassennummer # Human readable name of the field
+    type: string
+    required: false
+    hint: Strassennummer
+    localized: false
+
+- zip: # The lowercase, underscored name of the field
+    label: Postleitzahl # Human readable name of the field
+    type: string
+    required: false
+    hint: Postleitzahl
+    localized: false
+
+- city: # The lowercase, underscored name of the field
+    label: Ort # Human readable name of the field
+    type: string
+    required: false
+    hint: Ortschaftsbezeichung
+    localized: false
+
+- phone: # The lowercase, underscored name of the field
+    label: Telefonnummer # Human readable name of the field
+    type: string
+    required: false
+    hint: Telefonnummer ohne internationaler Vorwahl
+    localized: false
+
+- fax: # The lowercase, underscored name of the field
+    label: Faxnummer # Human readable name of the field
+    type: string
+    required: false
+    hint: Faxnummer ohne internationaler Vorwahl
+    localized: false
+
+- email: # The lowercase, underscored name of the field
+    label: Email # Human readable name of the field
+    type: string
+    required: false
+    hint: Email adresse
+    localized: false
+
 - breitengrad: # The lowercase, underscored name of the field
     label: Breitengrad # Human readable name of the field
     type: float

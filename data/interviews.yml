@@ -3,9 +3,9 @@
     person: walter-haecki # Slug of the target entry
 
 - "Metabolisches Syndrom":
-    image: null # Path to a file in the public/samples folder or to a remote and external file.
+    image: "/samples/food/Forellenfilet_und_Broccoli.jpg"
     person: walter-haecki # Slug of the target entry
 
 - "interview-1":
-    image: null # Path to a file in the public/samples folder or to a remote and external file.
+    image: "/samples/food/Forellenfilet_und_Broccoli.jpg"
     person: walter-haecki # Slug of the target entry
