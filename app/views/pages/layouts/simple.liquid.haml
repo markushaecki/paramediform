@@ -16,6 +16,7 @@ position: 1
     %meta{name:"description", content:"{{ site.meta_description }}"}/
     {% endif %}
 
+    {% block title %}
     %title
       {{ page.title }} - {{ site.name }} |
       {% if page.seo_title %}
@@ -23,9 +24,18 @@ position: 1
       {% else %}
       {{ site.seo_title }}
       {% endif %}
+    {% endblock %}
 
     %meta{content: "width=device-width, initial-scale=1, maximum-scale=10", name: "viewport"}/
     //%script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", type: "text/javascript"}
+
+    {% block share_meta_tags %}
+    %meta{:content => "{{ page.seo_title }}", :property => "og:title"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %meta{:content => "http://{{ host }}{{ 'Logo.png' | theme_image_url }}", :property => "og:image"}/
+    %meta{:content => "{{ url }}", :property => "og:url"}/
+    %meta{:content => "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme", :property => "og:site_name"}/
+    {% endblock %}
 
     {{ 'jquery.js' | javascript_tag }}
     {{ 'application.css' | stylesheet_tag }}
@@ -36,32 +46,18 @@ position: 1
 
     /[if lt IE 9]
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0"></script>
-
-    :javascript
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-63178513-1', 'auto');
-      ga('send', 'pageview');
-
-    {% inline_editor %}
 
   %body
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0" async="async"></script>
     #header
       %div.relative_position
-        %img.atmospereic{ src: "{{ 'atmospheric.png' | theme_image_url }}" }
+        /%img.atmospere{ src: "{{ 'hintergrundbild.png' | theme_image_url }}" }
       .container.relative_position{ :style => "max-width:750px"}
         %p.text-center
-          %a{ href: "/index", :style => "text-decoration:none;color:black" }
-            %img.img-responsive#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x120' }}", :style => "margin-top:50px" }
-            %p.text-center Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
+          %a{ href: "/index", :style => "text-decoration:none;color:black", :accesskey => "1" }
+            %img#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: 'x100' }}", :style => "margin-top:30px" }
+            %p.text-center{:style => "font-size:10px"} Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
-          .container{ :style => "width:100%;margin-top:20px;margin-bottom:20px"}
+          .container{ :style => "width:100%;margin-top:10px;margin-bottom:20px"}
             .navbar-header
               %button.navbar-toggle.collapsed{:type => "button", :data => {:toggle => 'collapse', :target => '#bs-example-navbar-collapse-1'}}
                 %span.sr-only Toggle navigation
@@ -81,8 +77,6 @@ position: 1
           {% block content %}
           {% endblock %}
 
-    {% include footer %}
+          {% include footer %}
 
-    :javascript
-      $(document).ready(function() {
-      });
+    {% google_analytics 'UA-63178513-1' %}

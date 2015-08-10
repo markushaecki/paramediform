@@ -66,59 +66,52 @@ div.detailed_institute_info p{
 	.nav > li > a{
 		padding: 10px 5px !important;
 	}
-	#column{
-	   -webkit-column-count: 1;
-	      -moz-column-count: 1;
-	           column-count: 1;
+	.columnize{
+	    -webkit-column-count: 1;
+	       -moz-column-count: 1;
+	            column-count: 1;
 
-	   -webkit-column-gap: 10px;
-	      -moz-column-gap: 10px;
-	           column-gap: 10px;
+	    -webkit-column-gap: 20px;
+	       -moz-column-gap: 20px;
+	            column-gap: 20px;
 	}
+	
 }
 
 @media only screen and (min-width : 280px) {
 	#institutes_map a{
-		font-size: 7px;
+		font-size: 7px !important;
 	}
 }
 
 @media only screen and (min-width : 480px) {
 	#institutes_map a{
-		font-size: 11px;
+		font-size: 9px !important;
 	}
-	#column{
-	   -webkit-column-count: 2;
-	      -moz-column-count: 2;
-	           column-count: 2;
+	
+	.columnize{
+	    -webkit-column-count: 2;
+	       -moz-column-count: 2;
+	            column-count: 2;
 
-	   -webkit-column-gap: 20px;
-	      -moz-column-gap: 20px;
-	           column-gap: 20px;
+	    -webkit-column-gap: 20px;
+	       -moz-column-gap: 20px;
+	            column-gap: 20px;
 	}
 }
 
 @media only screen and (min-width : 768px) {
 	#institutes_map a{
-		font-size: 9px;
+		font-size: 10px !important;
 	}
 	#institute_subnavigation a{
 		margin: 0px 0px;
-	}
-	#column{
-	   -webkit-column-count: 3;
-	      -moz-column-count: 3;
-	           column-count: 3;
-
-	   -webkit-column-gap: 30px;
-	      -moz-column-gap: 30px;
-	           column-gap: 30px;
-	}
+	}	
 }
 
 @media only screen and (min-width : 992px) {
 	#institutes_map a{
-		font-size: 11px;
+		font-size: 11px !important;
 	}
 }
 
@@ -169,12 +162,12 @@ div.detailed_institute_info p{
 
 .thumbnail{
 	background-color: transparent !important;
-	padding: 10px !important;
+	padding: 5px !important;
 }
 
 .image_with_background{
     border: 1px solid #CBCBCB;
-	padding: 10px;
+	padding: 5px;
 	@include border-radius(5px);
 }
 
@@ -262,9 +255,9 @@ legend{
        -moz-column-count: 2;
             column-count: 2;
 
-    -webkit-column-gap: 30px;
-       -moz-column-gap: 30px;
-            column-gap: 30px;
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
 }
 
 #indicator{
@@ -278,4 +271,27 @@ legend{
 
 .nav li.on a{
 	color: #7d0447 !important;
+}
+
+.textpadding h1, .textpadding h3, .textpadding div.paddingactive, img.textpadding{
+	padding-bottom: 15px;
+}
+
+.label{
+	display:inline-block !important;
+	margin-bottom: 4px !important;
+}
+
+.footer a{
+	color: gray;
+}
+
+body{
+	background-image: url("/images/hintergrundbild2.png");
+	background-repeat: repeat-x;
+}
+
+.fixed_title{
+	text-align: center;
+	height: 35px;
 }

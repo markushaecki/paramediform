@@ -1,51 +1,27 @@
 ---
-title: Text Bild Illustration
+title: Bild in Textfluss
 published: false
 is_layout: true
 handle: multiple_text_image
-editable_elements:
-  "content/sidebar/contact": "false"
 ---
 {% extends layouts/double-columns %}
 
 {% block content/main %}
 
-.paddingbox
-  %h2
-    {% editable_text title, format: raw, rows: 1 %}
-    Essen Sie sich schlank Paramediform hilft Ihnen dabei!
-    {% endeditable_text %}
-
-  {% editable_text text, format: html %}
-  %p Wir von Paramedifrom begleiten Sie bis zu Ihrem Wunschgewicht und darüber hinaus. Dank individuell zugeschnittenem Ernährungsplan, regelmässiger Betreuung und Kontrolle nehmen auch Sie ab, denn so ergings bereits tausenden vor Ihnen.
-  {% endeditable_text %}
-
-  - 2.times do |i|
-    {% block "Widget_#{i + 1}" %}
-
-    {% capture title %}{% editable_text title, format: raw %}
-    Ganzheitliche Ernährung
-    {% endeditable_text %}{% endcapture %}
-
-    {% capture text %}{% editable_text text, format: html %}
-    %p
-      Jeder Mensch hat unterschiedliche Veranlagungen. Grundlagen aus wissenschalftlicher Auswertung unserer langjährig Erfahrungswerten
-    {% endeditable_text %}{% endcapture %}
-
-    {% capture image %}{% editable_file image %}/samples/titletextimage/individual.png{% endeditable_file %}{% endcapture %}
-
-    {% include title_text_image with title: title, text: text, image: image %}
-
-    {% endblock %}
-
-  - 5.times do |i|
-    {% block "Widget_#{i + 3}" %}
-    {% capture title %}{% editable_text title, format: raw %}{% endeditable_text %}{% endcapture %}
-    {% capture text %}{% editable_text text, format: html %}{% endeditable_text %}{% endcapture %}
-    {% capture image %}{% editable_file image %}{% endeditable_file %}{% endcapture %}
-
-    {% include title_text_image with title: title, text: text, image: image %}
-
-    {% endblock %}
-
+.textpadding
+  {% include site_header %}
+  - 8.times do |i|
+    {% capture title %}{% editable_text "Titel #{i + 1}", format:raw, priority:"#{27 - i*3}", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture %}
+    {% if title.size > 0 %}
+    %h3.textpadding{:style => "margin-bottom:0;clear: both"} {{ title }}
+    {% endif %}
+    {% capture image %}{% editable_file "Bild #{i + 1}", priority:"#{26 - i*3}" %}{% endeditable_file %}{% endcapture %}
+    {% if image.size > 0 %}
+    %img.textpadding.img-responsive{ src: "{{ image | resize: '200x' }}",:style => "float:left;margin-right:20px" }
+    {% endif %}
+    {% capture text %}{% editable_text "Text #{i + 1}", priority:"#{25 - i*3}", format:raw %}{% endeditable_text %}{% endcapture %}
+    {% if text.size > 0 %}
+    .paddingactive {{ text }}
+    {% endif %}
+  {% include site_footer %}
 {% endblock %}

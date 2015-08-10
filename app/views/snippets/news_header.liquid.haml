@@ -5,6 +5,7 @@
 {% if this_news.tags %}
 .tags
   %span.glyphicon.glyphicon-tags
+  &nbsp;
   {% for tag in this_news.tags %}
   %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
   &nbsp;
@@ -12,4 +13,3 @@
 {% endif %}
 %b
   %p.text-justify {{ this_news.text }}
-%br

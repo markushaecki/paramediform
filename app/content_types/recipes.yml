@@ -33,21 +33,31 @@ fields:
     required: true
     hint: Explanatory text displayed in the back office
     localized: false
+    searchable: true
 
 - image: # The lowercase, underscored name of the field
     label: Image # Human readable name of the field
     type: file
-    required: false
+    required: true
     hint: Explanatory text displayed in the back office
     localized: false
 
 - preparation: # The lowercase, underscored name of the field
     label: Preparation # Human readable name of the field
     type: text
-    required: false
+    required: true
     hint: Explanatory text displayed in the back office
     localized: false
     text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+    searchable: true
+
+- activity:
+    label: Aktivität
+    type: belongs_to
+    required: true
+    hint: Trage hier "sichtbar" oder "versteckt" ein.
+    localized: false
+    class_name: activity    
 
 - ingredients:
     label: ingredients

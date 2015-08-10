@@ -2,27 +2,34 @@
 title: Willkommen
 published: true
 handle: home
-editable_elements:
-  "content/institutes_title": "Uber 50 Institute in Ihrer Nahe"
-  "content/methology_title": "Abnehmen mit Paramediform"
-  "content/scinence_title": "Wissenschaftliche Hintergründe"
 ---
 {% extends layouts/simple %}
 
 {% block header %}
 {{ 'map.js' | javascript_tag }}
 {{ 'jquery.activity-indicator.min.js' | javascript_tag }}
+{{ 'fadeimages.js' | javascript_tag }}
 {% endblock %}
 
 {% block content %}
 
-/ Find a random institute
-{% assign institute = contents.institutes.all | sample: 1 %}
+/ Find a random institute with valid successstory
+/{% assign institute = contents.institutes.all | sample: 1 %}
+{% assign institutes = contents.institutes.all | sample: 20 %}
+{% assign institute = "" %}
 
-{% capture url %}{{ institute.url }}/{{locale}}/success-stories/random.json{% endcapture %}
+{% for possibleinstitute in institutes %}
+{% if institute == "" %}
+{% capture url %}{{ possibleinstitute.url }}/success-stories/random.json?frontsite=true{% endcapture %}
 {% consume data from url %}
 {% assign success_story = data.success_story %}
 {% endconsume %}
+{% if success_story.prename != null %}
+{% assign institute = possibleinstitute %}
+{% endif %}
+{% endif %}
+{% endfor %}
+
 
 {% comment %}
 //{% capture geocoding %}http://maps.googleapis.com/maps/api/geocode/json?address=Schanzweg-7-5000-Aarau{% endcapture %}
@@ -31,68 +38,81 @@ editable_elements:
 //{% endconsume %}
 //{{ geo_adress.first.geometry.location.lng }}{{ geo_adress.first.geometry.location.lng }}
 {% endcomment %}
-.row
-  .col-xs-12
-    %h1.text-center {% editable_text introduction_title, format: "raw", line_break: false, rows: 1 %}Abnehmen mit Paramediform{% endeditable_text %}
-    %br
-    .row
-      .col-sm-6.col-xs-12
-        %img.img-responsive{ src: "{{ 'frau2.png' | theme_image_url }}", :style => "float:right" }
-      .col-sm-5.col-md-3.col-xs-12
-        %h2
-          %span{:style => "color:#C37635"} G
-          %span enug
-        %p{:style => "font-size:14px"} Nur wer genug isst kann langfristig abnehmen. Hungern kann man nicht über längere Zeit!
-        %h2
-          %span G
-          %span ediegen
-        %p{:style => "font-size:14px"} Das Essen ist ein zentraler Bestandteil unserer Lustempfindung. Essen muss eine Lust sein!
-        %h2
-          %span{:style => "color:#177910"} G
-          %span esund
-        %p{:style => "font-size:14px"} Nur eine gesunde ausgewogene Ernährung kann langfristig erfolgreich sein.
-      .col-sm-1.col-md-3.col-xs-12
-    %br
-    %br
-	
+{% assign years = now | date: "%Y" | minus: 1992 %}
+
+%h1.text-center Erfolgreich abnehmen seit {{ years }} Jahre in {{ contents.institutes.size }} Instituten
+%br
 .row
   .col-sm-6.col-xs-12
-    %h3 {% editable_text methology_title, format: "raw", line_break: false, rows: 1 %}Die Methode funktioniert bei "praktisch" allen{% endeditable_text %}
-    %br
-    %p{:style => "font-size:14px"} {% editable_text methology_text, format: "raw", line_break: false, rows: 1 %}Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit "Nicht- wir essen, desto schwieriger ist es, überflüssiges Fett ...{% endeditable_text %}
-    %br
-    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'", :style => "float:right"} Mehr Info...
-
+    .thumbnail{:style => "margin-bottom:5px !important"}
+      %img.img-responsive{ src: "{{ 'beratung.jpg' | theme_image_url }}" }
+    .fixed_title
+      %h3 Individuelle Beratung
   .col-sm-6.col-xs-12
-    %h3 {% editable_text scinence_title, format: "raw", line_break: false, rows: 1 %}Wissenschaftliche Hintergründe{% endeditable_text %}
-    %br
-    %p{:style => "font-size:14px"} {% editable_text scinence_text, format: "raw", line_break: false, rows: 1 %}Ananas ist nicht nur lecker, sie enthält auch zahlreiche Vitalstoffe und Enzyme und fördert die Verdauung. Seefahrer brachten die Ananas im Jahre 1535 ...{% endeditable_text %}
-    %br
-    %button.btn.btn-default{:type => "button", :onClick => "parent.location='/institutes'", :style => "float:right"} Mehr Info...
-%br
-%br
-
+    .thumbnail{:style => "margin-bottom:5px !important"}
+      %a#rezepturl{ href: '' }
+        %img.img-responsive#rezeptbild{ src: ""}
+    .fixed_title
+      %h3 Essen was der Körper braucht!
 .row
+  .col-sm-6.col-xs-12
+    %div
+      .thumbnail{:style => "margin-bottom:5px !important"}
+        %a#success_link.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
+          %img#before_img{ src: '{{ success_story.before_image.url | resize: "518x800#" }}', :style => "float:left;max-width:50%" }
+          %img#after_img{ src: '{{ success_story.after_image.url | resize: "518x800#" }}', :style => "float:left;max-width:50%" }
+        .clearfix
+    .fixed_title
+      %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+  .col-sm-6.col-xs-12
+    .thumbnail{:style => "margin-bottom:5px !important"}
+      %img.img-responsive{ src: "{{ 'stoffwechseltypen.jpg' | theme_image_url }}" }
+    .fixed_title
+      %h3 Welchen Stoffwechseltyp bist du?
+%br
   .col-sm-12.col-xs-12
-    %h3 {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}:
-    %a{ href: '{% path_to institutes %}#successstories'}
-      {% include before_after_front %}
-
-  .col-sm-12.col-xs-12
-    %h3 {% editable_text institutes_title, format: "raw", line_break: false, rows: 1 %}Über 50 Institute in Ihrer Nähe{% endeditable_text %}
-    .thumbnail
-      .text-center#institutes_map{:style => "position:relative"}
-        %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
-        %span.text-center#indicator{:style => "position:absolute"}
-        %br
-        %br
-        {% for map_institute in contents.institutes %}
-        %a{ href: '{% path_to map_institute, with: institute_success_stories %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}' }
-          .glyphicon.glyphicon-asterisk
-        {% endfor %}
-	
+    .text-center#institutes_map{:style => "position:relative"}
+      %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
+      %span.text-center#indicator{:style => "position:absolute"}
+      %br
+      %br
+      {% for map_institute in contents.institutes %}
+      %a{ href: '{% path_to map_institute, with: institute_success_stories %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}', :style => "font-size:7px" }
+        .glyphicon.glyphicon-asterisk
+      {% endfor %}
+    %h3.text-center {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe{% endeditable_text %}
 
 
-
+%div.hidden
+  {% for news_entry in contents.news %}
+  {% assign hideit = 1 %}
+  {% if news_entry.recipe %}
+  {% assign type = "recipe" %}
+  {% if news_entry.recipe.activity.attr != "versteckt" %}
+  {% assign hideit = 0 %}
+  {% endif %}
+  {% endif %}
+  {% if hideit == 0 %}
+  %p.news_p
+    %span.news_url aktuelles?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}
+    %span.img_url {{ news_entry.recipe.image.url }}
+  {% endif %}
+  {% endfor %}
+  
+  {% assign institutes = contents.institutes.all | sample: 40 %}
+  {% for institute in institutes %}
+  {% capture url %}{{ institute.url }}/success-stories/random.json?frontsite=true{% endcapture %}
+  {% consume data from url %}
+  {% assign success_story = data.success_story %}
+  {% endconsume %}
+  {% if success_story.prename != null %}
+  %p.success_p
+    %span.success_url {% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}
+    %span.before_url {{ success_story.before_image.url | resize: "518x800#" }}
+    %span.after_url {{ success_story.after_image.url | resize: "518x800#" }}
+    %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+  {% endif %}
+  {% endfor %}
+  
 
 {% endblock %}

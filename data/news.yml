@@ -9,6 +9,13 @@
     tags: ['Das sagt der Artz', 'Tipps']
     published_at: '2014-11-01'
 
+- "Forellenfilet und Broccoli":
+    social_media: "Amet asperiores et unde vel officiis veritatis."
+    text: "Reiciendis repellendus et est ut soluta pariatur. Ut dolores debitis vel quae. Doloremque eos aut nihil."
+    tags: ['Rezept der Woche', 'Erfahrungsbericht']
+    recipe: forellenfilet-und-broccoli
+    published_at: '2015-01-01'
+
 - "Metabolisches Syndrom":
     social_media: "Non neque quos animi ea dignissimos."
     text: "Wir leiden heute unter körperlicher Inaktivität verbunden mit Übergewicht. Gleichzeitig steht uns Essen im Überfluss zur Verfügung. Diese Kombination zu wenig Bewegung und zu viel Essen, was zu Übergewicht führen kann, sind in der Regel die Vorboten für das Metabolische Syndrom, welches oftmals leider schon in der Jugend beginnt. Dr. med Walter Häcki nimmt aus Sicht des Mediziners dazu Stellung."
@@ -23,36 +30,38 @@
     recipe: pouleteintopf-mit-reis
     published_at: '2014-10-05'
 
-- "Aktuelles 3: Illustrative Text":
-    title:
-      en: "News 3: Illustrative Text"
-    _slug:
-      en: "news-3-illustrative-text-en"
+- "Illustrative Text":
     social_media: "Et a aspernatur ratione autem non et quae."
     text: "Et sint perspiciatis repellat provident voluptatem ipsam est enim. Sint dolorum aut fugiat. Aspernatur ipsa maxime ex sit dolores quae animi. Voluptatibus rerum porro facilis et consequuntur eum corporis sed."
     tags: ['Text']
     illustrative_text: illustrative-text-1
     published_at: '2014-10-06'
 
-- "Aktuelles 4":
-    title:
-      en: "News 4"
-    _slug:
-      en: "news-4-en"
-    social_media: "Tenetur ea laboriosam et."
-    text: "Consequatur magni perferendis amet. Reprehenderit et possimus ut repudiandae vitae omnis nisi odio. Quasi quod eos esse. Rerum in tempora similique illo reiciendis vero veniam."
-    tags: ['Tipps', 'Vitamine']
-    interview: interview-1
-    published_at: '2014-10-10'
-
-- "Aktuelles 5":
-    title:
-      en: "News 5"
-    _slug:
-      en: "news-5-en"
+- "Fenchelsalat mit Fruechten":
     social_media: "Amet asperiores et unde vel officiis veritatis."
     text: "Reiciendis repellendus et est ut soluta pariatur. Ut dolores debitis vel quae. Doloremque eos aut nihil."
-    tags: ['Erfahrungsbericht']
-    recipe: recipe-1
-    published_at: '2014-11-01'
+    tags: ['Rezept der Woche', 'Erfahrungsbericht']
+    recipe: fenchelsalat-mit-fruechten
+    published_at: '2014-10-01'
+
+- "Fischfilet an Dillsauce auf Gemüsebeet":
+    social_media: "Amet asperiores et unde vel officiis veritatis."
+    text: "Reiciendis repellendus et est ut soluta pariatur. Ut dolores debitis vel quae. Doloremque eos aut nihil."
+    tags: ['Rezept der Woche', 'Erfahrungsbericht']
+    recipe: fischfilet-an-dillsauce-auf-gemuesebeet
+    published_at: '2014-01-01'
+
+- "Heilbutt im rüeblimantel":
+    social_media: "Amet asperiores et unde vel officiis veritatis."
+    text: "Reiciendis repellendus et est ut soluta pariatur. Ut dolores debitis vel quae. Doloremque eos aut nihil."
+    tags: ['Rezept der Woche', 'Erfahrungsbericht']
+    recipe: heilbutt-im-rueblimantel
+    published_at: '2014-03-01'
+
+- "Linsen Burger":
+    social_media: "Amet asperiores et unde vel officiis veritatis."
+    text: "Reiciendis repellendus et est ut soluta pariatur. Ut dolores debitis vel quae. Doloremque eos aut nihil."
+    tags: ['Rezept der Woche', 'Erfahrungsbericht']
+    recipe: linsen-burger
+    published_at: '2011-07-12'
 

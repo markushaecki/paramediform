@@ -1,10 +1,5 @@
-$(window).load(function() {
-  manage_atmospheric_image();
-});
-
 $(document).ready(function(e){
 	$(window).resize(function() {
-		manage_atmospheric_image();
 		/*
 		if($(window).width() < 768){
 			$('#sidebar').css("position", "relative");
@@ -90,23 +85,4 @@ function reload_with_zoom(zoom){
 	var rp_with = "zoom=" + (original_size+zoom).toString();
 	src = src.replace(replace, rp_with);
 	$("#google_map").attr("src", src);
-}
-
-function manage_atmospheric_image(){
-	var offset = $("#logo_img").offset();
-
-  var scale = (offset.top + $("#logo_img").height());
-	var scale_ratio = scale / 150
-
-	$(".atmospereic").height(300 * scale_ratio);
-
-	if($(window).width() < 1408){
-		var offset_right = $(window).width() - 1407*scale_ratio + (230 * (1 - $(window).width()/1440)) - (180-scale);
-		$(".atmospereic").css("right", offset_right);
-		$(".atmospereic").width(1407*scale_ratio);
-	} else {
-		$(".atmospereic").css("width", "100%");
-		$(".atmospereic").css("right", 0);
-	}
-
 }

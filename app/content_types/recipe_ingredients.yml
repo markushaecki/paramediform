@@ -33,6 +33,7 @@ fields:
     required: true
     hint: Explanatory text displayed in the back office
     localized: false
+    searchable: true
 
 - amount: # The lowercase, underscored name of the field
     label: Amount # Human readable name of the field
@@ -56,3 +57,4 @@ fields:
     localized: false
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: recipes
+    searchable: true

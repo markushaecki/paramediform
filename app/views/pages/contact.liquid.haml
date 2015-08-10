@@ -39,21 +39,42 @@ handle: contact_form
 {% model_form 'contacts', class: 'form-horizontal' %}
 %h2 Hiermit kontaktieren Sie die Systemzentrale:
 %br
-ParaMediForm
+.row
+  .col-sm-7.col-xs-12
+    %img.img-responsive{ src: "{{ 'systemzentrale.png' | theme_image_url }}" }
+    %br
+  .col-sm-5.col-xs-12
+    ParaMediForm
+    %br
+    Villa Hünerwadel
+    %br
+    Schützenmattstrasse 3
+    %br
+    5600 Lenzburg
+    %br
+    %br
+    Telefon +41 62 888 88 28
+    %br
+    Fax +41 62 888 88 20
+    %br
+    %br 
+.row
+  .col-sm-9.col-xs-12
+    %p{:style => "margin-top:7px"} ...oder kontaktieren Sie direkt das Institut in ihrer Region:
+  .col-sm-3.col-xs-12
+    .dropdown
+      %button.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
+        Institute
+        %span.caret
+      %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
+        {% with_scope order_by: 'name asc' %}
+        {% for institute in contents.institutes %}
+        %li{role: "presentation"}
+          %a{ href: '{% path_to institute %}/kontakt', role: "menuitem", tabindex: "-1" } {{ institute.name }}
+        {% endfor %}
+        {% endwith_scope %}
 %br
-Villa Hünerwadel
-%br
-Schützenmattstrasse 3
-%br
-5600 Lenzburg
-%br
-%br
-Telefon +41 62 888 88 28
-%br
-Fax +41 62 888 88 20
-%br
-
-
+	
 %legend Thema
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
@@ -66,10 +87,10 @@ Fax +41 62 888 88 20
   .col-sm-6.col-xs-12
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Rückmeldung
+        %input{:type => "radio", :name => "content[subject]", :value => "Paravita Beratung"} Paravita Beratung
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Anderes Thema"} Anderes Thema
+        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Rückmeldung
 
 %legend Absender
 .row

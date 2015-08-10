@@ -25,9 +25,10 @@ class ParaMediFormCLI < Thor
   end
 
   desc 'push_all', 'Deploy all the institutes (but without the data) to the Engine'
+  method_option :force, aliases: '-f', type: 'boolean', default: false, desc: 'Force the push (needed if content types are useless fields)'
   def push_all
     require File.dirname(__FILE__) + "/lib/commands/push_all_command.rb"
-    command = PushAllCommand.new(load_settings('institute_path'), logger)
+    command = PushAllCommand.new(load_settings('institute_path'), options, logger)
     run_cmd(command)
   end
 

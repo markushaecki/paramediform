@@ -15,13 +15,14 @@ $(document).ready(function() {
 	}
 	
 	
-	setTimeout(function() {
+	$('#institutes_map_img').on('load', function() {
 		var width = $("#institutes_map_img").width();
 		var height = $("#institutes_map_img").height();	
 		$("#indicator").css("top",height/2);
 		$("#indicator").css("left",width/2);
 		$("#indicator").activity();
-	}, 150);
+	});
+	
 	$("#institutes_map a div").css("color", "white");
 
 	$(window).resize(function() {

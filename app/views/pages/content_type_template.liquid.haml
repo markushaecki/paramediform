@@ -29,7 +29,7 @@ handle: institute_layout
 
 .row
   .col-sm-12.col-xs-offset-0.col-xs-12
-    %h1.title Institut {{ institute.name }}
+    %h1.title ParaMediForm {{ institute.name }}
     #contact_info
       %p.text-center.image_with_background
         %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&scale=2&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
@@ -43,7 +43,7 @@ handle: institute_layout
               %a{ href: "", :id => "zoom-in" }
                 %b +
         .col-sm-6.col-xs-6.col-md-6{:style => "padding-right:0"}
-          %p {{ information.name }}
+          %p ParaMediForm {{ institute.name }}
           %p {{ information.street }}
           %p {{ information.city }}
         .col-sm-6.col-xs-6.col-md-6{:style => "padding-left:0"}

@@ -9,10 +9,12 @@
 {% assign onetype = "illustrative_text" %}
 {% elsif one.recipe %}
 {% assign onetype = "recipe" %}
+{% else %}
+{% assign onetype = "" %}
 {% endif %}
 
 {% if one._slug == this._slug %}
-{% assign before = false %}	
+{% assign before = false %}
 {% else %}
 {% if before %}
 {% assign before_url = "?slug=" | append: one._slug | append: "&type=" | append: onetype | append: "&page=" | append: params.page %}

@@ -54,26 +54,26 @@ class IndexContentsCommand < BaseCommand
     self.index_illustrative_text(institute)
 
     # interviews
-    index_interviews(institute)
+    #index_interviews(institute)
 
     # recipes
-    index_recipes(institute)
+    #index_recipes(institute)
   end
+  
+  #def index_recipes(institute)
+  #  _index_collection(institute, :recipe) do
+  #    Recipe.all.map do |recipe|
+  #      # fetch the ingredients
+  #      if recipe.ingredient_slugs
+  #        recipe.ingredients = recipe.ingredient_slugs.map do |slug|
+  #          RecipeIngredient.find(slug)
+  #        end
+  #      end
 
-  def index_recipes(institute)
-    _index_collection(institute, :recipe) do
-      Recipe.all.map do |recipe|
-        # fetch the ingredients
-        if recipe.ingredient_slugs
-          recipe.ingredients = recipe.ingredient_slugs.map do |slug|
-            RecipeIngredient.find(slug)
-          end
-        end
-
-        recipe
-      end
-    end
-  end
+  #      recipe
+  #    end
+  #  end
+  #end
 
   def index_illustrative_text(institute)
     _index_collection(institute, :illustrative_text) do

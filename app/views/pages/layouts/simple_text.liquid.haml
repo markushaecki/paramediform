@@ -1,22 +1,30 @@
 ---
-title: Texte simple
+title: Standard Text Format
 published: false
 is_layout: true
-editable_elements:
-  "content/sidebar/contact": "false"
 position: 11
 ---
 {% extends layouts/double-columns %}
 
 {% block content/main %}
 
-.paddingbox
-
-  {% include text_header %}
-
+.textpadding
+  {% include site_header %}
   - 8.times do |i|
-    {% block "Bild-Text-#{i + 1}" %}
-    {% include text_image %}
-    {% endblock %}
-
+    {% capture title %}{% editable_text "Titel #{i + 1}", format:raw, priority:"#{27 - i*3}", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture %}
+    {% if title.size > 0 %}
+    %h3.textpadding{:style => "margin-bottom:0"} {{ title }}
+    {% endif %}
+    {% capture text %}{% editable_text "Text #{i + 1}", format:raw, priority:"#{26 - i*3}" %}{% endeditable_text %}{% endcapture %}
+    {% if text.size > 0 %}
+    .paddingactive {{ text }}
+    {% endif %}
+    {% capture image %}{% editable_file "Bild #{i + 1}", priority:"#{25 - i*3}" %}{% endeditable_file %}{% endcapture %}
+    {% if image.size > 0 %}
+    .thumbnail{:style => "margin-bottom:15px;"}
+      .img-box
+        %a{ href: "{{ image }}", :style => "padding:0px" }
+          %img.img-responsive{ src: "{{ image | resize: '900x200#' }}" }
+    {% endif %}
+  {% include site_footer %}
 {% endblock %}

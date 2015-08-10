@@ -31,16 +31,9 @@ fields:
     label: Title # Human readable name of the field
     type: string
     required: true
-    hint: Die Überschrift des Interviews
+    hint: "Referenztitel (wird auf der Webseite nicht dargestellt)"
     localized: false
-
-- description: # The lowercase, underscored name of the field
-    label: Description # Human readable name of the field
-    type: text
-    required: false
-    hint: Eine kurze Einleitung zum Intwerview.
-    localized: false
-    text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+    searchable: true
 
 - image: # The lowercase, underscored name of the field
     label: Image # Human readable name of the field
@@ -65,3 +58,4 @@ fields:
     localized: false
     class_name: interview_questions
     inverse_of: interview
+    searchable: true

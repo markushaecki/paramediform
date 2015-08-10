@@ -1,4 +1,15 @@
-.footer
-  / {% for page in site.pages %}
-  / %p {{ page.title }}
-  / {% endfor %}
+.footer{:style => "color:gray !important"}
+  © {{ now | date: "%Y" }} ParaMediForm AG
+  %br
+  %a{:href => "/impressum"} Impressum 
+  &nbsp; 
+  %a{:href => "/rechtliche_hinweise"} Rechtliche Hinweise 
+  &nbsp; 
+  %a{:href => "/nutzungsbedingungen"} Nutzungsbedingungen 
+  &nbsp; 
+  %a{:href => "/urheberrecht"} Urheberrecht 
+  &nbsp; 
+  %a{:href => "/privacy_policy"} Privacy Policy 
+  &nbsp; 
+  %a{:href => "/pdisclaimer"} Disclaimer
+

@@ -48,8 +48,8 @@ sidebar_news_title:
   en: News
 
 sidebar_share_title:
-  de: Mitteilen auf
-  en: Share on
+  de: Weiterempfehlen
+  en: Share
 
 sidebar_selbststaendigkeit_title:
   de: Ausbildung
@@ -62,6 +62,14 @@ sidebar_paravita_title:
 sidebar_parapan_title:
   de: Parapan
   en: Parapan
+
+sidebar_beforeafter_title:
+  de: Beispiele
+  en: Successes
+
+sidebar_kochbuch_title:
+  de: Kochbuch
+  en: Cookbook
 
 label_phone:
   de: Tel
@@ -142,3 +150,7 @@ contact_labels_email:
 following_errors_occured:
   de: Nachfolgende Fehler sind aufgetreten
   en: The following errors occured
+
+sidebar_kinder_title:
+  de: Für Kinder
+  en: For Children
