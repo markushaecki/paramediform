@@ -58,4 +58,4 @@ fields:
     localized: false
     class_name: interview_questions
     inverse_of: interview
-    searchable: true
+    searchable: false

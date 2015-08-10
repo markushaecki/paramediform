@@ -31,9 +31,9 @@ fields:
     label: Titel # Human readable name of the field
     type: string
     required: true
-    hint: Überschrift der neuen Nachricht. 
+    hint: Überschrift der neuen Nachricht.
     localized: true
-    searchable: true
+    searchable: false
 
 - text: # The lowercase, underscored name of the field
     label: Text # Human readable name of the field
@@ -41,7 +41,7 @@ fields:
     required: true
     hint: Dieser Text wird sowohl in der Übersicht als auch im Artikel selbst angezeigt.
     localized: false
-    searchable: true
+    searchable: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - published_at: # The lowercase, underscored name of the field

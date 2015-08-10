@@ -2,11 +2,15 @@ require 'date'
 require File.dirname(__FILE__) + '/extensions/api.rb'
 
 # social_media
-class News < Struct.new(:_id, :title, :slug, :type)
+class News < Struct.new(:_id, :title, :slug, :type, :text)
 
   include Entities::Extensions::Api
 
   attr_accessor :url
+
+  def content
+    [title text].compact.join(' ')
+  end
 
   def message
     "#{self.title} #{self.url}"
@@ -21,6 +25,7 @@ class News < Struct.new(:_id, :title, :slug, :type)
       self.api.update('content_types/news/entries', _id, { tweeted: true })
 
       true
+    
     rescue Exception => e
       raise Exception.new("Unable to update the message on Twitter, reason: #{e.message}")
     end

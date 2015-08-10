@@ -57,4 +57,4 @@ fields:
     localized: false
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: recipes
-    searchable: true
+    searchable: false
