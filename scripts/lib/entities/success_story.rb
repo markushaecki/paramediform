@@ -5,12 +5,12 @@ class SuccessStory < Struct.new(:title, :prename, :name, :place, :lost_weight, :
   include Entities::Extensions::Api
 
   def content
-    [prename, name, place, lost_weight, feeling_of_abdiction, experience].compact.join(' ')
+    [title, prename, name, place, lost_weight, feeling_of_abdiction, experience].compact.join(' ')
   end
 
   def self.build(attributes)
     self.new(
-      attributes['title'],
+      attributes['experience_title'],
       attributes['prename'],
       attributes['name'],
       attributes['place'],

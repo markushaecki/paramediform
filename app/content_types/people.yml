@@ -26,14 +26,14 @@ order_by: manually
 # public_submission_accounts: ['john@example.com']
 
 # A list describing each field
-fields: 
+fields:
 - name: # The lowercase, underscored name of the field
     label: Name # Human readable name of the field
     type: string
     required: true
     hint: Vor und Nachname der Person
     localized: true
-    searchable: true
+    searchable: false
 
 - picture: # The lowercase, underscored name of the field
     label: Bild # Human readable name of the field
@@ -48,7 +48,7 @@ fields:
     required: false
     hint: Der Titel beschreibt die Funktion oder Ausbildung welche die Person auszeichnet.
     localized: false
-    searchable: true
+    searchable: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - email: # The lowercase, underscored name of the field
@@ -65,7 +65,7 @@ fields:
     required: false
     hint: Hier soll definiert werden welchen Gruppen die Person zugehört. Damit kann sie auf den verschiedenen Seiten wie zum Beispiel in der Beiratsseite gelistet werden.
     localized: false
-    searchable: true
+    searchable: false
 
 - keynote: # The lowercase, underscored name of the field
     label: Leitmotiv # Human readable name of the field
@@ -73,5 +73,5 @@ fields:
     required: false
     hint: Das Leitmotiv ist ein Satz welcher etwas interessantes oder lustiges aussagt und hinter welchem die entsprechende Person vollkommen dahinter stehen kann.
     localized: false
-    searchable: true
+    searchable: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)

@@ -1,5 +1,8 @@
 {% comment %}
 / input:
+/   - process indexed_contents, pages, illustrative_texts, interviews (+ questions), recipes (+ ingredients)
+/
+/   - result
 /   - slug
 /   - highlighted_title
 /   - highlighted_content
@@ -8,6 +11,8 @@
 {% with_scope _slug: slug %}
 {% assign indexed_content = contents.indexed_contents.first %}
 {% endwith_scope %}
+
+{% if indexed_content %}
 .media-body
   %h4.media-heading
     %a{ href: '{{ indexed_content.url }}' }
@@ -25,4 +30,107 @@
     {{ indexed_content.content | truncate: 100 }}
     {% endif %}
     %br
+
+{% else %}
+
+{% if result.searchable_content %}
+
+.media-body
+  %h4.media-heading
+    %a{ href: '{{ result.fullpath }}' }
+      {% if result.highlighted.title.size > 0 %}
+      %span.highlighted {{ result.highlighted.title }}
+      {% else %}
+      {{ result.title }}
+      {% endif %}
+  .media-content
+    {% if result.highlighted.searchable_content.size > 0 %}
+    %span.highlighted {{ result.highlighted.searchable_content }}
+    {% else %}
+    {{ result.searchable_content | truncate: 100 }}
+    {% endif %}
+    %br
+
+{% else if result.content_type_slug == 'illustrative_texts' %}
+
+.media-body
+  %h4.media-heading
+    %a{ href: '{% path_to news %}?type=illustrative_text&slug={{ result._slug }}' }
+      {% if highlighted_title.size > 0 %}
+      %span.highlighted {{ result.highlighted.title }}
+      {% else %}
+      {{ result.title }}
+      {% endif %}
+  .media-content
+    {% if result.highlighted.text.size > 0 %}
+    %span.highlighted {{ result.highlighted.text }}
+    {% else %}
+    {{ result.text | truncate: 100 }}
+    {% endif %}
+    %br
+
+{% else if result.content_type_slug == 'interviews' %}
+
+.media-body
+  %h4.media-heading
+    %a{ href: '{% path_to news %}?type=interview&slug={{ result._slug }}' }
+      {% if result.highlighted.title.size > 0 %}
+      %span.highlighted {{ result.highlighted.title }}
+      {% else %}
+      {{ result.title }}
+      {% endif %}
+
+{% else if result.content_type_slug == 'interview_questions' %}
+
+{% with_scope _slug: result._slug %}{% assign question = contents.interview_questions.first %}{% endwith_scope %}
+
+.media-body
+  %h4.media-heading
+    %a{ href: '{% path_to news %}?type=interview&slug={{ question.interview._slug }}' }
+      {% if result.highlighted.question.size > 0 %}
+      %span.highlighted {{ result.highlighted.question }}
+      {% else %}
+      {{ result.question }}
+      {% endif %}
+  .media-content
+    {% if result.highlighted.answer.size > 0 %}
+    %span.highlighted {{ result.highlighted.answer }}
+    {% else %}
+    {{ result.answer | truncate: 100 }}
+    {% endif %}
+    %br
+
+{% else if result.content_type_slug == 'recipes' %}
+
+.media-body
+  %h4.media-heading
+    %a{ href: '{% path_to news %}?type=recipe&slug={{ result._slug }}' }
+      {% if result.highlighted.title.size > 0 %}
+      %span.highlighted {{ result.highlighted.title }}
+      {% else %}
+      {{ result.title }}
+      {% endif %}
+  .media-content
+    {% if result.highlighted.preparation.size > 0 %}
+    %span.highlighted {{ result.highlighted.preparation }}
+    {% else %}
+    {{ result.preparation | truncate: 100 }}
+    {% endif %}
+    %br
+
+{% else if result.content_type_slug == 'recipe_ingredients' %}
+
+{% with_scope _slug: result._slug %}{% assign ingredient = contents.recipe_ingredients.first %}{% endwith_scope %}
+
+.media-body
+  %h4.media-heading
+    %a{ href: '{% path_to news %}?type=recipe&slug={{ ingredient.recipe._slug }}' }
+      {% if result.highlighted.name.size > 0 %}
+      %span.highlighted {{ result.highlighted.name }}
+      {% else %}
+      {{ result.name }}
+      {% endif %}
+
+{% endif %}
+
 %hr
