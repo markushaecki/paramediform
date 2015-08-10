@@ -25,6 +25,7 @@ class News < Struct.new(:_id, :title, :slug, :type, :text)
       self.api.update('content_types/news/entries', _id, { tweeted: true })
 
       true
+    
     rescue Exception => e
       raise Exception.new("Unable to update the message on Twitter, reason: #{e.message}")
     end

@@ -15,13 +15,25 @@ class IndexContentsCommand < BaseCommand
       logger.log_action 'processing', institute.name
 
       # Index all the news
-      self.index_news(institute)
+      begin
+	self.index_news(institute)
+      rescue Exception => e
+        logger.log "  Error indexing news: #{e.message}", :red
+      end
 
       # Index all the success stories
-      self.index_success_stories(institute)
+      begin
+      	self.index_success_stories(institute)
+      rescue Exception => e
+        logger.log "  Error indexing success stories: #{e.message}", :red
+      end
 
       # Index all the team members
-      self.index_team_members(institute)
+      begin
+        self.index_team_members(institute)
+      rescue Exception => e
+        logger.log "  Error indexing team members: #{e.message}", :red
+      end
     end
   end
 
