@@ -38,16 +38,21 @@ class IndexContentsCommand < BaseCommand
   end
 
   def index_news(institute)
-    # illustrative texts
-    self.index_illustrative_text(institute)
+    _index_collection(institute, :news) do
+      News.all
+    end
 
-    # interviews
-    #index_interviews(institute)
 
-    # recipes
-    #index_recipes(institute)
+    # # illustrative texts
+    # self.index_illustrative_text(institute)
+
+    # # interviews
+    # #index_interviews(institute)
+
+    # # recipes
+    # #index_recipes(institute)
   end
-  
+
   #def index_recipes(institute)
   #  _index_collection(institute, :recipe) do
   #    Recipe.all.map do |recipe|
@@ -63,31 +68,31 @@ class IndexContentsCommand < BaseCommand
   #  end
   #end
 
-  def index_illustrative_text(institute)
-    _index_collection(institute, :illustrative_text) do
-      IllustrativeText.all
-    end
-  end
+  # def index_illustrative_text(institute)
+  #   _index_collection(institute, :illustrative_text) do
+  #     IllustrativeText.all
+  #   end
+  # end
 
-  def index_interviews(institute)
-    _index_collection(institute, :interview) do
-      Interview.all.map do |interview|
-        # fetch the author
-        if interview.author_slug
-          interview.author = Person.find(interview.author_slug)
-        end
+  # def index_interviews(institute)
+  #   _index_collection(institute, :interview) do
+  #     Interview.all.map do |interview|
+  #       # fetch the author
+  #       if interview.author_slug
+  #         interview.author = Person.find(interview.author_slug)
+  #       end
 
-        # fetch the questions/answers
-        if interview.question_slugs
-          interview.questions = interview.question_slugs.map do |slug|
-            InterviewQuestion.find(slug)
-          end
-        end
+  #       # fetch the questions/answers
+  #       if interview.question_slugs
+  #         interview.questions = interview.question_slugs.map do |slug|
+  #           InterviewQuestion.find(slug)
+  #         end
+  #       end
 
-        interview
-      end
-    end
-  end
+  #       interview
+  #     end
+  #   end
+  # end
 
   def save(type, collection)
     self.authenticate
