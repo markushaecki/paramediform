@@ -27,7 +27,7 @@
     %span.highlighted
       {{ highlighted_content | default: '' }}
     {% else %}
-    {{ indexed_content.content | truncate: 100 }}
+    {{ indexed_content.content | strip_html | truncate: 100 }}
     {% endif %}
     %br
 
@@ -47,7 +47,7 @@
     {% if result.highlighted.searchable_content.size > 0 %}
     %span.highlighted {{ result.highlighted.searchable_content }}
     {% else %}
-    {{ result.searchable_content | truncate: 100 }}
+    {{ result.searchable_content | strip_html | truncate: 100 }}
     {% endif %}
     %br
 
@@ -68,7 +68,7 @@
     {% if result.highlighted.text.size > 0 %}
     %span.highlighted {{ result.highlighted.text }}
     {% else %}
-    {{ result.text | truncate: 100 }}
+    {{ result.text | strip_html | truncate: 100 }}
     {% endif %}
     %br
 
@@ -103,7 +103,7 @@
     {% if result.highlighted.answer.size > 0 %}
     %span.highlighted {{ result.highlighted.answer }}
     {% else %}
-    {{ result.answer | truncate: 100 }}
+    {{ result.answer | strip_html | truncate: 100 }}
     {% endif %}
     %br
 
@@ -124,7 +124,7 @@
     {% if result.highlighted.preparation.size > 0 %}
     %span.highlighted {{ result.highlighted.preparation }}
     {% else %}
-    {{ result.preparation | truncate: 100 }}
+    {{ result.preparation | strip_html | truncate: 100 }}
     {% endif %}
     %br
 
