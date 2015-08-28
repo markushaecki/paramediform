@@ -52,6 +52,7 @@
     {{ result.searchable_content | strip_html | truncate: 100 }}
     {% endif %}
     %br
+%hr
 
 {% elsif result.content_type_slug == 'illustrative_texts' %}
 
@@ -73,6 +74,7 @@
     {{ result.text | strip_html | truncate: 100 }}
     {% endif %}
     %br
+%hr
 
 {% elsif result.content_type_slug == 'interviews' %}
 
@@ -87,6 +89,7 @@
       {% else %}
       {{ result.title }}
       {% endif %}
+%hr
 
 {% elsif result.content_type_slug == 'interview_questions' %}
 
@@ -108,6 +111,7 @@
     {{ result.answer | strip_html | truncate: 100 }}
     {% endif %}
     %br
+%hr
 
 {% elsif result.content_type_slug == 'recipes' %}
 
@@ -129,6 +133,7 @@
     {{ result.preparation | strip_html | truncate: 100 }}
     {% endif %}
     %br
+%hr
 
 {% elsif result.content_type_slug == 'recipe_ingredients' %}
 
@@ -143,9 +148,8 @@
       {% else %}
       {{ result.name }}
       {% endif %}
+%hr
 
 {% endif %}
-
-%hr
 
 {% endif %}
