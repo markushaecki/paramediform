@@ -27,6 +27,12 @@ handle: institute_layout
 {% assign information = data.information %}
 {% endconsume %}
 
+{% assign path_array = path | split: '/' %}
+{% if path_array.size < 3 %}
+%script
+  window.location.replace('/{{path_array[1]}}/erfolgsgeschichten');
+{% endif %}
+
 .row
   .col-sm-12.col-xs-offset-0.col-xs-12
     %h1.title ParaMediForm {{ institute.name }}
@@ -80,11 +86,5 @@ handle: institute_layout
           %br
           {% block tab_pane %}
           {% endblock %}
-
-{% assign path_array = path | split: '/' %}
-{% if path_array.size == 2 %}
-
-{% endif %}
-
 
 {% endblock %}
