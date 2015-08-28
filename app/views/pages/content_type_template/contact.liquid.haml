@@ -8,7 +8,8 @@ position: 6
 {% extends parent %}
 
 {% block header %}
-{{ 'jquery.steps.min.js' | javascript_tag }}
+{{ 'jquery.placeholder.min.js' | javascript_tag }}
+{{ 'contact.js' | javascript_tag }}
 {% endblock %}
 
 {% block content/main/tab_pane %}
@@ -108,14 +109,6 @@ position: 6
     %br
 %legend Nachricht
 %textarea{:class => "form-control", :name => "content[message]", :value => "{{customer_message.name}}" } {{customer_message.message}}
-%br
-%legend Kontaktaufnahme
-.radio
-  %label
-    %input{:type => "radio", :name => "content[type_of_contact]", :value => "E-Mail"} Bitte kontaktieren sie mich per E-Mail
-.radio
-  %label
-    %input{:type => "radio", :name => "content[type_of_contact]", :value => "Telefon"} Bitte kontaktieren sie mich per Telefon
 %br
 .checkbox
   %label

@@ -33,8 +33,8 @@ function startfoodinterval(){
 
 
 function fadefood() {
-    $('#rezeptbild').fadeOut(100, function(){		
-        $(this).attr('src', img_url[news_i]).fadeIn(100);
+    $('#rezeptbild').fadeOut(500, function(){		
+        $(this).attr('src', img_url[news_i]).fadeIn(500);
 	    $('#rezepturl').attr('href', news_url[news_i]);
     })	
     news_i++;
@@ -44,13 +44,13 @@ function fadefood() {
 }
 
 function fadesuccess() {
-    $('#before_img').fadeOut(100, function(){		
-        $(this).attr('src', before_url[success_i]).fadeIn(100);
+    $('#before_img').fadeOut(500, function(){		
+        $(this).attr('src', before_url[success_i]).fadeIn(500);
 	    $('#success_link').attr('href', success_url[success_i]);
 	    $('#success_text').html(success_text[success_i]);
     })	
-    $('#after_img').fadeOut(100, function(){		
-        $(this).attr('src', after_url[success_i]).fadeIn(100);
+    $('#after_img').fadeOut(500, function(){		
+        $(this).attr('src', after_url[success_i]).fadeIn(500);
     })	
     success_i++;
 	if(success_i+1>before_url.length){

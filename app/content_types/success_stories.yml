@@ -1,0 +1,113 @@
+# Human readable name of this type
+name: Erfolgsgeschichte
+
+# Lowercase, underscored handle used to access this type
+slug: success_stories
+
+# Explanatory text displayed in the back-office
+description: "Mit guten Erfolgsgeschichten steigern Sie das Vertrauen von potentiellen Neukunden. Die Geschichten sind zudem einfach über Facebook, Twitter, Google+, oder Whatsapp mitzuteilen. Es lohnt sich deshalb gute ausführliche Erfolgsgeschichten hochzuladen."
+
+# Slug of field used to identify entries by default, such as the title
+label_field_name: prename
+
+# Valid values: manually, created_at, updated_at, or the slug of any field
+order_by: startdate
+
+# Valid values: asc (ascending) and desc (descending). Set to asc by default.
+# order_direction: asc
+
+# Specify a field slug to group entries by that field in the back-office.
+# group_by: <your field>
+
+# Activate public 'create' API (e.g for a contact form)
+# public_submission_enabled: false
+
+# Array of emails to be notified of new entries made with the public API
+# public_submission_accounts: ['john@example.com']
+
+# A list describing each field
+fields:
+- prename: # The lowercase, underscored name of the field
+    label: Vorname # Human readable name of the field
+    type: string
+    required: true
+    hint: Vorname der Person die abgenommen hat.
+    localized: false
+
+- name: # The lowercase, underscored name of the field
+    label: Nachname # Human readable name of the field
+    type: string
+    required: true
+    hint: Nachname der Person die abgenommen hat.
+    localized: false
+
+- place: # The lowercase, underscored name of the field
+    label: Wohnort # Human readable name of the field
+    type: string
+    required: true
+    hint: Wohnort der Person die abgenommen hat.
+    localized: false
+
+- lost_weight: # The lowercase, underscored name of the field
+    label: Abgenommenes Gewicht # Human readable name of the field
+    type: string
+    required: true
+    hint: Bitte gebensie die abgenommene Gewichtszahl ein ohne "-" oder "kg" angaben.
+    localized: false
+
+- before_image: # The lowercase, underscored name of the field
+    label: Vorherfoto # Human readable name of the field
+    type: file
+    required: true
+    hint: "Vorher Foto mit Seitenverhältnis Breite 1 zu Höhe 2. Beforzugterweise jpg Bilder im Format BxH 640x1280 Pixel. Damit die Echtheit der Fotos zum Vorschein kommt sollen die Bilder im eingenen Institut am stehts selben Ort gemacht werden. Zudem empfielt es sich einen Hintergrund zu haben welcher sich im Laufe der Zeit verändert (Pflanze oder Fenster). Dies erhöht die Vertraunswürdigkeit in die Echtheit der Bilder."
+    localized: false
+
+- after_image: # The lowercase, underscored name of the field
+    label: Nachherfoto # Human readable name of the field
+    type: file
+    required: true
+    hint: "Nachher Foto mit Seitenverhältnis Breite 1 zu Höhe 2. Beforzugterweise jpg Bilder im Format BxH 640x1280 Pixel. Damit die Echtheit der Fotos zum Vorschein kommt sollen die Bilder im eingenen Institut am stehts selben Ort gemacht werden. Zudem empfielt es sich einen Hintergrund zu haben welcher sich im Laufe der Zeit verändert (Pflanze oder Fenster). Dies erhöht die Vertraunswürdigkeit in die Echtheit der Bilder."
+    localized: false
+
+- start_date:
+    label: Startzeitpunkt
+    type: date
+    required: false
+    hint: Beginn des Paramediform Programmes
+    localized: false
+
+- programm_duration:
+    label: Programmdauer
+    type: integer
+    required: false
+    hint: Dauer des Paramediform Programmes in Anzahl Wochen
+    localized: false
+
+- number_of_consultations:
+    label: Anzahl Betreuungen
+    type: integer
+    required: false
+    hint: Anzahl durchgeführte Betreuungen
+    localized: false
+
+- feeling_of_abdiction:
+    label: Beobachtungen
+    type: string
+    required: false
+    hint: Emotionale Befindlichkeit während des Programmes (1 bis max 2 Stichworte)
+    localized: false
+
+- experience_title:
+    label: Titel Erfahrungsbericht
+    type: string
+    required: false
+    hint: Dieser Titel gehört zum Erfahrungsbericht
+    localized: false
+
+- experience:
+    label: Erfahrungsbericht
+    type: text
+    text_formatting: html
+    required: false
+    hint: Ausführlicher Erfahrungsbericht zum Programm
+    localized: false

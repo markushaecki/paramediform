@@ -65,9 +65,9 @@ position: 5
       {% endif %}
 
       / parapan block
-      {% capture enable_methode %}{% editable_control "Methode", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Methode an." %}false{% endeditable_control %}{% endcapture %}
+      {% capture enable_methode %}{% editable_control "Methode", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Methode an." %}true{% endeditable_control %}{% endcapture %}
       {% if enable_methode == "true" %}
-      %a{ href: '/aktuelles?tag=Die%20Methode'}
+      %a{ href: '/abnehmen/die-methode'}
         .institutes.well
           %h3.text-center
             {{ 'sidebar_method_title' | translate }}
@@ -98,9 +98,9 @@ position: 5
       {% endif %}
       
       / vorhernachher block
-      {% capture enable_beforeafter %}{% editable_control "Vorher/Nachher", options: 'true=Yes,false=No', hint: "Link zu Vorher/Nachher Bilder" %}false{% endeditable_control %}{% endcapture %}
+      {% capture enable_beforeafter %}{% editable_control "Vorher/Nachher", options: 'true=Yes,false=No', hint: "Link zu Vorher/Nachher Bilder" %}true{% endeditable_control %}{% endcapture %}
       {% if enable_beforeafter == "true" %}
-      %a{ href: '{% path_to institutes %}#successstories' }
+      %a{ href: '{% path_to system_success_stories %}' }
         .news.well
           %h3.text-center
             {{ 'sidebar_beforeafter_title' | translate }}

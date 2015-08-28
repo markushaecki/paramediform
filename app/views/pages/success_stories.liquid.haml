@@ -1,0 +1,97 @@
+---
+title: Top Erfolgsgeschichten
+slug: abnehmen-erfolgsgeschichten
+published: true
+handle: system_success_stories
+position: 3
+---
+{% extends layouts/double-columns %}
+
+{% block header %}
+{{ 'map.js' | javascript_tag }}
+{{ 'jquery.activity-indicator.min.js' | javascript_tag }}
+{% endblock %}
+
+{% block share_meta_tags %}
+{% if params.slug %}
+{% with_scope _slug: params.slug %}
+{% assign success_story = contents.success_stories.first %}
+{% endwith_scope %}
+%meta{:content => "Bravo, {{ success_story.prename | append: ' ' | append: success_story.name | append: ' -' | append: success_story.lost_weight | append: ' Kg' }}", :property => "og:title"}
+%meta{:content => "{{ success_story.experience | strip_html }}", :property => "og:description"}
+%meta{:content => "website", :property => "og:type"}
+%meta{:content => "http://{{ host }}{{ success_story.after_image.url }}", :property => "og:image"}
+%meta{:content => "300", :property => "og:image:width"}
+%meta{:content => "600", :property => "og:image:height"}
+%meta{:content => "{{ url }}", :property => "og:url"}
+{% else %}
+%meta{:content => "Erfolgsgeschichten: Wie schlank sein zur Gewohnheit wird.", :property => "og:title"}
+%meta{:content => "website", :property => "og:type"}
+%meta{:content => "http://{{ host }}{{ 'sidebar_vorhernachher.png' | theme_image_url }}", :property => "og:image"}
+%meta{:content => "200", :property => "og:image:width"}
+%meta{:content => "200", :property => "og:image:height"}
+%meta{:content => "{{ url }}", :property => "og:url"}
+%meta{:content => "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme", :property => "og:site_name"}
+%meta{:content => "{{ page.seo_description }}", :property => "og:description"}
+{% endif %}
+{% endblock %}
+
+{% block content/main %}
+{% if params.slug %}
+
+{% with_scope _slug: params.slug %}
+{% assign success_story = contents.success_stories.first %}
+{% endwith_scope %}
+
+{% assign before_url = null %}
+{% assign after_url = null %}
+{% assign before = true %}
+{% for one in contents.success_stories.all %}
+{% if one._slug == success_story._slug %}
+{% assign before = false %}
+{% else %}
+{% if before %}
+{% assign before_url = "?slug=" | append: one._slug %}
+{% else %}
+{% if after_url == null %}
+{% assign after_url = "?slug=" | append: one._slug %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor %}
+
+{% include before_after_detail %}
+
+{% else %}
+
+%h2 {% editable_text success_stories_title, format: "raw", line_break: false, rows: 1 %}Auserlesene Erfolgsgeschichten:{% endeditable_text %}
+%br
+.row
+  {% for success_story in contents.success_stories.all %}
+  {% if success_story.prename != null %}
+  .col-sm-6.col-xs-12
+    %a.non-link-style{ href: "{% path_to system_success_stories %}?slug={{ success_story._slug }}" }
+      {% include before_after_overview %}
+    %br
+  {% endif %}
+  {% endfor %}
+{% endif %}
+%h3.text-center ...Weitere Erfolgsgeschichten finden Sie auf den jeweiligen Institutsseiten:
+%br
+.text-center#institutes_map{:style => "position:relative"}
+  %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
+  %span.text-center#indicator{:style => "position:absolute"}
+  %br
+  %br
+  {% for institute in contents.institutes %}
+  %a{ href: '{% path_to institute, with: institute_success_stories %}', title: '{{ institute.name }}', breit: '{{ institute.breitengrad }}', laeng: '{{ institute.laengengrad }}' }
+    .glyphicon.glyphicon-asterisk
+  {% endfor %}
+{% if params.slug == null %}
+%br
+.text-center
+  %script{:async => "async", :src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-547f2f7b7c2d7fa0", :type => "text/javascript"}
+  .addthis_sharing_toolbox
+  %br
+{% endif %}
+{% endblock %}

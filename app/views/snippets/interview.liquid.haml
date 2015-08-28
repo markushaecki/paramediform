@@ -1,5 +1,5 @@
 {% assign interview = news.interview %}
-{% if interview.image %}
+{% if interview.image.size > 0 %}
 .thumbnail
   .img-box
     %a{ href: '{{ interview.image.url }}' }
@@ -8,7 +8,7 @@
 %br
 .columnize
   {% if interview.person %}
-  {% unless interview.image %}
+  {% unless interview.image.size > 0 %}
   {% include interview_person with person:interview.person %}
   %hr
   {% endunless %}
@@ -17,7 +17,7 @@
   %h5{:style => "padding-bottom:10px"} {{ question.question }}
   .text
     {{ question.answer }}
-  {% if forloop.first and interview.person and interview.image %}
+  {% if forloop.first and interview.person and interview.image.size > 0 %}
   %hr
   {% include interview_person with person:interview.person %}
   {% endif %}

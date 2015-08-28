@@ -3,7 +3,7 @@ title: Institut
 published: true
 slug: institute
 listed: true
-position: 3
+position: 2
 handle: institute_home
 ---
 {% extends parent %}
@@ -12,11 +12,13 @@ handle: institute_home
 
 .row
   .col-xs-12
-    .thumbnail
+    .thumbnail{:style =>"padding:10px !important"}
+      {% if information.image.size > 0 %}
       %img.img-responsive{ src: '{{ information.image | resize: "645x" }}' }
       %br
+      {% endif %}
       %h2 {{ information.institute_title }}
-      %p{:style => "margin:0 0 20px"} {{ information.institute_description }} Hallo wie geht es euch denn so. Hallo wie geht es euch denn so, hallo wie geht es euch denn so... Hallo wie geht es euch denn so.
+      %p{:style => "margin:0 0 20px"} {{ information.institute_description }}
       {% for institute_picture in information.institute_pictures %}
       .row
         .col-xs-12
