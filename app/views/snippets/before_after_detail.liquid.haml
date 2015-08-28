@@ -1,7 +1,7 @@
 %div
   %h2.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
   .thumbnail{:style => "padding:20px !important"}
-    .doubleimg-box
+    .doubleimg-box#doubleimg
       %a{ vorsrc: '{{ success_story.before_image.url }}', nachsrc: '{{ success_story.after_image.url }}' }
         .img-box
           %img{ src: '{{ success_story.before_image.url | resize: "640x1280#" }}', :style => "float:left;max-width:50%" }

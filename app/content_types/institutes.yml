@@ -38,7 +38,7 @@ fields:
     label: Url # Human readable name of the field
     type: string
     required: true
-    hint: die URL ist stehts institute-Ortsbezeichnung.paramediform.ch Wobei es sich bei Ortsbezeichnung natürlich einen Platzhalter handelt.
+    hint: die URL ist stehts pmf-Ortsbezeichnung.locomotivehosting.com Wobei es sich bei Ortsbezeichnung natürlich einen Platzhalter handelt.
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 

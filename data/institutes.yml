@@ -168,16 +168,6 @@
     breitengrad: 46.868718
     laengengrad: 7.563380
 
-- "Riggisberg":
-    name:
-      en: "Riggisberg"
-    _slug:
-      de: "riggisberg"
-      en: "riggisberg"
-    url: "http://localhost:3333"
-    breitengrad: 46.814663
-    laengengrad: 7.476463
-
 - "Thun":
     name:
       en: "Thun"
@@ -187,16 +177,6 @@
     url: "http://localhost:3333"
     breitengrad: 46.714510
     laengengrad: 7.629230
-
-- "Düdingen":
-    name:
-      en: "Düdingen"
-    _slug:
-      de: "duedingen"
-      en: "duedingen"
-    url: "http://localhost:3333"
-    breitengrad: 46.848120
-    laengengrad: 7.191580
 
 - "Chur":
     name:
@@ -328,26 +308,6 @@
     breitengrad: 47.522162
     laengengrad: 8.539909
 
-- "Fehraltorf":
-    name:
-      en: "Fehraltorf"
-    _slug:
-      de: "fehraltorf"
-      en: "fehraltorf"
-    url: "http://localhost:3333"
-    breitengrad: 47.394237
-    laengengrad: 8.740527
-
-- "Horgen":
-    name:
-      en: "Horgen"
-    _slug:
-      de: "horgen"
-      en: "horgen"
-    url: "http://localhost:3333"
-    breitengrad: 47.260166
-    laengengrad: 8.599056
-
 - "Meilen":
     name:
       en: "Meilen"
@@ -358,6 +318,16 @@
     breitengrad: 47.269852
     laengengrad: 8.641389
 
+- "Sargans":
+    name:
+      en: "Sargans"
+    _slug:
+      de: "sargans"
+      en: "sargans"
+    url: "http://localhost:3333"
+    breitengrad: 47.047878
+    laengengrad: 9.440039
+
 - "Schlieren":
     name:
       en: "Schlieren"
@@ -367,6 +337,16 @@
     url: "http://localhost:3333"
     breitengrad: 47.396218
     laengengrad: 8.448974
+
+- "St. Gallen":
+    name:
+      en: "St. Gallen"
+    _slug:
+      de: "st-gallen"
+      en: "st-gallen"
+    url: "http://localhost:3333"
+    breitengrad: 47.424551
+    laengengrad: 9.375004
 
 - "Uster":
     name:
@@ -407,6 +387,16 @@
     url: "http://localhost:3333"
     breitengrad: 47.499165
     laengengrad: 8.727779
+
+- "Wünnewil":
+    name:
+      en: "Wünnewil"
+    _slug:
+      de: "Wunnewil"
+      en: "Wunnewil"
+    url: "http://localhost:3333"
+    breitengrad: 46.864935
+    laengengrad: 7.25821
 
 - "Zürich-Nord":
     name:

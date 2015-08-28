@@ -18,10 +18,13 @@ handle: news
 
 {% if this_news.interview %}
 {% include interview with news:this_news %}
+{% assign type = "interview" %}
 {% elsif this_news.recipe %}
 {% include recipe with news:this_news %}
+{% assign type = "recipe" %}
 {% elsif this_news.illustrative_text %}
 {% include illustrative_text with news:this_news %}
+{% assign type = "illustrative_text" %}
 {% else %}
 
 / # UNSUPPORTED
@@ -29,16 +32,59 @@ handle: news
   %h2 Nachricht konnte nicht gefunden werden.
 
 {% endif %}
+{% assign before_news = null %}
+{% for news in contents.news %}
+{% if news.after_news._slug == this_news._slug %}
+{% assign before_news = news %}
+{% endif %}
+{% endfor %}
+
+
 %hr
 .row
-  .col-sm-4.col-xs-12.text-center
-  .col-sm-4.col-xs-12.text-center
+  .col-sm-4.col-xs-12.text-center{:style => "height:100%;display:inline-block;"}
+    {% if before_news != null %}
+    {% if before_news.interview %}
+    {% assign type = "interview" %}
+    {% elsif before_news.recipe %}
+    {% assign type = "recipe" %}
+    {% elsif before_news.illustrative_text %}
+    {% assign type = "illustrative_text" %}
+    {% endif %}
     %div{:style => "margin-bottom:10px"}
-      %ul.pager{:style => "margin-top:0px; display: inline" }
+      %ul.pager{:style => "{{pagerstyle}};display: inline" }
         %li
-          %a{ href: "{{ path }}" } {{ "button_back" | translate }}
-  .col-sm-4.col-xs-12.text-center
-
+          %a{ href: "?slug={{ before_news._slug }}&type={{ type }}" } 
+            %table
+              %tr
+                %td{:style => "padding-right:7px"} &larr;
+                %td {{ before_news.title }}
+    {% endif %}
+  .col-sm-4.col-xs-12.text-center{:style => "height:100%  !important;display:inline-block !important;"}
+    {% if this_news.main_tag != null %}
+    %div{:style => "margin-bottom:10px"}
+      %ul.pager{:style => "{{pagerstyle}}; display: inline" }
+        %li
+          %a{ href: "{{ path }}?tag={{ this_news.main_tag }}" } {{ "button_back" | translate }}
+    {% endif %}
+  .col-sm-4.col-xs-12.text-center{:style => "height:100%;display:inline-block;"}
+    {% if this_news.after_news != null %}
+    {% if this_news.after_news.interview %}
+    {% assign type = "interview" %}
+    {% elsif this_news.after_news.recipe %}
+    {% assign type = "recipe" %}
+    {% elsif this_news.after_news.illustrative_text %}
+    {% assign type = "illustrative_text" %}
+    {% endif %}
+    %div{:style => "margin-bottom:10px"}
+      %ul.pager{:style => "{{pagerstyle}}; display: inline" }
+        %li
+          %a{ href: "?slug={{ this_news.after_news._slug }}&type={{ type }}" }
+            %table
+              %tr
+                %td {{ this_news.after_news.title }}
+                %td{:style => "padding-left:7px"} &rarr;
+    {% endif %}
 {% else %}
 
 {% assign current_page = params.page | default: 1 %}

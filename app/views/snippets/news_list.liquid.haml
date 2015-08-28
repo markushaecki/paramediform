@@ -2,14 +2,18 @@
 %ul.media-list
   {% if params.tag %}
   %div.text-center
-    .tags.text-center{:style => "margin-bottom:5px"}
-      %a.label.label-primary.tag{ href: "{{ path }}" } {{ params.tag }} X
+    .tags.text-center{:style => "margin-bottom:5px;margin-top:1px"}
+      %a.label.label-primary.tag.filtered_tag{ href: "{{ path }}" } {{ params.tag }}:
   {% endif %}
   {% for news_entry in paginate.collection %}
   {% assign hideit = 0 %}
   {% if news_entry.interview %}
   {% assign type = "interview" %}
+  {% if news_entry.interview.image %}
+  {% assign preview_image = news_entry.interview.image %}
+  {% else %}
   {% assign preview_image = news_entry.interview.person.picture %}
+  {% endif %}
   {% elsif news_entry.illustrative_text %}
   {% assign type = "illustrative_text" %}
   {% assign preview_image = news_entry.illustrative_text.image %}

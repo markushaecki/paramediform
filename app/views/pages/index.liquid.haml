@@ -13,23 +13,7 @@ handle: home
 
 {% block content %}
 
-/ Find a random institute with valid successstory
-/{% assign institute = contents.institutes.all | sample: 1 %}
-{% assign institutes = contents.institutes.all | sample: 20 %}
-{% assign institute = "" %}
-
-{% for possibleinstitute in institutes %}
-{% if institute == "" %}
-{% capture url %}{{ possibleinstitute.url }}/success-stories/random.json?frontsite=true{% endcapture %}
-{% consume data from url %}
-{% assign success_story = data.success_story %}
-{% endconsume %}
-{% if success_story.prename != null %}
-{% assign institute = possibleinstitute %}
-{% endif %}
-{% endif %}
-{% endfor %}
-
+{% assign success_story = contents.success_stories.first %}
 
 {% comment %}
 //{% capture geocoding %}http://maps.googleapis.com/maps/api/geocode/json?address=Schanzweg-7-5000-Aarau{% endcapture %}
@@ -39,52 +23,7 @@ handle: home
 //{{ geo_adress.first.geometry.location.lng }}{{ geo_adress.first.geometry.location.lng }}
 {% endcomment %}
 {% assign years = now | date: "%Y" | minus: 1992 %}
-
-%h1.text-center Erfolgreich abnehmen seit {{ years }} Jahren in {{ contents.institutes.size }} Instituten
-%br
-.row
-  .col-sm-6.col-xs-12
-    %a{ href:'/abnehmen/individuelle-beratung'}    
-      .thumbnail{:style => "margin-bottom:5px !important"}
-        %img.img-responsive{ src: "{{ 'beratung.jpg' | theme_image_url }}" }
-    .fixed_title
-      %h3 Individuelle Beratung
-  .col-sm-6.col-xs-12
-    .thumbnail{:style => "margin-bottom:5px !important"}
-      %a#rezepturl{ href: '' }
-        %img.img-responsive#rezeptbild{ src: ""}
-    .fixed_title
-      %h3 Essen was der Körper braucht!
-.row
-  .col-sm-6.col-xs-12
-    %div
-      .thumbnail{:style => "margin-bottom:5px !important"}
-        %a#success_link.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
-          %img#before_img{ src: '{{ success_story.before_image.url | resize: "518x800#" }}', :style => "float:left;max-width:50%" }
-          %img#after_img{ src: '{{ success_story.after_image.url | resize: "518x800#" }}', :style => "float:left;max-width:50%" }
-        .clearfix
-    .fixed_title
-      %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
-  .col-sm-6.col-xs-12
-    %a{ href:'/abnehmen/stoffwechseltypen'}    
-      .thumbnail{:style => "margin-bottom:5px !important"}
-        %img.img-responsive{ src: "{{ 'stoffwechseltypen.jpg' | theme_image_url }}" }
-    .fixed_title
-      %h3 Welchen Stoffwechseltyp bist du?
-%br
-  .col-sm-12.col-xs-12
-    .text-center#institutes_map{:style => "position:relative"}
-      %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
-      %span.text-center#indicator{:style => "position:absolute"}
-      %br
-      %br
-      {% for map_institute in contents.institutes %}
-      %a{ href: '{% path_to map_institute, with: institute_success_stories %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}', :style => "font-size:7px" }
-        .glyphicon.glyphicon-asterisk
-      {% endfor %}
-    %h3.text-center {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe{% endeditable_text %}
-
-
+{% assign recipy_url = null %}
 %div.hidden
   {% for news_entry in contents.news %}
   {% assign hideit = 1 %}
@@ -97,24 +36,63 @@ handle: home
   {% if hideit == 0 %}
   %p.news_p
     %span.news_url aktuelles?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}
-    %span.img_url {{ news_entry.recipe.image.url | resize: "700x525#" }}
+    %span.img_url {{ news_entry.recipe.image.url | resize: "700x700#" }}
+  {% assign recipy_url = news_entry.recipe.image.url %}
   {% endif %}
   {% endfor %}
   
-  {% assign institutes = contents.institutes.all | sample: 40 %}
-  {% for institute in institutes %}
-  {% capture url %}{{ institute.url }}/success-stories/random.json?frontsite=true{% endcapture %}
-  {% consume data from url %}
-  {% assign success_story = data.success_story %}
-  {% endconsume %}
+  {% for success_story in contents.success_stories.all %}
   {% if success_story.prename != null %}
   %p.success_p
-    %span.success_url {% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}
-    %span.before_url {{ success_story.before_image.url | resize: "354x547#" }}
-    %span.after_url {{ success_story.after_image.url | resize: "354x547#" }}
+    %span.success_url {% path_to system_success_stories %}
+    %span.before_url {{ success_story.before_image.url | resize: "350x700#" }}
+    %span.after_url {{ success_story.after_image.url | resize: "350x700#" }}
     %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
   {% endif %}
   {% endfor %}
-  
+
+%h1.text-center Erfolgreich abnehmen seit {{ years }} Jahren in {{ contents.institutes.size }} Instituten
+%br
+.row
+  .col-sm-6.col-xs-12
+    %a{ href:'/abnehmen/individuelle-beratung'}    
+      .thumbnail{:style => "margin-bottom:5px !important"}
+        %img.img-responsive{ src: "{{ 'beratung.jpg' | theme_image_url | resize: '700x700#' }}" }
+    .fixed_title
+      %h3 Individuelle Beratung
+  .col-sm-6.col-xs-12
+    .thumbnail{:style => "margin-bottom:5px !important"}
+      %a#rezepturl{ href: '' }
+        %img.img-responsive#rezeptbild{ src: "{{ recipy_url | resize: '700x700#' }}"}
+    .fixed_title
+      %h3 Essen was der Körper braucht!
+.row
+  .col-sm-6.col-xs-12
+    %div
+      .thumbnail{:style => "margin-bottom:5px !important"}
+        %a#success_link.non-link-style{ href: "{% path_to system_success_stories %}" }
+          %img#before_img{ src: '{{ success_story.before_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
+          %img#after_img{ src: '{{ success_story.after_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
+        .clearfix
+    .fixed_title
+      %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+  .col-sm-6.col-xs-12
+    %a{ href:'/abnehmen/stoffwechseltypen'}    
+      .thumbnail{:style => "margin-bottom:5px !important"}
+        %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '700x700#' }}" }
+    .fixed_title
+      %h3 Welchen Stoffwechseltyp sind Sie?
+%br
+  .col-sm-12.col-xs-12
+    .text-center#institutes_map{:style => "position:relative"}
+      %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
+      %span.text-center#indicator{:style => "position:absolute"}
+      %br
+      %br
+      {% for map_institute in contents.institutes %}
+      %a{ href: '{% path_to map_institute, with: institute_success_stories %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}', :style => "font-size:7px" }
+        .glyphicon.glyphicon-asterisk
+      {% endfor %}
+    %h3.text-center {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe{% endeditable_text %}  
 
 {% endblock %}
