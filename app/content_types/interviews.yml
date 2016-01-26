@@ -5,7 +5,7 @@ name: Interview
 slug: interviews
 
 # Explanatory text displayed in the back-office
-description: A description of the content type for the editors
+description: Interview mit einer bestimmten Person. Die Person muss im Datenobjekt Personen separat eingegeben werden.
 
 # Slug of field used to identify entries by default, such as the title
 label_field_name: title
@@ -28,15 +28,15 @@ order_by: manually
 # A list describing each field
 fields:
 - title: # The lowercase, underscored name of the field
-    label: Title # Human readable name of the field
+    label: Referenz Titel # Human readable name of the field
     type: string
     required: true
-    hint: "Referenztitel (wird auf der Webseite nicht dargestellt)"
+    hint: "Dieser Titel dient ihnen lediglich für die interne Referenz. Wir empfehlen den selben Titel wie für die Nachricht zu geben. (wird auf der Webseite nicht dargestellt)"
     localized: false
     searchable: true
 
 - image: # The lowercase, underscored name of the field
-    label: Image # Human readable name of the field
+    label: Bild # Human readable name of the field
     type: file
     required: false
     hint: Ein Bild welches dem Interview eine Stimmung verleiten soll. (Optional!)

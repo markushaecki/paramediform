@@ -5,7 +5,7 @@ name: Rezept
 slug: recipes
 
 # Explanatory text displayed in the back-office
-description: A description of the content type for the editors
+description: Ein schmackhaftes Paramediform Rezept. Sie haben hier die Möglichkeit das Rezept entweder als sichtbar oder als versteckt zu markieren. Damit können Sie lediglich die Saisonal passenden Rezepte anpreisen ohne alle anderen löschen zu müssen.
 
 # Slug of field used to identify entries by default, such as the title
 label_field_name: title
@@ -28,25 +28,25 @@ order_by: manually
 # A list describing each field
 fields:
 - title: # The lowercase, underscored name of the field
-    label: Title # Human readable name of the field
+    label: Referenz Titel # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: "Dieser Titel dient ihnen lediglich für die interne Referenz. Wir empfehlen den selben Titel wie für die Nachricht zu geben. (wird auf der Webseite nicht dargestellt)"
     localized: false
     searchable: true
 
 - image: # The lowercase, underscored name of the field
-    label: Image # Human readable name of the field
+    label: Bild # Human readable name of the field
     type: file
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: "Bild der im Rezept erklärten Speise (muss zwingend übereinstimmen, da sonst verwirrung entstehen könnte)"
     localized: false
 
 - preparation: # The lowercase, underscored name of the field
-    label: Preparation # Human readable name of the field
+    label: Zubereitung # Human readable name of the field
     type: text
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: Beschreibung der Zubereitung. (Wird rechts neben der Zutatenliste abgebildet werden)
     localized: false
     text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
     searchable: true

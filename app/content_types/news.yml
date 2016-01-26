@@ -98,7 +98,7 @@ fields:
     class_name: interviews
 
 - recipe: # The lowercase, underscored name of the field
-    label: Recipe # Human readable name of the field
+    label: Rezept # Human readable name of the field
     type: belongs_to
     required: false
     hint: Falls es sich um ein neues Rezept handelt soll das Interview hier referenziert werden.

@@ -8,6 +8,7 @@ var after_url = [];
 var success_text = [];
 
 $(window).load(function() {
+	/*
 	$( ".news_p" ).each(function(index) {
 		img_url[index] = $(this).children("span.img_url").text();
 		news_url[index] = $(this).children("span.news_url").text();
@@ -25,6 +26,7 @@ $(window).load(function() {
 	setTimeout(fadefood, 2000);
 	fadesuccess();
 	setInterval(fadesuccess, 4000);
+	*/
 });
 
 function startfoodinterval(){

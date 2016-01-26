@@ -5,7 +5,7 @@ name: Illustrierte Nachricht
 slug: illustrative_texts
 
 # Explanatory text displayed in the back-office
-description: A description of the content type for the editors
+description: Standard Nachricht mit einem Text und einem Bild zur illustration.
 
 # Slug of field used to identify entries by default, such as the title
 label_field_name: title
@@ -31,7 +31,7 @@ fields:
     label: Referenz Titel # Human readable name of the field
     type: string
     required: true
-    hint: Dieser Titel wird lediglich dazu verwendet um diese Illustration einer Nachricht zuortnen zu können.
+    hint: "Dieser Titel dient ihnen lediglich für die interne Referenz. Wir empfehlen den selben Titel wie für die Nachricht zu geben. (wird auf der Webseite nicht dargestellt)"
     localized: false
     searchable: true
 
@@ -45,7 +45,7 @@ fields:
     text_formatting: html
 
 - image: # The lowercase, underscored name of the field
-    label: Illustration # Human readable name of the field
+    label: Bild # Human readable name of the field
     type: file
     required: false
     hint: Dieses Bild wird mit dem Text zusammen angezeigt und untermalt damit die Stimmung welche der Text hervorrufen soll.

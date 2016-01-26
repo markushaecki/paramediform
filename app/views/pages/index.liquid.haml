@@ -23,33 +23,39 @@ handle: home
 //{{ geo_adress.first.geometry.location.lng }}{{ geo_adress.first.geometry.location.lng }}
 {% endcomment %}
 {% assign years = now | date: "%Y" | minus: 1992 %}
-{% assign recipy_url = null %}
-%div.hidden
-  {% for news_entry in contents.news %}
-  {% assign hideit = 1 %}
-  {% if news_entry.recipe %}
-  {% assign type = "recipe" %}
-  {% if news_entry.recipe.activity.attr != "versteckt" %}
-  {% assign hideit = 0 %}
-  {% endif %}
-  {% endif %}
-  {% if hideit == 0 %}
-  %p.news_p
-    %span.news_url aktuelles?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}
-    %span.img_url {{ news_entry.recipe.image.url | resize: "700x700#" }}
-  {% assign recipy_url = news_entry.recipe.image.url %}
-  {% endif %}
-  {% endfor %}
+//{% assign recipy_url = null %}
+//%div.hidden
+//  {% for news_entry in contents.news %}
+//  {% assign hideit = 1 %}
+//  {% if news_entry.recipe %}
+//  {% assign type = "recipe" %}
+//  {% if news_entry.recipe.activity.attr != "versteckt" %}
+//  {% assign hideit = 0 %}
+//  {% endif %}
+//  {% endif %}
+//  {% if hideit == 0 %}
+//  %p.news_p
+//    %span.news_url aktuelles?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}
+//    %span.img_url {{ news_entry.recipe.image.url | resize: "700x700#" }}
+//  {% assign recipy_url = news_entry.recipe.image.url %}
+//  {% endif %}
+//  {% endfor %}
   
-  {% for success_story in contents.success_stories.all %}
-  {% if success_story.prename != null %}
-  %p.success_p
-    %span.success_url {% path_to system_success_stories %}
-    %span.before_url {{ success_story.before_image.url | resize: "350x700#" }}
-    %span.after_url {{ success_story.after_image.url | resize: "350x700#" }}
-    %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
-  {% endif %}
-  {% endfor %}
+//  {% for success_story in contents.success_stories.all %}
+//  {% if success_story.prename != null %}
+//  %p.success_p
+//    %span.success_url {% path_to system_success_stories %}
+//    %span.before_url {{ success_story.before_image.url | resize: "350x700#" }}
+//    %span.after_url {{ success_story.after_image.url | resize: "350x700#" }}
+//    %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+//  {% endif %}
+//  {% endfor %}
+{% with_scope activity: "sichtbar" %}
+{% assign recipe = contents.recipes | sample %}
+{% endwith_scope %}
+{% assign recipy_news = recipe.news | sample %}
+{% assign recipy_image = recipe.image.url %}
+{% assign success_story = contents.success_stories | sample %}
 
 %h1.text-center Erfolgreich abnehmen seit {{ years }} Jahren in {{ contents.institutes.size }} Instituten
 %br
@@ -62,7 +68,7 @@ handle: home
       %h3 Individuelle Beratung
   .col-sm-6.col-xs-12
     .thumbnail{:style => "margin-bottom:5px !important"}
-      %a#rezepturl{ href: '' }
+      %a#rezepturl{ href: "{% path_to news %}?slug={{ recipy_news._slug }}&type=recipe" }
         %img.img-responsive#rezeptbild{ src: "{{ recipy_url | resize: '700x700#' }}"}
     .fixed_title
       %h3 Essen was der Körper braucht!

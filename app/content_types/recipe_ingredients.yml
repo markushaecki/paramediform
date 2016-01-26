@@ -5,7 +5,7 @@ name: Zutaten
 slug: recipe_ingredients
 
 # Explanatory text displayed in the back-office
-description: A description of the content type for the editors
+description: Ein gutes Rezept hat meist mehrere Zutaten. Hier können Sie eine eintragen und einem bereits aufgesetzten Rezept mittels seinem Referenztitel hinzufügen.
 
 # Slug of field used to identify entries by default, such as the title
 label_field_name: name
@@ -28,32 +28,32 @@ order_by: manually
 # A list describing each field
 fields:
 - name: # The lowercase, underscored name of the field
-    label: Name # Human readable name of the field
+    label: Bezeichnung # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: Benennen sie hier die Zutat in max. 60 Buchstaben.
     localized: false
     searchable: true
 
 - amount: # The lowercase, underscored name of the field
-    label: Amount # Human readable name of the field
+    label: Menge # Human readable name of the field
     type: string
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Hier wird lediglich die Mengenzahl ohne Einheit eingetragen.
     localized: false
 
 - unit: # The lowercase, underscored name of the field
-    label: Unit # Human readable name of the field
+    label: Einheit # Human readable name of the field
     type: string
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Die Einheit soll nach üblicher Art und Weise abgekürzt werden. (Gramm => g; Esslöffel => EL)
     localized: false
 
 - recipe: # The lowercase, underscored name of the field
-    label: Recipe # Human readable name of the field
+    label: Rezept # Human readable name of the field
     type: belongs_to
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Geben Sie hier den Referenz Titel ein zu welchem Sie die Zutat hinzufügen möchten.
     localized: false
     # Slug of the target content type (eg post if this content type is a comment)
     class_name: recipes

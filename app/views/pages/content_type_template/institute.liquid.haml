@@ -9,6 +9,10 @@ handle: institute_home
 {% extends parent %}
 
 {% block content/main/tab_pane %}
+{% capture url %}{{ institute.url }}/{{locale}}/institute/all.json{% endcapture %}
+{% consume data from url %}
+{% assign institute_pictures = data.institute_pictures %}
+{% endconsume %}
 
 .row
   .col-xs-12
@@ -19,7 +23,7 @@ handle: institute_home
       {% endif %}
       %h2 {{ information.institute_title }}
       %p{:style => "margin:0 0 20px"} {{ information.institute_description }}
-      {% for institute_picture in information.institute_pictures %}
+      {% for institute_picture in institute_pictures %}
       .row
         .col-xs-12
           .img-box

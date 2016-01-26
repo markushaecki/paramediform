@@ -9,7 +9,7 @@
   {% assign hideit = 0 %}
   {% if news_entry.interview %}
   {% assign type = "interview" %}
-  {% if news_entry.interview.image %}
+  {% if news_entry.interview.image != null %}
   {% assign preview_image = news_entry.interview.image %}
   {% else %}
   {% assign preview_image = news_entry.interview.person.picture %}
