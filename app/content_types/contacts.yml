@@ -30,7 +30,7 @@ fields:
 - subject: # The lowercase, underscored name of the field
     label: Thema # Human readable name of the field
     type: select
-    select_options: ["Ich möchte eine kostenlose Beratung!", "Terminvereinbarung", "Fragen zur ParaMediForm-Methode", "Rückmeldung", "Anderes Thema"]
+    select_options: ["Kostenlose Terminvereinbarung", "Fragen zur Methode", "Paravita Beratung", "Rückmeldung", "Möchte Unterlagen", "Anfrage neues Institut"]
     required: true
     hint: Anrede
     localized: false
@@ -126,4 +126,11 @@ fields:
     type: boolean
     required: false
     hint: Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm.
+    localized: false
+
+- institute:
+    label: Kontaktiertes Institut
+    type: string
+    required: true
+    hint: Sagt welches Instistitut bzw. Systemzentrale kontaktiert wurde
     localized: false

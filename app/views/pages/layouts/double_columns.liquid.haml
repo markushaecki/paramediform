@@ -19,7 +19,7 @@ position: 5
     #sidebar
       %form{:action => '{% path_to search %}', :role => "search"}
         .form-group
-          %input.form-control{name: 'q', :type => "text", :placeholder => "Wonach suchst du?"}
+          %input.form-control{name: 'q', :type => "text", :placeholder => "Wonach suchen Sie?"}
           //%button.btn.btn-default{:type => "submit"} Suchen
 
       / contact block
@@ -40,6 +40,17 @@ position: 5
             {{ 'sidebar_institutes_title' | translate }}
           .text-center
             %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x80' }}", style: 'height: 40px' }
+      {% endif %}
+
+      / selbststaendigkeit block
+      {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
+      {% if enable_selbststaendigkeit == "true" %}
+      %a{ href: '/unternehmen/selbststaendigkeit' }
+        .news.well
+          %h3.text-center
+            {{ 'sidebar_selbststaendigkeit_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px' }
       {% endif %}
 
       / paravita block
@@ -75,17 +86,6 @@ position: 5
             %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px' }
       {% endif %}
 
-      / selbststaendigkeit block
-      {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
-      {% if enable_selbststaendigkeit == "true" %}
-      %a{ href: '/unternehmen/selbststaendigkeit' }
-        .news.well
-          %h3.text-center
-            {{ 'sidebar_selbststaendigkeit_title' | translate }}
-          .text-center
-            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px' }
-      {% endif %}
-
       / news block
       {% capture enable_news %}{% editable_control "Aktuelles", options: 'true=Yes,false=No', hint: "Link zur Seite Aktuelles" %}true{% endeditable_control %}{% endcapture %}
       {% if enable_news == "true" %}
@@ -94,7 +94,7 @@ position: 5
           %h3.text-center
             {{ 'sidebar_news_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px' }
+            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px' }
       {% endif %}
       
       / vorhernachher block

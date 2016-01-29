@@ -15,7 +15,7 @@ position: 11
     {% if title.size > 0 %}
     %h3{:style => "padding-top:0px;padding-bottom:0"} {{ title }}
     {% endif %}
-    {% capture text %}{% editable_text "Text #{i + 1}", format:raw, priority:"#{26 - i*3}" %}{% endeditable_text %}{% endcapture %}
+    {% capture text %}{% editable_text "Text #{i + 1}", priority:"#{26 - i*3}" %}{% endeditable_text %}{% endcapture %}
     {% if text.size > 0 %}
     .vspacer {{ text }}
     {% endif %}

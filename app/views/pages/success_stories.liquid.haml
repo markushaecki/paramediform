@@ -17,7 +17,7 @@ position: 3
 {% with_scope _slug: params.slug %}
 {% assign success_story = contents.success_stories.first %}
 {% endwith_scope %}
-%meta{:content => "Bravo, {{ success_story.prename | append: ' ' | append: success_story.name | append: ' -' | append: success_story.lost_weight | append: ' Kg' }}", :property => "og:title"}
+%meta{:content => "Bravo, {{ success_story.prename | append: ' ' | append: success_story.name | append: ' -' | append: success_story.lost_weight | append: ' kg' }}", :property => "og:title"}
 %meta{:content => "{{ success_story.experience | strip_html }}", :property => "og:description"}
 %meta{:content => "website", :property => "og:type"}
 %meta{:content => "http://{{ host }}{{ success_story.after_image.url }}", :property => "og:image"}

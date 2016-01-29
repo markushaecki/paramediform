@@ -52,7 +52,7 @@ fields:
     label: Abgenommenes Gewicht # Human readable name of the field
     type: string
     required: true
-    hint: Bitte gebensie die abgenommene Gewichtszahl ein ohne "-" oder "kg" angaben.
+    hint: Bitte geben Sie die abgenommene Gewichtszahl ohne die Angaben "-" oder "kg" ein.
     localized: false
 
 - before_image: # The lowercase, underscored name of the field

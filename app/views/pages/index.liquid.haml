@@ -47,7 +47,7 @@ handle: home
 //    %span.success_url {% path_to system_success_stories %}
 //    %span.before_url {{ success_story.before_image.url | resize: "350x700#" }}
 //    %span.after_url {{ success_story.after_image.url | resize: "350x700#" }}
-//    %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+//    %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
 //  {% endif %}
 //  {% endfor %}
 {% with_scope activity: "sichtbar" %}
@@ -63,7 +63,7 @@ handle: home
   .col-sm-6.col-xs-12
     %a{ href:'/abnehmen/individuelle-beratung'}    
       .thumbnail{:style => "margin-bottom:5px !important"}
-        %img.img-responsive{ src: "{{ 'beratung.jpg' | theme_image_url | resize: '700x700#' }}" }
+        %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '700x700#' }}" }
     .fixed_title
       %h3 Individuelle Beratung
   .col-sm-6.col-xs-12
@@ -81,7 +81,7 @@ handle: home
           %img#after_img{ src: '{{ success_story.after_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
         .clearfix
     .fixed_title
-      %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+      %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
   .col-sm-6.col-xs-12
     %a{ href:'/abnehmen/stoffwechseltypen'}    
       .thumbnail{:style => "margin-bottom:5px !important"}

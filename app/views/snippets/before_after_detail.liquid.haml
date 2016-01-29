@@ -1,5 +1,5 @@
 %div
-  %h2.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " Kg" }}
+  %h2.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
   .thumbnail{:style => "padding:20px !important"}
     .doubleimg-box#doubleimg
       %a{ vorsrc: '{{ success_story.before_image.url }}', nachsrc: '{{ success_story.after_image.url }}' }
@@ -20,7 +20,7 @@
     %table.round-corner-table{:style => "width:100%;background-color:#FFF6FC"}
       %tr
         %td  &nbsp;
-      {% if success_story.start_date != nil && success_story.start_date != '' %}	   
+      {% if success_story.start_date != nil && success_story.start_date != '' %}   
       %tr
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-play-circle
@@ -29,7 +29,7 @@
         %td{:style => "width:55%"}
           {{ success_story.start_date | localized_date: '%d.%m.%Y' }} 
       {% endif %}
-      {% if success_story.programm_duration != nil && success_story.programm_duration != '' %}	   
+      {% if success_story.programm_duration != nil && success_story.programm_duration != '' %}
       %tr
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-time
@@ -38,7 +38,7 @@
         %td{:style => "width:35%"}
           {{ success_story.programm_duration }} Wochen
       {% endif %}
-      {% if success_story.number_of_consultations != nil && success_story.number_of_consultations != '' %}	   
+      {% if success_story.number_of_consultations != nil && success_story.number_of_consultations != '' %}
       %tr
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-dashboard
@@ -47,7 +47,7 @@
         %td{:style => "width:35%"}
           {{ success_story.number_of_consultations  }} Termine à 20 min
       {% endif %}
-      {% if success_story.feeling_of_abdiction != nil && success_story.feeling_of_abdiction != '' %}	   
+      {% if success_story.feeling_of_abdiction != nil && success_story.feeling_of_abdiction != '' %}
       %tr{:style => "vertical-align:top"}
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-eye-open

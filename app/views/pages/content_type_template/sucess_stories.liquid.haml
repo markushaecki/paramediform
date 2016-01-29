@@ -3,7 +3,7 @@ title: Erfolge
 slug: erfolgsgeschichten
 published: true
 listed: true
-position: 1
+position: 2
 handle: institute_success_stories
 ---
 
@@ -49,7 +49,7 @@ handle: institute_success_stories
 {% consume data from url %}
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
-%meta{:content => "Bravo, {{ success_story.prename | append: ' ' | append: success_story.name | append: ' -' | append: success_story.lost_weight | append: ' Kg' }}", :property => "og:title"}
+%meta{:content => "Bravo, {{ success_story.prename | append: ' ' | append: success_story.name | append: ' -' | append: success_story.lost_weight | append: ' kg' }}", :property => "og:title"}
 %meta{:content => "{{ success_story.experience | strip_html }}", :property => "og:description"}
 %meta{:content => "website", :property => "og:type"}
 %meta{:content => "{{ success_story.after_image.url }}", :property => "og:image"}
@@ -66,7 +66,7 @@ handle: institute_success_stories
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
 %title
-  Bravo! {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat ' | append: success_story.lost_weight | append: ' Kg abgenommen' }}
+  Bravo! {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat ' | append: success_story.lost_weight | append: ' kg abgenommen' }}
 {% endif %}
 {% endblock %}
 

@@ -75,24 +75,31 @@ handle: contact_form
         {% endfor %}
         {% endwith_scope %}
 %br
-	
+
 %legend Thema
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Terminvereinbarung"} Terminvereinbarung
+        %input{:type => "radio", :name => "content[subject]", :value => "Kostenlose Terminvereinbarung"} Wünsche kostenlose Beratung
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Fragen zur ParaMediForm-Methode"} Fragen zur Methode
+        %input{:type => "radio", :name => "content[subject]", :value => "Fragen zur Methode"} Habe Fragen zur Methode
   .col-sm-6.col-xs-12
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Paravita Beratung"} Paravita Beratung
+        %input{:type => "radio", :name => "content[subject]", :value => "Paravita Beratung"} Möchte eine Paravita Beratung
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Rückmeldung
-
+        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Allgemeine Rückmeldung
+  .col-xs-12
+    .radio
+      %label
+        %input{:type => "radio", :name => "content[subject]", :value => "Möchte Unterlagen"} Schicken sie mir weitere Unterlagen zum Franchiseprogramm
+  .col-xs-12
+    .radio
+      %label
+        %input{:type => "radio", :name => "content[subject]", :value => "Anfrage neues Institut"} Ich möchte ein eigenes ParaMediForm-Institut eröffnen
 %legend Absender
 .row
   .col-sm-6.col-xs-12
@@ -102,25 +109,25 @@ handle: contact_form
       {% endfor %}
     %br
 .row
+  .col-sm-6.col-xs-12  
+    %input{:class => "form-control", :type => "text", :name => "content[surname]", :value => "{{ params.content.surname }}", :placeholder => "Vorname"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[surname]", :placeholder => "Vorname"}
-  .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[lastname]", :placeholder => "Nachname"}
+    %input{:class => "form-control", :type => "text", :name => "content[lastname]", :value => "{{ params.content.lastname }}", :placeholder => "Nachname"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[address]", :placeholder => "Adresse"}
+    %input{:class => "form-control", :type => "text", :name => "content[address]", :value => "{{ params.content.address }}", :placeholder => "Adresse"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :placeholder => "Hausnummer"}
+    %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :value => "{{ params.content.housenumber }}", :placeholder => "Hausnummer"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :placeholder => "PLZ"}
+    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :value => "{{ params.content.zipcode }}", :placeholder => "PLZ"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[place]", :placeholder => "Ort"}
+    %input{:class => "form-control", :type => "text", :name => "content[place]", :value => "{{ params.content.place }}", :placeholder => "Ort"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[phone]", :placeholder => "Telefon"}
+    %input{:class => "form-control", :type => "text", :name => "content[phone]", :value => "{{ params.content.phone }}",:placeholder => "Telefon"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[email]", :placeholder => "E-Mail"}
+    %input{:class => "form-control", :type => "text", :name => "content[email]", :value => "{{ params.content.email }}", :placeholder => "E-Mail"}
 .row
   .col-sm-12.col-xs-12
     .checkbox
@@ -135,6 +142,7 @@ handle: contact_form
     %input{:type => "checkbox", :name => "content[newsletter]", :checked => "yes"} Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm.
 %br
 %br
+%input{:type => "hidden", :name => "content[institute]", :value => "System Zentrale"}  
 .text-center
   %button{ :class => "btn btn-primary", :type => "submit"} Senden
 %br
