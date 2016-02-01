@@ -39,8 +39,8 @@ editable_elements:
     .glyphicon.glyphicon-asterisk
   {% endfor %}
 .dropdown{style: "position:absolute;z-index:2"}
-  %button.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
-    Institute
+  %button.pink-btn.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
+    Liste aller Institute
     %span.caret
   %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
     {% with_scope order_by: 'name asc' %}
@@ -50,7 +50,7 @@ editable_elements:
     {% endfor %}
     {% endwith_scope %}
 
-%p{style: "color:lightgray;margin-left:100px"} Tipp: Klicke auf einen Stern um auf die gewünschte Institutsseite zu gelangen.
+%p{style: "margin-left:170px"} Tipp: Wählen Sie Ihr Institut entweder auf der Landkarte aus, oder verwenden Sie die alphabetische geordnete Liste links.
 %br
 
 %a{name: "successstories"}

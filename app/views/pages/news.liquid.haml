@@ -10,7 +10,7 @@ handle: news
 
 {% if params.slug and params.type %}
 
-{% with_scope _slug: params.slug, published_at.lt: today %}
+{% with_scope _slug: params.slug, published_at.lt: today + 1 %}
 {% assign this_news = contents.news.first %}
 {% endwith_scope %}
 
@@ -89,11 +89,11 @@ handle: news
 
 {% assign current_page = params.page | default: 1 %}
 {% if params.tag == null %}
-{% with_scope order_by: 'published_at desc', published_at.lt: today %}
+{% with_scope order_by: 'published_at desc', published_at.lt: today + 1 %}
 {% include news_list %}
 {% endwith_scope %}
 {% else %}
-{% with_scope order_by: 'published_at desc', published_at.lt: today, tags: params.tag %}
+{% with_scope order_by: 'published_at desc', published_at.lt: today + 1, tags: params.tag %}
 {% include news_list %}
 {% endwith_scope %}
 {% endif %}

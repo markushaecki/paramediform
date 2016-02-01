@@ -111,7 +111,7 @@ position: 5
       / Kochbuch block
       {% capture enable_kochbuch %}{% editable_control "Kochbuch", options: 'true=Yes,false=No', hint: "Link zum Bestellen von Kochbuch" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_kochbuch == "true" %}
-      %a{ href: '' }
+      %a{ href: '/produkte/kochbuch' }
         .well
           %h3.text-center
             {{ 'sidebar_kochbuch_title' | translate }}

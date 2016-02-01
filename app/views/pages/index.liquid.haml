@@ -60,34 +60,42 @@ handle: home
 %h1.text-center Erfolgreich abnehmen seit {{ years }} Jahren in {{ contents.institutes.size }} Instituten
 %br
 .row
-  .col-sm-6.col-xs-12
-    %a{ href:'/abnehmen/individuelle-beratung'}    
-      .thumbnail{:style => "margin-bottom:5px !important"}
-        %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '700x700#' }}" }
-    .fixed_title
-      %h3 Individuelle Beratung
-  .col-sm-6.col-xs-12
-    .thumbnail{:style => "margin-bottom:5px !important"}
-      %a#rezepturl{ href: "{% path_to news %}?slug={{ recipy_news._slug }}&type=recipe" }
-        %img.img-responsive#rezeptbild{ src: "{{ recipy_url | resize: '700x700#' }}"}
-    .fixed_title
-      %h3 Essen was der Körper braucht!
-.row
-  .col-sm-6.col-xs-12
-    %div
-      .thumbnail{:style => "margin-bottom:5px !important"}
-        %a#success_link.non-link-style{ href: "{% path_to system_success_stories %}" }
-          %img#before_img{ src: '{{ success_story.before_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
-          %img#after_img{ src: '{{ success_story.after_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
-        .clearfix
-    .fixed_title
-      %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
-  .col-sm-6.col-xs-12
-    %a{ href:'/abnehmen/stoffwechseltypen'}    
-      .thumbnail{:style => "margin-bottom:5px !important"}
-        %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '700x700#' }}" }
-    .fixed_title
-      %h3 Welchen Stoffwechseltyp sind Sie?
+  .col-sm-8.col-xs-12
+    .row
+      .col-sm-6.col-xs-6
+        %a{ href:'/abnehmen/individuelle-beratung'}    
+          .thumbnail{:style => "margin-bottom:5px !important"}
+            %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '700x700#' }}" }
+        .fixed_title
+          %h3 Individuelle Beratung
+      .col-sm-6.col-xs-6
+        .thumbnail{:style => "margin-bottom:5px !important"}
+          %a#rezepturl{ href: "{% path_to news %}?slug={{ recipy_news._slug }}&type=recipe" }
+            %img.img-responsive#rezeptbild{ src: "{{ recipy_url | resize: '700x700#' }}"}
+        .fixed_title
+          %h3 Essen was der Körper braucht!
+    %br
+    .row
+      .col-sm-6.col-xs-6
+        %div
+          .thumbnail{:style => "margin-bottom:5px !important"}
+            %a#success_link.non-link-style{ href: "{% path_to system_success_stories %}" }
+              %img#before_img{ src: '{{ success_story.before_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
+              %img#after_img{ src: '{{ success_story.after_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
+            .clearfix
+        .fixed_title
+          %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
+      .col-sm-6.col-xs-6
+        %a{ href:'/abnehmen/stoffwechseltypen'}    
+          .thumbnail{:style => "margin-bottom:5px !important"}
+            %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '700x700#' }}" }
+        .fixed_title
+          %h3 Welchen Stoffwechseltyp sind Sie?
+    %br
+  .col-sm-4.col-xs-12
+    {% with_scope order_by: 'published_at desc', published_at.lt: today, tags: 'wichtig' %}
+    {% include news_important %}
+    {% endwith_scope %}
 %br
   .col-sm-12.col-xs-12
     .text-center#institutes_map{:style => "position:relative"}
@@ -96,7 +104,7 @@ handle: home
       %br
       %br
       {% for map_institute in contents.institutes %}
-      %a{ href: '{% path_to map_institute, with: institute_success_stories %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}', :style => "font-size:7px" }
+      %a{ href: '{% path_to map_institute %}', title: '{{ map_institute.name }}', breit: '{{ map_institute.breitengrad }}', laeng: '{{ map_institute.laengengrad }}', :style => "font-size:7px" }
         .glyphicon.glyphicon-asterisk
       {% endfor %}
     %h3.text-center {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe{% endeditable_text %}  
