@@ -40,8 +40,8 @@
         &nbsp;
         {% endfor %}
       {% endif %}
-      .thumbnail{:style => "width:85px;float:left;margin-right:20px"}
-        %img.img-responsive{ src: '{{ preview_image | resize: "80x80#" }}' }
+      .thumbnail{:style => "width:160px;float:left;margin-right:20px"}
+        %img.img-responsive{ src: '{{ preview_image | resize: "160x100#" }}' }
       .text
         {{ news_entry.text | truncate: 170 }}
     {% unless forloop.last %}

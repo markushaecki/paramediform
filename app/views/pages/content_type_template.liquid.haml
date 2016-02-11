@@ -75,8 +75,13 @@ handle: institute_layout
 
       {% for _page in root_page.children %}
       {% if _page.listed? and _page.published? %}
+      {% if _page.handle == "institute_contact" %}
+      %li{ class: "{% if page.fullpath == _page.fullpath %}active{% endif %}" }
+        %a{ href: "{% path_to institute, with: institute_layout %}/{{ _page.original_slug }}", :id => "institut_contact" } {{ _page.original_title }}
+      {% else %}
       %li{ class: "{% if page.fullpath == _page.fullpath %}active{% endif %}" }
         %a{ href: "{% path_to institute, with: institute_layout %}/{{ _page.original_slug }}" } {{ _page.original_title }}
+      {% endif %}
       {% endif %}
       {% endfor %}
 

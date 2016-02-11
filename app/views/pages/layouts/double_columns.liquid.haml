@@ -23,7 +23,7 @@ position: 5
           //%button.btn.btn-default{:type => "submit"} Suchen
 
       / contact block
-      %a{ href: '{% path_to contact_form %}' }
+      %a{ href: '{% path_to contact_form %}', :id => "sidebar_contact" }
         .contact.well
           %h3.text-center
             {{ 'sidebar_contact_title' | translate }}
