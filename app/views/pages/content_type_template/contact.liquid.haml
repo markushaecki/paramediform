@@ -28,6 +28,9 @@ position: 6
 {% endif %}
 
 {% model_form 'contacts', class: 'form-horizontal', success: path %}
+
+%input{ type: 'hidden', name: 'notified_accounts', value: '{{ institute.email }}' }
+
 %h2 Hiermit kontaktieren Sie das Institut {{ institute.name }}:
 %br
 .row
@@ -84,7 +87,7 @@ position: 6
       {% endfor %}
     %br
 .row
-  .col-sm-6.col-xs-12  
+  .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[surname]", :value => "{{ params.content.surname }}", :placeholder => "Vorname"}
   .col-sm-6.col-xs-12
     %input{:class => "form-control", :type => "text", :name => "content[lastname]", :value => "{{ params.content.lastname }}", :placeholder => "Nachname"}
@@ -117,7 +120,7 @@ position: 6
     %input{:type => "checkbox", :name => "content[newsletter]", :checked => "yes"} Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm.
 %br
 %br
-%input{:type => "hidden", :name => "content[institute]", :value => "{{ institute.name }}"}  
+%input{:type => "hidden", :name => "content[institute]", :value => "{{ institute.name }}"}
 .text-center
   %button{ :class => "btn btn-primary", :type => "submit"} Senden
 %br
