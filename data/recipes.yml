@@ -21,7 +21,7 @@
 - "Heilbutt im Rueblimantel":
     image: "/samples/food/Heilbutt_im_Rueblimantel.jpg" # Path to a file in the public/samples folder or to a remote and external file.
     preparation: "Voluptas necessitatibus deserunt molestias. Dolorem vel fugiat animi non. Reiciendis cumque ad omnis ut nisi doloribus ut. Et voluptatem eos assumenda sit ea sed."
-    activity: versteckt
+    activity: sichtbar
 
 - "Linsen Burger":
     image: "/samples/food/Linsen-Burger.jpg" # Path to a file in the public/samples folder or to a remote and external file.

@@ -14,7 +14,7 @@ handle: institute_contact
 {% endblock %}
 
 {% block content/main/tab_pane %}
-{% if contact.errors %}
+{% if contact.errors.size >0 %}
 .alert.alert-warning
   %strong {{ 'following_errors_occured' | translate }}:
   %ul

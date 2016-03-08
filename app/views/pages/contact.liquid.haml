@@ -42,7 +42,7 @@ handle: contact_form
 %br
 .row
   .col-sm-7.col-xs-12
-    %img.img-responsive{ src: "{{ 'systemzentrale.png' | theme_image_url }}" }
+    %img.img-responsive{ src: '{{ "systemzentrale.jpg" | theme_image_url | resize: "645x" }}' }
     %br
   .col-sm-5.col-xs-12
     ParaMediForm

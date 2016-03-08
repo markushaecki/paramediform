@@ -67,7 +67,7 @@ position: 5
       / parapan block
       {% capture enable_parapan %}{% editable_control "Parapan", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Parapan Webseite an." %}false{% endeditable_control %}{% endcapture %}
       {% if enable_parapan == "true" %}
-      %a{ href: 'http://parapan.locomotivehosting.com'}
+      %a{ href: 'http://www.parapan.ch'}
         .institutes.well
           %h3.text-center
             {{ 'sidebar_parapan_title' | translate }}

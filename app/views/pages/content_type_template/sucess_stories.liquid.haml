@@ -29,6 +29,11 @@ handle: institute_success_stories
 {% else %}
 / by default, we display the list of success stories
 .row
+  {% if success_stories.size == 0 %}
+  .col-sm-12.col-xs-12
+    .p Herzlich willkommen bei PMF-{{ institute.name }}. Das Institut hat vor kurzem eröffnet, bald werden die ersten Erfolgsgeschichten für Sie aus PMF {{ institute.name }} erscheinen. 
+    %br
+  {% else %}
   {% for success_story in success_stories %}
   {% if success_story.prename != "" %}
   .col-sm-6.col-xs-12
@@ -36,7 +41,10 @@ handle: institute_success_stories
       {% include before_after_overview %}
   {% endif %}
   {% endfor %}
-
+  .col-sm-12.col-xs-12
+    {% include note %}
+  {% endif %}
+  
 {% endif %}
 
 {% endblock %}
@@ -66,7 +74,12 @@ handle: institute_success_stories
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
 %title
-  Bravo! {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat ' | append: success_story.lost_weight | append: ' kg abgenommen' }}
+  ParaMediForm - {% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %} - Bravo {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat ' | append: success_story.lost_weight | append: ' kg abgenommen' }}
+%meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }}"}/
+{% else %}
+%title
+  ParaMediForm - {% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %} - {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ site.seo_title }}{% endif %}
+%meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }}"}/
 {% endif %}
 {% endblock %}
 

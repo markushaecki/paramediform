@@ -35,7 +35,7 @@ editable_elements:
   %br
   %br
   {% for institute in contents.institutes %}
-  %a{ href: '{% path_to institute, with: institute_success_stories %}', title: '{{ institute.name }}', breit: '{{ institute.breitengrad }}', laeng: '{{ institute.laengengrad }}' }
+  %a{ href: '{% path_to institute, with: institute_home %}', title: '{{ institute.name }}', breit: '{{ institute.breitengrad }}', laeng: '{{ institute.laengengrad }}' }
     .glyphicon.glyphicon-asterisk
   {% endfor %}
 .dropdown{style: "position:absolute;z-index:2"}
@@ -46,7 +46,7 @@ editable_elements:
     {% with_scope order_by: 'name asc' %}
     {% for institute in contents.institutes %}
     %li{role: "presentation"}
-      %a{ href: '{% path_to institute, with: institute_success_stories %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}
+      %a{ href: '{% path_to institute, with: institute_home %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}
     {% endfor %}
     {% endwith_scope %}
 
@@ -57,18 +57,18 @@ editable_elements:
 %h4 {% editable_text success_stories_title, format: "raw", line_break: false, rows: 1 %}Zufällig ausgewählte Erfolgsgeschichten{% endeditable_text %}
 
 .row
-  {% assign institutes = contents.institutes.all | sample: 20 %}
+  {% assign institutes = contents.institutes.all | sample: 10 %}
   {% for institute in institutes %}
   {% capture url %}{{ institute.url }}/success-stories/random.json{% endcapture %}
   {% consume data from url %}
   {% assign success_story = data.success_story %}
   {% endconsume %}
   {% if success_story.prename != null %}
-  .col-sm-6.col-xs-12
+  .col-sm-6.col-xs-6
     %a.non-link-style{ href: "{% path_to institute, with: institute_success_stories %}?slug={{ success_story.slug }}&page={{ params.page }}" }
       {% include before_after_overview %}
     %br
   {% endif %}
   {% endfor %}
-
+{% include note %}
 {% endblock %}

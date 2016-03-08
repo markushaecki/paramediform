@@ -14,49 +14,30 @@ handle: home
 {% block content %}
 
 {% assign success_story = contents.success_stories.first %}
-
-{% comment %}
-//{% capture geocoding %}http://maps.googleapis.com/maps/api/geocode/json?address=Schanzweg-7-5000-Aarau{% endcapture %}
-//{% consume data from geocoding %}
-//{% assign geo_adress = data.results %}
-//{% endconsume %}
-//{{ geo_adress.first.geometry.location.lng }}{{ geo_adress.first.geometry.location.lng }}
-{% endcomment %}
 {% assign years = now | date: "%Y" | minus: 1992 %}
-//{% assign recipy_url = null %}
-//%div.hidden
-//  {% for news_entry in contents.news %}
-//  {% assign hideit = 1 %}
-//  {% if news_entry.recipe %}
-//  {% assign type = "recipe" %}
-//  {% if news_entry.recipe.activity.attr != "versteckt" %}
-//  {% assign hideit = 0 %}
-//  {% endif %}
-//  {% endif %}
-//  {% if hideit == 0 %}
-//  %p.news_p
-//    %span.news_url aktuelles?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}
-//    %span.img_url {{ news_entry.recipe.image.url | resize: "700x700#" }}
-//  {% assign recipy_url = news_entry.recipe.image.url %}
-//  {% endif %}
-//  {% endfor %}
-  
-//  {% for success_story in contents.success_stories.all %}
-//  {% if success_story.prename != null %}
-//  %p.success_p
-//    %span.success_url {% path_to system_success_stories %}
-//    %span.before_url {{ success_story.before_image.url | resize: "350x700#" }}
-//    %span.after_url {{ success_story.after_image.url | resize: "350x700#" }}
-//    %span.success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
-//  {% endif %}
-//  {% endfor %}
-{% with_scope activity: "sichtbar" %}
-{% assign recipe = contents.recipes | sample %}
-{% endwith_scope %}
-{% assign recipy_news = recipe.news | sample %}
-{% assign recipy_image = recipe.image.url %}
-{% assign success_story = contents.success_stories | sample %}
 
+{% with_scope published_at.lt: today + 1 %}
+{% assign recipy_news = contents.news %}
+{% assign news_count = 0 %}
+{% for newsitem in recipy_news %}
+{% if newsitem.recipe.activity.attr == "sichtbar" %}
+{% assign news_count = news_count | plus: 1 %}
+{% endif %}
+{% endfor %}
+{% assign randomized_count = now | localized_date: '%S' | modulo: news_count | plus: 1 %}
+{% assign news_count = 0 %}
+{% for newsitem in recipy_news %}
+{% if newsitem.recipe.activity.attr == "sichtbar" %}
+{% assign news_count = news_count | plus: 1 %}
+{% if news_count == randomized_count %}
+{% assign this_news = newsitem %}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endwith_scope %}
+
+{% assign recipy_image = this_news.recipe.image.url %}
+{% assign success_story = contents.success_stories | sample %}
 %h1.text-center Erfolgreich abnehmen seit {{ years }} Jahren in {{ contents.institutes.size }} Instituten
 %br
 .row
@@ -65,13 +46,13 @@ handle: home
       .col-sm-6.col-xs-6
         %a{ href:'/abnehmen/individuelle-beratung'}    
           .thumbnail{:style => "margin-bottom:5px !important"}
-            %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '700x700#' }}" }
+            %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '400x400#' }}" }
         .fixed_title
           %h3 Individuelle Beratung
       .col-sm-6.col-xs-6
         .thumbnail{:style => "margin-bottom:5px !important"}
-          %a#rezepturl{ href: "{% path_to news %}?slug={{ recipy_news._slug }}&type=recipe" }
-            %img.img-responsive#rezeptbild{ src: "{{ recipy_url | resize: '700x700#' }}"}
+          %a#rezepturl{ href: "{% path_to news %}?slug={{ this_news._slug }}&type=recipe" }
+            %img.img-responsive#rezeptbild{ src: "{{ recipy_image | resize: '400x400#' }}"}
         .fixed_title
           %h3 Essen was der Körper braucht!
     %br
@@ -80,15 +61,15 @@ handle: home
         %div
           .thumbnail{:style => "margin-bottom:5px !important"}
             %a#success_link.non-link-style{ href: "{% path_to system_success_stories %}" }
-              %img#before_img{ src: '{{ success_story.before_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
-              %img#after_img{ src: '{{ success_story.after_image.url | resize: "350x700" }}', :style => "float:left;max-width:50%" }
+              %img#before_img{ src: '{{ success_story.before_image.url | resize: "200x400" }}', :style => "float:left;max-width:50%" }
+              %img#after_img{ src: '{{ success_story.after_image.url | resize: "200x400" }}', :style => "float:left;max-width:50%" }
             .clearfix
         .fixed_title
           %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
       .col-sm-6.col-xs-6
         %a{ href:'/abnehmen/stoffwechseltypen'}    
           .thumbnail{:style => "margin-bottom:5px !important"}
-            %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '700x700#' }}" }
+            %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '400x400#' }}" }
         .fixed_title
           %h3 Welchen Stoffwechseltyp sind Sie?
     %br

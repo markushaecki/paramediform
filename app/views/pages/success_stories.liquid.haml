@@ -2,7 +2,6 @@
 title: Top Erfolgsgeschichten
 slug: abnehmen-erfolgsgeschichten
 published: true
-handle: system_success_stories
 position: 3
 ---
 {% extends layouts/double-columns %}
@@ -69,14 +68,14 @@ position: 3
 .row
   {% for success_story in contents.success_stories.all %}
   {% if success_story.prename != null %}
-  .col-sm-6.col-xs-12
+  .col-sm-6.col-xs-6
     %a.non-link-style{ href: "{% path_to system_success_stories %}?slug={{ success_story._slug }}" }
       {% include before_after_overview %}
     %br
   {% endif %}
   {% endfor %}
 {% endif %}
-%h3.text-center ...Weitere Erfolgsgeschichten finden Sie auf den jeweiligen Institutsseiten:
+%p Weitere Erfolgsgeschichten finden Sie auf den jeweiligen Institutsseiten:
 %br
 .text-center#institutes_map{:style => "position:relative"}
   %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }
@@ -87,6 +86,7 @@ position: 3
   %a{ href: '{% path_to institute, with: institute_success_stories %}', title: '{{ institute.name }}', breit: '{{ institute.breitengrad }}', laeng: '{{ institute.laengengrad }}' }
     .glyphicon.glyphicon-asterisk
   {% endfor %}
+
 {% if params.slug == null %}
 %br
 .text-center
@@ -94,4 +94,5 @@ position: 3
   .addthis_sharing_toolbox
   %br
 {% endif %}
+{% include note %}
 {% endblock %}

@@ -6,6 +6,64 @@ handle: news
 ---
 {% extends layouts/double-columns %}
 
+{% block title %}
+{% if params.slug %}
+{% with_scope _slug: params.slug, published_at.lt: today + 1 %}
+{% assign this_news = contents.news.first %}
+{% endwith_scope %}
+{% if this_news.interview %}
+{% assign type = "Interview" %}
+{% elsif this_news.recipe %}
+{% assign type = "Rezept" %}
+{% elsif this_news.illustrative_text %}
+{% assign type = "Artikel" %}
+{% if this_news.tags.first == "wichtig" %}
+{% assign type = "Nachricht" %}
+{% endif %}
+{% endif %}
+%title
+  ParaMediForm - {{ type }} - {{ this_news.title }}
+%meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }} {{ type }} {{ this_news.tags | first }}"}/
+{% elsif params.tag %}
+%title
+  ParaMediForm - {{ params.tag }} 
+%meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }} {{ params.tag }} "}/
+{% else %}
+%title
+  ParaMediForm - Nachrichten zu Ernährung Gesundheit und Wissenschaft
+%meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }}"}/
+{% endif %}
+{% endblock %}
+
+{% block description %}
+{% if params.slug %}
+{% with_scope _slug: params.slug, published_at.lt: today + 1 %}
+{% assign this_news = contents.news.first %}
+{% endwith_scope %}
+{% if this_news.interview %}
+{% assign person_name = this_news.interview.person.name %}
+{% assign person_title = this_news.interview.person.title %}
+{% assign text_title = this_news.title %}
+{% assign text = this_news.text | truncatewords: 10 %}
+%meta{name:"description", content:"Ein Interview mit {{ person_name }} {{ person_title }}: {{ text_title }} - {{ text }}"}/
+{% elsif this_news.recipe %}
+{% assign rezept_title = this_news.recipe.title %}
+{% assign text = this_news.text | truncatewords: 15 %}
+%meta{name:"description", content:"Schmackhaftes ParaMediForm Rezept: {{ rezept_title }} - {{ text }}"}/
+{% elsif this_news.illustrative_text %}
+{% assign article_title = this_news.illustrative_text.title %}
+{% assign text = this_news.text | truncatewords: 20 %}
+%meta{name:"description", content:"Ein Artikel zu {{ article_title }} - {{ text }}"}/
+{% endif %}
+{% else %}
+{% if page.meta_description %}
+%meta{name:"description", content:"{{ page.meta_description }}"}/
+{% else %}
+%meta{name:"description", content:"{{ site.meta_description }}"}/
+{% endif %}
+{% endif %}
+{% endblock %}
+
 {% block content/main %}
 
 {% if params.slug and params.type %}
