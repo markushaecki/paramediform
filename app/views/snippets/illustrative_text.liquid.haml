@@ -1,11 +1,13 @@
 {% assign illustrative_text = news.illustrative_text %}
 %br
+{% if illustrative_text.image.size > 0 %}
 .row
   .col-xs-12
     .thumbnail
       .img-box
         %a{ href: '{{ illustrative_text.image.url }}' }
           %img.img-responsive{ src: '{{ illustrative_text.image.url | resize: "900x400#" }}' }    
+{% endif %}
 .columnize
   .row
     .col-xs-12
