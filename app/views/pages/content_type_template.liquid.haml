@@ -61,7 +61,8 @@ handle: institute_layout
             %p {{ "label_fax" | translate }} {{ institute.fax }}
             {% endif %}
             {% if institute.email != '' and institute.email != null %}
-            %p {{ institute.email }}
+            %p 
+              %a{ href: "{% path_to institute, with:institute_contact %}#institutetap" } {{ institute.email }}
             {% endif %}
 %br
 

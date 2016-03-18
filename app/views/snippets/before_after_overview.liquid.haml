@@ -1,7 +1,7 @@
 %div
   .thumbnail{:style => "padding-bottom:0px !important"}
-    %img{ src: '{{ success_story.before_image.url | resize: "200x400#" }}', :style => "float:left;max-width:50%" }
-    %img{ src: '{{ success_story.after_image.url | resize: "200x400#" }}', :style => "float:left;max-width:50%" }
+    %img{ src: '{{ success_story.before_image.url | resize: "200x400#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} vor dem Abnehmen mit ParaMediForm" }
+    %img{ src: '{{ success_story.after_image.url | resize: "200x400#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} nach dem Abnehmen mit ParaMediForm" }
     .clearfix
     %table{:style => "height:6ex;margin-left:auto;margin-right:auto"}
       %tr

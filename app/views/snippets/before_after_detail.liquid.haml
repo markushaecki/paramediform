@@ -4,9 +4,9 @@
     .doubleimg-box#doubleimg
       %a{ vorsrc: '{{ success_story.before_image.url }}', nachsrc: '{{ success_story.after_image.url }}' }
         .img-box
-          %img{ src: '{{ success_story.before_image.url | resize: "640x1280#" }}', :style => "float:left;max-width:50%" }
+          %img{ src: '{{ success_story.before_image.url | resize: "640x1280#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} vor dem Abnehmen mit ParaMediForm" }
         .img-box
-          %img{ src: '{{ success_story.after_image.url | resize: "640x1280#" }}', :style => "float:left;max-width:50%" }  
+          %img{ src: '{{ success_story.after_image.url | resize: "640x1280#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} nach dem Abnehmen mit ParaMediForm" }  
     .clearfix
     %br
     {% include subnavigation_buttons %}

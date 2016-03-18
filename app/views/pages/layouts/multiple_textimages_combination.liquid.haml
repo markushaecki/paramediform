@@ -17,7 +17,8 @@ handle: multiple_text_image
     {% endif %}
     {% capture image %}{% editable_file "Bild #{i + 1}", priority:"#{26 - i*3}" %}{% endeditable_file %}{% endcapture %}
     {% if image.size > 0 %}
-    %img.textpadding.img-responsive{ src: "{{ image | resize: '200x' }}",:style => "float:left;margin-right:20px" }
+    {% assign m = #{i} | mod:2 %}
+    %img.textpadding.img-responsive{ src: "{{ image | resize: '200x' }}",:style => "float:left;margin-right:20px", alt: "{% if title.size == 0 %}{% if #{i} == 0 %}{{ page.title}}{% else %}{% if m == 0 %}{{ site.seo_title }}{% else %}{{ page.seo_title }}{% endif %}{% endif %}{% else %}{{ title }}{% endif %}" }
     {% endif %}
     {% capture text %}{% editable_text "Text #{i + 1}", priority:"#{25 - i*3}" %}{% endeditable_text %}{% endcapture %}
     {% if text.size > 0 %}

@@ -21,10 +21,11 @@ position: 11
     {% endif %}
     {% capture image %}{% editable_file "Bild #{i + 1}", priority:"#{25 - i*3}" %}{% endeditable_file %}{% endcapture %}
     {% if image.size > 0 %}
+    {% assign m = #{i} | mod:2 %}
     .thumbnail.vspacer
       .img-box
         %a{ href: "{{ image }}", :style => "padding:0px" }
-          %img.img-responsive{ src: "{{ image | resize: '900x400#' }}" }
+          %img.img-responsive{ src: "{{ image | resize: '900x400#' }}", alt: "{% if title.size == 0 %}{% if #{i} == 0 %}{{ page.title}}{% else %}{% if m == 0 %}{{ site.seo_title }}{% else %}{{ page.seo_title }}{% endif %}{% endif %}{% else %}{{ title }}{% endif %}" }
     {% endif %}
   {% include site_footer %}
 {% endblock %}

@@ -3,7 +3,7 @@
 .thumbnail
   .img-box
     %a{ href: '{{ interview.image.url }}' }
-      %img.img-responsive{ src: '{{ interview.image.url | resize: "900x380#" }}' }
+      %img.img-responsive{ src: '{{ interview.image.url | resize: "900x380#" }}', alt: "{{ news.interview.title }}" }
 {% endif %}
 %br
 .columnize

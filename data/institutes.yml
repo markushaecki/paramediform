@@ -1,82 +1,83 @@
-- "Aarau":
+- "Wien":
     name:
-      en: "Aarau"
+      en: "Wien"
     _slug:
-      de: "aarau"
-      en: "aarau"
+      de: "wien"
+      en: "wie"
     url: "http://localhost:3333"
-    breitengrad: 47.39068015
-    laengengrad: 8.04343198863637
+    breitengrad: 47.776113
+    laengengrad: 16.328601
+    email: aarau@paramediform.ch
 
-- "Zug":
+- "Achen":
     name:
-      en: "Zug"
+      en: "achen"
     _slug:
-      de: "zug"
-      en: "zug"
+      de: "achen"
+      en: "achen"
     url: "http://localhost:3333"
-    breitengrad: 47.1702113
-    laengengrad: 8.5156091
+    breitengrad: 50.751747
+    laengengrad: 6.178454
 
-- "Oensingen":
+- "Berlin-Frohnau":
     name:
-      en: "Oensingen"
+      en: "berlin-frohnau"
     _slug:
-      de: "oensingen"
-      en: "oensingen"
+      de: "berlin-frohnau"
+      en: "berlin-frohnau"
     url: "http://localhost:3333"
-    breitengrad: 47.286536
-    laengengrad: 7.7093199
+    breitengrad: 52.635105
+    laengengrad: 13.300467
 
-- "Baden":
+- "Berlin-Zehlendorf":
     name:
-      en: "Baden"
+      en: "berlin-zehlendorf"
     _slug:
-      de: "baden"
-      en: "baden"
+      de: "berlin-zehlendorf"
+      en: "berlin-zehlendorf"
     url: "http://localhost:3333"
-    breitengrad: 47.449383
-    laengengrad: 8.291975
+    breitengrad: 52.439657
+    laengengrad: 13.216858
 
-- "Brugg":
+- "Hohen Neuendorf":
     name:
       en: "Brugg"
     _slug:
       de: "brugg"
       en: "brugg"
     url: "http://localhost:3333"
-    breitengrad: 47.479555
-    laengengrad: 8.206539
+    breitengrad: 52.669032
+    laengengrad: 13.287876
 
-- "Lenzburg":
+- "Homburg":
     name:
-      en: "Lenzburg"
+      en: "homburg"
     _slug:
-      de: "lenzburg"
-      en: "lenzburg"
+      de: "homburg"
+      en: "homburg"
     url: "http://localhost:3333"
-    breitengrad: 47.388909
-    laengengrad: 8.181711
+    breitengrad: 49.322327
+    laengengrad: 7.335961
 
-- "Rheinfelden":
+- "Köln":
     name:
-      en: "Rheinfelden"
+      en: "koln"
     _slug:
-      de: "rheinfelden"
-      en: "rheinfelden"
+      de: "koln"
+      en: "koln"
     url: "http://localhost:3333"
-    breitengrad: 47.554754
-    laengengrad: 7.794804
+    breitengrad: 50.938604
+    laengengrad: 6.836995
 
-- "Wohlen":
+- "Schwerin":
     name:
-      en: "Wohlen"
+      en: "schwerin"
     _slug:
-      de: "wohlen"
-      en: "wohlen"
+      de: "schwerin"
+      en: "schwerin"
     url: "http://localhost:3333"
-    breitengrad: 47.349578
-    laengengrad: 8.277223
+    breitengrad: 53.628330
+    laengengrad: 11.415120
 
 - "Zofingen":
     name:

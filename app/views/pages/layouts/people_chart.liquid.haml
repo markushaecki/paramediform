@@ -32,7 +32,7 @@ position: 10
           .pull-left{:style => "margin-right:20px"}
             .img-box
               %a{ href: '{{ person.picture.url }}' }
-                %img.img-responsive.media-object{ src: '{{ person.picture.url | resize: "130x180#" }}' }
+                %img.img-responsive.media-object{ src: '{{ person.picture.url | resize: "130x180#" }}', alt: "{{ person.name }} {{ person.title }}" }
                 %br
           %h4.media-heading{:style => "padding-bottom:0;padding-top:18px"} {{ person.name }}
           {{ person.title }}
