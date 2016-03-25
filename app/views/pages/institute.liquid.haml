@@ -1,7 +1,7 @@
 ---
 title: Institute
 published: true
-handle: institutes
+handle: institute
 listed: true
 position: 2
 editable_elements:
@@ -10,8 +10,8 @@ editable_elements:
 {% extends layouts/double-columns %}
 
 {% block header %}
-{{ 'map.js' | javascript_tag }}
-{{ 'jquery.activity-indicator.min.js' | javascript_tag }}
+%script{ :src => "{{ 'map.js' | javascript_url }}"}
+%script{:async => "", :src => "{{ 'jquery.activity-indicator.min.js' | javascript_url }}"}
 {% endblock %}
 
 {% block share_meta_tags %}
@@ -34,23 +34,20 @@ editable_elements:
   %span.text-center#indicator{:style => "position:absolute"}
   %br
   %br
-  {% for institute in contents.institutes %}
-  %a{ href: '{% path_to institute, with: institute_home %}', title: '{{ institute.name }}', breit: '{{ institute.breitengrad }}', laeng: '{{ institute.laengengrad }}' }
+  {% for institut in contents.institutes %}
+  %a{ href: '{% path_to institut, with: institute_home %}', title: '{{ institut.name }}', breit: '{{ institut.breitengrad }}', laeng: '{{ institut.laengengrad }}' }
     .glyphicon.glyphicon-asterisk
   {% endfor %}
-.dropdown{style: "position:absolute;z-index:2"}
-  %button.pink-btn.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
-    Liste aller Institute
-    %span.caret
-  %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
+.dropdown
+  %button.pink-btn.btn.btn-default.dropdown-toggle{ :style => "width:100%", type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
+    %h3.text-center{:style => "margin-bottom:0"} {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe <span class="caret"></span>{% endeditable_text %} 
+  %ul.dropdown-menu{:style => "margin-left:auto;margin-right: auto;left: 0;right: 0;", role: "menu", aria: {labelledby: "dropdownMenu1"}}
     {% with_scope order_by: 'name asc' %}
-    {% for institute in contents.institutes %}
+    {% for institut in contents.institutes %}
     %li{role: "presentation"}
-      %a{ href: '{% path_to institute, with: institute_home %}', role: "menuitem", tabindex: "-1" } {{ institute.name }}
+      %a{ href: '{% path_to institut, with: institute_home %}', role: "menuitem", tabindex: "-1" } {{ institut.name }}
     {% endfor %}
     {% endwith_scope %}
-
-%p{style: "margin-left:170px"} Tipp: Wählen Sie Ihr Institut entweder auf der Landkarte aus, oder verwenden Sie die alphabetische geordnete Liste links.
 %br
 
 %a{name: "successstories"}

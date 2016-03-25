@@ -36,7 +36,7 @@ handle: institute_success_stories
   {% else %}
   {% for success_story in success_stories %}
   {% if success_story.prename != "" %}
-  .col-sm-6.col-xs-12
+  .col-sm-6.col-xs-6
     %a.non-link-style{ href: "?slug={{ success_story.slug }}&page={{ params.page }}" }
       {% include before_after_overview %}
   {% endif %}

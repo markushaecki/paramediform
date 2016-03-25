@@ -23,7 +23,7 @@ $(document).ready(function(e){
          '</div>';
        $('body').append(box);
      });
-
+	 $('.pagination').removeClass("pagination-sm");
      $('div.doubleimg-box a').click(function(event) {
        event.preventDefault();
        var box =

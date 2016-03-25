@@ -9,8 +9,8 @@ handle: institute_contact
 {% extends parent %}
 
 {% block header %}
-{{ 'jquery.placeholder.min.js' | javascript_tag }}
-{{ 'contact.js' | javascript_tag }}
+%script{:async => "", :src => "{{ 'mapjquery.placeholder.min.js' | javascript_url }}"}
+%script{:async => "", :src => "{{ 'contact.js' | javascript_url }}"}
 {% endblock %}
 
 {% block content/main/tab_pane %}

@@ -3,13 +3,12 @@ title: Erfolgsgeschichten
 slug: erfolgsgeschichten
 published: true
 position: 3
-handle: system_success_stories
 ---
 {% extends layouts/double-columns %}
 
 {% block header %}
-{{ 'map.js' | javascript_tag }}
-{{ 'jquery.activity-indicator.min.js' | javascript_tag }}
+%script{ :src => "{{ 'map.js' | javascript_url }}"}
+%script{ :async => "", :src => "{{ 'jquery.activity-indicator.min.js' | javascript_url }}"}
 {% endblock %}
 
 {% block share_meta_tags %}
