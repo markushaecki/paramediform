@@ -6,8 +6,8 @@ handle: home
 {% extends layouts/simple %}
 
 {% block header %}
-%script{ :src => "{{ 'map.js' | javascript_url }}"}
-%script{:async => "", :src => "{{ 'jquery.activity-indicator.min.js' | javascript_url }}"}
+{{ 'map.js' | javascript_tag }}
+{{ 'jquery.activity-indicator.min.js' | javascript_tag }}
 {% endblock %}
 
 {% block content %}

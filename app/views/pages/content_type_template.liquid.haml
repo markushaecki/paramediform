@@ -14,8 +14,8 @@ handle: institute_layout
 {% extends layouts/double-columns %}
 
 {% block header %}
-%script{:async => "", :src => "{{ 'jquery.cookie.js' | javascript_url }}"}
-%script{:async => "", :src => "{{ 'institute.js' | javascript_url }}"}
+{{ 'jquery.cookie.js' | javascript_tag }}
+{{ 'institute.js' | javascript_tag }}
 {% endblock %}
 
 {% block content/main %}
