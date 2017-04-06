@@ -4,6 +4,14 @@ $(window).load(function() {
 	$("#institutes_map a div").css("color", "#F83CA4");
 });
 
+$(function() {
+	$('#institutes_map').load(function() {
+		arrange_institute_links();
+		$("#indicator").activity(false);
+		$("#institutes_map a div").css("color", "#F83CA4");
+	});
+});
+
 $(document).ready(function() {	
     if($(window).width() > 767){
 	 	$("#institutes_map a").each(function() {

@@ -8,6 +8,27 @@ handle: institute_news
 ---
 {% extends parent %}
 
+{% block api_call %}
+{% capture url %}{{ institute.url }}/{{locale}}/news/one.json?slug={{ params.slug }}{% endcapture %}
+{% consume data from url %}
+{% assign this_news = data.news_entry %}
+{% endconsume %}
+{% endblock %}
+
+{% block title %}
+%title
+  Ernährungsberatung {{ institute.name }}: {{ this_news.title }}
+{% endblock %}
+
+{% block description %}
+%meta{name:"description", content:"Nachricht Ernährungsberatung {{ institute.name }} zum Thema: {{ this_news.title }}"}/
+{% endblock %}
+
+
+{% block content/main/title %}
+%h1.title Ernährungsberatung {{ institute.name }} - Aktuelles
+{% endblock %}
+
 {% block content/main/tab_pane %}
 
 {% capture url %}{{ institute.url }}/{{locale}}/news/all.json?page={{ params.page }}&tag={{ params.tag | encode }}{% endcapture %}
@@ -17,11 +38,6 @@ handle: institute_news
 {% endconsume %}
 
 {% if params.slug %}
-
-{% capture url %}{{ institute.url }}/{{locale}}/news/one.json?slug={{ params.slug }}{% endcapture %}
-{% consume data from url %}
-{% assign this_news = data.news_entry %}
-{% endconsume %}
 
 {% include institute_news %}
 %br

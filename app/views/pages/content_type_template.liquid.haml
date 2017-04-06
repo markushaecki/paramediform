@@ -13,8 +13,7 @@ handle: institute_layout
 ---
 {% extends layouts/double-columns %}
 
-{% block header %}
-{{ 'jquery.cookie.js' | javascript_tag }}
+{% block head_files %}
 {{ 'institute.js' | javascript_tag }}
 {% endblock %}
 
@@ -28,41 +27,14 @@ handle: institute_layout
 {% assign path_array = path | split: '/' %}
 {% if path_array.size < 3 %}
 %script
-  window.location.replace('/{{path_array[1]}}/erfolgsgeschichten');
+  window.location.replace('/{{path_array[1]}}/ernaehrungsberatung');
 {% endif %}
 
 .row
   .col-sm-12.col-xs-offset-0.col-xs-12
+    {% block title %}
     %h1.title ParaMediForm {{ institute.name }}
-    #contact_info
-      %p.text-center.image_with_background
-        %img.img-responsive{ src: "http://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&scale=2&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
-      .row.detailed_institute_info
-        .col-sm-12.col-xs-12
-          %ul.pager{:style => "margin-top:0px;margin-bottom:0px" }
-            %li
-              %a{ href: "", :id => "zoom-out" }
-                %b -
-            %li
-              %a{ href: "", :id => "zoom-in" }
-                %b +
-        .col-sm-6.col-xs-6.col-md-6{:style => "padding-right:0"}
-          %p ParaMediForm {{ institute.name }}
-          %p {{ institute.street }} {{ institute.streetnumber }}
-          %p {{ institute.zip }} {{ institute.city }}
-        .col-sm-6.col-xs-6.col-md-6{:style => "padding-left:0"}
-          .text-right
-            {% if institute.phone != '' and institute.phone != null %}
-            %p {{ "label_phone" | translate }} {{ institute.phone }}
-            {% endif %}
-            {% if institute.fax != '' and institute.fax != null %}
-            %p {{ "label_fax" | translate }} {{ institute.fax }}
-            {% endif %}
-            {% if institute.email != '' and institute.email != null %}
-            %p 
-              %a{ href: "{% path_to institute, with:institute_contact %}#institutetap" } {{ institute.email }}
-            {% endif %}
-%br
+    {% endblock %}
 
 .row#institutetap
   .col-sm-12.col-xs-offset-0.col-xs-12
@@ -90,5 +62,33 @@ handle: institute_layout
           %br
           {% block tab_pane %}
           {% endblock %}
-
+    #contact_info
+      %p.text-center.image_with_background
+        %img.img-responsive{ src: "https://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&scale=2&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
+      .row.detailed_institute_info
+        .col-sm-12.col-xs-12
+          %ul.pager{:style => "margin-top:0px;margin-bottom:0px" }
+            %li
+              %a{ href: "", :id => "zoom-out" }
+                %b -
+            %li
+              %a{ href: "", :id => "zoom-in" }
+                %b +
+        .col-sm-6.col-xs-6.col-md-6{:style => "padding-right:0"}
+          %p ParaMediForm {{ institute.name }}
+          %p {{ institute.street }} {{ institute.streetnumber }}
+          %p {{ institute.zip }} {{ institute.city }}
+        .col-sm-6.col-xs-6.col-md-6{:style => "padding-left:0"}
+          .text-right
+            {% if institute.phone != '' and institute.phone != null %}
+            %p {{ "label_phone" | translate }} {{ institute.phone }}
+            {% endif %}
+            {% if institute.fax != '' and institute.fax != null %}
+            %p {{ "label_fax" | translate }} {{ institute.fax }}
+            {% endif %}
+            {% if institute.email != '' and institute.email != null %}
+            %p 
+              %a{ href: "{% path_to institute, with:institute_contact %}#institutetap" } {{ institute.email }}
+            {% endif %}
+%br
 {% endblock %}

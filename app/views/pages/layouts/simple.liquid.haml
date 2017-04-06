@@ -7,6 +7,7 @@ position: 1
 !!!
 %html{lang: "{{ locale }}"}
   %head
+    {% block api_call %}{% endblock %}
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "content-type"}/
     %meta{charset: "utf-8"}/
     {% block description %}
@@ -19,9 +20,17 @@ position: 1
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
 
     {% block title %}
+    {% if page.seo_title %}{% assign seo_title = page.seo_title  %}{% else %}{% assign seo_title = site.seo_title  %}{% endif %}
+    {% assign title_prep = seo_title | split: '->' | first %}
+    {% if title_prep == "Spezialtitel" %}
     %title
-      ParaMediForm - {% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %} - {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ site.seo_title }}{% endif %}
-    %meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }}"}/
+      {{ seo_title | split: '->' | last }}
+    %meta{name: "keywords", content: "{{ page.meta_keywords }}"}/
+    {% else %}
+    %title
+      ParaMediForm - {% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %} - {{ seo_title }}
+    %meta{name: "keywords", content: "{{ site.meta_keywords }}, {{ page.meta_keywords }}"}/
+    {% endif %}
     {% endblock %}
 
     %meta{content: "width=device-width, initial-scale=1, maximum-scale=10", name: "viewport"}/
@@ -34,18 +43,26 @@ position: 1
     %meta{:content => "{{ url }}", :property => "og:url"}/
     %meta{:content => "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme", :property => "og:site_name"}/
     {% endblock %}
-
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
     :javascript
       if (typeof jQuery === 'undefined') {
-        document.write(unescape({{ 'jquery.js' | javascript_url }}));
+        document.write("<script src='{{ 'jquery.js' | javascript_url }}'>\x3C/script>");
       }
-    
+  
+    %script{ "data-autopop" => "false", :src => "https://cdn.snipcart.com/scripts/2.0/snipcart.js", :id => "snipcart", :data => {:api => {:key => "YTZlYjUxNmMtMWM4Ny00NmZlLTlhOGItYzU2MjZiMzllZjAzNjM2MTY4OTY3MDU3MTE2NDY3"}}}
+
+    {{ 'application.css' | stylesheet_tag }}
     {{ 'application.css' | stylesheet_tag }}
     {{ 'bootstrap.css' | stylesheet_tag }}
+    {{ 'snipcart.css' | stylesheet_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
+    {{ 'jquery.cookie.js' | javascript_tag }}
     {{ 'application.js' | javascript_tag }}
     {{ 'tooltipsy.js' | javascript_tag }}
+    {% block head_files %}
+    {% endblock %}
+    {% block head_marked_language %}
+    {% endblock %}
 
     :javascript
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -62,8 +79,6 @@ position: 1
       a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0047/7018.js?"+Math.floor(new Date().getTime()/3600000);
       a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
-    /[if lt IE 9]
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js" async></script>
   %body
     #header
       %div.relative_position
@@ -72,7 +87,7 @@ position: 1
         %p.text-center
           %a{ href: "/index", :style => "text-decoration:none;color:black", :accesskey => "1" }
             %img#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: '160x80#' }}", :style => "margin-top:30px", :alt => "Paramediform Logo - Gesundheit Wohlbefinden und Gewichtsabnahme" }
-            %p.text-center{:style => "font-size:13px"} Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
+            %p.text-center{:style => "font-size:13px"} Abnehmen durch Ernährungsberatung von ParaMediForm
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
           .container{ :style => "width:100%;margin-top:10px;margin-bottom:20px"}
             .navbar-header
@@ -84,8 +99,9 @@ position: 1
             .collapse.navbar-collapse#bs-example-navbar-collapse-1
               %ul.nav.navbar-nav.nav-justified
                 {% nav site, exclude: '^(layouts)', depth: 2, no_wrapper: true, bootstrap: true %}
-        {% block header %}
-        {% endblock %}
+        
+
+        
 
       #content
         .container{ :style => "max-width:750px"}
@@ -94,5 +110,3 @@ position: 1
           {% endblock %}
 
           {% include footer %}
-
-    {% google_analytics 'UA-63178513-1' %}

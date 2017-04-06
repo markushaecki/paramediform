@@ -2,8 +2,6 @@
     name: Lehmann
     place: Rothrist
     lost_weight: 30
-    before_image: "/samples/success_stories/brigitte_before.png" # Path to a file in the public/samples folder or to a remote and external file.
-    after_image: "/samples/success_stories/brigitte_after.png" # Path to a file in the public/samples folder or to a remote and external file.
     start_date: '2013-10-01'
     programm_duration: 40
     number_of_consultations: 20
@@ -15,8 +13,6 @@
     name: Bamert
     place: Kaltbrunn
     lost_weight: 50
-    before_image: "/samples/success_stories/theo_before.png" # Path to a file in the public/samples folder or to a remote and external file.
-    after_image: "/samples/success_stories/theo_after.png" # Path to a file in the public/samples folder or to a remote and external file.
     start_date: '2013-10-01'
     programm_duration: 40
     number_of_consultations: 20
@@ -28,8 +24,6 @@
     name: Hassig
     place: Winterthur
     lost_weight: 24
-    before_image: "/samples/success_stories/illona_before.png" # Path to a file in the public/samples folder or to a remote and external file.
-    after_image: "/samples/success_stories/illona_after.png" # Path to a file in the public/samples folder or to a remote and external file.
     feeling_of_abdiction: Nur ganz selten
     experience_title: "Der einzig richtige Weg zur Traumfigur!"
     experience: "Mich motivierten die vielen Bilder von Menschen, die in der ParaMediForm Zeitungsbeilage abgenommen haben, so dass ich selbst zum Telefon griff und mich für ein kostenloses Erstgespräch anmeldete. <br><br> Ganz toll am ParaMediForm-Programm fand ich, dass ich genügend essen konnte und keinen Hunger verspürte. Nach der Auswertung meines Ernährungsprofils und der Bestimmung der auf mich abgestimmten Portionen habe ich jede Woche kontinuierlich 0.5-1 kg abgenommen. Das Gute an der ParaMediForm-Methode ist, dass ich am ganzen Körper gleichmässig abgenommen habe. Ich kaufe bewusster und kritischer ein und fühle mich dadurch viel energiegeladener und auch unternehmungslustiger.<br><br> Heute zeige ich mich gerne und das Bedürfnis meinen Körper zu verstecken, ist weg. Einzigartig bei ParaMediForm ist die Nachbetreuung und ich nutze sie sehr gerne, weil sie mir Halt und Selbstvertrauen gibt. Denn das erreichte Wohlfühlgewicht langfristig stabil zu halten, bleibt für mich die grosse Herausforderung. Ich bin froh, dass ich mich damals angemeldet habe, denn jetzt weiss ich, dass dies der einzig richtige Weg war um zu meiner Traumfigur zu kommen. Ich würde es jederzeit wieder machen."
@@ -38,8 +32,6 @@
     name: Grossrieder
     place: Bosigen
     lost_weight: 16
-    before_image: "/samples/success_stories/urs_before.png" # Path to a file in the public/samples folder or to a remote and external file.
-    after_image: "/samples/success_stories/urs_after.png" # Path to a file in the public/samples folder or to a remote and external file.
     start_date: '2011-02-12'
     programm_duration: 45
     number_of_consultations: 32

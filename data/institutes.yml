@@ -118,6 +118,7 @@
     url: "http://localhost:3333"
     breitengrad: 46.949077
     laengengrad: 7.442652
+    email: bern@paramediform.ch
 
 - "Büren an der Aare":
     name:

@@ -1,29 +1,23 @@
 - "Pouleteintopf mit Reis":
-    image: "/samples/food/Poulet-Curry-Salat.jpg" # Path to a file in the public/samples folder or to a remote and external file.
     preparation: "Gemüse in kleine Streifen schneiden. Zwiebel und Knoblauch hacken. Alles in einem grossen Topf andünsten. Poulet anbraten und zum Gemüse geben. Alles weich kochen und dazu Reis servieren (2-4 EL pro Person). (Rezept für 4 Personen)"
-    activity: versteckt
+    activity: "versteckt"
 
 - "Fenchelsalat mit Fruechten":
-    image: "/samples/food/Fenchelsalat_mit_Fruechten.jpg" # Path to a file in the public/samples folder or to a remote and external file.
     preparation: "Voluptas necessitatibus deserunt molestias. Dolorem vel fugiat animi non. Reiciendis cumque ad omnis ut nisi doloribus ut. Et voluptatem eos assumenda sit ea sed."
-    activity: versteckt
+    activity: "versteckt"
 
 - "Fischfilet an Dillsauce auf Gemuesebeet":
-    image: "/samples/food/Fischfilet_an_Dillsauce_auf_Gemuesebeet.jpg" # Path to a file in the public/samples folder or to a remote and external file.
     preparation: "Asperiores et debitis nam voluptatibus cupiditate quisquam recusandae. Odio expedita quia sint qui deserunt atque. Repudiandae velit corrupti repellendus veniam quae magni."
-    activity: sichtbar
+    activity: "sichtbar"
 
 - "Forellenfilet und Broccoli":
-    image: "/samples/food/Forellenfilet_und_Broccoli.jpg" # Path to a file in the public/samples folder or to a remote and external file.
     preparation: "Accusantium corrupti officia dolore esse blanditiis aut. Est adipisci doloremque quos recusandae dolor. Animi voluptatem molestiae ipsam. Officia ex blanditiis fuga mollitia et. Alias est temporibus aspernatur reprehenderit delectus hic beatae."
-    activity: versteckt
+    activity: "versteckt"
 
 - "Heilbutt im Rueblimantel":
-    image: "/samples/food/Heilbutt_im_Rueblimantel.jpg" # Path to a file in the public/samples folder or to a remote and external file.
     preparation: "Voluptas necessitatibus deserunt molestias. Dolorem vel fugiat animi non. Reiciendis cumque ad omnis ut nisi doloribus ut. Et voluptatem eos assumenda sit ea sed."
-    activity: sichtbar
+    activity: "sichtbar"
 
 - "Linsen Burger":
-    image: "/samples/food/Linsen-Burger.jpg" # Path to a file in the public/samples folder or to a remote and external file.
     preparation: "Asperiores et debitis nam voluptatibus cupiditate quisquam recusandae. Odio expedita quia sint qui deserunt atque. Repudiandae velit corrupti repellendus veniam quae magni."
-    activity: sichtbar
+    activity: "sichtbar"

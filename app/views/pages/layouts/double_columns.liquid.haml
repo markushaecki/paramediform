@@ -9,7 +9,7 @@ position: 5
 {% block content %}
 
 .row
-  .col-sm-9.col-xs-12
+  .col-sm-9.col-xs-12{ :style => "padding-left:0;padding-right:0"}
     #main
       {% block main %}
       {% endblock %}
@@ -22,6 +22,33 @@ position: 5
           %input.form-control{name: 'q', :type => "text", :placeholder => "Wonach suchen Sie?"}
           //%button.btn.btn-default{:type => "submit"} Suchen
 
+      / snipcart summary block
+      %a.warenkorb-style{:href => "#"}
+        #snipcart-shop.shop.well
+          .snipcart-spacer
+          %h3.text-center.warenkorb-link-style
+            Warenkorb
+          .snipcart-spacer
+          .text-center
+            %img{ src: "{{ 'warenkorb.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Mineralstoffe kaufen" }
+          .snipcart-summary.text-center
+            %span.snipcart-total-items
+            Produkte
+            %br
+            %span.snipcart-total-price      
+          .snipcart-spacer
+
+      / institutes block
+      {% capture enable_institutes %}{% editable_control "Institute", options: 'true=Yes,false=No', hint: "Link zur Übersicht über alle Institute" %}true{% endeditable_control %}{% endcapture %}
+      {% if enable_institutes == "true" %}
+      %a{ href: '{% path_to institute %}'}
+        .institutes.well
+          %h3.text-center
+            {{ 'sidebar_institutes_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'Ernaehrungsberatung_Schweiz.jpg' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Ernährungsberatung Schweiz" }
+      {% endif %}
+
       / contact block
       %a{ href: '{% path_to contact_form %}', :id => "sidebar_contact" }
         .contact.well
@@ -31,17 +58,6 @@ position: 5
             %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
             %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
       
-      / institutes block
-      {% capture enable_institutes %}{% editable_control "Institute", options: 'true=Yes,false=No', hint: "Link zur Übersicht über alle Institute" %}false{% endeditable_control %}{% endcapture %}
-      {% if enable_institutes == "true" %}
-      %a{ href: '{% path_to institutes %}'}
-        .institutes.well
-          %h3.text-center
-            {{ 'sidebar_institutes_title' | translate }}
-          .text-center
-            %img{ src: "{{ 'sidebar_institute.png' | theme_image_url | resize: 'x80' }}", style: 'height: 40px', alt: "Übersicht zu allen Paramediform Instituten" }
-      {% endif %}
-
       / selbststaendigkeit block
       {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_selbststaendigkeit == "true" %}
@@ -50,7 +66,7 @@ position: 5
           %h3.text-center
             {{ 'sidebar_selbststaendigkeit_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Machen Sie sich selbstständig" }
+            %img{ src: "{{ 'Ernaehrungsberatung_Ausbildung.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Machen Sie sich selbstständig" }
       {% endif %}
 
       / paravita block
@@ -100,7 +116,7 @@ position: 5
       / vorhernachher block
       {% capture enable_beforeafter %}{% editable_control "Vorher/Nachher", options: 'true=Yes,false=No', hint: "Link zu Vorher/Nachher Bilder" %}true{% endeditable_control %}{% endcapture %}
       {% if enable_beforeafter == "true" %}
-      %a{ href: '{% path_to system_success_stories %}' }
+      %a{ href: '{% path_to system_success_story %}' }
         .news.well
           %h3.text-center
             {{ 'sidebar_beforeafter_title' | translate }}

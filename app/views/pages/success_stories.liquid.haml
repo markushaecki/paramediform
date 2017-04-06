@@ -3,10 +3,11 @@ title: Erfolgsgeschichten
 slug: erfolgsgeschichten
 published: true
 position: 3
+handle: system_success_story
 ---
 {% extends layouts/double-columns %}
 
-{% block header %}
+{% block head_files %}
 %script{ :src => "{{ 'map.js' | javascript_url }}"}
 %script{ :async => "", :src => "{{ 'jquery.activity-indicator.min.js' | javascript_url }}"}
 {% endblock %}
@@ -69,7 +70,7 @@ position: 3
   {% for success_story in contents.success_stories.all %}
   {% if success_story.prename != null %}
   .col-sm-6.col-xs-6
-    %a.non-link-style{ href: "{% path_to system_success_stories %}?slug={{ success_story._slug }}" }
+    %a.non-link-style{ href: "{% path_to system_success_story %}?slug={{ success_story._slug }}" }
       {% include before_after_overview %}
     %br
   {% endif %}

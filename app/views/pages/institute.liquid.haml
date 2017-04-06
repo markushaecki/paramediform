@@ -2,14 +2,14 @@
 title: Institute
 published: true
 handle: institute
-listed: true
+listed: false
 position: 2
 editable_elements:
   "content/main/success_stories_title": "Erfolgsgeschichten"
 ---
 {% extends layouts/double-columns %}
 
-{% block header %}
+{% block head_files %}
 {{ 'map.js' | javascript_tag }}
 {{ 'jquery.activity-indicator.min.js' | javascript_tag }}
 {% endblock %}

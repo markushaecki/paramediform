@@ -9,6 +9,14 @@ handle: institute_success_stories
 
 {% extends parent %}
 
+{% block description %}
+%meta{name:"description", content:"Aus Ernährungsberatung wird eine attraktive Figur. Die Erfolgsgeschichten aus {{ institute.name }} finden Sie hier."}/
+{% endblock %}
+
+{% block content/main/title %}
+%h1.title Ernährungsberatung {{ institute.name }} - Erfolgsgeschichten
+{% endblock %}
+
 {% comment %}
 {% block content/main/tab_pane %}
 {% capture url %}{{ institute.url }}/{{locale}}/success-stories/all.json{% endcapture %}
@@ -74,7 +82,7 @@ handle: institute_success_stories
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
 %title
-  ParaMediForm - {% if page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %} - Bravo {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat ' | append: success_story.lost_weight | append: ' kg abgenommen' }}
+  {{ success_story.prename | append: ' ' | append: success_story.name | append: ' aus ' | append: success_story.place | append: ' hat ' | append: success_story.lost_weight | append: ' kg abgenommen, Bravo!' }}
 %meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }}"}/
 {% else %}
 %title

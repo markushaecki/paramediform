@@ -8,9 +8,18 @@ handle: institute_contact
 ---
 {% extends parent %}
 
-{% block header %}
+{% block head_files %}
 {{ 'jquery.placeholder.min.js' | javascript_tag }}
 {{ 'contact.js' | javascript_tag }}
+{% endblock %}
+
+{% block description %}
+%meta{name:"description", content:"Kontaktieren Sie die Ernährungsberatung {{ institute.name }}. Die erste Stunde ist kostenlos. Sie erfahren dabei alles wichtige zur Methode von Paramediform."}/
+{% endblock %}
+
+
+{% block content/main/title %}
+%h1.title Ernährungsberatung {{ institute.name }} - Kontakt
 {% endblock %}
 
 {% block content/main/tab_pane %}
@@ -26,11 +35,17 @@ handle: institute_contact
       {{ 'contact_label_is_required' | translate }}
     {% endunless %}
     {% endfor %}
+{% else %}
+
+.alert.alert-success
+  %strong Besten Dank {{ contact.surname }} {{ contact.lastname }}, wir werden uns bei Ihnen melden.
+  
 {% endif %}
+
 
 {% model_form 'contacts', class: 'form-horizontal', success: path %}
 
-%input{ type: 'hidden', name: 'notified_accounts', value: '{{ institute.email }}' }
+%input{ type: 'hidden', name: 'notified_accounts', value: 'to-be-repl-by-js' }
 
 %h2 Hiermit kontaktieren Sie das Institut {{ institute.name }}:
 %br

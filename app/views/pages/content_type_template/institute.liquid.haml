@@ -1,12 +1,52 @@
 ---
 title: Institut
 published: true
-slug: institut
+slug: ernaehrungsberatung
 listed: true
 position: 1
 handle: institute_home
 ---
 {% extends parent %}
+
+{% block title %}
+%title
+  Ernährungsberatung {{ institute.name }} von ParaMediForm
+%meta{name: "keywords", content: "Ernährungsberatung {{ institute.name }}"}/
+{% endblock %}
+
+{% block description %}
+%meta{name:"description", content:"Ernährungsberatung {{ institute.name }}, willkommen bei ParaMediForm. Wir beraten Sie in {{ institute.name }} zum Thema gesunde Ernährung, Abnehmen und Wohlbefinden."}/
+{% endblock %}
+
+
+{% block head_marked_language %}
+:javascript
+  {
+    "@context": "http://schema.org",
+    "@type": "HealthClub",
+    "@id": "http://www.paramediform.ch",
+    "name": "ParaMediForm Ernährungsberatung {{ institute.name }}",
+    "description": "Ernährungsberatung nach ParaMediForm bedeuted viel essen, genug trinken und trotzdem Gewicht abnehmen. Mit dem auf Sie zugeschnittenen Ernährungsplan helfen und betreuen wir Sie über mehrere Monate.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ institute.street }} {{ institute.streetnumber }}",
+      "addressLocality": "{{ institute.city }}",
+      "postalCode": "{{ institute.zip }} ",
+      "addressCountry": "CH"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{institute.breitengrad}},
+      "longitude": {{institute.laengengrad}}
+    },
+    {% if institute.phone != '' and institute.phone != null %}"telephone": "{{ institute.phone }}",{% endif %}
+    "url": "{{ host }}{{ path }}"
+  }
+{% endblock %}
+
+{% block content/main/title %}
+%h1.title Ernährungsberatung {{ institute.name }}
+{% endblock %}
 
 {% block content/main/tab_pane %}
 {% capture url %}{{ institute.url }}/{{locale}}/institute/all.json{% endcapture %}
@@ -28,7 +68,7 @@ handle: institute_home
         .col-xs-12
           .img-box
             %a{ href: '{{ institute_picture.picture.url }}' }
-              %img.img-responsive{ src: '{{ institute_picture.picture.url | resize: "630x" }}' }
+              %img.img-responsive{ src: '{{ institute_picture.picture.url | resize: "630x" }}', alt: '{{ institute_picture.description }}' }
           %p{:style => "text-align: center;margin-top:10px;margin-bottom:0px"} {{ institute_picture.description }}
           {% unless forloop.last %}
           %br

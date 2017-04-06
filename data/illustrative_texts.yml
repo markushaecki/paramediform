@@ -3,12 +3,9 @@
 
 - "Illustrative text 2":
     text: "Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla"
-    image: "/images/good-food.png" # Path to a file in the public/samples folder or to a remote and external file.
 
 - "Illustrative text 3":
     text: "Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla"
-    image: "/images/good-food.png" # Path to a file in the public/samples folder or to a remote and external file.
 
 - "Illustrative text 4":
     text: "Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla Blabla blabla bla bla"
-    image: "/images/good-food.png" # Path to a file in the public/samples folder or to a remote and external file.

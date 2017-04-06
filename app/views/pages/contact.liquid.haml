@@ -6,7 +6,7 @@ handle: contact_form
 ---
 {% extends layouts/double-columns %}
 
-{% block header %}
+{% block head_files %}
 {{ 'jquery.placeholder.min.js' | javascript_tag }}
 {{ 'contact.js' | javascript_tag }}
 {% endblock %}
@@ -31,7 +31,7 @@ handle: contact_form
 {% else %}
 
 .alert.alert-success
-  %strong Hi {{ contact.surname }} {{ contact.lastname }}, your form has been correctly submitted.
+  %strong Besten Dank {{ contact.surname }} {{ contact.lastname }}, wir werden uns bei Ihnen melden.
 
 {% endif %}
 
@@ -79,27 +79,21 @@ handle: contact_form
 %legend Thema
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
+    %input{:type => "hidden", :name => "content[subject]", :value => "Paravita Beratung"}
+    %input{:type => "hidden", :name => "content[subject]", :value => "Fragen zur Methode"}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Kostenlose Terminvereinbarung"} Wünsche kostenlose Beratung
+        %input{:type => "radio", :name => "content[subject]", :value => "Anfrage neues Institut"} Eigenes Institut eröffnen
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Fragen zur Methode"} Habe Fragen zur Methode
+        %input{:type => "radio", :name => "content[subject]", :value => "Möchte Unterlagen"} Unterlagen zur Ausbildung
   .col-sm-6.col-xs-12
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Paravita Beratung"} Möchte eine Paravita Beratung
+        %input{:type => "radio", :name => "content[subject]", :value => "Kostenlose Terminvereinbarung"} Kostenlose Erstberatung
     .radio
       %label
         %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Allgemeine Rückmeldung
-  .col-xs-12
-    .radio
-      %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Möchte Unterlagen"} Schicken sie mir weitere Unterlagen zum Franchiseprogramm
-  .col-xs-12
-    .radio
-      %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Anfrage neues Institut"} Ich möchte ein eigenes ParaMediForm-Institut eröffnen
 %legend Absender
 .row
   .col-sm-6.col-xs-12

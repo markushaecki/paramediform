@@ -1,4 +1,23 @@
 $(document).ready(function(e){
+    $('.snipcart-total-items').bind('DOMSubtreeModified', function(e) {
+		var value = parseInt($('.snipcart-total-items').text());
+		if(!isNaN(value)){
+          if (value > $.cookie('basket_value') && value > 0){
+      	    $(".snipcart-spacer").addClass("blink");
+  	        setTimeout(function() {
+  	            $(".snipcart-spacer").removeClass("blink");
+  	        }, 1500);
+          }
+          $.cookie('basket_value', value, { path: '/' })
+		} 
+      	if(value == 0 || isNaN(value)) $("a.warenkorb-style").attr("href", "/produkte/nahrungsergaenzungsmittel").removeClass("snipcart-checkout");
+        else $("a.warenkorb-style").attr("href", "#").addClass("snipcart-checkout");
+    });
+
+		
+	$( "a[href='/produkte/parapan']" ).prop('rel', 'nofollow');
+	$( "a[href='/produkte/parapan']" ).prop('href', 'http://www.parapan.ch/gesundes-brot');
+	
 	$(window).resize(function() {
 		/*
 		if($(window).width() < 768){
@@ -52,6 +71,43 @@ $(document).ready(function(e){
        reload_with_zoom(-1);
 	   return false;
      });
+	 
+ // Find all YouTube videos
+ var $allVideos = $("iframe[src^='//www.youtube.com'], iframe[src^='//player.vimeo.com']"),
+     // The element that is fluid width
+     $fluidEl = $("#main");
+
+ // Figure out and save aspect ratio for each video
+ $allVideos.each(function() {
+
+   $(this)
+     .data('aspectRatio', this.height / this.width)
+
+     // and remove the hard coded width/height
+     .removeAttr('height')
+     .removeAttr('width');
+
+ });
+
+ // When the window is resized
+ $(window).resize(function() {
+
+   var newWidth = $fluidEl.width() - 20;
+
+   // Resize all videos according to their own aspect ratio
+   $allVideos.each(function() {
+
+     var $el = $(this);
+     $el
+       .width(newWidth)
+       .height(newWidth * $el.data('aspectRatio'));
+
+   });
+
+ // Kick off one resize to fix all videos on page load
+ }).resize();
+
+
 });
 
 /*

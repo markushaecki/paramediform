@@ -5,7 +5,7 @@ handle: home
 ---
 {% extends layouts/simple %}
 
-{% block header %}
+{% block head_files %}
 {{ 'map.js' | javascript_tag }}
 {{ 'jquery.activity-indicator.min.js' | javascript_tag }}
 {% endblock %}
@@ -42,7 +42,7 @@ handle: home
 .columnize3col
   .row
     .col-xs-12
-      %p {% editable_text "Kurze Einführung zu Paramediform", format: "raw" %}{% endeditable_text %} Lesen Sie hier mehr zu unserer <a href="abnehmen/die-methode">Methode zum Abnehmen</a>
+      %p {% editable_text "Kurze Einführung zu Paramediform", format: "html" %}{% endeditable_text %} Lesen Sie hier mehr zu unserer <a href="abnehmen/die-methode">Methode zum Abnehmen</a>
 %br
 .row
   .col-sm-8.col-xs-12
@@ -51,8 +51,8 @@ handle: home
         %a{ href:'/abnehmen/individuelle-beratung'}    
           .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '400x400#' }}" }
-        .fixed_title
-          %h3 Individuelle Beratung
+          .fixed_title
+            %h3 Individuelle Beratung
       .col-sm-6.col-xs-6
         .thumbnail{:style => "margin-bottom:5px !important"}
           %a#rezepturl{ href: "{% path_to news %}?slug={{ this_news._slug }}&type=recipe" }
@@ -64,7 +64,7 @@ handle: home
       .col-sm-6.col-xs-6
         %div
           .thumbnail{:style => "margin-bottom:5px !important"}
-            %a#success_link.non-link-style{ href: "{% path_to system_success_stories %}" }
+            %a#success_link.non-link-style{ href: "{% path_to system_success_story %}" }
               %img#before_img{ src: '{{ success_story.before_image.url | resize: "200x400" }}', :style => "float:left;max-width:50%" }
               %img#after_img{ src: '{{ success_story.after_image.url | resize: "200x400" }}', :style => "float:left;max-width:50%" }
             .clearfix
@@ -102,6 +102,44 @@ handle: home
         {% endfor %}
         {% endwith_scope %}
     %br
+    %a{ href: '{% path_to contact_form %}', :id => "sidebar_contact" }
+      .contact.well
+        %h3.text-center
+          {{ 'sidebar_contact_title' | translate }}
+        %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
+          %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
+          %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
+    %a{ href: '/unternehmen/selbststaendigkeit' }
+      .news.well
+        %h3.text-center
+          {{ 'sidebar_selbststaendigkeit_title' | translate }}
+        .text-center
+          %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Machen Sie sich selbstständig" }
+    %a{ href: '/produkte/paravita'}
+      .institutes.well
+        %h3.text-center
+          {{ 'sidebar_paravita_title' | translate }}
+        .text-center
+          %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Produkte zur Ernährungsergänzung" }
+    %a{ href: 'http://www.parapan.ch'}
+      .institutes.well
+        %h3.text-center
+          {{ 'sidebar_parapan_title' | translate }}
+        .text-center
+          %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Das Ballaststoffreiche Parapan Brot" }
+    %a{ href: '/abnehmen/die-methode'}
+      .institutes.well
+        %h3.text-center
+          {{ 'sidebar_method_title' | translate }}
+        .text-center
+          %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Die ParaMediForm Methode" }
+    %a{ href: '{% path_to news %}' }
+      .news.well
+        %h3.text-center
+          {{ 'sidebar_news_title' | translate }}
+        .text-center
+          %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Aktuelle Nachrichten von Paramediform" }
+
 //%p{style: "margin-left:170px"} Tipp: Wählen Sie Ihr Institut entweder auf der Landkarte aus, oder verwenden Sie die alphabetische geordnete Liste links.
 %br
 

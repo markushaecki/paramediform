@@ -7,6 +7,12 @@ position: 3
 handle: institute_curve
 ---
 {% extends parent %}
+{% block description %}
+%meta{name:"description", content:"Die Gewichtskurve aus {{ institute.name }} stellt den Erfolg der Ernährungsberatung grafisch dar."}/
+{% endblock %}
+{% block content/main/title %}
+%h1.title Ernährungsberatung {{ institute.name }} - Gewichtskurve
+{% endblock %}
 
 {% block content/main/tab_pane %}
 {% capture url %}{{ institute.url }}/{{locale}}/weight-curves/all.json{% endcapture %}

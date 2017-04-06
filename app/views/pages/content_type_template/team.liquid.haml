@@ -7,6 +7,16 @@ position: 4
 handle: institute_team
 ---
 {% extends parent %}
+{% block title %}
+%title
+  Abnehmen {{ institute.name }}, so werden sie schlank!
+{% endblock %}
+{% block description %}
+%meta{name:"description", content:"Abnehmen {{ institute.name }}, Ein Team stellt sich ganz in Ihren ernährungsberaterischen Dienst."}/
+{% endblock %}
+{% block content/main/title %}
+%h1.title Abnehmen {{ institute.name }} - Team
+{% endblock %}
 
 {% block content/main/tab_pane %}
 

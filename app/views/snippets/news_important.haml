@@ -33,16 +33,5 @@
     %br
     {% endif %}
   {% endif %}
-  {% endfor %}
-  
-  {% if paginate.total_pages != 1 %}
-  {% if params.tag == blank %}
-  {% capture tag_params %}{% endcapture %}
-  {% else %}
-  {% capture tag_params %}&tag={{ params.tag | encode }}{% endcapture %}
-  {% endif %}
-  .text-center
-    {% include pagination with pagination: paginate, other_params: tag_params %}
-  {% endif %}
-  
+  {% endfor %}  
 {% endpaginate %}
