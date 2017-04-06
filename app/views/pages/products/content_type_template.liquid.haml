@@ -1,0 +1,67 @@
+---
+title: Template of a Produkte
+
+# true if the page is published
+published: true
+
+# content type that this page is templatizing
+content_type: products
+
+listed: false
+
+handle: products_template
+---
+
+{% extends layouts/double-columns %}
+{% block content/main %}
+%div
+  %h1{:style => "padding-left:0;padding-bottom:15px"} {{ product.name }}
+  %div{:style => "padding-bottom:30px"}
+    %b {{ product.description }}
+  .thumbnail.vspacer
+    .img-box
+      %a{ href: "{{ product.picture.url }}", :style => "padding:0px" }
+        %img.img-responsive{ src: "{{ product.picture.url | resize: '900x400#' }}", alt: "{{ product.name }}" }      
+  %h3{:style => "padding-top:0px;padding-bottom:0"} Zutaten:
+  .vspacer
+    %ul
+      {% for ingredient in product.ingredients %}
+      %li {{ ingredient }}
+      {% endfor %}
+  %h3{:style => "padding-top:0px;padding-bottom:0"} Anwendung:
+  .vspacer
+    %p {{ product.application }}
+  {% if product.applicationtime %}
+  %h3{:style => "padding-top:0px;padding-bottom:0"} Empfohlene Einnahmezeiten:
+  .vspacer
+    %div {{ product.applicationtime }}
+  {% endif %}
+  %h3{:style => "padding-top:0px;padding-bottom:0"} Menge:
+  %p {{ product.amount }}
+  %br
+  %br
+  %br
+  %br
+  %div{:style => "position:relative"}
+    .pricetag
+      %button.snipcart-add-item{ :style => "float:right", "data-item-description" => "{{ product.description }}", "data-item-id" => "{{ product._id }}", "data-item-image" => "{{ product.picture.url | resize: '120x120#' }}", "data-item-name" => "{{ product.name }}", "data-item-price" => "{{ product.price }}", "data-item-url" => "{{ url }}", "data-item-weight" => "20"}
+        %img{ src: "{{ 'warenkorb-zum-kaufen.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "In den Warenkorb" }
+        //%span.glyphicon.glyphicon-shopping-cart{:style => "color:#F83CA4;font-size:50px"}
+      .price
+        {{ product.price }} CHF
+  .vspacer
+  %h3{:style => "padding-top:0px;padding-bottom:0"} Weitere Produkte:
+  .vspacer
+  .row
+    .col-sm-12.col-xs-12
+      {% for other_product in contents.products.all %}
+      {% unless other_product.name == product.name %}
+      .imagebox{ :style => 'float:left;max-width: 31%;margin-right:2%'}
+        %a{ href: "{% path_to other_product %}", :style => "padding:0px" }
+          .ingrediencelink{:style => "height:2em;line-height:1em; text-align: center;display:flex;align-items: center;justify-content: center;"}
+            {{ other_product.name }}
+          %img.img-responsive{ src: "{{ other_product.ingredientspicture.url | resize: '400x400#' }}", alt: "{{ other_product.name }}" }
+        %br
+      {% endunless %}
+      {% endfor %}
+{% endblock %}

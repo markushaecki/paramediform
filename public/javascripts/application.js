@@ -8,10 +8,22 @@ $(document).ready(function(e){
   	            $(".snipcart-spacer").removeClass("blink");
   	        }, 1500);
           }
+		  /*
+		  if(value == 1){
+			  $("span.snipcart-total-items").html("Produkt");
+		  } else {
+			  $("span.snipcart-total-items").html("Produkte");
+		  }
+		  */
           $.cookie('basket_value', value, { path: '/' })
 		} 
-      	if(value == 0 || isNaN(value)) $("a.warenkorb-style").attr("href", "/produkte/nahrungsergaenzungsmittel").removeClass("snipcart-checkout");
-        else $("a.warenkorb-style").attr("href", "#").addClass("snipcart-checkout");
+      	if(value == 0 || isNaN(value)) {
+			$("a.warenkorb-style").attr("href", "/shop").removeClass("snipcart-checkout");
+			$("div.fixedfooter").addClass("dontshow");
+		} else {
+			$("a.warenkorb-style").attr("href", "#").addClass("snipcart-checkout");
+			$("div.fixedfooter").removeClass("dontshow");
+		}
     });
 
 		

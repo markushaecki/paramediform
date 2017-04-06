@@ -35,18 +35,11 @@ fields:
     localized: true
     searchable: false
 
-- tags: # The lowercase, underscored name of the field
-    label: Tags # Human readable name of the field
-    type: tags
-    required: true
-    hint: Mit diesen Tags wird das Produkt zu gewissen Leiden zugeordnet und entsprechend verkauft.
-    localized: false
-
 - description:
-    label: Anwendungsbereich
+    label: Beschreibung
     type: text
     required: false
-    hint: Kurze beschreibung der möglichen Anwendungsfälle.
+    hint: Kurze Beschreibung des Produktes.
     localized: false
     searchable: false
 
@@ -54,15 +47,23 @@ fields:
     label: Anwendungsbereich
     type: text
     required: false
-    hint: Kurze beschreibung der möglichen Anwendungsfälle.
+    hint: Anweisung zur Einnahmemenge.
     localized: false
     searchable: false
 
-- ingredience:
+- ingredients:
     label: Inhaltsbeschreibung
+    type: tags
+    required: false
+    hint: Inhaltsbeschreibung.
+    localized: false
+    searchable: false
+
+- applicationtime:
+    label: Einnahmezeitpunkt
     type: text
     required: false
-    hint: Kurze beschreibung der möglichen Anwendungsfälle.
+    hint: Beschreibung des optimalen Einnahmezeitpunktes.
     localized: false
     searchable: false
 
@@ -75,16 +76,23 @@ fields:
     searchable: false
 
 - picture: # The lowercase, underscored name of the field
-    label: Bild # Human readable name of the field
+    label: Produktbild # Human readable name of the field
     type: file
     required: false
-    hint: "Rechteckiges Produktbild (100x100px)"
+    hint: "Breitbildformat"
+    localized: false
+
+- ingredientspicture: # The lowercase, underscored name of the field
+    label: Bild des Inhaltes # Human readable name of the field
+    type: file
+    required: false
+    hint: "Quadratisches Produktbild"
     localized: false
 
 - url: # The lowercase, underscored name of the field
     label: Produkturl # Human readable name of the field
     type: string
-    required: true
+    required: false
     hint: Relativer Pfad zur Produktübersicht.
     localized: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)

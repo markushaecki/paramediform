@@ -1,0 +1,20 @@
+---
+title: Shop
+slug: shop
+published: true
+handle: shop
+listed: false
+position: 1
+---
+
+{% extends layouts/double-columns %}
+
+{% block content/main %}
+%h1 Nahrungsergänzungsmittel
+%br
+.row
+  {% for product in contents.products %}
+  .col-sm-6.col-xs-12
+    {% include product_listing with product %}
+  {% endfor %}	
+{% endblock %}

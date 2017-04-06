@@ -1,152 +1,159 @@
 - "Basenpulver":
     description: "Unser Säure-Basen-Haushalt sollte ausgeglichen sein für unsere Körperfunktionen. Gerät das Säure-Basen-Verhältnis aus dem Gleichgewicht, kann sich dies auf unterschiedliche Formen bemerkbar machen."
-    application: "Bei Kopfschmerzen, bei Müdigkeit, bei Muskelverspannungen, bei einseitiger Ernährung."
-    ingredience: "Natriumhydrogencarbonat; Calciumcarbonat; Trikaliumcitrat; Monohydrat; Magnesiumcitrat Nonahydrat."
+    application: "3 x täglich 1 leicht gehäufter Teelöffel (1 Portion) in 100 – 250 ml Flüssigkeit (z.B. Wasser oder Fruchtsaft) auflösen und trinken."
+    ingredients: ['Natriumhydrogencarbonat', 'Calciumcarbonat', 'Trikaliumcitrat', 'Monohydrat', 'Magnesiumcitrat Nonahydrat']
     amount: "e 400 g"
-    tags: ['Erschoepfung', 'Einseitige Ernaehrung']
     price: "34.90"
     picture: "/samples/products/Paravita_Basenpulver_2.jpg"
-
-- "Q10 NT Kapseln":
-    description: "Coenzym Q10 ist eine körpereigene Substanz, die für den Menschen lebensnotwendig und in allen Zellen des menschlichen Organismus vorhanden ist. Sie ist für die Energieversorgung des Körpers mötig und spielt auch beim Zellschutz eine wichtige Rolle."
-    application: "Ausdauer-, Kraft- und Hobbysport, starke Beanspruchung im Beruf und Alltag, 50 plus /Anti-Aging, einseitige Ernährung, bei Übergewicht, Stress/Burn-Out/CFS."
-    ingredience: "Guar; Kartoffelstärke; L-Carnitin-L-Tartrat; Coenzym Q10; Antioxidantienmittel: DL-∝-Tocopherol."
-    amount: "60 Kapseln, e 27 g"
-    tags: ['Einseitige Ernaehrung', 'Sport Ernaehrung', 'Anti-Aging', 'Uebergewicht', 'Burn-Out']
-    url: "/"
-    price: "56.90"
+    ingredientspicture: "/samples/products/ingredients/Basenpulver.jpg"
+    applicationtime: "Ca. 10.00 Uhr, 16.00 Uhr und vor der Nachtruhe."
 
 - "L-Carnitin retard":
     description: "L-Carnitin ist ein vitaminähnlicher Nährstoff, der vom Körper teilweise selbst produziert wird, jedoch zu zwei Dritteln durch die Nahrung oder ergänzende Produkte aufgenommen wird."
-    application: "Verbesserung der Herzfunktion, Stärkung des Immunsystems, Leistungssteigerung beim Sport, Verbesserung/Unterstützung des Fettstoffwechsels, begleitend bei Diäten zur Gewichtsreduktion und zur Gewichtskontrolle, langfristige Medikamenteneinnahme, vegetarische Ernährung, Schwangerschaft/Stillzeit, Cholesterin, Diabetes, Stress/Erschöpfung."
-    ingredience: "L-Carnitin L-Tartrat 46 g (entspricht 31,3 g L-Carnitin); Guar; Kartoffelstärke."
+    application: "250 mg bis 5 g pro Tag."
+    ingredients: ['L-Carnitin L-Tartrat 46 g (entspricht 31,3 g L-Carnitin)', 'Guar', 'Kartoffelstärke']
     amount: "e 96 g"
-    tags: ['Sport Ernaehrung', 'Uebergewicht', 'Burn-Out', 'Immunsystem staerken', 'Kreislaufstoerungen', 'Fleischersatz', 'Ernaehrung in der Schwangerschaft', 'Entgiften', 'Leberentgiftung']
     url: "/"
     price: "56.90"
-
-- "Top Flora Kautabletten":
-    description: "Beispiel Text"
-    application: "Blähungen, Durchfall, bei Einnahme von Antibiotika, Abführmitteln oder Cortison, zum Aufbau einer gesunden Darmflora."
-    ingredience: "Isomalt; Inulin (Präbiotica); Probiotische Kulturen (Lactobacillus Rhamnosus und Lactobacillus Plantarum); Vitamin C; Magnesiumstearat."
-    amount: "60 Tabletten"
-    tags: ['Immunsystem staerken', 'Entgiften', 'Blähungen', 'Leberentgiftung']
-    url: "/"
-    price: "35.90"
+    picture: "/samples/products/L-Carnitin_retard.jpg"
+    ingredientspicture: "/samples/products/ingredients/L-Carnitin_retard.jpg"
 
 - "Gelatine HD hydrolisiert":
-    description: "Als sogenanntes "Hausmittel" wird Gelatine schon seit Langem in die Behandlung von Gelenken mit einbezogen."
-    application: "Arthrose und Gelenkprobleme, Übergewicht, fortgeschrittenes Alter, unausgewogene Ernährung, Durchblutungsstörungen, Sport, Unfall, abnorme Gelenkachsen."
-    ingredience: "Nichtquellende hydrolysierte Gelatine aus kollagenem Eiweiss; purin- und cholesterinfrei; lactose- und glutenfrei, keine Nussbestandteile."
+    description: "Als sogenanntes 'Hausmittel' wird Gelatine schon seit Langem in die Behandlung von Gelenken mit einbezogen."
+    application: "1–3 Teelöffel (3–10 g) pro Tag z.B. in Wasser, Saft, Joghurt usw. anrühren."
+    ingredients: ['Nichtquellende hydrolysierte Gelatine aus kollagenem Eiweiss', 'purin- und cholesterinfrei', 'lactose- und glutenfrei, keine Nussbestandteile']
     amount: "e 400 g"
-    tags: ['Einseitige Ernaehrung', 'Anti-Aging', 'Sport Ernaehrung', 'Uebergewicht', 'Kreislaufstoerungen', 'Rheumatoide Arthritis']
     url: "/"
     price: "35.90"
+    picture: "/samples/products/Gelatine_HD_10_hydrolysiert.jpg"
+    ingredientspicture: "/samples/products/ingredients/Gelatine_HD-10.jpg"
 
 - "Guar Granulat":
     description: "Guar ist ein feinkörniges Granulat, das im Magen bei Flüssigkeitszufuhr rasch aufquillt, den Appetit hemmt und im Dünndarm Cholesterin und Gallensäuren bindet und dadurch Stoffwechsel- und Leberfunktion entlastet."
-    application: "Verstopfung, Darmträgheit, Hämorrhoiden, Divertikulose, Übergewicht, cholesterinsenkend, zur Entgiftung, Diabetes mellitus/Zuckerkrankheit."
-    ingredience: "Guarkernmehl (70%); Kartoffelmehl; Apfelpulver."
+    application: "3-mal täglich 1 gestrichener Teelöffel (1 Portion) in 100 – 250 ml Flüssigkeit oder breiige Speisen, wie Joghurt, Quark usw. einrühren und unmittelbar konsumieren."
+    ingredients: ['Guarkernmehl (70%)', 'Kartoffelmehl', 'Apfelpulver']
     amount: "e 300 g"
-    tags: ['Uebergewicht', 'Burn-Out', 'Immunsystem staerken', 'Entgiften', 'Obstipation', 'Leberentgiftung']
     url: "/"
     price: "33.90"
-
-- "Chlorella Tabletten":
-    description: "Die Kraft der Algen, Entgiftung auf natürliche Weise."
-    application: "Chlorella ist eine Alge, welche vor allem zur Nahrungsergänzung als Eiweissquelle eingesetzt wird. Ein weiteres Einsatzgebiet von Chlorella ist die Ausleitung von Schwermetallen, wie Amalgam und anderen Schadstoffen während einer Stoffwechselentgiftungs-Therapie."
-    ingredience: "Chlorella pyrenoidosa Mikroalgenpulver (98,5%);Kieselsäure (1%) (Trennmittel); Caliumstearat (0,5%) (Trennmittel)."
-    amount: "300 Tabletten"
-    tags: ['Entgiften', 'Obstipation', 'Leberentgiftung']
-    url: "/"
-    price: "58.90"
+    picture: "/samples/products/Guar_Granulat.jpg"
+    ingredientspicture: "/samples/products/ingredients/Guar_Granulat.jpg"
 
 - "Edelhefe":
     description: "Die Edelhefe schmeckt aromatisch und angenehm mild. Sie eignet sich dadurch hervorragend zum Binden sowie salzarmen Abschmecken von pikanten Speisen, Saucen oder Salaten."
-    application: "Sie kann als natriumarmes Würzmittel eingesetzt werden. Durch den pikant-würzigen Geschmack eigent sich die Edelhefe zum Aufstreuen auf viele Speisen wie Suppen, Gemüse, in Salatsaucen usw. Die Edelhefe sollte nicht mitgekocht werden."
-    ingredience: "Die Edelhefe ist glutenfrei und eiweissreich; sie dient zur Nahrungsergänzung mit Vitaminen, Mineralstoffen und Spurenelementen."
+    application: "2 gehäufte Esslöffel täglich über die Speisen streuen."
+    ingredients: ['Die Edelhefe ist glutenfrei und eiweissreich', 'sie dient zur Nahrungsergänzung mit Vitaminen, Mineralstoffen und Spurenelementen']
     amount: "250 g"
-    tags: ['Einseitige Ernaehrung', 'Uebergewicht', 'Immunsystem staerken', 'Fleischersatz', 'Ernaehrung in der Schwangerschaft']
     url: "/"
     price: "12.90"
+    picture: "/samples/products/Edelhefe.jpg"
+    ingredientspicture: "/samples/products/ingredients/Edelhefe.jpg"
+
+- "Chlorella Tabletten":
+    description: "Die Kraft der Algen, Entgiftung auf natürliche Weise."
+    application: "3-mal täglich 3-5 Talbetten vor oder zwischen den Mahlzeiten mit ausreichend Flüssigkeit einnnehmen."
+    ingredients: ['Chlorella pyrenoidosa Mikroalgenpulver (98,5%)', 'Kieselsäure (1%) (Trennmittel)', 'Caliumstearat (0,5%) (Trennmittel)']
+    amount: "300 Tabletten"
+    url: "/"
+    price: "58.90"
+    picture: "/samples/products/Chlorella_Tabletten.jpg"
+    ingredientspicture: "/samples/products/ingredients/Chlorella_Tabletten.jpg"
 
 - "Multivitamin Lutschtabletten":
-    description: "Beispiel Text"
-    application: "Ideal für Kinder, zur Unterstützung des Immunsystems, zum Ausgleich eines Vitaminmangels."
-    ingredience: "Isomalt; Tablettierungshilfe (Magnesiumstearat); natürliches Orangenaroma; 12.0 Vitamine."
+    description: "Auch eine ausgewogene Ernährung reicht heute nicht mehr aus, den Körper optimal mit den benötigten Vitamine zu versorgen und den körpereigenen Stoffwechsel in Gang zu halten."
+    application: "Erwachsene täglich 2 Lutschtabletten, Kinder bis 12 Jahre täglich 1 Lutschtablette im Mund zergehen lassen."
+    ingredients: ['Isomalt', 'Tablettierungshilfe (Magnesiumstearat)', 'natürliches Orangenaroma', '12.0 Vitamine']
     amount: "100 Tabletten, e 145 g"
-    tags: ['Immunsystem staerken']
     url: "/"
     price: "24.90"
+    picture: "/samples/products/Multivitamin_Lutschtabletten.jpg"
+    ingredientspicture: "/samples/products/ingredients/Multivitamintabletten.jpg"
 
-- "Teemischung I":
-    description: "Beispiel Text"
-    application: "Reguliert den Wasserhaushalt. Trinken Sie über den Tag verteilt mehrere Tassen."
-    ingredience: "Melissenblätter; Birkenblätter; Brennesselblätter; Hagenbutten; Malvenblüten."
-    amount: "100 g"
-    tags: ['Uebergewicht', 'Burn-Out']
+- "Q10 NT Kapseln":
+    description: "Coenzym Q10 ist eine körpereigene Substanz, die für den Menschen lebensnotwendig und in allen Zellen des menschlichen Organismus vorhanden ist. Sie ist für die Energieversorgung des Körpers mötig und spielt auch beim Zellschutz eine wichtige Rolle."
+    application: "3-mal täglich 1 Kapsel unzerkaut mit etwas Flüssigkeit einnehmen."
+    ingredients: ['Guar', 'Kartoffelstärke', 'L-Carnitin-L-Tartrat', 'Coenzym Q10', 'Antioxidantienmittel: DL-∝-Tocopherol']
+    amount: "60 Kapseln, e 27 g"
     url: "/"
-    price: "16.90"
-
-- "Teemischung II":
-    description: "Beispiel Text"
-    application: "Reguliert das Verdauungssystem. Trinken Sie über den Tag verteilt mehrere Tassen."
-    ingredience: "Brennesselblätter; Löwenzahnkraut; Pfefferminzblätter; Schlüsselblumen; Tausendguldenkraut; Ringelblumen; Orangenblätter bitter; Stevia blätter."
-    amount: "100 g"
-    tags: ['Anti-Aging', 'Uebergewicht', 'Obstipation']
-    url: "/"
-    price: "17.90"
-    
-- "Petersilientee":
-    description: "Beispiel Text"
-    application: "Petersilienblättertee reguliert in kleineren Mengen den Wasserhaushalt und in grösseren Mengen wird der Magen-Darmtrakt angeregt und vermehrt durchblutet. Vorsicht: Liegt eine Schwangerschaft vor, darf kein Petersilientee getrunken werden."
-    ingredience: "Aus natürlich gewachsenen Petersilienblätter."
-    amount: "100 g"
-    tags: ['Uebergewicht', 'Obstipation']
-    url: "/"
-    price: "12.90"
-
-- "Himbeerblättertee":
-    description: "Beispiel Text"
-    application: "In der Pflanzenheilkunde wird das Himbeerblatt bei Durchfall, Magen-Darmentzündungen, Verstopfung und zur Förderung der Muttermilch eingesetzt. Himbeerblättertee kann ebenfalls bei Störungen des Verdauungssystems eingesetzt werden."
-    ingredience: "Aus natürlich gewachsenen Himbeerblätter."
-    amount: "100 g"
-    tags: ['Uebergewicht', 'Ernaehrung in der Schwangerschaft', 'Blähungen', 'Obstipation']
-    url: "/"
-    price: "11.90"
-
-- "Rotkleeblütentee":
-    description: "Beispiel Text"
-    application: "In der Pflanzenheilkunde wird das Rotklee bei Leberschwäche und Verstopfung, Wechseljahresbeschwerden und Rheuma eingesetzt. Hauptindikationen sind: Förderung der Lebertätigkeit und der Gallensaftproduktion, bei Verdauungsproblemen, Blutreinigend."
-    ingredience: "Aus natürlich gewachsenen Rotkleeblüten."
-    amount: "100 g"
-    tags: ['Kreislaufstoerungen', 'Obstipation', 'Rheumatoide Arthritis', 'Leberentgiftung']
-    url: "/"
-    price: "17.90"
-    
-- "Urinstreifen":
-    description: "Beispiel Text"
-    application: "Durch die heutigen Lebensumstände wie Stress, falsche Ernährung usw. reagiert der Körper mit einer Übersäuerung, welche der Körper über Urin, Schweiss und Atemluft abgibt. Eine Übersäuerung kann einen negativen Einfluss auf sämtliche Stoffwechselvorgänge im Körper haben. Cellulite zum Beispiel ist eine sichtbare Folge einer Übersäuerung in Zusammenhang mit Übergewicht und Bindegewebsschwäche. Eine starke Übersäuerung kann auch einen negativen Einfluss auf eine erwünschte Gewichtsabnahme haben, d.h. es kann kein Fett verbrannt und abgebaut werden, solange eine starke Übersäuerung vorliegt. Die Messung des pH-Wertes mit Urinteststreifen ist ausschlaggebend, wie dringend eine Behandlung mit Paravita® Basenpulver oder Basentabletten ist."
-    ingredience: "Zur Messung des pH-Wertes im Urin."
-    amount: "100 Stk."
-    tags: ['Erschoepfung', 'Einseitige Ernaehrung', 'Uebergewicht', 'Burn-Out', 'Entgiften', 'Leberentgiftung']
-    url: "/"
-    price: "10.90"
-
-- "Omega-3 Fischöl flüssig":
-    description: "Beispiel Text"
-    application: "Bluthochdruck, erhöhte LDL-Cholesterinwerte und tiefe HDL-Cholesterinwerte, chronisch entzündliche Darmerkrankungen (Morbus Crohn), Diabetes mellitus, Herz-Kreislauferkrankungen, rheumatische Erkrankungen, Psoriasis, Neurodermitis, Akne und andere Hautprobleme, Schwangerschaft und Stillzeit (wichtig für die Gehirnentwicklung und die Sehkraft von Säuglingen), Asthma, Sport (regenerative Entzündungen), allgemein zur Prävention/Anti-Aging, Allergien."
-    ingredience: "Omega-3-angereichertes Fischöl (70%); Vitamin C (Ascorbylpalmitat); Vitamin E (α-Tocopherol); Aroma: Limone; α-Tocopherol."
-    amount: "200 ml, e 180 g"
-    tags: ['Einseitige Ernaehrung', 'Anti-Aging', 'Sport Ernaehrung', 'Uebergewicht', 'Ernaehrung in der Schwangerschaft', 'Rheumatoide Arthritis']
-    url: "/"
-    price: "75.90"
+    price: "56.90"
+    picture: "/samples/products/Q10_NT_Kapseln.jpg"
+    ingredientspicture: "/samples/products/ingredients/Q10.jpg"
     
 - "Omega-3 Fischölkapseln":
-    description: "Beispiel Text"
-    application: "Bluthochdruck, erhöhte LDL-Cholesterinwerte und tiefe HDL-Cholesterinwerte, chronisch entzündliche Darmerkrankungen (Morbus Crohn), Diabetes mellitus, Herz-Kreislauferkrankungen, rheumatische Erkrankungen, Psoriasis, Neurodermitis, Akne und andere Hautprobleme, Schwangerschaft und Stillzeit (wichtig für die Gehirnentwicklung und die Sehkraft von Säuglingen), Asthma, Sport (regenerative Entzündungen), allgemein zur Prävention/Anti-Aging, Allergien."
-    ingredience: "Omega-3-angereichertes Fischöl (70%), Fischgelatine, Feuchthaltemittel: Glyerin, Wasser, Antioxidationsmittel: tocopherolhaltiger Extrakt (E-306, aus Soja)."
+    description: "Diese Fettsäuren gehören zu einer gesunden Ernährung, da der Körper diese nicht selber herstellen kann. Erst seit etwa 1980 weiss man, dass Omega-3-Fettsäuren einen für den Menschen lebenswichtigen Nährstoff darstellen."
+    application: "1-mal täglich 1 Kapsel unzerkaut mit etwas Flüssigkeit einnehmen."
+    ingredients: ['Omega-3-angereichertes Fischöl (70%)', 'Fischgelatine', 'Feuchthaltemittel: Glyerin', 'Wasser', 'Antioxidationsmittel: tocopherolhaltiger Extrakt (E-306, aus Soja)']
     amount: "240 Kapseln, e 170 g"
-    tags: ['Einseitige Ernaehrung', 'Anti-Aging', 'Sport Ernaehrung', 'Uebergewicht', 'Ernaehrung in der Schwangerschaft', 'Rheumatoide Arthritis']
     url: "/"
     price: "59.90"
+    picture: "/samples/products/Omega-3_Fisch_l_Kapseln.jpg"
+    ingredientspicture: "/samples/products/ingredients/Omega-3_Fischoelkapseln.jpg"
+
+- "Omega-3 Fischöl flüssig":
+    description: "Diese Fettsäuren gehören zu einer gesunden Ernährung, da der Körper diese nicht selber herstellen kann. Erst seit etwa 1980 weiss man, dass Omega-3-Fettsäuren einen für den Menschen lebenswichtigen Nährstoff darstellen."
+    application: "1-mal täglich 1 kl. Messlöffel (2,5 ml = ca.1 g) Öl einnehmen."
+    ingredients: ['Omega-3-angereichertes Fischöl (70%)', 'Vitamin C (Ascorbylpalmitat)', 'Vitamin E (α-Tocopherol)', 'Aroma: Limone', 'α-Tocopherol']
+    amount: "200 ml, e 180 g"
+    url: "/"
+    price: "75.90"
+    picture: "/samples/products/Omega-3_Fisch_l_fl_ssig.jpg"
+    ingredientspicture: "/samples/products/ingredients/Omega-3_ Fischoel_fluessig.jpg"
+
+- "Urinstreifen":
+    description: "Die Messung des PH-Werts über den Urin wird empfohlen um eine mögliche Übersäuerung des Körpers festzustellen."
+    application: "Die Messung erfolgt über einen längeren Zeitraum, mindestens 1 Woche. Die Messungen werden pH-Werts (Übersäuerung) zu erhalten, da sich dieser je nach Nahrung und Tagesablauf verändert. Die erste Messung erfolgt mit dem 2. Urin am Morgen."
+    ingredients: ['Zur Messung des pH-Wertes im Urin']
+    amount: "100 Stk."
+    url: "/"
+    price: "10.90"
+    picture: "/samples/products/Urinstreifen.jpg"
+    ingredientspicture: "/samples/products/ingredients/Urinstreifen.jpg"
+
+- "Teemischung I":
+    description: "Die Paravita® Teemischung I reguliert den Wasserhaushalt, ist aber nicht so stark entwässernd, wie der Petersilientee."
+    application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
+    ingredients: ['Melissenblätter', 'Birkenblätter', 'Brennesselblätter', 'Hagenbutten', 'Malvenblüten']
+    amount: "100 g"
+    url: "/"
+    price: "16.90"
+    picture: "/samples/products/Teemischung_I.jpg"
+    ingredientspicture: "/samples/products/ingredients/ParaTee_Mischung_I.jpg"
+
+- "Teemischung II":
+    description: "Die Paravita® Teemischung II enthält Bitterstoffe und unterstützt die Leber- und Gallentätigkeit. Zudem reguliert diese Teemischung das Verdauungssystem."
+    application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
+    ingredients: ['Brennesselblätter', 'Löwenzahnkraut', 'Pfefferminzblätter', 'Schlüsselblumen', 'Tausendguldenkraut', 'Ringelblumen', 'Orangenblätter bitter', 'Stevia blätter']
+    amount: "100 g"
+    url: "/"
+    price: "17.90"
+    picture: "/samples/products/Teemischung_II.jpg"
+    ingredientspicture: "/samples/products/ingredients/ParaTee_Mischung_II.jpg"
+    
+- "Petersilientee":
+    description: "In kleinen Mengen reguliert der Paravita® Petersilientee den Wasserhaushalt und in grösseren Mengen wird der Magen-Darmtrakt angeregt und vermehrt durchblutet. Der Paravita® Petersilientee eignet sich als Stoffwechseltee für den Nebennierentyp."
+    application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
+    ingredients: ['Aus natürlich gewachsenen Petersilienblätter']
+    amount: "100 g"
+    url: "/"
+    price: "12.90"
+    picture: "/samples/products/Petersilientee.jpg"
+    ingredientspicture: "/samples/products/ingredients/Petersilientee.jpg"
+
+- "Himbeerblättertee":
+    description: "Für den Paravita® Himbeerblättertee werden die getrockneten, geschnittenen Blätter des Himbeerstrauches verwendet. In der Pflanzenheilkunde wird das Himbeerblatt bei Durchfall, Magen-Darmentzündungen, Verstopfungen und zur Förderung der Muttermilch eingesetzt. Der Paravita® Himbeerblättertee eignet sich als Stoffwechseltee für den Schilddrüsentyp."
+    application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
+    ingredients: ['Aus natürlich gewachsenen Himbeerblätter']
+    amount: "100 g"
+    url: "/"
+    price: "11.90"
+    picture: "/samples/products/Himbeerblaettertee.jpg"
+    ingredientspicture: "/samples/products/ingredients/Himbeerblaettertee.jpg"
+
+- "Rotkleeblütentee":
+    description: "Für den Paravita® Rotkleeblütentee wird die ganze getrocknete Pflanze verwendet. Die Teemischung ist vielseitig einsetzbar und daher sehr beliebt. Der Paravita® Rotkleeblütentee eignet sich als Stoffwechseltee für den Keimdrüsentyp."
+    application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
+    ingredients: ['Aus natürlich gewachsenen Rotkleeblüten']
+    amount: "100 g"
+    url: "/"
+    price: "17.90"
+    picture: "/samples/products/Rotkleebluetentee.jpg"
+    ingredientspicture: "/samples/products/ingredients/Rotkleeblütentee.jpg"
