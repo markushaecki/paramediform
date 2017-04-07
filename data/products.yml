@@ -1,4 +1,5 @@
 - "Basenpulver":
+    category: "Nahrungsergänzungsmittel"
     description: "Unser Säure-Basen-Haushalt sollte ausgeglichen sein für unsere Körperfunktionen. Gerät das Säure-Basen-Verhältnis aus dem Gleichgewicht, kann sich dies auf unterschiedliche Formen bemerkbar machen."
     application: "3 x täglich 1 leicht gehäufter Teelöffel (1 Portion) in 100 – 250 ml Flüssigkeit (z.B. Wasser oder Fruchtsaft) auflösen und trinken."
     ingredients: ['Natriumhydrogencarbonat', 'Calciumcarbonat', 'Trikaliumcitrat', 'Monohydrat', 'Magnesiumcitrat Nonahydrat']
@@ -9,6 +10,7 @@
     applicationtime: "Ca. 10.00 Uhr, 16.00 Uhr und vor der Nachtruhe."
 
 - "L-Carnitin retard":
+    category: "Nahrungsergänzungsmittel"
     description: "L-Carnitin ist ein vitaminähnlicher Nährstoff, der vom Körper teilweise selbst produziert wird, jedoch zu zwei Dritteln durch die Nahrung oder ergänzende Produkte aufgenommen wird."
     application: "250 mg bis 5 g pro Tag."
     ingredients: ['L-Carnitin L-Tartrat 46 g (entspricht 31,3 g L-Carnitin)', 'Guar', 'Kartoffelstärke']
@@ -19,6 +21,7 @@
     ingredientspicture: "/samples/products/L-Carnitin_retard_ingredients.jpg"
 
 - "Gelatine HD hydrolisiert":
+    category: "Nahrungsergänzungsmittel"
     description: "Als sogenanntes 'Hausmittel' wird Gelatine schon seit Langem in die Behandlung von Gelenken mit einbezogen."
     application: "1–3 Teelöffel (3–10 g) pro Tag z.B. in Wasser, Saft, Joghurt usw. anrühren."
     ingredients: ['Nichtquellende hydrolysierte Gelatine aus kollagenem Eiweiss', 'purin- und cholesterinfrei', 'lactose- und glutenfrei, keine Nussbestandteile']
@@ -29,6 +32,7 @@
     ingredientspicture: "/samples/products/Gelatine_HD-10_ingredients.jpg"
 
 - "Guar Granulat":
+    category: "Nahrungsergänzungsmittel"
     description: "Guar ist ein feinkörniges Granulat, das im Magen bei Flüssigkeitszufuhr rasch aufquillt, den Appetit hemmt und im Dünndarm Cholesterin und Gallensäuren bindet und dadurch Stoffwechsel- und Leberfunktion entlastet."
     application: "3-mal täglich 1 gestrichener Teelöffel (1 Portion) in 100 – 250 ml Flüssigkeit oder breiige Speisen, wie Joghurt, Quark usw. einrühren und unmittelbar konsumieren."
     ingredients: ['Guarkernmehl (70%)', 'Kartoffelmehl', 'Apfelpulver']
@@ -39,6 +43,7 @@
     ingredientspicture: "/samples/products/Guar_Granulat_ingredients.jpg"
 
 - "Edelhefe":
+    category: "Nahrungsergänzungsmittel"
     description: "Die Edelhefe schmeckt aromatisch und angenehm mild. Sie eignet sich dadurch hervorragend zum Binden sowie salzarmen Abschmecken von pikanten Speisen, Saucen oder Salaten."
     application: "2 gehäufte Esslöffel täglich über die Speisen streuen."
     ingredients: ['Die Edelhefe ist glutenfrei und eiweissreich', 'sie dient zur Nahrungsergänzung mit Vitaminen, Mineralstoffen und Spurenelementen']
@@ -49,6 +54,7 @@
     ingredientspicture: "/samples/products/Edelhefe_ingredients.jpg"
 
 - "Chlorella Tabletten":
+    category: "Nahrungsergänzungsmittel"
     description: "Die Kraft der Algen, Entgiftung auf natürliche Weise."
     application: "3-mal täglich 3-5 Talbetten vor oder zwischen den Mahlzeiten mit ausreichend Flüssigkeit einnnehmen."
     ingredients: ['Chlorella pyrenoidosa Mikroalgenpulver (98,5%)', 'Kieselsäure (1%) (Trennmittel)', 'Caliumstearat (0,5%) (Trennmittel)']
@@ -59,6 +65,7 @@
     ingredientspicture: "/samples/products/Chlorella_Tabletten_ingredients.jpg"
 
 - "Multivitamin Lutschtabletten":
+    category: "Nahrungsergänzungsmittel"
     description: "Auch eine ausgewogene Ernährung reicht heute nicht mehr aus, den Körper optimal mit den benötigten Vitamine zu versorgen und den körpereigenen Stoffwechsel in Gang zu halten."
     application: "Erwachsene täglich 2 Lutschtabletten, Kinder bis 12 Jahre täglich 1 Lutschtablette im Mund zergehen lassen."
     ingredients: ['Isomalt', 'Tablettierungshilfe (Magnesiumstearat)', 'natürliches Orangenaroma', '12.0 Vitamine']
@@ -69,6 +76,7 @@
     ingredientspicture: "/samples/products/Multivitamintabletten_ingredients.jpg"
 
 - "Q10 NT Kapseln":
+    category: "Nahrungsergänzungsmittel"
     description: "Coenzym Q10 ist eine körpereigene Substanz, die für den Menschen lebensnotwendig und in allen Zellen des menschlichen Organismus vorhanden ist. Sie ist für die Energieversorgung des Körpers mötig und spielt auch beim Zellschutz eine wichtige Rolle."
     application: "3-mal täglich 1 Kapsel unzerkaut mit etwas Flüssigkeit einnehmen."
     ingredients: ['Guar', 'Kartoffelstärke', 'L-Carnitin-L-Tartrat', 'Coenzym Q10', 'Antioxidantienmittel: DL-∝-Tocopherol']
@@ -79,6 +87,7 @@
     ingredientspicture: "/samples/products/Q10_ingredients.jpg"
     
 - "Omega-3 Fischölkapseln":
+    category: "Nahrungsergänzungsmittel"
     description: "Diese Fettsäuren gehören zu einer gesunden Ernährung, da der Körper diese nicht selber herstellen kann. Erst seit etwa 1980 weiss man, dass Omega-3-Fettsäuren einen für den Menschen lebenswichtigen Nährstoff darstellen."
     application: "1-mal täglich 1 Kapsel unzerkaut mit etwas Flüssigkeit einnehmen."
     ingredients: ['Omega-3-angereichertes Fischöl (70%)', 'Fischgelatine', 'Feuchthaltemittel: Glyerin', 'Wasser', 'Antioxidationsmittel: tocopherolhaltiger Extrakt (E-306, aus Soja)']
@@ -89,6 +98,7 @@
     ingredientspicture: "/samples/products/Omega-3_Fischoelkapseln_ingredients.jpg"
 
 - "Omega-3 Fischöl flüssig":
+    category: "Nahrungsergänzungsmittel"
     description: "Diese Fettsäuren gehören zu einer gesunden Ernährung, da der Körper diese nicht selber herstellen kann. Erst seit etwa 1980 weiss man, dass Omega-3-Fettsäuren einen für den Menschen lebenswichtigen Nährstoff darstellen."
     application: "1-mal täglich 1 kl. Messlöffel (2,5 ml = ca.1 g) Öl einnehmen."
     ingredients: ['Omega-3-angereichertes Fischöl (70%)', 'Vitamin C (Ascorbylpalmitat)', 'Vitamin E (α-Tocopherol)', 'Aroma: Limone', 'α-Tocopherol']
@@ -99,6 +109,7 @@
     ingredientspicture: "/samples/products/Omega-3_ Fischoel_fluessig_ingredients.jpg"
 
 - "Urinstreifen":
+    category: "Nahrungsergänzungsmittel"
     description: "Die Messung des PH-Werts über den Urin wird empfohlen um eine mögliche Übersäuerung des Körpers festzustellen."
     application: "Die Messung erfolgt über einen längeren Zeitraum, mindestens 1 Woche. Die Messungen werden pH-Werts (Übersäuerung) zu erhalten, da sich dieser je nach Nahrung und Tagesablauf verändert. Die erste Messung erfolgt mit dem 2. Urin am Morgen."
     ingredients: ['Zur Messung des pH-Wertes im Urin']
@@ -109,6 +120,7 @@
     ingredientspicture: "/samples/products/Urinstreifen_ingredients.jpg"
 
 - "Teemischung I":
+    category: "Nahrungsergänzungsmittel"
     description: "Die Paravita® Teemischung I reguliert den Wasserhaushalt, ist aber nicht so stark entwässernd, wie der Petersilientee."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
     ingredients: ['Melissenblätter', 'Birkenblätter', 'Brennesselblätter', 'Hagenbutten', 'Malvenblüten']
@@ -119,6 +131,7 @@
     ingredientspicture: "/samples/products/ParaTee_Mischung_I_ingredients.jpg"
 
 - "Teemischung II":
+    category: "Nahrungsergänzungsmittel"
     description: "Die Paravita® Teemischung II enthält Bitterstoffe und unterstützt die Leber- und Gallentätigkeit. Zudem reguliert diese Teemischung das Verdauungssystem."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
     ingredients: ['Brennesselblätter', 'Löwenzahnkraut', 'Pfefferminzblätter', 'Schlüsselblumen', 'Tausendguldenkraut', 'Ringelblumen', 'Orangenblätter bitter', 'Stevia blätter']
@@ -129,6 +142,7 @@
     ingredientspicture: "/samples/products/ParaTee_Mischung_II_ingredients.jpg"
     
 - "Petersilientee":
+    category: "Nahrungsergänzungsmittel"
     description: "In kleinen Mengen reguliert der Paravita® Petersilientee den Wasserhaushalt und in grösseren Mengen wird der Magen-Darmtrakt angeregt und vermehrt durchblutet. Der Paravita® Petersilientee eignet sich als Stoffwechseltee für den Nebennierentyp."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
     ingredients: ['Aus natürlich gewachsenen Petersilienblätter']
@@ -139,6 +153,7 @@
     ingredientspicture: "/samples/products/Petersilientee_ingredients.jpg"
 
 - "Himbeerblättertee":
+    category: "Nahrungsergänzungsmittel"
     description: "Für den Paravita® Himbeerblättertee werden die getrockneten, geschnittenen Blätter des Himbeerstrauches verwendet. In der Pflanzenheilkunde wird das Himbeerblatt bei Durchfall, Magen-Darmentzündungen, Verstopfungen und zur Förderung der Muttermilch eingesetzt. Der Paravita® Himbeerblättertee eignet sich als Stoffwechseltee für den Schilddrüsentyp."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
     ingredients: ['Aus natürlich gewachsenen Himbeerblätter']
@@ -149,7 +164,19 @@
     ingredientspicture: "/samples/products/Himbeerblaettertee_ingredients.jpg"
 
 - "Rotkleeblütentee":
+    category: "Nahrungsergänzungsmittel"
     description: "Für den Paravita® Rotkleeblütentee wird die ganze getrocknete Pflanze verwendet. Die Teemischung ist vielseitig einsetzbar und daher sehr beliebt. Der Paravita® Rotkleeblütentee eignet sich als Stoffwechseltee für den Keimdrüsentyp."
+    application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
+    ingredients: ['Aus natürlich gewachsenen Rotkleeblüten']
+    amount: "100 g"
+    url: "/"
+    price: "17.90"
+    picture: "/samples/products/Rotkleebluetentee.jpg"
+    ingredientspicture: "/samples/products/Rotkleeblütentee_ingredients.jpg"
+
+- "Kochbuch":
+    category: "Kochbuch"
+    description: "blabla"
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
     ingredients: ['Aus natürlich gewachsenen Rotkleeblüten']
     amount: "100 g"

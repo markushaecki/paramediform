@@ -35,6 +35,14 @@ fields:
     localized: true
     searchable: false
 
+- category: # The lowercase, underscored name of the field
+    label: Produktekategorie # Human readable name of the field
+    type: string
+    required: true
+    hint: Kategorie des Produktes (Nahrungsergänzungsmittel oder sonstiges).
+    localized: false
+    # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
+
 - description:
     label: Beschreibung
     type: text

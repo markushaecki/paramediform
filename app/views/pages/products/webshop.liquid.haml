@@ -13,8 +13,10 @@ position: 1
 %h1 Nahrungsergänzungsmittel
 %br
 .row
+  {% with_scope category: "Nahrungsergänzungsmittel" %}
   {% for product in contents.products %}
   .col-sm-6.col-xs-12
     {% include product_listing with product %}
   {% endfor %}	
+  {% endwith_scope %}
 {% endblock %}
