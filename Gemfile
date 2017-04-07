@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'locomotivecms_mounter', github: 'locomotivecms/mounter', ref: '4c7d971'
 gem 'locomotivecms_wagon', '~> 1.5.8'
 
 group :development do

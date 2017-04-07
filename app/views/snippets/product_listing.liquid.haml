@@ -1,6 +1,6 @@
 .wellshopitem
   .wellinside
-    %a{ href: '{{ product.url }}'}
+    %a{ href: '{% path_to product %}'}
       %b
         {{ product.name | upcase }}
     %br

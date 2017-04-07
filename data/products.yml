@@ -5,7 +5,7 @@
     amount: "e 400 g"
     price: "34.90"
     picture: "/samples/products/Paravita_Basenpulver_2.jpg"
-    ingredientspicture: "/samples/products/ingredients/Basenpulver.jpg"
+    ingredientspicture: "/samples/products/Basenpulver_ingredients.jpg"
     applicationtime: "Ca. 10.00 Uhr, 16.00 Uhr und vor der Nachtruhe."
 
 - "L-Carnitin retard":
@@ -16,7 +16,7 @@
     url: "/"
     price: "56.90"
     picture: "/samples/products/L-Carnitin_retard.jpg"
-    ingredientspicture: "/samples/products/ingredients/L-Carnitin_retard.jpg"
+    ingredientspicture: "/samples/products/L-Carnitin_retard_ingredients.jpg"
 
 - "Gelatine HD hydrolisiert":
     description: "Als sogenanntes 'Hausmittel' wird Gelatine schon seit Langem in die Behandlung von Gelenken mit einbezogen."
@@ -26,7 +26,7 @@
     url: "/"
     price: "35.90"
     picture: "/samples/products/Gelatine_HD_10_hydrolysiert.jpg"
-    ingredientspicture: "/samples/products/ingredients/Gelatine_HD-10.jpg"
+    ingredientspicture: "/samples/products/Gelatine_HD-10_ingredients.jpg"
 
 - "Guar Granulat":
     description: "Guar ist ein feinkörniges Granulat, das im Magen bei Flüssigkeitszufuhr rasch aufquillt, den Appetit hemmt und im Dünndarm Cholesterin und Gallensäuren bindet und dadurch Stoffwechsel- und Leberfunktion entlastet."
@@ -36,7 +36,7 @@
     url: "/"
     price: "33.90"
     picture: "/samples/products/Guar_Granulat.jpg"
-    ingredientspicture: "/samples/products/ingredients/Guar_Granulat.jpg"
+    ingredientspicture: "/samples/products/Guar_Granulat_ingredients.jpg"
 
 - "Edelhefe":
     description: "Die Edelhefe schmeckt aromatisch und angenehm mild. Sie eignet sich dadurch hervorragend zum Binden sowie salzarmen Abschmecken von pikanten Speisen, Saucen oder Salaten."
@@ -46,7 +46,7 @@
     url: "/"
     price: "12.90"
     picture: "/samples/products/Edelhefe.jpg"
-    ingredientspicture: "/samples/products/ingredients/Edelhefe.jpg"
+    ingredientspicture: "/samples/products/Edelhefe_ingredients.jpg"
 
 - "Chlorella Tabletten":
     description: "Die Kraft der Algen, Entgiftung auf natürliche Weise."
@@ -56,7 +56,7 @@
     url: "/"
     price: "58.90"
     picture: "/samples/products/Chlorella_Tabletten.jpg"
-    ingredientspicture: "/samples/products/ingredients/Chlorella_Tabletten.jpg"
+    ingredientspicture: "/samples/products/Chlorella_Tabletten_ingredients.jpg"
 
 - "Multivitamin Lutschtabletten":
     description: "Auch eine ausgewogene Ernährung reicht heute nicht mehr aus, den Körper optimal mit den benötigten Vitamine zu versorgen und den körpereigenen Stoffwechsel in Gang zu halten."
@@ -66,7 +66,7 @@
     url: "/"
     price: "24.90"
     picture: "/samples/products/Multivitamin_Lutschtabletten.jpg"
-    ingredientspicture: "/samples/products/ingredients/Multivitamintabletten.jpg"
+    ingredientspicture: "/samples/products/Multivitamintabletten_ingredients.jpg"
 
 - "Q10 NT Kapseln":
     description: "Coenzym Q10 ist eine körpereigene Substanz, die für den Menschen lebensnotwendig und in allen Zellen des menschlichen Organismus vorhanden ist. Sie ist für die Energieversorgung des Körpers mötig und spielt auch beim Zellschutz eine wichtige Rolle."
@@ -76,7 +76,7 @@
     url: "/"
     price: "56.90"
     picture: "/samples/products/Q10_NT_Kapseln.jpg"
-    ingredientspicture: "/samples/products/ingredients/Q10.jpg"
+    ingredientspicture: "/samples/products/Q10_ingredients.jpg"
     
 - "Omega-3 Fischölkapseln":
     description: "Diese Fettsäuren gehören zu einer gesunden Ernährung, da der Körper diese nicht selber herstellen kann. Erst seit etwa 1980 weiss man, dass Omega-3-Fettsäuren einen für den Menschen lebenswichtigen Nährstoff darstellen."
@@ -86,7 +86,7 @@
     url: "/"
     price: "59.90"
     picture: "/samples/products/Omega-3_Fisch_l_Kapseln.jpg"
-    ingredientspicture: "/samples/products/ingredients/Omega-3_Fischoelkapseln.jpg"
+    ingredientspicture: "/samples/products/Omega-3_Fischoelkapseln_ingredients.jpg"
 
 - "Omega-3 Fischöl flüssig":
     description: "Diese Fettsäuren gehören zu einer gesunden Ernährung, da der Körper diese nicht selber herstellen kann. Erst seit etwa 1980 weiss man, dass Omega-3-Fettsäuren einen für den Menschen lebenswichtigen Nährstoff darstellen."
@@ -96,7 +96,7 @@
     url: "/"
     price: "75.90"
     picture: "/samples/products/Omega-3_Fisch_l_fl_ssig.jpg"
-    ingredientspicture: "/samples/products/ingredients/Omega-3_ Fischoel_fluessig.jpg"
+    ingredientspicture: "/samples/products/Omega-3_ Fischoel_fluessig_ingredients.jpg"
 
 - "Urinstreifen":
     description: "Die Messung des PH-Werts über den Urin wird empfohlen um eine mögliche Übersäuerung des Körpers festzustellen."
@@ -106,7 +106,7 @@
     url: "/"
     price: "10.90"
     picture: "/samples/products/Urinstreifen.jpg"
-    ingredientspicture: "/samples/products/ingredients/Urinstreifen.jpg"
+    ingredientspicture: "/samples/products/Urinstreifen_ingredients.jpg"
 
 - "Teemischung I":
     description: "Die Paravita® Teemischung I reguliert den Wasserhaushalt, ist aber nicht so stark entwässernd, wie der Petersilientee."
@@ -116,7 +116,7 @@
     url: "/"
     price: "16.90"
     picture: "/samples/products/Teemischung_I.jpg"
-    ingredientspicture: "/samples/products/ingredients/ParaTee_Mischung_I.jpg"
+    ingredientspicture: "/samples/products/ParaTee_Mischung_I_ingredients.jpg"
 
 - "Teemischung II":
     description: "Die Paravita® Teemischung II enthält Bitterstoffe und unterstützt die Leber- und Gallentätigkeit. Zudem reguliert diese Teemischung das Verdauungssystem."
@@ -126,7 +126,7 @@
     url: "/"
     price: "17.90"
     picture: "/samples/products/Teemischung_II.jpg"
-    ingredientspicture: "/samples/products/ingredients/ParaTee_Mischung_II.jpg"
+    ingredientspicture: "/samples/products/ParaTee_Mischung_II_ingredients.jpg"
     
 - "Petersilientee":
     description: "In kleinen Mengen reguliert der Paravita® Petersilientee den Wasserhaushalt und in grösseren Mengen wird der Magen-Darmtrakt angeregt und vermehrt durchblutet. Der Paravita® Petersilientee eignet sich als Stoffwechseltee für den Nebennierentyp."
@@ -136,7 +136,7 @@
     url: "/"
     price: "12.90"
     picture: "/samples/products/Petersilientee.jpg"
-    ingredientspicture: "/samples/products/ingredients/Petersilientee.jpg"
+    ingredientspicture: "/samples/products/Petersilientee_ingredients.jpg"
 
 - "Himbeerblättertee":
     description: "Für den Paravita® Himbeerblättertee werden die getrockneten, geschnittenen Blätter des Himbeerstrauches verwendet. In der Pflanzenheilkunde wird das Himbeerblatt bei Durchfall, Magen-Darmentzündungen, Verstopfungen und zur Förderung der Muttermilch eingesetzt. Der Paravita® Himbeerblättertee eignet sich als Stoffwechseltee für den Schilddrüsentyp."
@@ -146,7 +146,7 @@
     url: "/"
     price: "11.90"
     picture: "/samples/products/Himbeerblaettertee.jpg"
-    ingredientspicture: "/samples/products/ingredients/Himbeerblaettertee.jpg"
+    ingredientspicture: "/samples/products/Himbeerblaettertee_ingredients.jpg"
 
 - "Rotkleeblütentee":
     description: "Für den Paravita® Rotkleeblütentee wird die ganze getrocknete Pflanze verwendet. Die Teemischung ist vielseitig einsetzbar und daher sehr beliebt. Der Paravita® Rotkleeblütentee eignet sich als Stoffwechseltee für den Keimdrüsentyp."
@@ -156,4 +156,4 @@
     url: "/"
     price: "17.90"
     picture: "/samples/products/Rotkleebluetentee.jpg"
-    ingredientspicture: "/samples/products/ingredients/Rotkleeblütentee.jpg"
+    ingredientspicture: "/samples/products/Rotkleeblütentee_ingredients.jpg"

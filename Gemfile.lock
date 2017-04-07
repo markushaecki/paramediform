@@ -13,6 +13,34 @@ GIT
       locomotivecms-solid (~> 0.2.2.1)
       pony (~> 1.8)
 
+GIT
+  remote: git://github.com/locomotivecms/mounter.git
+  revision: 4c7d971d72de84b30ccabcadcf13c870f95a3774
+  ref: 4c7d971
+  specs:
+    locomotivecms_mounter (1.5.8)
+      RedCloth (~> 4.2.3)
+      activesupport (~> 3.2.21)
+      chronic (~> 0.10.2)
+      coffee-script (~> 2.2.0)
+      colorize (~> 0.5.8)
+      compass (~> 1.0.1, >= 0.12)
+      haml (~> 4.0.5)
+      httmultiparty (= 0.3.10)
+      i18n (~> 0.6.11)
+      json (~> 1.8.0)
+      less (~> 2.2.1)
+      logger
+      mime-types (~> 1.19)
+      multi_json (~> 1.8.4)
+      sass (~> 3.4.4)
+      sprockets-sass (~> 1.2.0)
+      stringex (~> 2.0.3)
+      tilt (= 1.4.1)
+      tzinfo (~> 0.3.29)
+      yui-compressor (~> 0.12.0)
+      zip (~> 2.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -31,7 +59,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.11.1)
+    coffee-script-source (1.12.2)
     colorize (0.5.8)
     commonjs (0.2.7)
     compass (1.0.3)
@@ -66,7 +94,7 @@ GEM
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
-    json (1.8.3)
+    json (1.8.6)
     less (2.2.2)
       commonjs (~> 0.2.6)
     listen (2.7.12)
@@ -76,28 +104,6 @@ GEM
     locomotivecms-liquid (2.6.0)
     locomotivecms-solid (0.2.2.1)
       locomotivecms-liquid (~> 2.6.0)
-    locomotivecms_mounter (1.5.8)
-      RedCloth (~> 4.2.3)
-      activesupport (~> 3.2.21)
-      chronic (~> 0.10.2)
-      coffee-script (~> 2.2.0)
-      colorize (~> 0.5.8)
-      compass (~> 1.0.1, >= 0.12)
-      haml (~> 4.0.5)
-      httmultiparty (= 0.3.10)
-      i18n (~> 0.6.11)
-      json (~> 1.8.0)
-      less (~> 2.2.1)
-      logger
-      mime-types (~> 1.19)
-      multi_json (~> 1.8.4)
-      sass (~> 3.4.4)
-      sprockets-sass (~> 1.2.0)
-      stringex (~> 2.0.3)
-      tilt (= 1.4.1)
-      tzinfo (~> 0.3.29)
-      yui-compressor (~> 0.12.0)
-      zip (~> 2.0.2)
     locomotivecms_wagon (1.5.8)
       RedCloth (~> 4.2.8)
       activesupport (~> 3.2.18)
@@ -137,7 +143,7 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (3.0.0)
     rubyzip (1.1.7)
-    sass (3.4.22)
+    sass (3.4.23)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -155,7 +161,7 @@ GEM
     tilt (1.4.1)
     timers (4.0.4)
       hitimes
-    tzinfo (0.3.52)
+    tzinfo (0.3.53)
     wdm (0.1.1)
     will_paginate (3.0.12)
     yui-compressor (0.12.0)
@@ -167,6 +173,7 @@ PLATFORMS
 DEPENDENCIES
   locomotivecms-search-wagon!
   locomotivecms_liquid_extensions!
+  locomotivecms_mounter!
   locomotivecms_wagon (~> 1.5.8)
   rb-fsevent (~> 0.9.1)
   rb-inotify (~> 0.9)

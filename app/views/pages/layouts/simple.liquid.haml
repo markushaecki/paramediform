@@ -48,8 +48,8 @@ position: 1
       if (typeof jQuery === 'undefined') {
         document.write("<script src='{{ 'jquery.js' | javascript_url }}'>\x3C/script>");
       }
-  
-    %script{ "data-autopop" => "false", :src => "https://cdn.snipcart.com/scripts/2.0/snipcart.js", :id => "snipcart", :data => {:api => {:key => "YTZlYjUxNmMtMWM4Ny00NmZlLTlhOGItYzU2MjZiMzllZjAzNjM2MTY4OTY3MDU3MTE2NDY3"}}}
+
+    %script{ "data-autopop" => "false", :src => "https://cdn.snipcart.com/scripts/2.0/snipcart.js", :id => "snipcart", :data => {:api => {:key => "{% if host == 'www.paramediform.ch' %}ZDkwNDkwYzQtZmUyYi00MjUyLWFhYzMtMGVkMTNjNzgwYzk1NjM2MTY4OTY3MDU3MTE2NDY3{% else %}YTZlYjUxNmMtMWM4Ny00NmZlLTlhOGItYzU2MjZiMzllZjAzNjM2MTY4OTY3MDU3MTE2NDY3{% endif% }"}}}
 
     {{ 'application.css' | stylesheet_tag }}
     {{ 'application.css' | stylesheet_tag }}
