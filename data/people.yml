@@ -1,0 +1,49 @@
+- "Reto Zumbühl":
+    title: "Geschäftsleitung"
+    keynote: "In den Augen aller Menschen wohnt eine unstillbare Sehnsucht. In allen wohnt der gleiche Funke unstillbaren Verlangens, das gleiche heimliche Feuer ..."
+    email: "reto.zumbuehl@paramediform.ch"
+    picture: "/samples/people/reto.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    tags: ['Beirat', 'Gruppe']
+
+- "Mirjam Koch":
+    title: "Administration und ParaPan-Lizenzvergabe"
+    keynote: "Wenn alle sagen du kannst nicht, dann musst du!"
+    email: "mirjam.koch@paramediform.ch"
+    picture: "/samples/people/mirjam.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    tags: ['Gruppe']
+
+- "Rita Müller":
+    title: "Werbung"
+    keynote: "Wir warten unser Leben lang auf den außergewöhnlichen Menschen, statt die gewöhnlichen um uns her in solche zu verwandeln."
+    email: "rita.mueller@paramediform.ch"
+    picture: "/samples/people/rita.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    tags: ['Beira', 'Gruppe']
+
+- "Manuela Diener":
+    title: "Partnermanagement"
+    keynote: "Was wir am nötigsten brauchen, ist ein Mensch, der uns zwingt, das zu tun, was wir können."
+    email: "manuela.diener@paramediform.ch"
+    picture: "/samples/people/manuela.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    tags: ['Beirat', 'Gruppe']
+
+- "Andrea Polzhofer":
+    title: "Institutsleitung Lenzburg"
+    keynote: "Mein Job ist es nicht, es den Leuten besonders leicht zu machen. Mein Job ist es, sie besser zu machen."
+    email: "manuela.diener@paramediform.ch"
+    picture: "/samples/people/andrea.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    tags: ['Beirat', 'Gruppe']
+
+- "Monika Bachmann":
+    title: "Rechnungswesen und Buchhaltung"
+    keynote: "Der größte Motivator für kleine Männer Bedeutendes zu vollbringen sind die Frauen. "
+    email: "monika.bachmann@paramediform.ch"
+    picture: "/samples/people/monika.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    tags: ['Beirat', 'Gruppe']
+
+- "Dr. med. Walter Häcki":
+    _slug: walter-haecki
+    title: "Spezialist für Magen- und Darmkrankheiten"
+    keynote: "Für eine optimale Verdauung braucht der Magen die richtige Ernährung. "
+    email: "whaecki@paramediform.ch"
+    picture: "/samples/people/walter.jpg" # Path to a file in the public/samples folder or to a remote and external file.
+    tags: ['Systemzentrale', 'Verwaltungsrat']

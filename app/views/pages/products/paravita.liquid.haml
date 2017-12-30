@@ -1,0 +1,78 @@
+---
+title: Paravita®
+slug: paravita
+published: true
+listed: true
+---
+{% extends layouts/double-columns %}
+
+{% block content/main %}
+%div
+  {% capture title %}{% editable_text "Titel", format:raw, priority:"#{10}", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture %}
+  {% if title.size > 0 %}
+  %h1{:style => "padding-left:0;padding-bottom:15px"} {{ title }}
+  {% endif %}
+  {% capture einfuehrung %}{% editable_text "Einführung", format:raw, priority:"#{9}" %}{% endeditable_text %}{% endcapture %}
+  {% if einfuehrung.size > 0 %}
+  %div{:style => "padding-bottom:10px"}
+    %b {{ einfuehrung }}
+  {% endif %}
+  {% capture textabschnitt1 %}{% editable_text "Textabschnitt 1", format:raw, priority:"#{8}" %}{% endeditable_text %}{% endcapture %}
+  .vspacer
+    %p{:style => "text-align: justify;"} {{ textabschnitt1 }}
+  .vspacer
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "750", :src => "//www.youtube.com/embed/ug95YIpl4n4?rel=0&showinfo=0&autoplay=0&controls=0", :width => "1000"}
+  {% capture textabschnitt2 %}{% editable_text "Textabschnitt 2", format:raw, priority:"#{6}" %}{% endeditable_text %}{% endcapture %}
+  {% if textabschnitt2.size > 0 %}
+  .vspacer
+    %p{:style => "text-align: justify;"} {{ textabschnitt2 }}
+  {% endif %}
+  {% capture uebersichtsbild %}{% editable_file "Übersichtsbild", priority:"#{7}" %}{% endeditable_file %}{% endcapture %}
+  {% if uebersichtsbild.size > 0 %}
+  .vspacer
+    .img-box
+      %a{ href: "{{ uebersichtsbild }}", :style => "padding:0px" }
+        %img.img-responsive{ src: "{{ uebersichtsbild | resize: '900x500#' }}", alt: "Paravita Produktpalette" }
+  {% endif %}
+  {% capture untertitel %}{% editable_text "Untertitel", format:raw, format:raw, priority:"#{4}", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture %}
+  {% if untertitel.size > 0 %}
+  %h2{:style => "padding-top:0px;padding-bottom:0"} {{ untertitel }}
+  {% endif %}
+  {% capture textabschnitt3 %}{% editable_text "Textabschnitt 3", format:raw, priority:"#{3}" %}{% endeditable_text %}{% endcapture %}
+  {% if textabschnitt3.size > 0 %}
+  .vspacer
+    %p{:style => "text-align: justify;"} {{ textabschnitt3 }}
+  {% endif %}
+  .vspacer
+    %p
+      %img{:height => "137", :src => "https://www.paramediform.ch/sites/5552fcd35918ada8a7001e1c/assets/58e3a59f5918ad6a9b01575a/20070317-ParaVita-Bildmarke.jpg", :width => "275"}/
+    .row
+
+    .row
+      .col-sm-9.col-xs-12
+        %p{:style => "margin-top:7px"} ...kontaktieren Sie direkt das Institut in ihrer Region:
+      .col-sm-3.col-xs-12
+        .dropdown
+          %button.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
+            Institute
+            %span.caret
+          %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
+            {% with_scope order_by: 'name asc' %}
+            {% for institute in contents.institutes %}
+            %li{role: "presentation"}
+              %a{ href: "/{{ institute._slug }}/kontakt#institutetap", role: "menuitem", tabindex: "-1" } {{ institute.name }}
+            {% endfor %}
+            {% endwith_scope %}
+  .row
+    .col-sm-12.col-xs-12
+      {% with_scope category: "Nahrungsergänzungsmittel" %}
+      {% for other_product in contents.products.all %}
+      .imagebox{ :style => 'float:left;max-width: 31%;margin-right:2%'}
+        %a{ href: "{% path_to other_product %}", :style => "padding:0px" }
+          .ingrediencelink{:style => "height:2em;line-height:1em; text-align: center;display:flex;align-items: center;justify-content: center;"}
+            {{ other_product.name }}
+          %img.img-responsive{ src: "{{ other_product.ingredientspicture.url | resize: '400x400#' }}", alt: "{{ other_product.name }}" }
+        %br
+      {% endfor %}
+      {% endwith_scope %}
+{% endblock %}

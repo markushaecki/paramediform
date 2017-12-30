@@ -23,3 +23,36 @@
     / PREPARATION
     %br
     {{ recipe.preparation }}
+%br
+{% with_scope category: "Kochbuch" %}
+{% for product in contents.products %}
+.wellshopitem{ :style => "min-height: 20px !important" }
+  .wellinside
+    %a{ href: '{% path_to product %}'}
+      %b
+        {{ product.name | upcase }}
+    %br
+    %br
+    .img-box
+      %img{ src: '{{ product.ingredientshillpicture.url | resize: "x700" }}', :style => "max-width:100%", alt: "{{ product.name | strip_html }}" }
+    %br
+    %b Inhalt:
+    .vspacer
+      %ul
+        {% for ingredient in product.ingredients %}
+        %li {{ ingredient }}
+        {% endfor %}
+    %a{ href: '{% path_to product %}', style: "float:right;margin-right:10px"}
+      mehr...
+    %br
+    %br
+    %br
+    %br
+  .pricetag
+    %button.snipcart-add-item{ :style => "float:right", "data-item-description" => "{{ product.description }}", "data-item-id" => "{{ product._id }}", "data-item-image" => "{{ product.ingredientshillpicture.url | resize: '120x' }}", "data-item-name" => "{{ product.name }}", "data-item-price" => "{{ product.price }}", "data-item-url" => "{{ url }}", "data-item-weight" => "20"}
+      %img{ src: "{{ 'warenkorb-zum-kaufen.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "In den Warenkorb" }
+      //%span.glyphicon.glyphicon-shopping-cart{:style => "color:#F83CA4;font-size:50px"}
+    .price
+      {{ product.price }} CHF
+{% endfor %}
+{% endwith_scope %}

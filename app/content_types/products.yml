@@ -97,6 +97,13 @@ fields:
     hint: "Quadratisches Produktbild"
     localized: false
 
+- ingredientshillpicture: # The lowercase, underscored name of the field
+    label: Bild des Inhaltes Hügels # Human readable name of the field
+    type: file
+    required: false
+    hint: "Inhaltsbild angehäuft"
+    localized: false
+
 - url: # The lowercase, underscored name of the field
     label: Produkturl # Human readable name of the field
     type: string

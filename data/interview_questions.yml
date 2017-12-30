@@ -1,0 +1,15 @@
+- "Was sind die häufigsten Ursachen für Übergewicht?":
+    answer: "Dr. med. Walter Häcki: Im Vordergrund steht sicher eine falsche Ernährung. Diese beginnt oft schon in der Jugend oder im Zusammenhang mit einer Schwangerschaft, einem Schicksalsschlag oder als Folge einer Sucht. Ungenügende körperliche Betätigung reduziert den Kalorienbedarf. Falls man seine Essgewohnheiten nicht ändert, führt das zu einer ungewohnten Gewichtszunahme."
+    interview: gesunde-ernaehrung # Slug of the target entry
+
+- "Was sind die Grundsätze für eine gesunde Ernährung?":
+    answer: "W.H.: Das Wichtigste ist, dass man sich vielseitig ernährt. Dazu werden genügend Vitamine und Mineralsalze, aber auch Fett, Kohlenhydrate und Eiweisse benötigt. Diese sind in ihren Verhältnissen und Mengen dem Alter und der körperlichen Betätigung anzupassen."
+    interview: gesunde-ernaehrung # Slug of the target entry
+
+- "Ist der Jo-Jo-Effekt zwangsläufig eine Folge jeder Diät?":
+    answer: "W.H.: Jo-Jo-Effekt nennt man das Auf und Ab der Gewichtskurve. Dies tritt typischerweise bei jeder Kurzkur-Behandlung auf. Sei es in den Ferien oder zu Hause. Kaum ist die Kur vorbei, nimmt man wieder zu: Je rascher man abgenommen hat, desto schneller nimmt man wieder zu. Der Körper will sein Gewicht rasch wiederhaben. Dabei kommt es zu einer Überreaktion."
+    interview: gesunde-ernaehrung # Slug of the target entry
+
+- "Kann der Jo-Jo-Effekt verhindert werden?":
+    answer: "W.H.: Man sollte keine kurzfristigen Kuren machen. Vielmehr braucht es eine Umstellung der Ernährungsweise und eine langsame kontinuierliche Gewichtsabnahme über Wochen und Monate. Der Erfolg muss durch eine längere Nachbetreuung gesichert werden, sonst gerät man rasch wieder ins alte Fahrwasser."
+    interview: gesunde-ernaehrung # Slug of the target entry

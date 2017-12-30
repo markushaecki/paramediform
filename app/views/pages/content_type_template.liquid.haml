@@ -88,7 +88,7 @@ handle: institute_layout
             {% endif %}
             {% if institute.email != '' and institute.email != null %}
             %p 
-              %a{ href: "{% path_to institute, with:institute_contact %}#institutetap" } {{ institute.email }}
+              %a{ href: "{% path_to institute, with:institute_contact %}#institutetap", :id =>"mailadress" } {{ institute.email }}
             {% endif %}
 %br
 {% endblock %}

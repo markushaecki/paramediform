@@ -5,8 +5,9 @@
     ingredients: ['Natriumhydrogencarbonat', 'Calciumcarbonat', 'Trikaliumcitrat', 'Monohydrat', 'Magnesiumcitrat Nonahydrat']
     amount: "e 400 g"
     price: "34.90"
-    picture: "/samples/products/Paravita_Basenpulver_2.jpg"
-    ingredientspicture: "/samples/products/Basenpulver_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/basenpulver.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/basenpulver_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/basenpulver_inhaltshaufen.jpg"
     applicationtime: "Ca. 10.00 Uhr, 16.00 Uhr und vor der Nachtruhe."
 
 - "L-Carnitin retard":
@@ -17,8 +18,9 @@
     amount: "e 96 g"
     url: "/"
     price: "56.90"
-    picture: "/samples/products/L-Carnitin_retard.jpg"
-    ingredientspicture: "/samples/products/L-Carnitin_retard_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/l-carnitin.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/l-carnitin_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/l-carnitin_inhaltshaufen.jpg"
 
 - "Gelatine HD hydrolisiert":
     category: "Nahrungsergänzungsmittel"
@@ -28,8 +30,9 @@
     amount: "e 400 g"
     url: "/"
     price: "35.90"
-    picture: "/samples/products/Gelatine_HD_10_hydrolysiert.jpg"
-    ingredientspicture: "/samples/products/Gelatine_HD-10_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/gelatine_HD-10.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/gelatine_HD-10_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/gelatine_inhaltshaufen.jpg"
 
 - "Guar Granulat":
     category: "Nahrungsergänzungsmittel"
@@ -39,8 +42,9 @@
     amount: "e 300 g"
     url: "/"
     price: "33.90"
-    picture: "/samples/products/Guar_Granulat.jpg"
-    ingredientspicture: "/samples/products/Guar_Granulat_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/guar.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/guar_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/guar_inhaltshaufen.jpg"
 
 - "Edelhefe":
     category: "Nahrungsergänzungsmittel"
@@ -50,8 +54,9 @@
     amount: "250 g"
     url: "/"
     price: "12.90"
-    picture: "/samples/products/Edelhefe.jpg"
-    ingredientspicture: "/samples/products/Edelhefe_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/edelhefe.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/edelhefe_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/edelhefe_inhaltshaufen.jpg"
 
 - "Chlorella Tabletten":
     category: "Nahrungsergänzungsmittel"
@@ -61,8 +66,9 @@
     amount: "300 Tabletten"
     url: "/"
     price: "58.90"
-    picture: "/samples/products/Chlorella_Tabletten.jpg"
-    ingredientspicture: "/samples/products/Chlorella_Tabletten_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/chlorella.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/chlorella_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/chlorella_inhaltshaufen.jpg"
 
 - "Multivitamin Lutschtabletten":
     category: "Nahrungsergänzungsmittel"
@@ -72,8 +78,9 @@
     amount: "100 Tabletten, e 145 g"
     url: "/"
     price: "24.90"
-    picture: "/samples/products/Multivitamin_Lutschtabletten.jpg"
-    ingredientspicture: "/samples/products/Multivitamintabletten_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/multivitamin.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/multivitamin_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/multivitamin_inhaltshaufen.jpg"
 
 - "Q10 NT Kapseln":
     category: "Nahrungsergänzungsmittel"
@@ -83,8 +90,9 @@
     amount: "60 Kapseln, e 27 g"
     url: "/"
     price: "56.90"
-    picture: "/samples/products/Q10_NT_Kapseln.jpg"
-    ingredientspicture: "/samples/products/Q10_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/q10.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/q10_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/q10_inhaltshaufen.jpg"
     
 - "Omega-3 Fischölkapseln":
     category: "Nahrungsergänzungsmittel"
@@ -94,8 +102,9 @@
     amount: "240 Kapseln, e 170 g"
     url: "/"
     price: "59.90"
-    picture: "/samples/products/Omega-3_Fisch_l_Kapseln.jpg"
-    ingredientspicture: "/samples/products/Omega-3_Fischoelkapseln_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/omega_3.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/omega_3_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/omega_3_inhaltshaufen.jpg"
 
 - "Omega-3 Fischöl flüssig":
     category: "Nahrungsergänzungsmittel"
@@ -105,8 +114,9 @@
     amount: "200 ml, e 180 g"
     url: "/"
     price: "75.90"
-    picture: "/samples/products/Omega-3_Fisch_l_fl_ssig.jpg"
-    ingredientspicture: "/samples/products/Omega-3_ Fischoel_fluessig_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/omega_3_fluessig.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/omega_3_fluessig_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/omega_3_fluessig_inhaltshaufen.jpg"
 
 - "Urinstreifen":
     category: "Nahrungsergänzungsmittel"
@@ -116,8 +126,9 @@
     amount: "100 Stk."
     url: "/"
     price: "10.90"
-    picture: "/samples/products/Urinstreifen.jpg"
-    ingredientspicture: "/samples/products/Urinstreifen_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/urinstreifen.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/urinstreifen_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/urinstreifen_inhaltshaufen.jpg"
 
 - "Teemischung I":
     category: "Nahrungsergänzungsmittel"
@@ -127,8 +138,9 @@
     amount: "100 g"
     url: "/"
     price: "16.90"
-    picture: "/samples/products/Teemischung_I.jpg"
-    ingredientspicture: "/samples/products/ParaTee_Mischung_I_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/paratee1.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/paratee1_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/paratee1_inhaltshaufen.jpg"
 
 - "Teemischung II":
     category: "Nahrungsergänzungsmittel"
@@ -138,8 +150,9 @@
     amount: "100 g"
     url: "/"
     price: "17.90"
-    picture: "/samples/products/Teemischung_II.jpg"
-    ingredientspicture: "/samples/products/ParaTee_Mischung_II_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/paratee2.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/paratee2_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/paratee2_inhaltshaufen.jpg"
     
 - "Petersilientee":
     category: "Nahrungsergänzungsmittel"
@@ -149,8 +162,9 @@
     amount: "100 g"
     url: "/"
     price: "12.90"
-    picture: "/samples/products/Petersilientee.jpg"
-    ingredientspicture: "/samples/products/Petersilientee_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/petersilientee.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/petersilientee_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/petersilientee_inhaltshaufen.jpg"
 
 - "Himbeerblättertee":
     category: "Nahrungsergänzungsmittel"
@@ -160,8 +174,9 @@
     amount: "100 g"
     url: "/"
     price: "11.90"
-    picture: "/samples/products/Himbeerblaettertee.jpg"
-    ingredientspicture: "/samples/products/Himbeerblaettertee_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/himbeerblaettertee.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/himbeerblaettertee_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/himbeerblaettertee_inhaltshaufen.jpg"
 
 - "Rotkleeblütentee":
     category: "Nahrungsergänzungsmittel"
@@ -171,16 +186,17 @@
     amount: "100 g"
     url: "/"
     price: "17.90"
-    picture: "/samples/products/Rotkleebluetentee.jpg"
-    ingredientspicture: "/samples/products/Rotkleeblütentee_ingredients.jpg"
+    picture: "/images/products/aussenverpackung/rotkleebluetentee.jpg"
+    ingredientspicture: "/images/products/inhaltsansicht/rotkleebluetentee_inhalt.jpg"
+    ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/rotkleebluetentee_inhaltshaufen.jpg"
 
-- "Kochbuch":
+- "Kochbuch zum Kaufen:":
     category: "Kochbuch"
-    description: "blabla"
-    application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
-    ingredients: ['Aus natürlich gewachsenen Rotkleeblüten']
-    amount: "100 g"
+    description: "Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit 'Nicht-Essen' erreicht werden. Jede Gewichtsreduktion, die langfristig Erfolg haben will, muss mit dem 'Lustprinzip' arbeiten. Zum Lustvollen Kochen hilft Ihnen dieses Kochbuch"
+    application: "Sich regelmässig Zeit zum Kochen nehmen."
+    ingredients: ['36 Gourmet Kochrezepte', 'Mit Nährwertangaben zum Abnehmen', 'Auf Saisonalität unterteilte Kapitel']
+    amount: "77 fantastisch illustrierte Seiten"
     url: "/"
-    price: "17.90"
-    picture: "/samples/products/Rotkleebluetentee.jpg"
-    ingredientspicture: "/samples/products/Rotkleeblütentee_ingredients.jpg"
+    price: "39.00"
+    picture: "/images/products/inhaltsstoffe_huegel/Kochbuchseite.jpg"
+    ingredientshillpicture: "/images/products/aussenverpackung/kochbuch.jpg"

@@ -45,7 +45,7 @@ position: 11
   %br
   %div{:style => "position:relative"}
     .pricetag
-      %button.snipcart-add-item{ :style => "float:right", "data-item-description" => "{{ product.description }}", "data-item-id" => "{{ product._id }}", "data-item-image" => "{{ product.picture.url | resize: '120x120#' }}", "data-item-name" => "{{ product.name }}", "data-item-price" => "{{ product.price }}", "data-item-url" => "{{ url }}", "data-item-weight" => "20"}
+      %button.snipcart-add-item{ :style => "float:right", "data-item-description" => "{{ product.description }}", "data-item-id" => "{{ product._id }}", "data-item-image" => "{{ product.ingredientshillpicture.url | resize: '120x' }}", "data-item-name" => "{{ product.name }}", "data-item-price" => "{{ product.price }}", "data-item-url" => "{{ url }}", "data-item-weight" => "20"}
         %img{ src: "{{ 'warenkorb-zum-kaufen.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "In den Warenkorb" }
         //%span.glyphicon.glyphicon-shopping-cart{:style => "color:#F83CA4;font-size:50px"}
       .price
@@ -55,6 +55,7 @@ position: 11
   .vspacer
   .row
     .col-sm-12.col-xs-12
+      {% with_scope category: "Nahrungsergänzungsmittel" %}
       {% for other_product in contents.products.all %}
       {% unless other_product.name == product.name %}
       .imagebox{ :style => 'float:left;max-width: 31%;margin-right:2%'}
@@ -65,4 +66,5 @@ position: 11
         %br
       {% endunless %}
       {% endfor %}
+      {% endwith_scope %}
 {% endblock %}

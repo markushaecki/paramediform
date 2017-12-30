@@ -142,6 +142,10 @@ div.detailed_institute_info p{
 	            column-gap: 20px;
 	}
 	
+	.wellshopitem{
+		min-height: 570px !important;
+	}
+	
 }
 
 @media only screen and (min-width : 992px) {
@@ -348,14 +352,9 @@ body{
 	background-color: #FFEDF7 !important;;
 }
 
-.tag{
-	width:100% !important;
-	white-space: normal !important;
-}
-
 .wellshopitem{
 	position: relative;
-	min-height: 700px;
+	min-height: 720px;
 	width:100%;
 	float: left;
 	padding: 0px;
@@ -444,3 +443,27 @@ button{
    width:100%;
    background:white;
 }
+
+.btn-primary {
+  background-color: #428bca !important;
+}
+
+.snip-product__thumbnail {
+    position:relative;
+}
+
+.snip-product__thumbnail img {
+    max-height: 100% !important;  
+    max-width: 100% !important; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto !important;
+}
+
+
+

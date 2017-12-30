@@ -3,7 +3,7 @@ title: Shop
 slug: nahrungsergaenzungsmittel
 published: true
 handle: shop
-listed: false
+listed: true
 position: 1
 ---
 
@@ -17,6 +17,6 @@ position: 1
   {% for product in contents.products %}
   .col-sm-6.col-xs-12
     {% include product_listing with product %}
-  {% endfor %}	
+  {% endfor %}
   {% endwith_scope %}
 {% endblock %}

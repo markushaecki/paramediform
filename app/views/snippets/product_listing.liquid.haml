@@ -6,9 +6,7 @@
     %br
     %br
     .img-box
-      %img{ src: '{{ product.picture.url | resize: "700x700#" }}', :style => "max-width:100%", alt: "{{ product.name | strip_html }}" }
-    %br
-    %br
+      %img{ src: '{{ product.ingredientshillpicture.url | resize: "x700" }}', :style => "max-width:100%", alt: "{{ product.name | strip_html }}" }
     %b Inhalt:
     %p  
       {% for ingredient in product.ingredients %}
@@ -30,7 +28,7 @@
     %br
     .kein-arzneimittel - Kein Arzneimittel -
   .pricetag
-    %button.snipcart-add-item{ :style => "float:right", "data-item-description" => "{{ product.description }}", "data-item-id" => "{{ product._id }}", "data-item-image" => "{{ product.picture.url | resize: '120x120#' }}", "data-item-name" => "{{ product.name }}", "data-item-price" => "{{ product.price }}", "data-item-url" => "{{ url }}", "data-item-weight" => "20"}
+    %button.snipcart-add-item{ :style => "float:right", "data-item-description" => "{{ product.description }}", "data-item-id" => "{{ product._id }}", "data-item-image" => "{{ product.ingredientshillpicture.url | resize: '120x' }}", "data-item-name" => "{{ product.name }}", "data-item-price" => "{{ product.price }}", "data-item-url" => "{{ url }}", "data-item-weight" => "20"}
       %img{ src: "{{ 'warenkorb-zum-kaufen.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "In den Warenkorb" }
       //%span.glyphicon.glyphicon-shopping-cart{:style => "color:#F83CA4;font-size:50px"}
     .price

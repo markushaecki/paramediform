@@ -36,12 +36,13 @@ handle: institute_contact
     {% endunless %}
     {% endfor %}
 {% else %}
+{% if contact.surname.size > 0 %}
 
-.alert.alert-success
-  %strong Besten Dank {{ contact.surname }} {{ contact.lastname }}, wir werden uns bei Ihnen melden.
+.alert.alert-success{ type:'hidden'}
+  %strong{ type:'hidden'} Besten Dank {{ contact.surname }} {{ contact.lastname }}, wir werden uns bei Ihnen melden.
   
 {% endif %}
-
+{% endif %}
 
 {% model_form 'contacts', class: 'form-horizontal', success: path %}
 

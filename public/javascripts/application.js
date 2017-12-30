@@ -18,7 +18,7 @@ $(document).ready(function(e){
           $.cookie('basket_value', value, { path: '/' })
 		} 
       	if(value == 0 || isNaN(value)) {
-			$("a.warenkorb-style").attr("href", "/shop").removeClass("snipcart-checkout");
+			$("a.warenkorb-style").attr("href", "/kaufen/nahrungsergaenzungsmittel").removeClass("snipcart-checkout");
 			$("div.fixedfooter").addClass("dontshow");
 		} else {
 			$("a.warenkorb-style").attr("href", "#").addClass("snipcart-checkout");
