@@ -39,7 +39,7 @@ position: 1
     {% block share_meta_tags %}
     %meta{:content => "{{ page.seo_title }}", :property => "og:title"}/
     %meta{:content => "website", :property => "og:type"}/
-    %meta{:content => "http://{{ host }}{{ 'Logo.png' | theme_image_url }}", :property => "og:image"}/
+    %meta{:content => "{{ 'Logo.png' | theme_image_url }}", :property => "og:image"}/
     %meta{:content => "{{ url }}", :property => "og:url"}/
     %meta{:content => "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme", :property => "og:site_name"}/
     {% endblock %}
