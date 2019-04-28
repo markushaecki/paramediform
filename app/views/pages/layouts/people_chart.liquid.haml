@@ -7,7 +7,7 @@ position: 10
 {% extends layouts/double-columns %}
 {% block content/main %}
 
-{% capture group %}{% editable_text "Gruppenzugehörigkeit", hint: "Alle Personen welche der hier angegebenen Gruppe zugehören, werden auf dieser Seite aufgelistet.", format: "raw", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture%}
+{% capture group %}{% editable_text "Gruppenzugehörigkeit", hint: "Alle Personen welche der hier angegebenen Gruppe zugehören, werden auf dieser Seite aufgelistet.", format: "raw", line_break: false, rows: 1, inline_editing: false %}{% endeditable_text %}{% endcapture%}
 {% with_scope tags:group %}
 {% assign people_in_group = contents.people.all %}
 {% endwith_scope %}

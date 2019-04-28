@@ -11,7 +11,7 @@ description: "Mit guten Erfolgsgeschichten steigern Sie das Vertrauen von potent
 label_field_name: prename
 
 # Valid values: manually, created_at, updated_at, or the slug of any field
-order_by: startdate
+order_by: start_date
 
 # Valid values: asc (ascending) and desc (descending). Set to asc by default.
 # order_direction: asc

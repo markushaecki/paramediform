@@ -24,10 +24,9 @@ handle: institute_layout
 {% assign information = data.information %}
 {% endconsume %}
 
-{% assign path_array = path | split: '/' %}
-{% if path_array.size < 3 %}
+{% if page.handle == 'institute_layout' %}
 %script
-  window.location.replace('/{{path_array[1]}}/ernaehrungsberatung');
+  window.location.replace('{% path_to institute, with: 'institute_home' %}');
 {% endif %}
 
 .row
@@ -87,7 +86,7 @@ handle: institute_layout
             %p {{ "label_fax" | translate }} {{ institute.fax }}
             {% endif %}
             {% if institute.email != '' and institute.email != null %}
-            %p 
+            %p
               %a{ href: "{% path_to institute, with:institute_contact %}#institutetap", :id =>"mailadress" } {{ institute.email }}
             {% endif %}
 %br

@@ -14,14 +14,9 @@ position: 5
       {% block main %}
       {% endblock %}
       {% block sidebar %}
-      
+
   .col-sm-3.col-xs-12
     #sidebar
-      %form{:action => '{% path_to search %}', :role => "search"}
-        .form-group
-          %input.form-control{name: 'q', :type => "text", :placeholder => "Wonach suchen Sie?"}
-          //%button.btn.btn-default{:type => "submit"} Suchen
-
       / snipcart summary block
       %div.fixedfooter.dontshow
         %a.warenkorb-style{:href => "#"}
@@ -33,7 +28,7 @@ position: 5
                 %span.snipcart-total-items
                 Produkte
                 %br
-                %span.snipcart-total-price      
+                %span.snipcart-total-price
 
       %div.insidebar
         %a.warenkorb-style{:href => "#"}
@@ -48,7 +43,7 @@ position: 5
               %span.snipcart-total-items
               Produkte
               %br
-              %span.snipcart-total-price      
+              %span.snipcart-total-price
             .snipcart-spacer
 
       / institutes block
@@ -69,7 +64,7 @@ position: 5
             {{ 'sidebar_contact_title' | translate }}
           %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
             %img{ src: "{{ 'sidebar_contact.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Kontaktieren Sie uns" }
-      
+
       / selbststaendigkeit block
       {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_selbststaendigkeit == "true" %}
@@ -124,7 +119,7 @@ position: 5
           .text-center
             %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Aktuelle Nachrichten von Paramediform" }
       {% endif %}
-      
+
       / vorhernachher block
       {% capture enable_beforeafter %}{% editable_control "Vorher/Nachher", options: 'true=Yes,false=No', hint: "Link zu Vorher/Nachher Bilder" %}true{% endeditable_control %}{% endcapture %}
       {% if enable_beforeafter == "true" %}
@@ -157,7 +152,7 @@ position: 5
           .text-center
             %img{ src: "{{ 'sidebar_parolino.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px', alt: "Paramediform für Kinder" }
       {% endif %}
-      
+
   {% endblock %}
 
 {% endblock %}

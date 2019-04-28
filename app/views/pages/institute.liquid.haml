@@ -41,7 +41,7 @@ editable_elements:
   {% endfor %}
 .dropdown
   %button.pink-btn.btn.btn-default.dropdown-toggle{ :style => "width:100%", type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
-    %h3.text-center{:style => "margin-bottom:0"} {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe <span class="caret"></span>{% endeditable_text %} 
+    %h3.text-center{:style => "margin-bottom:0"} {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe <span class="caret"></span>{% endeditable_text %}
   %ul.dropdown-menu{:style => "margin-left:auto;margin-right: auto;left: 0;right: 0;", role: "menu", aria: {labelledby: "dropdownMenu1"}}
     {% with_scope order_by: 'name asc' %}
     {% for institut in contents.institutes %}
@@ -55,7 +55,7 @@ editable_elements:
 %h4 {% editable_text success_stories_title, format: "raw", line_break: false, rows: 1 %}Zufällig ausgewählte Erfolgsgeschichten{% endeditable_text %}
 
 .row
-  {% assign institutes = contents.institutes.all | sample: 10 %}
+  {% assign institutes = contents.institutes.all | shuffle | slice: 0, 10 %}
   {% for institute in institutes %}
   {% capture url %}{{ institute.url }}/success-stories/random.json{% endcapture %}
   {% consume data from url %}

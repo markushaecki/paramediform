@@ -6,7 +6,7 @@
         .img-box
           %img{ src: '{{ success_story.before_image.url | resize: "345x690#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} vor dem Abnehmen mit ParaMediForm" }
         .img-box
-          %img{ src: '{{ success_story.after_image.url | resize: "345x690#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} nach dem Abnehmen mit ParaMediForm" }  
+          %img{ src: '{{ success_story.after_image.url | resize: "345x690#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} nach dem Abnehmen mit ParaMediForm" }
     .clearfix
     %br
     {% include subnavigation_buttons %}
@@ -16,20 +16,20 @@
       .addthis_sharing_toolbox
       %br
     .story_title{:style => "text-weight:bold;margin-bottom:20px"}{{ success_story.experience_title }}
-    {% if (success_story.start_date != nil && success_story.start_date != '') && (success_story.programm_duration != nil && success_story.programm_duration != '') && (success_story.number_of_consultations != nil && success_story.number_of_consultations != '') && (success_story.feeling_of_abdiction != nil && success_story.feeling_of_abdiction != '') %}
+    {% if (success_story.start_date != nil and success_story.start_date != '') and (success_story.programm_duration != nil and success_story.programm_duration != '') and (success_story.number_of_consultations != nil and success_story.number_of_consultations != '') and (success_story.feeling_of_abdiction != nil and success_story.feeling_of_abdiction != '') %}
     %table.round-corner-table{:style => "width:100%;background-color:#FFF6FC"}
       %tr
         %td  &nbsp;
-      {% if success_story.start_date != nil && success_story.start_date != '' %}   
+      {% if success_story.start_date != nil and success_story.start_date != '' %}
       %tr
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-play-circle
         %td{:style => "width:35%"}
           Programmstart:
         %td{:style => "width:55%"}
-          {{ success_story.start_date | localized_date: '%d.%m.%Y' }} 
+          {{ success_story.start_date | localized_date: '%d.%m.%Y' }}
       {% endif %}
-      {% if success_story.programm_duration != nil && success_story.programm_duration != '' %}
+      {% if success_story.programm_duration != nil and success_story.programm_duration != '' and success_story.programm_duration > 0 %}
       %tr
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-time
@@ -38,7 +38,7 @@
         %td{:style => "width:35%"}
           {{ success_story.programm_duration }} Wochen
       {% endif %}
-      {% if success_story.number_of_consultations != nil && success_story.number_of_consultations != '' %}
+      {% if success_story.number_of_consultations != nil and success_story.number_of_consultations != '' %}
       %tr
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-dashboard
@@ -47,14 +47,14 @@
         %td{:style => "width:35%"}
           {{ success_story.number_of_consultations  }} Termine à 20 min
       {% endif %}
-      {% if success_story.feeling_of_abdiction != nil && success_story.feeling_of_abdiction != '' %}
+      {% if success_story.feeling_of_abdiction != nil and success_story.feeling_of_abdiction != '' %}
       %tr{:style => "vertical-align:top"}
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-eye-open
         %td{:style => "width:35%"}
           Beobachtungen:
         %td{:style => "width:35%"}
-          {{ success_story.feeling_of_abdiction }} 
+          {{ success_story.feeling_of_abdiction }}
       {% endif %}
       %tr
         %td  &nbsp;

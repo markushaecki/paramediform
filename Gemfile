@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'locomotivecms_mounter', github: 'locomotivecms/mounter', ref: '4c7d971'
-gem 'locomotivecms_wagon', '~> 1.5.8'
+gem 'locomotivecms_wagon', github: 'locomotivecms/wagon', ref: '2fe2b89'
+gem 'locomotivecms_steam', github: 'locomotivecms/steam', ref: 'e0abf4c'
 
 group :development do
   # Mac OS X
@@ -19,6 +19,4 @@ group :misc do
   # Add your extra gems here
   # gem 'susy', require: 'susy'
   # gem 'redcarpet', require: 'redcarpet'
-  gem 'locomotivecms_liquid_extensions', github: 'locomotivecms/liquid_extensions'
-  gem 'locomotivecms-search-wagon', github: 'Papipo/locomotivecms-search', branch: 'wagon'
 end

@@ -10,16 +10,16 @@
   {% if news_entry.interview %}
   {% assign type = "interview" %}
   {% if news_entry.interview.image != null %}
-  {% assign preview_image = news_entry.interview.image %}
+  {% assign preview_image = news_entry.interview.image.url %}
   {% else %}
-  {% assign preview_image = news_entry.interview.person.picture %}
+  {% assign preview_image = news_entry.interview.person.picture.url %}
   {% endif %}
   {% elsif news_entry.illustrative_text %}
   {% assign type = "illustrative_text" %}
-  {% assign preview_image = news_entry.illustrative_text.image %}
+  {% assign preview_image = news_entry.illustrative_text.image.url %}
   {% elsif news_entry.recipe %}
   {% assign type = "recipe" %}
-  {% assign preview_image = news_entry.recipe.image %}
+  {% assign preview_image = news_entry.recipe.image.url %}
   {% if news_entry.recipe.activity.attr == "versteckt" %}
   {% assign hideit = 1 %}
   {% endif %}
@@ -54,7 +54,7 @@
     {% endif %}
   {% endif %}
   {% endfor %}
-  
+
   {% if paginate.total_pages != 1 %}
   {% if params.tag == blank %}
   {% capture tag_params %}{% endcapture %}
@@ -64,5 +64,5 @@
   .text-center
     {% include pagination with pagination: paginate, other_params: tag_params %}
   {% endif %}
-  
+
 {% endpaginate %}

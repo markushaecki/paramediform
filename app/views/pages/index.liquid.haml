@@ -36,19 +36,19 @@ handle: home
 {% endwith_scope %}
 
 {% assign recipy_image = this_news.recipe.image.url %}
-{% assign success_story = contents.success_stories | sample %}
+{% assign success_story = contents.success_stories.all | shuffle | first %}
 %h1.text-center Erfolgreich abnehmen seit {{ years }} Jahren in {{ contents.institutes.size }} Instituten
 %br
 .columnize3col
   .row
     .col-xs-12
-      %p {% editable_text "Kurze Einführung zu Paramediform", format: "html" %}{% endeditable_text %} Lesen Sie hier mehr zu unserer <a href="abnehmen/die-methode">Methode</a> zum <a href="abnehmen>Abnehmen</a>
+      %p {% editable_text "Kurze Einführung zu Paramediform", format: "html" %}{% endeditable_text %} Lesen Sie hier mehr zu unserer <a href="abnehmen/die-methode">Methode</a> zum <a href="abnehmen">Abnehmen</a>
 %br
 .row
   .col-sm-8.col-xs-12
     .row
       .col-sm-6.col-xs-6
-        %a{ href:'/abnehmen/individuelle-beratung'}    
+        %a{ href:'/abnehmen/individuelle-beratung'}
           .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '400x400#' }}" }
           .fixed_title
@@ -71,7 +71,7 @@ handle: home
         .fixed_title
           %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
       .col-sm-6.col-xs-6
-        %a{ href:'/abnehmen/stoffwechseltypen'}    
+        %a{ href:'/abnehmen/stoffwechseltypen'}
           .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '400x400#' }}" }
         .fixed_title
@@ -93,7 +93,7 @@ handle: home
       {% endfor %}
     .dropdown
       %button.pink-btn.btn.btn-default.dropdown-toggle{ :style => "width:100%", type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
-        %h3.text-center{:style => "margin-bottom:0"} {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe <span class="caret"></span>{% endeditable_text %} 
+        %h3.text-center{:style => "margin-bottom:0"} {% editable_text "Institute Titel", format: "raw", line_break: false, rows: 1 %}Institute ganz in Ihrer Nähe <span class="caret"></span>{% endeditable_text %}
       %ul.dropdown-menu{:style => "margin-left:auto;margin-right: auto;left: 0;right: 0;", role: "menu", aria: {labelledby: "dropdownMenu1"}}
         {% with_scope order_by: 'name asc' %}
         {% for institut in contents.institutes %}

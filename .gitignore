@@ -5,3 +5,4 @@ config/deploy.yml
 *.log
 .DS_Store
 scripts/settings.yml
+.sass-cache
