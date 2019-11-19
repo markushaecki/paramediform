@@ -40,7 +40,7 @@ fields:
     type: string
     required: true
     hint: Kategorie des Produktes (Nahrungsergänzungsmittel oder sonstiges).
-    localized: false
+    localized: true
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
 - description:
@@ -48,7 +48,7 @@ fields:
     type: text
     required: false
     hint: Kurze Beschreibung des Produktes.
-    localized: false
+    localized: true
     searchable: false
 
 - application:
@@ -56,7 +56,7 @@ fields:
     type: text
     required: false
     hint: Anweisung zur Einnahmemenge.
-    localized: false
+    localized: true
     searchable: false
 
 - ingredients:
@@ -64,7 +64,7 @@ fields:
     type: tags
     required: false
     hint: Inhaltsbeschreibung.
-    localized: false
+    localized: true
     searchable: false
 
 - applicationtime:
@@ -72,7 +72,7 @@ fields:
     type: text
     required: false
     hint: Beschreibung des optimalen Einnahmezeitpunktes.
-    localized: false
+    localized: true
     searchable: false
 
 - amount:

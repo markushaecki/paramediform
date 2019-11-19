@@ -40,7 +40,7 @@ fields:
     type: text
     required: true
     hint: Dieser Text wird sowohl in der Übersicht als auch im Artikel selbst angezeigt.
-    localized: false
+    localized: true
     searchable: false
     # text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
 
@@ -70,7 +70,7 @@ fields:
     type: string
     required: false
     hint: "Hier kannst du den Haupttag festhalten. Am Ende der Nachricht wird damit eine Übersichtsverlinkung zu ähnlichen Texten generiert (z.B 'Das sagt der Arzt')"
-    localized: false
+    localized: true
 
 - after_news: # The lowercase, underscored name of the field
     label: Nächste Nachricht # Human readable name of the field

@@ -9,29 +9,28 @@ handle: institute_news
 {% extends parent %}
 
 {% block api_call %}
-{% capture url %}{{ institute.url }}/{{locale}}/news/one.json?slug={{ params.slug }}{% endcapture %}
+{% capture url %}{{ institute.url }}/news/one.json?slug={{ params.slug }}{% endcapture %}
 {% consume data from url %}
 {% assign this_news = data.news_entry %}
 {% endconsume %}
 {% endblock %}
 
 {% block title %}
-%title
-  Ernährungsberatung {{ institute.name }}: {{ this_news.title }}
+%title {{ 'institute_news_page_title' | t: institute_name: institute.name, news_title: this_news.title }}
 {% endblock %}
 
 {% block description %}
-%meta{name:"description", content:"Nachricht Ernährungsberatung {{ institute.name }} zum Thema: {{ this_news.title }}"}/
+%meta{name:"description", content:"{{ 'institute_news_page_description' | t: institute_name: institute.name, news_title: this_news.title }}"}/
 {% endblock %}
 
 
 {% block content/main/title %}
-%h1.title Ernährungsberatung {{ institute.name }} - Aktuelles
+%h1.title {{ 'institute_news_title' | t: institute_name: institute.name }}
 {% endblock %}
 
 {% block content/main/tab_pane %}
 
-{% capture url %}{{ institute.url }}/{{locale}}/news/all.json?page={{ params.page }}&tag={{ params.tag | encode }}{% endcapture %}
+{% capture url %}{{ institute.url }}/news/all.json?page={{ params.page }}&tag={{ params.tag | encode }}{% endcapture %}
 {% consume data from url %}
 {% assign news = data.news %}
 {% assign news_pagination = data.pagination %}
@@ -78,7 +77,7 @@ handle: institute_news
 
   {% endif %}
 %hr{:style => "margin-bottom:0px"}
-%b Aktuelles der Systemzentrale:
+%b {{ 'institute_news_headquarters_title' | t }}
 %br
 %br
 {% with_scope order_by: 'published_at desc', published_at.lt: today + 1, tags: 'wichtig' %}

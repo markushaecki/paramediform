@@ -95,14 +95,14 @@ fields:
     type: string
     required: false
     hint: Emotionale Befindlichkeit während des Programmes (1 bis max 2 Stichworte)
-    localized: false
+    localized: true
 
 - experience_title:
     label: Titel Erfahrungsbericht
     type: string
     required: false
     hint: Dieser Titel gehört zum Erfahrungsbericht
-    localized: false
+    localized: true
 
 - experience:
     label: Erfahrungsbericht
@@ -110,4 +110,4 @@ fields:
     text_formatting: html
     required: false
     hint: Ausführlicher Erfahrungsbericht zum Programm
-    localized: false
+    localized: true

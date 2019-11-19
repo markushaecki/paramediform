@@ -17,9 +17,8 @@ handle: institute_contact
 %meta{name:"description", content:"Kontaktieren Sie die Ernährungsberatung {{ institute.name }}. Die erste Stunde ist kostenlos. Sie erfahren dabei alles wichtige zur Methode von Paramediform."}/
 {% endblock %}
 
-
 {% block content/main/title %}
-%h1.title Ernährungsberatung {{ institute.name }} - Kontakt
+%h1.title {{ 'institute_contact_title' | t: name: institute.name }}
 {% endblock %}
 
 {% block content/main/tab_pane %}
@@ -39,8 +38,8 @@ handle: institute_contact
 {% if contact.surname.size > 0 %}
 
 .alert.alert-success{ type:'hidden'}
-  %strong{ type:'hidden'} Besten Dank {{ contact.surname }} {{ contact.lastname }}, wir werden uns bei Ihnen melden.
-  
+  %strong{ type:'hidden'} {{ 'contact_form_success' | t: surname: contact.surname, lastname: contact.lastname }}
+
 {% endif %}
 {% endif %}
 
@@ -48,7 +47,7 @@ handle: institute_contact
 
 %input{ type: 'hidden', name: 'notified_accounts', value: 'to-be-repl-by-js' }
 
-%h2 Hiermit kontaktieren Sie das Institut {{ institute.name }}:
+%h2 {{ 'institute_contact_subtitle' | t: name: institute.name }}
 %br
 .row
   .col-sm-6.col-xs-12
@@ -76,26 +75,27 @@ handle: institute_contact
     {% endif %}
     %br
 
-%legend Thema
+%legend {{ 'institute_contact_subject_title' | t }}
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
     %input{:type => "hidden", :name => "content[subject]", :value => "Möchte Unterlagen"}
     %input{:type => "hidden", :name => "content[subject]", :value => "Anfrage neues Institut"}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Kostenlose Terminvereinbarung", :checked => ""} Wünsche kostenlose Beratung
+        %input{:type => "radio", :name => "content[subject]", :value => "Kostenlose Terminvereinbarung", :checked => ""} {{ 'institute_contact_subject_1' | t }}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Fragen zur Methode"} Habe Fragen zur Methode
+        %input{:type => "radio", :name => "content[subject]", :value => "Fragen zur Methode"} {{ 'institute_contact_subject_2' | t }}
+
   .col-sm-6.col-xs-12
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Paravita Beratung"} Möchte eine Paravita Beratung
+        %input{:type => "radio", :name => "content[subject]", :value => "Paravita Beratung"} {{ 'institute_contact_subject_3' | t }}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Allgemeine Rückmeldung
+        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} {{ 'institute_contact_subject_4' | t }}
 
-%legend Absender
+%legend {{ 'institute_contact_sender_title' | t }}
 .row
   .col-sm-6.col-xs-12
     %select{ class: 'form-control', name: 'content[salutation]', placeholder: "Anrede" }
@@ -105,41 +105,42 @@ handle: institute_contact
     %br
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[surname]", :value => "{{ params.content.surname }}", :placeholder => "Vorname"}
+    %input{:class => "form-control", :type => "text", :name => "content[surname]", :value => "{{ params.content.surname }}", :placeholder => "{{ 'institute_contact_sender_surname' | t }}"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[lastname]", :value => "{{ params.content.lastname }}", :placeholder => "Nachname"}
+    %input{:class => "form-control", :type => "text", :name => "content[lastname]", :value => "{{ params.content.lastname }}", :placeholder =>  "{{ 'institute_contact_sender_lastname' | t }}"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[address]", :value => "{{ params.content.address }}", :placeholder => "Adresse"}
+    %input{:class => "form-control", :type => "text", :name => "content[address]", :value => "{{ params.content.address }}", :placeholder => "{{ 'institute_contact_sender_address' | t }}"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :value => "{{ params.content.housenumber }}", :placeholder => "Hausnummer"}
+    %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :value => "{{ params.content.housenumber }}", :placeholder => "{{ 'institute_contact_sender_housenumber' | t }}"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :value => "{{ params.content.zipcode }}", :placeholder => "PLZ"}
+    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :value => "{{ params.content.zipcode }}", :placeholder => "{{ 'institute_contact_sender_zipcode' | t }}"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[place]", :value => "{{ params.content.place }}", :placeholder => "Ort"}
+    %input{:class => "form-control", :type => "text", :name => "content[place]", :value => "{{ params.content.place }}", :placeholder => "{{ 'institute_contact_sender_place' | t }}"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[phone]", :value => "{{ params.content.phone }}",:placeholder => "Telefon"}
+    %input{:class => "form-control", :type => "text", :name => "content[phone]", :value => "{{ params.content.phone }}",:placeholder => "{{ 'institute_contact_sender_phone' | t }}"}
+.row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[email]", :value => "{{ params.content.email }}", :placeholder => "E-Mail"}
+    %input{:class => "form-control", :type => "text", :name => "content[email]", :value => "{{ params.content.email }}", :placeholder => "{{ 'institute_contact_sender_email' | t }}"}
 .row
   .col-sm-12.col-xs-12
     .checkbox
       %label
-        %input{:type => "checkbox", :name => "content[existing_customer]"} Ich bin oder war bereits Kundin oder Kunde bei ParaMediForm.
+        %input{:type => "checkbox", :name => "content[existing_customer]"} {{ 'institute_contact_existing_customer' | t }}
     %br
-%legend Nachricht
+%legend {{ 'institute_contact_story_title' | t }}
 %textarea{:class => "form-control", :name => "content[message]", :value => "{{customer_message.name}}" } {{customer_message.message}}
 %br
 .checkbox
   %label
-    %input{:type => "checkbox", :name => "content[newsletter]", :checked => "yes"} Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm.
+    %input{:type => "checkbox", :name => "content[newsletter]", :checked => "yes"} {{ 'institute_contact_newsletter' | t }}
 %br
 %br
 %input{:type => "hidden", :name => "content[institute]", :value => "{{ institute.name }}"}
 .text-center
-  %button{ :class => "btn btn-primary", :type => "submit"} Senden
+  %button{ :class => "btn btn-primary", :type => "submit"} {{ 'institute_contact_submit' | t }}
 %br
 {% endmodel_form %}
 %hr

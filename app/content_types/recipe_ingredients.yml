@@ -32,7 +32,7 @@ fields:
     type: string
     required: true
     hint: Benennen sie hier die Zutat in max. 60 Buchstaben.
-    localized: false
+    localized: true
     searchable: true
 
 - amount: # The lowercase, underscored name of the field
@@ -47,7 +47,7 @@ fields:
     type: string
     required: false
     hint: Die Einheit soll nach üblicher Art und Weise abgekürzt werden. (Gramm => g; Esslöffel => EL)
-    localized: false
+    localized: true
 
 - recipe: # The lowercase, underscored name of the field
     label: Rezept # Human readable name of the field

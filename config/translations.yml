@@ -7,6 +7,89 @@
 #   en: Hello world !
 #   fr: Bonjour le monde !
 
+# === Institute - Contact page ===
+
+institute_contact_title:
+  de: Ernährungsberatung {{ name }} - Kontakt
+  fr: Conseil diététique {{ name }} - Contact
+
+institute_contact_subtitle:
+  de: "Hiermit kontaktieren Sie das Institut {{ name }}:"
+
+institute_contact_form_success:
+  de: "Besten Dank {{ surname }} {{ lastname }}, wir werden uns bei Ihnen melden."
+
+institute_contact_subject_title:
+  de: "Thema"
+  fr: "Sujet"
+
+institute_contact_subject_1:
+  de: "Wünsche kostenlose Beratung"
+
+institute_contact_subject_2:
+  de: "Habe Fragen zur Methode"
+
+institute_contact_subject_3:
+  de: Möchte eine Paravita Beratung
+
+institute_contact_subject_4:
+  de: Allgemeine Rückmeldung
+
+institute_contact_sender_title:
+  de: Absender
+
+institute_contact_sender_surname:
+  de: Vorname
+
+institute_contact_sender_lastname:
+  de: Nachname
+
+institute_contact_sender_address:
+  de: Adresse
+
+institute_contact_sender_housenumber:
+  de: Hausnummer
+
+institute_contact_sender_zipcode:
+  de: PLZ
+
+institute_contact_sender_place:
+  de: Ort
+
+institute_contact_sender_phone:
+  de: Telefon
+
+institute_contact_sender_email:
+  de: E-Mail
+
+institute_contact_existing_customer:
+  de: "Ich bin oder war bereits Kundin oder Kunde bei ParaMediForm."
+
+institute_contact_story_title:
+  de: Nachricht
+
+institute_contact_newsletter:
+  de: "Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm."
+
+institute_contact_submit:
+  de: Senden
+
+# === Institute - Contact page ===
+
+institute_news_page_title:
+  de: "Ernährungsberatung {{ institute_name }}: {{ news_title }}"
+
+institute_news_page_description:
+  de: "Nachricht Ernährungsberatung {{ institute_name }} zum Thema: {{ news_title }}"
+
+institute_news_title:
+  de: "Ernährungsberatung {{ institute_name }} - Aktuelles"
+
+institute_news_headquarters_title:
+  de: "Aktuelles der Systemzentrale:"
+
+# === Others ===
+
 locales_de:
   de: Deutsch
   en: German
@@ -41,7 +124,7 @@ sidebar_contact_title:
 
 sidebar_institutes_title:
   de: Institute
-  en: Institutes 
+  en: Institutes
 
 sidebar_news_title:
   de: Aktuelles
@@ -53,7 +136,7 @@ sidebar_share_title:
 
 sidebar_selbststaendigkeit_title:
   de: Ausbildung
-  en: Education 
+  en: Education
 
 sidebar_paravita_title:
   de: Mikronährstoffe

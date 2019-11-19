@@ -54,6 +54,7 @@ position: 1
     {{ 'application.css' | stylesheet_tag }}
     {{ 'application.css' | stylesheet_tag }}
     {{ 'bootstrap.css' | stylesheet_tag }}
+    {{ 'bootstrap_changes.css' | stylesheet_tag }}
     {{ 'snipcart.css' | stylesheet_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
     {{ 'jquery.cookie.js' | javascript_tag }}
@@ -73,25 +74,26 @@ position: 1
       ga('create', 'UA-75210020-1', 'auto');
       ga('send', 'pageview')
 
-  :javascript
-    !function(f,b,e,v,n,t,s)
+    :javascript
+      !function(f,b,e,v,n,t,s)
 
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '1449014745152657');
+      fbq('init', '1449014745152657');
 
-    fbq('track', 'PageView');
+      fbq('track', 'PageView');
 
-  %noscript
-    %img{:height => "1", :src => "https://www.facebook.com/tr?id=1449014745152657&ev=PageView\r\n&noscript=1", :width => "1"}/
+    {% alt_page_links %}
 
   %body
+    %noscript
+      %img{:height => "1", :src => "https://www.facebook.com/tr?id=1449014745152657&ev=PageView\r\n&noscript=1", :width => "1"}/
     #header
       %div.relative_position
         /%img.atmospere{ src: "{{ 'hintergrundbild.png' | theme_image_url }}" }
@@ -111,9 +113,17 @@ position: 1
             .collapse.navbar-collapse#bs-example-navbar-collapse-1
               %ul.nav.navbar-nav.nav-justified
                 {% nav site, exclude: '^(layouts)', depth: 2, no_wrapper: true, bootstrap: true %}
-
-
-
+                %li.dropdown.dropdown--locales
+                  %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' }, role: 'button', :'aria-haspopup' => true, :'aria-expanded' => 'false' }
+                    {{ locale }}
+                    %span.caret
+                  %ul.dropdown-menu
+                    {% for _locale in locales %}
+                    {% if _locale != locale %}
+                    %a{ href: '{% path_to page, locale: _locale %}' }
+                      {{ _locale }}
+                    {% endif %}
+                    {% endfor %}
 
       #content
         .container{ :style => "max-width:750px"}

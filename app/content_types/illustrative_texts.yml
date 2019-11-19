@@ -40,8 +40,7 @@ fields:
     type: text
     required: true
     hint: Dieser Text ist der eingeltiche Inhalt der Nachricht. Er bedarf keiner Einleitung mehr.
-    localized: false
-    searchable: true
+    localized: true
     text_formatting: html
 
 - image: # The lowercase, underscored name of the field

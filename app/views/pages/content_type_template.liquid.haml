@@ -19,7 +19,7 @@ handle: institute_layout
 
 {% block content/main %}
 
-{% capture url %}{{institute.url}}/{{locale}}/index.json{% endcapture %}
+{% capture url %}{{institute.url}}/index.json{% endcapture %}
 {% consume data from url %}
 {% assign information = data.information %}
 {% endconsume %}

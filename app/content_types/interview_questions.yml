@@ -32,7 +32,7 @@ fields:
     type: string
     required: true
     hint: Die Frage welche gestellt wird.
-    localized: false
+    localized: true
     searchable: true
 
 - answer: # The lowercase, underscored name of the field
@@ -40,7 +40,7 @@ fields:
     type: text
     required: true
     hint: Die zugehörige Antwort zur oben gestellten Frage.
-    localized: false
+    localized: true
     text_formatting: html # html (uses rich text editor) or text (uses plain text editor)
     searchable: true
 
