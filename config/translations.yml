@@ -88,6 +88,31 @@ institute_news_title:
 institute_news_headquarters_title:
   de: "Aktuelles der Systemzentrale:"
 
+# === Institute - Success stories ===
+
+institute_success_stories_page_description:
+  de: Aus Ernährungsberatung wird eine attraktive Figur. Die Erfolgsgeschichten aus {{ institute_name }} finden Sie hier."
+
+institute_success_stories_title:
+  de: "Ernährungsberatung {{ institute_name }} - Erfolgsgeschichten"
+
+institute_success_stories_none:
+  de: "Herzlich willkommen bei PMF-{{ institute_name }}. Das Institut hat vor kurzem eröffnet, bald werden die ersten Erfolgsgeschichten für Sie aus PMF {{ institute_name }} erscheinen."
+
+institute_success_stories_note:
+  de: "Hinweis: Wir gratulieren unseren Kundinnen und Kunden! Sie finden auf unserer Homepage eine grosse Anzahl persönlicher Erfolgsgeschichten. Bei den Fotos handelt es sich um Originalaufnahmen. ParaMediForm wird nicht bei krankhafter Fettsucht angeboten. Für die nachhaltige Gewichtsreduzierung bedarf es der dauerhaften Einhaltung der im Programm vermittelten Ernährungsregeln."
+
+# === Institute - Team ===
+
+institute_team_page_title:
+  de: "Abnehmen {{ institute_name }}, so werden sie schlank!"
+
+institute_team_page_description:
+  de: "Abnehmen {{ institute_name }}, Ein Team stellt sich ganz in Ihren ernährungsberaterischen Dienst."
+
+institute_team_title:
+  de: "Abnehmen {{ institute_name }} - Team"
+
 # === Others ===
 
 locales_de:

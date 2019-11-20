@@ -10,23 +10,23 @@ handle: institute_success_stories
 {% extends parent %}
 
 {% block description %}
-%meta{name:"description", content:"Aus Ernährungsberatung wird eine attraktive Figur. Die Erfolgsgeschichten aus {{ institute.name }} finden Sie hier."}/
+%meta{name:"description", content:"{{ 'institute_success_stories_page_description' | t: institute_name: institute.name }}"}/
 {% endblock %}
 
 {% block content/main/title %}
-%h1.title Ernährungsberatung {{ institute.name }} - Erfolgsgeschichten
+%h1.title {{ 'institute_success_stories_title' | t: institute_name: institute.name }}
 {% endblock %}
 
 {% comment %}
 {% block content/main/tab_pane %}
-{% capture url %}{{ institute.url }}/{{locale}}/success-stories/all.json{% endcapture %}
+{% capture url %}{{ institute.url }}/success-stories/all.json{% endcapture %}
 {% consume data from url %}
 {% assign success_stories = data.success_stories %}
 {% endconsume %}
 
 {% if params.slug %}
 
-{% capture url %}{{ institute.url }}/{{locale}}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
+{% capture url %}{{ institute.url }}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
 {% consume data from url %}
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
@@ -37,9 +37,9 @@ handle: institute_success_stories
 {% else %}
 / by default, we display the list of success stories
 .row
-  {% if success_stories.size == 0 %}
+  {% if success_stories is empty or success_stories.size == 0 %}
   .col-sm-12.col-xs-12
-    .p Herzlich willkommen bei PMF-{{ institute.name }}. Das Institut hat vor kurzem eröffnet, bald werden die ersten Erfolgsgeschichten für Sie aus PMF {{ institute.name }} erscheinen. 
+    .p {{ 'institute_success_stories_none' | t: institute_name: institute.name }}
     %br
   {% else %}
   {% for success_story in success_stories %}
@@ -52,7 +52,7 @@ handle: institute_success_stories
   .col-sm-12.col-xs-12
     {% include note %}
   {% endif %}
-  
+
 {% endif %}
 
 {% endblock %}
@@ -61,7 +61,7 @@ handle: institute_success_stories
 
 {% block share_meta_tags %}
 {% if params.slug %}
-{% capture url %}{{ institute.url }}/{{locale}}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
+{% capture url %}{{ institute.url }}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
 {% consume data from url %}
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
@@ -77,7 +77,7 @@ handle: institute_success_stories
 
 {% block title %}
 {% if params.slug %}
-{% capture url %}{{ institute.url }}/{{locale}}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
+{% capture url %}{{ institute.url }}/success-stories/one.json?slug={{ params.slug }}{% endcapture %}
 {% consume data from url %}
 {% assign success_story = data.success_story.first %}
 {% endconsume %}

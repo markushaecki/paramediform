@@ -7,20 +7,22 @@ position: 4
 handle: institute_team
 ---
 {% extends parent %}
+
 {% block title %}
-%title
-  Abnehmen {{ institute.name }}, so werden sie schlank!
+%title {{ 'institute_team_page_title' | t: institute_name: institute.name }}
 {% endblock %}
+
 {% block description %}
-%meta{name:"description", content:"Abnehmen {{ institute.name }}, Ein Team stellt sich ganz in Ihren ernährungsberaterischen Dienst."}/
+%meta{name:"description", content: "{{ 'institute_team_page_description' | t: institute_name: institute.name }}"}/
 {% endblock %}
+
 {% block content/main/title %}
-%h1.title Abnehmen {{ institute.name }} - Team
+%h1.title {{ 'institute_team_title' | t: institute_name: institute.name }}
 {% endblock %}
 
 {% block content/main/tab_pane %}
 
-{% capture url %}{{ institute.url }}/{{locale}}/team-members/all.json{% endcapture %}
+{% capture url %}{{ institute.url }}/team-members/all.json{% endcapture %}
 {% consume data from url %}
 {% assign team_members = data.team_members %}
 {% endconsume %}
