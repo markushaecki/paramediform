@@ -127,6 +127,73 @@ institute_weight_curve_status_title:
 institute_weight_curve_status_notification:
   de: "<b>Erklärung:</b> Die Gewichtskurve zeigt anonymisiert die Erfolge, aller sich aktuell im Programm befindlichen Personen. Eine Einheit nach rechts illustriert eine Woche und eine nach unten das verlorene Kilogramm. Diese Gewichtskurve wird im Anschluss an die Beratung gemeinsam nachgeführt."
 
+# === Layouts - Double columnns ===
+
+layout_double_columns_cart_product:
+  de: Produkte
+
+layout_double_columns_cart_title:
+  de: Warenkorb
+
+layout_double_columns_sidebar_institutes_title:
+  de: Institute
+
+layout_double_columns_sidebar_institutes_image_alt:
+  de: Ernährungsberatung Schweiz
+
+layout_double_columns_sidebar_contact_title:
+  de: Anmelden
+
+layout_double_columns_sidebar_contact_image_alt:
+  de: Kontaktieren Sie uns
+
+layout_double_columns_sidebar_education_title:
+  de: Ausbildung
+
+layout_double_columns_sidebar_education_image_alt:
+  de: Machen Sie sich selbstständig
+
+layout_double_columns_sidebar_paravita_title:
+  de: Mikronährstoffe
+
+layout_double_columns_sidebar_paravita_image_alt:
+  de: Produkte zur Ernährungsergänzung
+
+layout_double_columns_sidebar_parapan_title:
+  de: Parapan
+
+layout_double_columns_sidebar_parapan_image_alt:
+  de: Das Ballaststoffreiche Parapan Brot
+
+layout_double_columns_sidebar_method_title:
+  de: Die Methode
+
+layout_double_columns_sidebar_method_image_alt:
+  de: "Die ParaMediForm Methode"
+
+layout_double_columns_sidebar_news_title:
+  de: Aktuelles
+
+layout_double_columns_sidebar_news_image_alt:
+  de: "Aktuelle Nachrichten von Paramediform"
+
+layout_double_columns_sidebar_beforeafter_title:
+  de: Beispiele
+
+layout_double_columns_sidebar_beforeafter_image_alt:
+  de: Unsere Erfolgsgeschiten
+
+layout_double_columns_sidebar_cookbook_title:
+  de: Kochbuch
+
+layout_double_columns_sidebar_cookbook_image_alt:
+  de: Das Kochbuch zur Gaumenfreude in allen Jahreszeiten
+
+layout_double_columns_sidebar_kids_title:
+  de: Für Kinder
+
+layout_double_columns_sidebar_kids_image_alt:
+  de: Paramediform für Kinder
 
 # === Others ===
 
@@ -158,45 +225,9 @@ zoom_in:
   de: "zoom +"
   en: "zoom +"
 
-sidebar_contact_title:
-  de: Anmelden
-  en: Register
-
-sidebar_institutes_title:
-  de: Institute
-  en: Institutes
-
-sidebar_news_title:
-  de: Aktuelles
-  en: News
-
 sidebar_share_title:
   de: Weiterempfehlen
   en: Share
-
-sidebar_selbststaendigkeit_title:
-  de: Ausbildung
-  en: Education
-
-sidebar_paravita_title:
-  de: Mikronährstoffe
-  en: Micronutrient
-
-sidebar_parapan_title:
-  de: Parapan
-  en: Parapan
-
-sidebar_method_title:
-  de: Die Methode
-  en: Method
-
-sidebar_beforeafter_title:
-  de: Beispiele
-  en: Successes
-
-sidebar_kochbuch_title:
-  de: Kochbuch
-  en: Cookbook
 
 label_phone:
   de: Tel
@@ -278,14 +309,3 @@ following_errors_occured:
   de: Nachfolgende Fehler sind aufgetreten
   en: The following errors occured
 
-sidebar_kinder_title:
-  de: Für Kinder
-  en: For Children
-
-sidebar_method_title:
-  de: Die Methode
-  en: Method
-
-sidebar_beforeafter_title:
-  de: Beispiele
-  en: Examples

@@ -26,7 +26,7 @@ position: 5
                 %img{ src: "{{ 'warenkorb.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Mineralstoffe kaufen" }
               .snipcart-summary.text-center{:style => "float:left;margin-left:40px"}
                 %span.snipcart-total-items
-                Produkte
+                {{ 'layout_double_columns_cart_product' | t }}
                 %br
                 %span.snipcart-total-price
 
@@ -35,13 +35,13 @@ position: 5
           #snipcart-shop.shop.well
             .snipcart-spacer
             %h3.text-center.warenkorb-link-style
-              Warenkorb
+              {{ 'layout_double_columns_cart_title' | t }}
             .snipcart-spacer
             .text-center
               %img{ src: "{{ 'warenkorb.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Mineralstoffe kaufen" }
             .snipcart-summary.text-center
               %span.snipcart-total-items
-              Produkte
+              {{ 'layout_double_columns_cart_product' | t }}
               %br
               %span.snipcart-total-price
             .snipcart-spacer
@@ -52,39 +52,41 @@ position: 5
       %a{ href: '{% path_to institute %}'}
         .institutes.well
           %h3.text-center
-            {{ 'sidebar_institutes_title' | translate }}
+            {{ 'layout_double_columns_sidebar_institutes_title' | translate }}
           .text-center
-            %img{ src: "{{ 'Ernaehrungsberatung_Schweiz.jpg' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Ernährungsberatung Schweiz" }
+            %img{ src: "{{ 'Ernaehrungsberatung_Schweiz.jpg' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'layout_double_columns_sidebar_institutes_image_alt' | t }}" }
       {% endif %}
 
       / contact block
       %a{ href: '{% path_to contact_form %}', :id => "sidebar_contact" }
         .contact.well
           %h3.text-center
-            {{ 'sidebar_contact_title' | translate }}
+            {{ 'layout_double_columns_sidebar_contact_title' | translate }}
           %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
-            %img{ src: "{{ 'sidebar_contact.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Kontaktieren Sie uns" }
+            %img{ src: "{{ 'sidebar_contact.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'layout_double_columns_sidebar_contact_image_alt' | t }}" }
 
       / selbststaendigkeit block
       {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_selbststaendigkeit == "true" %}
-      %a{ href: '/unternehmen/selbststaendigkeit' }
+      {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1 %}/unternehmen/selbststaendigkeit{% endeditable_text %}{% endcapture %}
+      %a{ href: '{{ url }}' }
         .news.well
           %h3.text-center
-            {{ 'sidebar_selbststaendigkeit_title' | translate }}
+            {{ 'layout_double_columns_sidebar_education_title' | translate }}
           .text-center
-            %img{ src: "{{ 'Ernaehrungsberatung_Ausbildung.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Machen Sie sich selbstständig" }
+            %img{ src: "{{ 'Ernaehrungsberatung_Ausbildung.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'layout_double_columns_sidebar_education_image_alt' | t }}" }
       {% endif %}
 
       / paravita block
       {% capture enable_paravita %}{% editable_control "Paravita", options: 'true=Yes,false=No', hint: "Zeigt einen Link zu den Paravita Produkten an. " %}false{% endeditable_control %}{% endcapture %}
       {% if enable_paravita == "true" %}
-      %a{ href: '/produkte/paravita'}
+      {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1 %}/produkte/paravita{% endeditable_text %}{% endcapture %}
+      %a{ href: '{{ url }}'}
         .institutes.well
           %h3.text-center
-            {{ 'sidebar_paravita_title' | translate }}
+            {{ 'layout_double_columns_sidebar_paravita_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Produkte zur Ernährungsergänzung" }
+            %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'layout_double_columns_sidebar_paravita_image_alt' | t }}" }
       {% endif %}
 
       / parapan block
@@ -93,20 +95,21 @@ position: 5
       %a{ href: 'http://www.parapan.ch'}
         .institutes.well
           %h3.text-center
-            {{ 'sidebar_parapan_title' | translate }}
+            {{ 'layout_double_columns_sidebar_parapan_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Das Ballaststoffreiche Parapan Brot" }
+            %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'layout_double_columns_sidebar_parapan_image_alt' | t }}" }
       {% endif %}
 
-      / parapan block
+      / Methode block
       {% capture enable_methode %}{% editable_control "Methode", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Methode an." %}true{% endeditable_control %}{% endcapture %}
       {% if enable_methode == "true" %}
-      %a{ href: '/abnehmen/die-methode'}
+      {% capture url %}{% editable_text "sidebar_method_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/die-methode{% endeditable_text %}{% endcapture %}
+      %a{ href: '{{ url }}'}
         .institutes.well
           %h3.text-center
-            {{ 'sidebar_method_title' | translate }}
+            {{ 'layout_double_columns_sidebar_method_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Die ParaMediForm Methode" }
+            %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'layout_double_columns_sidebar_method_image_alt' | t }}" }
       {% endif %}
 
       / news block
@@ -115,9 +118,9 @@ position: 5
       %a{ href: '{% path_to news %}' }
         .news.well
           %h3.text-center
-            {{ 'sidebar_news_title' | translate }}
+            {{ 'layout_double_columns_sidebar_news_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Aktuelle Nachrichten von Paramediform" }
+            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'layout_double_columns_sidebar_news_image_alt' | t }}" }
       {% endif %}
 
       / vorhernachher block
@@ -126,31 +129,33 @@ position: 5
       %a{ href: '{% path_to system_success_story %}' }
         .news.well
           %h3.text-center
-            {{ 'sidebar_beforeafter_title' | translate }}
+            {{ 'layout_double_columns_sidebar_beforeafter_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_vorhernachher.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Unsere Erfolgsgeschiten" }
+            %img{ src: "{{ 'sidebar_vorhernachher.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'layout_double_columns_sidebar_beforeafter_image_alt' | t }}" }
       {% endif %}
 
       / Kochbuch block
       {% capture enable_kochbuch %}{% editable_control "Kochbuch", options: 'true=Yes,false=No', hint: "Link zum Bestellen von Kochbuch" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_kochbuch == "true" %}
-      %a{ href: '/kaufen/kochbuch-zum-kaufen' }
+      {% capture url %}{% editable_text "sidebar_cookbook_url", line_break: false, format: 'raw', rows: 1 %}/kaufen/kochbuch-zum-kaufen{% endeditable_text %}{% endcapture %}
+      %a{ href: '{{ url }}' }
         .well
           %h3.text-center
-            {{ 'sidebar_kochbuch_title' | translate }}
+            {{ 'layout_double_columns_sidebar_cookbook_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_kochbuch.png' | theme_image_url | resize: 'x160' }}", style: 'height: 80px', alt: "Das Kochbuch zur Gaumenfreude in allen Jahreszeiten" }
+            %img{ src: "{{ 'sidebar_kochbuch.png' | theme_image_url | resize: 'x160' }}", style: 'height: 80px', alt: "{{ 'layout_double_columns_sidebar_cookbook_image_alt' | t }}" }
       {% endif %}
 
-      / Kochbuch block
+      / Kinder block
       {% capture enable_kinder %}{% editable_control "Kinderprogramm", options: 'true=Yes,false=No', hint: "Link zum Kinderprogramm Parolino" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_kinder == "true" %}
-      %a{ href: '/abnehmen/parolino-das-kinderprogramm' }
+      {% capture url %}{% editable_text "sidebar_kids_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/parolino-das-kinderprogramm{% endeditable_text %}{% endcapture %}
+      %a{ href: '{{ url }}' }
         .well
           %h3.text-center
-            {{ 'sidebar_kinder_title' | translate }}
+            {{ 'layout_double_columns_sidebar_kids_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_parolino.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px', alt: "Paramediform für Kinder" }
+            %img{ src: "{{ 'sidebar_parolino.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px', alt: "{{ 'layout_double_columns_sidebar_kids_image_alt' | t }}" }
       {% endif %}
 
   {% endblock %}
