@@ -197,8 +197,75 @@ layout_double_columns_sidebar_kids_image_alt:
 
 # === Layouts - Simple ===
 
+layout_simple_meta_og_site_name:
+  de: ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme
+
 layout_simple_logo_tagline:
   de: Abnehmen durch Ernährungsberatung von ParaMediForm
+
+# === Products page - Content type template ===
+
+products_template_ingredients_title:
+  de: "Zutaten:"
+
+products_template_usage_title:
+  de: "Anwendung:"
+
+products_template_recommendation_title:
+  de: "Empfohlene Einnahmezeiten:"
+
+products_template_quantity_title:
+  de: "Menge:"
+
+products_template_other_products_title:
+  de: "Weitere Produkte:"
+
+products_template_category:
+  de: "Nahrungsergänzungsmittel"
+  fr: "Compléments alimentaires"
+
+# === Products page - Paravita ===
+
+products_paravita_image_alt:
+  de: "Paravita Produktpalette"
+
+products_paravita_explanation:
+  de: "...kontaktieren Sie direkt das Institut in ihrer Region:"
+
+products_paravita_institute:
+  de: Institute
+
+products_paravita_category:
+  de: Nahrungsergänzungsmittel
+  fr: Compléments alimentaires
+
+
+# === Products page - Webshop ===
+
+products_webshop_title:
+  de: Nahrungsergänzungsmittel
+  fr: Compléments alimentaires
+
+products_webshop_category:
+  de: Nahrungsergänzungsmittel
+  fr: Compléments alimentaires
+
+# === Snippets ===
+
+snippet_product_listing_content_title:
+  de: "Inhalt:"
+
+snippet_product_listing_usage_title:
+  de: "Anwendungsmöglichkeiten:"
+
+snippet_product_listing_quantity_title:
+  de: "Menge"
+
+snippet_product_listing_more:
+  de: "mehr..."
+
+snippet_product_listing_no_medicine:
+  de: "Kein Arzneimittel"
 
 # === Others ===
 

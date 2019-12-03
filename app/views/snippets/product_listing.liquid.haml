@@ -7,26 +7,26 @@
     %br
     .img-box
       %img{ src: '{{ product.ingredientshillpicture.url | resize: "x700" }}', :style => "max-width:100%", alt: "{{ product.name | strip_html }}" }
-    %b Inhalt:
-    %p  
+    %b {{ 'snippet_product_listing_content_title' | t }}
+    %p
       {% for ingredient in product.ingredients %}
       {{ ingredient }} &nbsp;
       {% endfor %}
-    %b Anwendungsmöglichkeiten:
+    %b {{ 'snippet_product_listing_usage_title' | t }}
     {{ product.application | truncate: 80 }}
     %br
     %br
-    %b Menge:
+    %b {{ 'snippet_product_listing_quantity_title' | t }}
     {{ product.amount }}
     %br
     %a{ href: '{% path_to product %}', style: "float:right"}
-      mehr...
+      {{ 'snippet_product_listing_more' | t }}
     %br
     %br
     %br
     %br
     %br
-    .kein-arzneimittel - Kein Arzneimittel -
+    .kein-arzneimittel - {{ 'snippet_product_listing_no_medicine' | t }} -
   .pricetag
     %button.snipcart-add-item{ :style => "float:right", "data-item-description" => "{{ product.description }}", "data-item-id" => "{{ product._id }}", "data-item-image" => "{{ product.ingredientshillpicture.url | resize: '120x' }}", "data-item-name" => "{{ product.name }}", "data-item-price" => "{{ product.price }}", "data-item-url" => "{{ url }}", "data-item-weight" => "20"}
       %img{ src: "{{ 'warenkorb-zum-kaufen.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "In den Warenkorb" }

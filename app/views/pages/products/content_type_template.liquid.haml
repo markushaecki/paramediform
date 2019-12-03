@@ -23,21 +23,21 @@ position: 3
     .img-box
       %a{ href: "{{ product.picture.url }}", :style => "padding:0px" }
         %img.img-responsive{ src: "{{ product.picture.url | resize: '900x400#' }}", alt: "{{ product.name }}" }
-  %h3{:style => "padding-top:0px;padding-bottom:0"} Zutaten:
+  %h3{:style => "padding-top:0px;padding-bottom:0"} {{ 'products_template_ingredients_title' | t }}
   .vspacer
     %ul
       {% for ingredient in product.ingredients %}
       %li {{ ingredient }}
       {% endfor %}
-  %h3{:style => "padding-top:0px;padding-bottom:0"} Anwendung:
+  %h3{:style => "padding-top:0px;padding-bottom:0"} {{ 'products_template_usage_title' | t }}
   .vspacer
     %p {{ product.application }}
   {% if product.applicationtime %}
-  %h3{:style => "padding-top:0px;padding-bottom:0"} Empfohlene Einnahmezeiten:
+  %h3{:style => "padding-top:0px;padding-bottom:0"} {{ 'products_template_recommendation_title' | t }}
   .vspacer
     %div {{ product.applicationtime }}
   {% endif %}
-  %h3{:style => "padding-top:0px;padding-bottom:0"} Menge:
+  %h3{:style => "padding-top:0px;padding-bottom:0"} {{ 'products_template_quantity_title' | t }}
   %p {{ product.amount }}
   %br
   %br
@@ -51,11 +51,12 @@ position: 3
       .price
         {{ product.price }} CHF
   .vspacer
-  %h3{:style => "padding-top:0px;padding-bottom:0"} Weitere Produkte:
+  %h3{:style => "padding-top:0px;padding-bottom:0"} {{ 'products_template_other_products_title' | t }}
   .vspacer
   .row
     .col-sm-12.col-xs-12
-      {% with_scope category: "Nahrungsergänzungsmittel" %}
+      {% capture category_name %}{{ 'products_template_category' | t }}{% endcapture %}
+      {% with_scope category: category_name %}
       {% for other_product in contents.products.all %}
       {% unless other_product.name == product.name %}
       .imagebox{ :style => 'float:left;max-width: 31%;margin-right:2%'}

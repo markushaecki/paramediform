@@ -10,10 +10,11 @@ position: 1
 {% extends layouts/double-columns %}
 
 {% block content/main %}
-%h1 Nahrungsergänzungsmittel
+%h1 {{ 'products_webshop_title' | t }}
 %br
 .row
-  {% with_scope category: "Nahrungsergänzungsmittel" %}
+  {% capture category_name %}{{ 'products_webshop_category' | t }}{% endcapture %}
+  {% with_scope category: category_name %}
   {% for product in contents.products %}
   .col-sm-6.col-xs-12
     {% include product_listing with product %}

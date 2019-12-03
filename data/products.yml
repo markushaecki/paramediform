@@ -1,8 +1,16 @@
 - "Basenpulver":
-    category: "Nahrungsergänzungsmittel"
+    title:
+      de: "Basenpulver"
+    _slug:
+      de: "basenpulver"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Unser Säure-Basen-Haushalt sollte ausgeglichen sein für unsere Körperfunktionen. Gerät das Säure-Basen-Verhältnis aus dem Gleichgewicht, kann sich dies auf unterschiedliche Formen bemerkbar machen."
     application: "3 x täglich 1 leicht gehäufter Teelöffel (1 Portion) in 100 – 250 ml Flüssigkeit (z.B. Wasser oder Fruchtsaft) auflösen und trinken."
-    ingredients: ['Natriumhydrogencarbonat', 'Calciumcarbonat', 'Trikaliumcitrat', 'Monohydrat', 'Magnesiumcitrat Nonahydrat']
+    ingredients:
+      de: ['Natriumhydrogencarbonat', 'Calciumcarbonat', 'Trikaliumcitrat', 'Monohydrat', 'Magnesiumcitrat Nonahydrat']
+      fr: ['Natriumhydrogencarbonat', 'Calciumcarbonat', 'Trikaliumcitrat', 'Monohydrat', 'Magnesiumcitrat Nonahydrat']
     amount: "e 400 g"
     price: "34.90"
     picture: "/images/products/aussenverpackung/basenpulver.jpg"
@@ -11,10 +19,18 @@
     applicationtime: "Ca. 10.00 Uhr, 16.00 Uhr und vor der Nachtruhe."
 
 - "L-Carnitin retard":
-    category: "Nahrungsergänzungsmittel"
+    title:
+      de: "L-Carnitin retard"
+    _slug:
+      de: "l-carnitin-retard"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "L-Carnitin ist ein vitaminähnlicher Nährstoff, der vom Körper teilweise selbst produziert wird, jedoch zu zwei Dritteln durch die Nahrung oder ergänzende Produkte aufgenommen wird."
     application: "250 mg bis 5 g pro Tag."
-    ingredients: ['L-Carnitin L-Tartrat 46 g (entspricht 31,3 g L-Carnitin)', 'Guar', 'Kartoffelstärke']
+    ingredients:
+      de: ['L-Carnitin L-Tartrat 46 g (entspricht 31,3 g L-Carnitin)', 'Guar', 'Kartoffelstärke']
+      fr: ['L-Carnitin L-Tartrat 46 g (entspricht 31,3 g L-Carnitin)', 'Guar', 'Kartoffelstärke']
     amount: "e 96 g"
     url: "/"
     price: "56.90"
@@ -23,10 +39,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/l-carnitin_inhaltshaufen.jpg"
 
 - "Gelatine HD hydrolisiert":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Als sogenanntes 'Hausmittel' wird Gelatine schon seit Langem in die Behandlung von Gelenken mit einbezogen."
     application: "1–3 Teelöffel (3–10 g) pro Tag z.B. in Wasser, Saft, Joghurt usw. anrühren."
-    ingredients: ['Nichtquellende hydrolysierte Gelatine aus kollagenem Eiweiss', 'purin- und cholesterinfrei', 'lactose- und glutenfrei, keine Nussbestandteile']
+    ingredients:
+      de: ['Nichtquellende hydrolysierte Gelatine aus kollagenem Eiweiss', 'purin- und cholesterinfrei', 'lactose- und glutenfrei, keine Nussbestandteile']
     amount: "e 400 g"
     url: "/"
     price: "35.90"
@@ -35,10 +54,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/gelatine_inhaltshaufen.jpg"
 
 - "Guar Granulat":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Guar ist ein feinkörniges Granulat, das im Magen bei Flüssigkeitszufuhr rasch aufquillt, den Appetit hemmt und im Dünndarm Cholesterin und Gallensäuren bindet und dadurch Stoffwechsel- und Leberfunktion entlastet."
     application: "3-mal täglich 1 gestrichener Teelöffel (1 Portion) in 100 – 250 ml Flüssigkeit oder breiige Speisen, wie Joghurt, Quark usw. einrühren und unmittelbar konsumieren."
-    ingredients: ['Guarkernmehl (70%)', 'Kartoffelmehl', 'Apfelpulver']
+    ingredients:
+      de: ['Guarkernmehl (70%)', 'Kartoffelmehl', 'Apfelpulver']
     amount: "e 300 g"
     url: "/"
     price: "33.90"
@@ -47,10 +69,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/guar_inhaltshaufen.jpg"
 
 - "Edelhefe":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Die Edelhefe schmeckt aromatisch und angenehm mild. Sie eignet sich dadurch hervorragend zum Binden sowie salzarmen Abschmecken von pikanten Speisen, Saucen oder Salaten."
     application: "2 gehäufte Esslöffel täglich über die Speisen streuen."
-    ingredients: ['Die Edelhefe ist glutenfrei und eiweissreich', 'sie dient zur Nahrungsergänzung mit Vitaminen, Mineralstoffen und Spurenelementen']
+    ingredients:
+      de: ['Die Edelhefe ist glutenfrei und eiweissreich', 'sie dient zur Nahrungsergänzung mit Vitaminen, Mineralstoffen und Spurenelementen']
     amount: "250 g"
     url: "/"
     price: "12.90"
@@ -59,10 +84,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/edelhefe_inhaltshaufen.jpg"
 
 - "Chlorella Tabletten":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Die Kraft der Algen, Entgiftung auf natürliche Weise."
     application: "3-mal täglich 3-5 Talbetten vor oder zwischen den Mahlzeiten mit ausreichend Flüssigkeit einnnehmen."
-    ingredients: ['Chlorella pyrenoidosa Mikroalgenpulver (98,5%)', 'Kieselsäure (1%) (Trennmittel)', 'Caliumstearat (0,5%) (Trennmittel)']
+    ingredients:
+      de: ['Chlorella pyrenoidosa Mikroalgenpulver (98,5%)', 'Kieselsäure (1%) (Trennmittel)', 'Caliumstearat (0,5%) (Trennmittel)']
     amount: "300 Tabletten"
     url: "/"
     price: "58.90"
@@ -71,10 +99,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/chlorella_inhaltshaufen.jpg"
 
 - "Multivitamin Lutschtabletten":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Auch eine ausgewogene Ernährung reicht heute nicht mehr aus, den Körper optimal mit den benötigten Vitamine zu versorgen und den körpereigenen Stoffwechsel in Gang zu halten."
     application: "Erwachsene täglich 2 Lutschtabletten, Kinder bis 12 Jahre täglich 1 Lutschtablette im Mund zergehen lassen."
-    ingredients: ['Isomalt', 'Tablettierungshilfe (Magnesiumstearat)', 'natürliches Orangenaroma', '12.0 Vitamine']
+    ingredients:
+      de: ['Isomalt', 'Tablettierungshilfe (Magnesiumstearat)', 'natürliches Orangenaroma', '12.0 Vitamine']
     amount: "100 Tabletten, e 145 g"
     url: "/"
     price: "24.90"
@@ -83,22 +114,28 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/multivitamin_inhaltshaufen.jpg"
 
 - "Q10 NT Kapseln":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Coenzym Q10 ist eine körpereigene Substanz, die für den Menschen lebensnotwendig und in allen Zellen des menschlichen Organismus vorhanden ist. Sie ist für die Energieversorgung des Körpers mötig und spielt auch beim Zellschutz eine wichtige Rolle."
     application: "3-mal täglich 1 Kapsel unzerkaut mit etwas Flüssigkeit einnehmen."
-    ingredients: ['Guar', 'Kartoffelstärke', 'L-Carnitin-L-Tartrat', 'Coenzym Q10', 'Antioxidantienmittel: DL-∝-Tocopherol']
+    ingredients:
+      de: ['Guar', 'Kartoffelstärke', 'L-Carnitin-L-Tartrat', 'Coenzym Q10', 'Antioxidantienmittel: DL-∝-Tocopherol']
     amount: "60 Kapseln, e 27 g"
     url: "/"
     price: "56.90"
     picture: "/images/products/aussenverpackung/q10.jpg"
     ingredientspicture: "/images/products/inhaltsansicht/q10_inhalt.jpg"
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/q10_inhaltshaufen.jpg"
-    
+
 - "Omega-3 Fischölkapseln":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Diese Fettsäuren gehören zu einer gesunden Ernährung, da der Körper diese nicht selber herstellen kann. Erst seit etwa 1980 weiss man, dass Omega-3-Fettsäuren einen für den Menschen lebenswichtigen Nährstoff darstellen."
     application: "1-mal täglich 1 Kapsel unzerkaut mit etwas Flüssigkeit einnehmen."
-    ingredients: ['Omega-3-angereichertes Fischöl (70%)', 'Fischgelatine', 'Feuchthaltemittel: Glyerin', 'Wasser', 'Antioxidationsmittel: tocopherolhaltiger Extrakt (E-306, aus Soja)']
+    ingredients:
+      de: ['Omega-3-angereichertes Fischöl (70%)', 'Fischgelatine', 'Feuchthaltemittel: Glyerin', 'Wasser', 'Antioxidationsmittel: tocopherolhaltiger Extrakt (E-306, aus Soja)']
     amount: "240 Kapseln, e 170 g"
     url: "/"
     price: "59.90"
@@ -107,10 +144,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/omega_3_inhaltshaufen.jpg"
 
 - "Omega-3 Fischöl flüssig":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Diese Fettsäuren gehören zu einer gesunden Ernährung, da der Körper diese nicht selber herstellen kann. Erst seit etwa 1980 weiss man, dass Omega-3-Fettsäuren einen für den Menschen lebenswichtigen Nährstoff darstellen."
     application: "1-mal täglich 1 kl. Messlöffel (2,5 ml = ca.1 g) Öl einnehmen."
-    ingredients: ['Omega-3-angereichertes Fischöl (70%)', 'Vitamin C (Ascorbylpalmitat)', 'Vitamin E (α-Tocopherol)', 'Aroma: Limone', 'α-Tocopherol']
+    ingredients:
+      de: ['Omega-3-angereichertes Fischöl (70%)', 'Vitamin C (Ascorbylpalmitat)', 'Vitamin E (α-Tocopherol)', 'Aroma: Limone', 'α-Tocopherol']
     amount: "200 ml, e 180 g"
     url: "/"
     price: "75.90"
@@ -119,10 +159,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/omega_3_fluessig_inhaltshaufen.jpg"
 
 - "Urinstreifen":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Die Messung des PH-Werts über den Urin wird empfohlen um eine mögliche Übersäuerung des Körpers festzustellen."
     application: "Die Messung erfolgt über einen längeren Zeitraum, mindestens 1 Woche. Die Messungen werden pH-Werts (Übersäuerung) zu erhalten, da sich dieser je nach Nahrung und Tagesablauf verändert. Die erste Messung erfolgt mit dem 2. Urin am Morgen."
-    ingredients: ['Zur Messung des pH-Wertes im Urin']
+    ingredients:
+      de: ['Zur Messung des pH-Wertes im Urin']
     amount: "100 Stk."
     url: "/"
     price: "10.90"
@@ -131,10 +174,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/urinstreifen_inhaltshaufen.jpg"
 
 - "Teemischung I":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Die Paravita® Teemischung I reguliert den Wasserhaushalt, ist aber nicht so stark entwässernd, wie der Petersilientee."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
-    ingredients: ['Melissenblätter', 'Birkenblätter', 'Brennesselblätter', 'Hagenbutten', 'Malvenblüten']
+    ingredients:
+      de: ['Melissenblätter', 'Birkenblätter', 'Brennesselblätter', 'Hagenbutten', 'Malvenblüten']
     amount: "100 g"
     url: "/"
     price: "16.90"
@@ -143,22 +189,28 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/paratee1_inhaltshaufen.jpg"
 
 - "Teemischung II":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Die Paravita® Teemischung II enthält Bitterstoffe und unterstützt die Leber- und Gallentätigkeit. Zudem reguliert diese Teemischung das Verdauungssystem."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
-    ingredients: ['Brennesselblätter', 'Löwenzahnkraut', 'Pfefferminzblätter', 'Schlüsselblumen', 'Tausendguldenkraut', 'Ringelblumen', 'Orangenblätter bitter', 'Stevia blätter']
+    ingredients:
+      de: ['Brennesselblätter', 'Löwenzahnkraut', 'Pfefferminzblätter', 'Schlüsselblumen', 'Tausendguldenkraut', 'Ringelblumen', 'Orangenblätter bitter', 'Stevia blätter']
     amount: "100 g"
     url: "/"
     price: "17.90"
     picture: "/images/products/aussenverpackung/paratee2.jpg"
     ingredientspicture: "/images/products/inhaltsansicht/paratee2_inhalt.jpg"
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/paratee2_inhaltshaufen.jpg"
-    
+
 - "Petersilientee":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "In kleinen Mengen reguliert der Paravita® Petersilientee den Wasserhaushalt und in grösseren Mengen wird der Magen-Darmtrakt angeregt und vermehrt durchblutet. Der Paravita® Petersilientee eignet sich als Stoffwechseltee für den Nebennierentyp."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
-    ingredients: ['Aus natürlich gewachsenen Petersilienblätter']
+    ingredients:
+      de: ['Aus natürlich gewachsenen Petersilienblätter']
     amount: "100 g"
     url: "/"
     price: "12.90"
@@ -167,10 +219,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/petersilientee_inhaltshaufen.jpg"
 
 - "Himbeerblättertee":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Für den Paravita® Himbeerblättertee werden die getrockneten, geschnittenen Blätter des Himbeerstrauches verwendet. In der Pflanzenheilkunde wird das Himbeerblatt bei Durchfall, Magen-Darmentzündungen, Verstopfungen und zur Förderung der Muttermilch eingesetzt. Der Paravita® Himbeerblättertee eignet sich als Stoffwechseltee für den Schilddrüsentyp."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
-    ingredients: ['Aus natürlich gewachsenen Himbeerblätter']
+    ingredients:
+      de: ['Aus natürlich gewachsenen Himbeerblätter']
     amount: "100 g"
     url: "/"
     price: "11.90"
@@ -179,10 +234,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/himbeerblaettertee_inhaltshaufen.jpg"
 
 - "Rotkleeblütentee":
-    category: "Nahrungsergänzungsmittel"
+    category:
+      de: "Nahrungsergänzungsmittel"
+      fr: "Compléments alimentaires"
     description: "Für den Paravita® Rotkleeblütentee wird die ganze getrocknete Pflanze verwendet. Die Teemischung ist vielseitig einsetzbar und daher sehr beliebt. Der Paravita® Rotkleeblütentee eignet sich als Stoffwechseltee für den Keimdrüsentyp."
     application: "2-3 gehäufte Esslöffel der Kräuter mit einem Liter heissem, nicht kochendem Wasser übergiessen und 5-10 Minuten ziehen lassen."
-    ingredients: ['Aus natürlich gewachsenen Rotkleeblüten']
+    ingredients:
+      de: ['Aus natürlich gewachsenen Rotkleeblüten']
     amount: "100 g"
     url: "/"
     price: "17.90"
@@ -191,10 +249,13 @@
     ingredientshillpicture: "/images/products/inhaltsstoffe_huegel/rotkleebluetentee_inhaltshaufen.jpg"
 
 - "Kochbuch zum Kaufen:":
-    category: "Kochbuch"
+    category:
+      de: "Kochbuch"
+      fr: "Livres de cuisine"
     description: "Nachhaltig das Gewicht zu reduzieren und dann auch zu behalten, kann nicht mit 'Nicht-Essen' erreicht werden. Jede Gewichtsreduktion, die langfristig Erfolg haben will, muss mit dem 'Lustprinzip' arbeiten. Zum Lustvollen Kochen hilft Ihnen dieses Kochbuch"
     application: "Sich regelmässig Zeit zum Kochen nehmen."
-    ingredients: ['36 Gourmet Kochrezepte', 'Mit Nährwertangaben zum Abnehmen', 'Auf Saisonalität unterteilte Kapitel']
+    ingredients:
+      de: ['36 Gourmet Kochrezepte', 'Mit Nährwertangaben zum Abnehmen', 'Auf Saisonalität unterteilte Kapitel']
     amount: "77 fantastisch illustrierte Seiten"
     url: "/"
     price: "39.00"

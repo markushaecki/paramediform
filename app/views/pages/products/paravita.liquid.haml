@@ -33,7 +33,7 @@ position: 2
   .vspacer
     .img-box
       %a{ href: "{{ uebersichtsbild }}", :style => "padding:0px" }
-        %img.img-responsive{ src: "{{ uebersichtsbild | resize: '900x500#' }}", alt: "Paravita Produktpalette" }
+        %img.img-responsive{ src: "{{ uebersichtsbild | resize: '900x500#' }}", alt: "{{ 'products_paravita_image_alt' | t }}" }
   {% endif %}
   {% capture untertitel %}{% editable_text "Untertitel", format:raw, format:raw, priority:"#{4}", line_break: false, rows: 1 %}{% endeditable_text %}{% endcapture %}
   {% if untertitel.size > 0 %}
@@ -51,11 +51,11 @@ position: 2
 
     .row
       .col-sm-9.col-xs-12
-        %p{:style => "margin-top:7px"} ...kontaktieren Sie direkt das Institut in ihrer Region:
+        %p{:style => "margin-top:7px"} {{ 'products_paravita_explanation' | t }}
       .col-sm-3.col-xs-12
         .dropdown
           %button.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
-            Institute
+            {{ 'products_paravita_institute' | t }}
             %span.caret
           %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
             {% with_scope order_by: 'name asc' %}
@@ -66,7 +66,8 @@ position: 2
             {% endwith_scope %}
   .row
     .col-sm-12.col-xs-12
-      {% with_scope category: "Nahrungsergänzungsmittel" %}
+      {% capture category_name %}{{ 'products_paravita_category' | t }}{% endcapture %}
+      {% with_scope category: category_name %}
       {% for other_product in contents.products.all %}
       .imagebox{ :style => 'float:left;max-width: 31%;margin-right:2%'}
         %a{ href: "{% path_to other_product %}", :style => "padding:0px" }
