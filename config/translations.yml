@@ -113,6 +113,21 @@ institute_team_page_description:
 institute_team_title:
   de: "Abnehmen {{ institute_name }} - Team"
 
+# === Institute - Weight Curve ===
+
+institute_weight_curve_page_description:
+  de: "Die Gewichtskurve aus {{ institute_name }} stellt den Erfolg der Ernährungsberatung grafisch dar."
+
+institute_weight_curve_title:
+  de: "Ernährungsberatung {{ institute_name }} - Gewichtskurve"
+
+institute_weight_curve_status_title:
+  de: "Gewichtskurve Stand {{ updated_at }}:"
+
+institute_weight_curve_status_notification:
+  de: "<b>Erklärung:</b> Die Gewichtskurve zeigt anonymisiert die Erfolge, aller sich aktuell im Programm befindlichen Personen. Eine Einheit nach rechts illustriert eine Woche und eine nach unten das verlorene Kilogramm. Diese Gewichtskurve wird im Anschluss an die Beratung gemeinsam nachgeführt."
+
+
 # === Others ===
 
 locales_de:

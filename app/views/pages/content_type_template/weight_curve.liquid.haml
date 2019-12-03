@@ -7,24 +7,28 @@ position: 3
 handle: institute_curve
 ---
 {% extends parent %}
+
+
 {% block description %}
-%meta{name:"description", content:"Die Gewichtskurve aus {{ institute.name }} stellt den Erfolg der Ernährungsberatung grafisch dar."}/
+%meta{name:"description", content:"{{ 'institute_weight_curve_page_description' | t: institute_name: institute.name }}"}/
 {% endblock %}
+
 {% block content/main/title %}
-%h1.title Ernährungsberatung {{ institute.name }} - Gewichtskurve
+%h1.title {{ 'institute_weight_curve_title' | t: institute_name: institute.name }}
 {% endblock %}
 
 {% block content/main/tab_pane %}
-{% capture url %}{{ institute.url }}/{{locale}}/weight-curves/all.json{% endcapture %}
+{% capture url %}{{ institute.url }}/weight-curves/all.json{% endcapture %}
 {% consume data from url %}
 {% assign weight_curves = data.weight_curves %}
 {% endconsume %}
 .row
   .col-xs-12
     .thumbnail{:style =>"padding:10px !important"}
-      %h2 Gewichtskurve Stand {{ weight_curves.first.updated_at }}:
+      %h2 {{ 'institute_weight_curve_status_title' | t: updated_at: weight_curves.first.updated_at }}
       .img-box{:style =>"padding-top:5px !important;padding-bottom:10px !important"}
         %a{ href: '{{ weight_curves.first.image.url }}' }
           %img.img-responsive{ src: '{{ weight_curves.first.image.url | resize: "630x" }}' }
-      <b>Erklärung:</b> Die Gewichtskurve zeigt anonymisiert die Erfolge, aller sich aktuell im Programm befindlichen Personen. Eine Einheit nach rechts illustriert eine Woche und eine nach unten das verlorene Kilogramm. Diese Gewichtskurve wird im Anschluss an die Beratung gemeinsam nachgeführt.
+
+      {{ 'institute_weight_curve_status_notification' | t }}
 {% endblock %}
