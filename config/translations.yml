@@ -195,6 +195,11 @@ layout_double_columns_sidebar_kids_title:
 layout_double_columns_sidebar_kids_image_alt:
   de: Paramediform für Kinder
 
+# === Layouts - Simple ===
+
+layout_simple_logo_tagline:
+  de: Abnehmen durch Ernährungsberatung von ParaMediForm
+
 # === Others ===
 
 locales_de:

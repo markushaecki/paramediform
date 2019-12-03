@@ -41,7 +41,7 @@ position: 1
     %meta{:content => "website", :property => "og:type"}/
     %meta{:content => "{{ 'Logo.png' | theme_image_url }}", :property => "og:image"}/
     %meta{:content => "{{ url }}", :property => "og:url"}/
-    %meta{:content => "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme", :property => "og:site_name"}/
+    %meta{:content => "{{ 'layout_simple_meta_og_site_name' | t }}", :property => "og:site_name"}/
     {% endblock %}
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"}
     :javascript
@@ -99,9 +99,9 @@ position: 1
         /%img.atmospere{ src: "{{ 'hintergrundbild.png' | theme_image_url }}" }
       .container.relative_position{ :style => "max-width:750px"}
         %p.text-center
-          %a{ href: "/index", :style => "text-decoration:none;color:black", :accesskey => "1" }
+          %a{ href: "{% path_to 'home' %}", :style => "text-decoration:none;color:black", :accesskey => "1" }
             %img#logo_img{ src: "{{ 'Logo.png' | theme_image_url | resize: '160x80#' }}", :style => "margin-top:30px", :alt => "Paramediform Logo - Gesundheit Wohlbefinden und Gewichtsabnahme" }
-            %p.text-center{:style => "font-size:13px"} Abnehmen durch Ernährungsberatung von ParaMediForm
+            %p.text-center{:style => "font-size:13px"} {{ 'layout_simple_logo_tagline' | t }}
         %nav.navbar.navbar-default.navbar-static-top{:role => "navigation"}
           .container{ :style => "width:100%;margin-top:10px;margin-bottom:20px"}
             .navbar-header
@@ -130,4 +130,4 @@ position: 1
           {% block content %}
           {% endblock %}
 
-          {% include footer %}
+          {% include 'footer' %}
