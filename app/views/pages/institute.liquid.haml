@@ -16,19 +16,18 @@ editable_elements:
 {% endblock %}
 
 {% block share_meta_tags %}
-%meta{:content => "Erfolgsgeschichten: Wie schlank sein zur Gewohnheit wird.", :property => "og:title"}
+%meta{:content => "{{ 'page_institute_og_title' | t }}", :property => "og:title"}
 %meta{:content => "website", :property => "og:type"}
 %meta{:content => "{{ 'sidebar_vorhernachher.png' | theme_image_url }}", :property => "og:image"}
 %meta{:content => "200", :property => "og:image:width"}
 %meta{:content => "200", :property => "og:image:height"}
 %meta{:content => "{{ url }}", :property => "og:url"}
-%meta{:content => "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme", :property => "og:site_name"}
+%meta{:content => "{{ 'page_institute_og_site_name' | t }}", :property => "og:site_name"}
 %meta{:content => "{{ page.seo_description }}", :property => "og:description"}
 {% endblock %}
 
 
 {% block content/main %}
-
 
 .text-center#institutes_map{:style => "position:relative"}
   %img.img-responsive#institutes_map_img{ src: "{{ 'map.png' | theme_image_url }}" }

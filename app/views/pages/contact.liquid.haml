@@ -3,6 +3,7 @@ title: Kontakt
 slug: kontakt
 published: true
 handle: contact_form
+position: 2
 ---
 {% extends layouts/double-columns %}
 
@@ -31,14 +32,14 @@ handle: contact_form
 {% else %}
 
 .alert.alert-success
-  %strong Besten Dank {{ contact.surname }} {{ contact.lastname }}, wir werden uns bei Ihnen melden.
+  %strong {{ 'page_contact_alert_success' | t: surname: contact.surname, lastname: contact.lastname }}
 
 {% endif %}
 
 {% endif %}
 
 {% model_form 'contacts', class: 'form-horizontal' %}
-%h2 Hiermit kontaktieren Sie die Systemzentrale:
+%h2 {{ 'page_contact_title' | t }}
 %br
 .row
   .col-sm-7.col-xs-12
@@ -54,91 +55,92 @@ handle: contact_form
     5600 Lenzburg
     %br
     %br
-    Telefon +41 62 888 88 28
+    {{ 'page_contact_address_phone' | t }} +41 62 888 88 28
     %br
-    Fax +41 62 888 88 20
+    {{ 'page_contact_address_fax' | t }} +41 62 888 88 20
     %br
-    %br 
+    %br
 .row
   .col-sm-9.col-xs-12
-    %p{:style => "margin-top:7px"} ...oder kontaktieren Sie direkt das Institut in ihrer Region:
+    %p{:style => "margin-top:7px"} {{ 'page_contact_pick_institute' | t }}
   .col-sm-3.col-xs-12
     .dropdown
       %button.btn.btn-default.dropdown-toggle{type: "button", id: "dropdownMenu1", data: {toggle: "dropdown"}}
-        Institute
+        {{ 'page_contact_institute_dropdown_title' | t }}
         %span.caret
       %ul.dropdown-menu{role: "menu", aria: {labelledby: "dropdownMenu1"}}
         {% with_scope order_by: 'name asc' %}
         {% for institute in contents.institutes %}
         %li{role: "presentation"}
-          %a{ href: "/{{ institute._slug }}/kontakt#institutetap", role: "menuitem", tabindex: "-1" } {{ institute.name }}
+          %a{ href: "{% path_to institute, with: 'institute_contact' %}", role: "menuitem", tabindex: "-1" } {{ institute.name }}
         {% endfor %}
         {% endwith_scope %}
 %br
 
-%legend Thema
+%legend {{ 'page_contact_topic' | t }}
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
     %input{:type => "hidden", :name => "content[subject]", :value => "Paravita Beratung"}
     %input{:type => "hidden", :name => "content[subject]", :value => "Fragen zur Methode"}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Anfrage neues Institut"} Eigenes Institut eröffnen
+        %input{:type => "radio", :name => "content[subject]", :value => "Anfrage neues Institut"} {{ 'page_contact_subject_1' | t }}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Möchte Unterlagen"} Unterlagen zur Ausbildung
+        %input{:type => "radio", :name => "content[subject]", :value => "Möchte Unterlagen"} {{ 'page_contact_subject_2' | t }}
   .col-sm-6.col-xs-12
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Kostenlose Terminvereinbarung"} Kostenlose Erstberatung
+        %input{:type => "radio", :name => "content[subject]", :value => "Kostenlose Terminvereinbarung"} {{ 'page_contact_subject_3' | t }}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} Allgemeine Rückmeldung
-%legend Absender
+        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} {{ 'page_contact_subject_4' | t }}
+
+%legend {{ 'page_contact_sender_title' | t }}
 .row
   .col-sm-6.col-xs-12
-    %select{ class: 'form-control', name: 'content[salutation]', placeholder: "Anrede" }
+    %select{ class: 'form-control', name: 'content[salutation]', placeholder: "{{ 'institute_contact_sender_gender_placeholder' | t }}" }
       {% for option in contents.contacts.salutation_options %}
       %option {{ option }}
       {% endfor %}
     %br
 .row
-  .col-sm-6.col-xs-12  
-    %input{:class => "form-control", :type => "text", :name => "content[surname]", :value => "{{ params.content.surname }}", :placeholder => "Vorname"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[lastname]", :value => "{{ params.content.lastname }}", :placeholder => "Nachname"}
+    %input{:class => "form-control", :type => "text", :name => "content[surname]", :value => "{{ params.content.surname }}", :placeholder => "{{ 'page_contact_sender_surname' | t }}"}
+  .col-sm-6.col-xs-12
+    %input{:class => "form-control", :type => "text", :name => "content[lastname]", :value => "{{ params.content.lastname }}", :placeholder => "{{ 'page_contact_sender_lastname' | t }}"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[address]", :value => "{{ params.content.address }}", :placeholder => "Adresse"}
+    %input{:class => "form-control", :type => "text", :name => "content[address]", :value => "{{ params.content.address }}", :placeholder => "{{ 'page_contact_sender_address' | t }}"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :value => "{{ params.content.housenumber }}", :placeholder => "Hausnummer"}
+    %input{:class => "form-control", :type => "text", :name => "content[housenumber]", :value => "{{ params.content.housenumber }}", :placeholder => "{{ 'page_contact_sender_housenumber' | t }}"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :value => "{{ params.content.zipcode }}", :placeholder => "PLZ"}
+    %input{:class => "form-control", :type => "text", :name => "content[zipcode]", :value => "{{ params.content.zipcode }}", :placeholder => "{{ 'page_contact_sender_zipcode' | t }}"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[place]", :value => "{{ params.content.place }}", :placeholder => "Ort"}
+    %input{:class => "form-control", :type => "text", :name => "content[place]", :value => "{{ params.content.place }}", :placeholder => "{{ 'page_contact_sender_place' | t }}"}
 .row
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[phone]", :value => "{{ params.content.phone }}",:placeholder => "Telefon"}
+    %input{:class => "form-control", :type => "text", :name => "content[phone]", :value => "{{ params.content.phone }}",:placeholder => "{{ 'page_contact_sender_phone' | t }}"}
   .col-sm-6.col-xs-12
-    %input{:class => "form-control", :type => "text", :name => "content[email]", :value => "{{ params.content.email }}", :placeholder => "E-Mail"}
+    %input{:class => "form-control", :type => "text", :name => "content[email]", :value => "{{ params.content.email }}", :placeholder => "{{ 'page_contact_sender_email' | t }}"}
 .row
   .col-sm-12.col-xs-12
     .checkbox
       %label
-        %input{:type => "checkbox", :name => "content[existing_customer]"} Ich bin oder war bereits Kundin oder Kunde bei ParaMediForm.
+        %input{:type => "checkbox", :name => "content[existing_customer]"} {{ 'page_contact_existing_customer' | t }}
     %br
-%legend Nachricht
+%legend {{ 'page_contact_story_title' | t }}
 %textarea{:class => "form-control", :name => "content[message]", :value => "{{customer_message.name}}" } {{customer_message.message}}
 %br
 .checkbox
   %label
-    %input{:type => "checkbox", :name => "content[newsletter]", :checked => "yes"} Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm.
+    %input{:type => "checkbox", :name => "content[newsletter]", :checked => "yes"} {{ 'page_contact_newsletter' | t }}
 %br
 %br
-%input{:type => "hidden", :name => "content[institute]", :value => "System Zentrale"}  
+%input{:type => "hidden", :name => "content[institute]", :value => "System Zentrale"}
 .text-center
-  %button{ :class => "btn btn-primary", :type => "submit"} Senden
+  %button{ :class => "btn btn-primary", :type => "submit"} {{ 'page_contact_submit' |t }}
 %br
 {% endmodel_form %}
 %hr

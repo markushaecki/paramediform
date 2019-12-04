@@ -38,6 +38,9 @@ institute_contact_subject_4:
 institute_contact_sender_title:
   de: Absender
 
+institute_contact_sender_gender_placeholder:
+  de: Anrede
+
 institute_contact_sender_surname:
   de: Vorname
 
@@ -135,64 +138,66 @@ layout_double_columns_cart_product:
 layout_double_columns_cart_title:
   de: Warenkorb
 
-layout_double_columns_sidebar_institutes_title:
+# === Sidebar ===
+
+sidebar_institutes_title:
   de: Institute
 
-layout_double_columns_sidebar_institutes_image_alt:
+sidebar_institutes_image_alt:
   de: Ernährungsberatung Schweiz
 
-layout_double_columns_sidebar_contact_title:
+sidebar_contact_title:
   de: Anmelden
 
-layout_double_columns_sidebar_contact_image_alt:
+sidebar_contact_image_alt:
   de: Kontaktieren Sie uns
 
-layout_double_columns_sidebar_education_title:
+sidebar_education_title:
   de: Ausbildung
 
-layout_double_columns_sidebar_education_image_alt:
+sidebar_education_image_alt:
   de: Machen Sie sich selbstständig
 
-layout_double_columns_sidebar_paravita_title:
+sidebar_paravita_title:
   de: Mikronährstoffe
 
-layout_double_columns_sidebar_paravita_image_alt:
+sidebar_paravita_image_alt:
   de: Produkte zur Ernährungsergänzung
 
-layout_double_columns_sidebar_parapan_title:
+sidebar_parapan_title:
   de: Parapan
 
-layout_double_columns_sidebar_parapan_image_alt:
+sidebar_parapan_image_alt:
   de: Das Ballaststoffreiche Parapan Brot
 
-layout_double_columns_sidebar_method_title:
+sidebar_method_title:
   de: Die Methode
 
-layout_double_columns_sidebar_method_image_alt:
+sidebar_method_image_alt:
   de: "Die ParaMediForm Methode"
 
-layout_double_columns_sidebar_news_title:
+sidebar_news_title:
   de: Aktuelles
 
-layout_double_columns_sidebar_news_image_alt:
+sidebar_news_image_alt:
   de: "Aktuelle Nachrichten von Paramediform"
 
-layout_double_columns_sidebar_beforeafter_title:
+sidebar_beforeafter_title:
   de: Beispiele
 
-layout_double_columns_sidebar_beforeafter_image_alt:
+sidebar_beforeafter_image_alt:
   de: Unsere Erfolgsgeschiten
 
-layout_double_columns_sidebar_cookbook_title:
+sidebar_cookbook_title:
   de: Kochbuch
 
-layout_double_columns_sidebar_cookbook_image_alt:
+sidebar_cookbook_image_alt:
   de: Das Kochbuch zur Gaumenfreude in allen Jahreszeiten
 
-layout_double_columns_sidebar_kids_title:
+sidebar_kids_title:
   de: Für Kinder
 
-layout_double_columns_sidebar_kids_image_alt:
+sidebar_kids_image_alt:
   de: Paramediform für Kinder
 
 # === Layouts - Simple ===
@@ -239,7 +244,6 @@ products_paravita_category:
   de: Nahrungsergänzungsmittel
   fr: Compléments alimentaires
 
-
 # === Products page - Webshop ===
 
 products_webshop_title:
@@ -266,6 +270,131 @@ snippet_product_listing_more:
 
 snippet_product_listing_no_medicine:
   de: "Kein Arzneimittel"
+
+# === Contact page ===
+
+page_contact_title:
+  de: "Hiermit kontaktieren Sie die Systemzentrale:"
+
+page_contact_alert_success:
+  de: "Besten Dank {{ surname }} {{ lastname }}, wir werden uns bei Ihnen melden."
+
+page_contact_address_phone:
+  de: "Telefon"
+
+page_contact_address_fax:
+  de: "Fax"
+
+page_contact_pick_institute:
+  de: "...oder kontaktieren Sie direkt das Institut in ihrer Region:"
+
+page_contact_institute_dropdown_title:
+  de: "Institute"
+
+page_contact_subject_title:
+  de: "Thema"
+  fr: "Sujet"
+
+page_contact_subject_1:
+  de: "Eigenes Institut eröffnen"
+
+page_contact_subject_2:
+  de: "Unterlagen zur Ausbildung"
+
+page_contact_subject_3:
+  de: Kostenlose Erstberatung
+
+page_contact_subject_4:
+  de: Allgemeine Rückmeldung
+
+page_contact_sender_title:
+  de: Absender
+
+institute_contact_sender_gender_placeholder:
+  de: Anrede
+
+page_contact_sender_surname:
+  de: Vorname
+
+page_contact_sender_lastname:
+  de: Nachname
+
+page_contact_sender_address:
+  de: Adresse
+
+page_contact_sender_housenumber:
+  de: Hausnummer
+
+page_contact_sender_zipcode:
+  de: PLZ
+
+page_contact_sender_place:
+  de: Ort
+
+page_contact_sender_phone:
+  de: Telefon
+
+page_contact_sender_email:
+  de: E-Mail
+
+page_contact_existing_customer:
+  de: "Ich bin oder war bereits Kundin oder Kunde bei ParaMediForm."
+
+page_contact_story_title:
+  de: Nachricht
+
+page_contact_newsletter:
+  de: "Gerne erhalte ich auch in Zukunft Informationen von und über ParaMediForm."
+
+page_contact_submit:
+  de: Senden
+
+# === Home page ===
+
+page_home_title:
+  de: "Erfolgreich abnehmen seit {{years}} Jahren in {{size}} Instituten"
+
+page_home_individual_advice_title:
+  de: "Individuelle Beratung"
+
+page_home_eat_title:
+  de: "Essen was der Körper braucht!"
+
+page_home_metabolic_type_title:
+  de: "Welchen Stoffwechseltyp sind Sie?"
+
+# === Institute page ===
+
+page_institute_og_title:
+  de: "Erfolgsgeschichten: Wie schlank sein zur Gewohnheit wird."
+
+page_institute_og_site_name:
+  de: "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme"
+
+# === News page ===
+
+page_news_meta_title:
+  de: "ParaMediForm - Nachrichten zu Ernährung Gesundheit und Wissenschaft"
+
+page_news_interview_meta_description:
+  de: "Ein Interview mit {{ person_name }} {{ person_title }}: {{ text_title }} - {{ text }}"
+
+page_news_recipe_meta_description:
+  de: "Schmackhaftes ParaMediForm Rezept: {{ rezept_title }} - {{ text }}"
+
+page_news_illustrative_text_meta_description:
+  de: "Ein Artikel zu {{ article_title }} - {{ text }}"
+
+# === Success stories page ===
+
+page_success_stories_og_title:
+  de: "Erfolgsgeschichten: Wie schlank sein zur Gewohnheit wird."
+
+page_success_stories_og_site_name:
+  de: "ParaMediForm - Institut für Gesundheit, Wohlbefinden und Gewichtsabnahme"
+
+page_success_stories_further_stories:
+  de: "Weitere Erfolgsgeschichten finden Sie auf den jeweiligen Institutsseiten:"
 
 # === Others ===
 

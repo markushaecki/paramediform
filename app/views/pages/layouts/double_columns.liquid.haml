@@ -52,18 +52,18 @@ position: 5
       %a{ href: '{% path_to institute %}'}
         .institutes.well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_institutes_title' | translate }}
+            {{ 'sidebar_institutes_title' | translate }}
           .text-center
-            %img{ src: "{{ 'Ernaehrungsberatung_Schweiz.jpg' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'layout_double_columns_sidebar_institutes_image_alt' | t }}" }
+            %img{ src: "{{ 'Ernaehrungsberatung_Schweiz.jpg' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'sidebar_institutes_image_alt' | t }}" }
       {% endif %}
 
       / contact block
       %a{ href: '{% path_to contact_form %}', :id => "sidebar_contact" }
         .contact.well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_contact_title' | translate }}
+            {{ 'sidebar_contact_title' | translate }}
           %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
-            %img{ src: "{{ 'sidebar_contact.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'layout_double_columns_sidebar_contact_image_alt' | t }}" }
+            %img{ src: "{{ 'sidebar_contact.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'sidebar_contact_image_alt' | t }}" }
 
       / selbststaendigkeit block
       {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
@@ -72,9 +72,9 @@ position: 5
       %a{ href: '{{ url }}' }
         .news.well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_education_title' | translate }}
+            {{ 'sidebar_education_title' | translate }}
           .text-center
-            %img{ src: "{{ 'Ernaehrungsberatung_Ausbildung.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'layout_double_columns_sidebar_education_image_alt' | t }}" }
+            %img{ src: "{{ 'Ernaehrungsberatung_Ausbildung.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'sidebar_education_image_alt' | t }}" }
       {% endif %}
 
       / paravita block
@@ -84,9 +84,9 @@ position: 5
       %a{ href: '{{ url }}'}
         .institutes.well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_paravita_title' | translate }}
+            {{ 'sidebar_paravita_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'layout_double_columns_sidebar_paravita_image_alt' | t }}" }
+            %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'sidebar_paravita_image_alt' | t }}" }
       {% endif %}
 
       / parapan block
@@ -95,9 +95,9 @@ position: 5
       %a{ href: 'http://www.parapan.ch'}
         .institutes.well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_parapan_title' | translate }}
+            {{ 'sidebar_parapan_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'layout_double_columns_sidebar_parapan_image_alt' | t }}" }
+            %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_parapan_image_alt' | t }}" }
       {% endif %}
 
       / Methode block
@@ -107,9 +107,9 @@ position: 5
       %a{ href: '{{ url }}'}
         .institutes.well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_method_title' | translate }}
+            {{ 'sidebar_method_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'layout_double_columns_sidebar_method_image_alt' | t }}" }
+            %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_method_image_alt' | t }}" }
       {% endif %}
 
       / news block
@@ -118,9 +118,9 @@ position: 5
       %a{ href: '{% path_to news %}' }
         .news.well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_news_title' | translate }}
+            {{ 'sidebar_news_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'layout_double_columns_sidebar_news_image_alt' | t }}" }
+            %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_news_image_alt' | t }}" }
       {% endif %}
 
       / vorhernachher block
@@ -129,9 +129,9 @@ position: 5
       %a{ href: '{% path_to system_success_story %}' }
         .news.well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_beforeafter_title' | translate }}
+            {{ 'sidebar_beforeafter_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_vorhernachher.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'layout_double_columns_sidebar_beforeafter_image_alt' | t }}" }
+            %img{ src: "{{ 'sidebar_vorhernachher.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_beforeafter_image_alt' | t }}" }
       {% endif %}
 
       / Kochbuch block
@@ -141,9 +141,9 @@ position: 5
       %a{ href: '{{ url }}' }
         .well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_cookbook_title' | translate }}
+            {{ 'sidebar_cookbook_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_kochbuch.png' | theme_image_url | resize: 'x160' }}", style: 'height: 80px', alt: "{{ 'layout_double_columns_sidebar_cookbook_image_alt' | t }}" }
+            %img{ src: "{{ 'sidebar_kochbuch.png' | theme_image_url | resize: 'x160' }}", style: 'height: 80px', alt: "{{ 'sidebar_cookbook_image_alt' | t }}" }
       {% endif %}
 
       / Kinder block
@@ -153,9 +153,9 @@ position: 5
       %a{ href: '{{ url }}' }
         .well
           %h3.text-center
-            {{ 'layout_double_columns_sidebar_kids_title' | translate }}
+            {{ 'sidebar_kids_title' | translate }}
           .text-center
-            %img{ src: "{{ 'sidebar_parolino.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px', alt: "{{ 'layout_double_columns_sidebar_kids_image_alt' | t }}" }
+            %img{ src: "{{ 'sidebar_parolino.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px', alt: "{{ 'sidebar_kids_image_alt' | t }}" }
       {% endif %}
 
   {% endblock %}

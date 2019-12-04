@@ -23,7 +23,7 @@
   .media
     {{ news_entry.published_at | localized_date: '%d.%m.%Y' }}
     %h5{:style => "margin-top:0"}
-      %a{ href: "/aktuelles?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}" } {{ news_entry.title }}
+      %a{ href: "{% path_to 'news' %}?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}" } {{ news_entry.title }}
     .text
       {{ news_entry.text | truncate: 170 }}
     {% unless forloop.last %}
@@ -33,5 +33,5 @@
     %br
     {% endif %}
   {% endif %}
-  {% endfor %}  
+  {% endfor %}
 {% endpaginate %}

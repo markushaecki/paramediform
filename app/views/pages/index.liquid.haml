@@ -37,7 +37,7 @@ handle: home
 
 {% assign recipy_image = this_news.recipe.image.url %}
 {% assign success_story = contents.success_stories.all | shuffle | first %}
-%h1.text-center Erfolgreich abnehmen seit {{ years }} Jahren in {{ contents.institutes.size }} Instituten
+%h1.text-center {{ 'page_home_title' | t: years: years, size: contents.institutes.size }}
 %br
 .columnize3col
   .row
@@ -48,17 +48,19 @@ handle: home
   .col-sm-8.col-xs-12
     .row
       .col-sm-6.col-xs-6
-        %a{ href:'/abnehmen/individuelle-beratung'}
+        {% capture url %}{% editable_text "individual_advice_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/individuelle-beratung{% endeditable_text %}{% endcapture %}
+        %a{ href:'{{ url }}'}
           .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '400x400#' }}" }
           .fixed_title
-            %h3 Individuelle Beratung
+            %h3 {{ 'page_home_individual_advice_title' | t }}
+
       .col-sm-6.col-xs-6
         .thumbnail{:style => "margin-bottom:5px !important"}
           %a#rezepturl{ href: "{% path_to news %}?slug={{ this_news._slug }}&type=recipe" }
             %img.img-responsive#rezeptbild{ src: "{{ recipy_image | resize: '400x400#' }}"}
         .fixed_title
-          %h3 Essen was der Körper braucht!
+          %h3 {{ 'page_home_eat_title' | t }}
     %br
     .row
       .col-sm-6.col-xs-6
@@ -71,11 +73,12 @@ handle: home
         .fixed_title
           %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
       .col-sm-6.col-xs-6
-        %a{ href:'/abnehmen/stoffwechseltypen'}
+        {% capture url %}{% editable_text "metabolic_types_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/stoffwechseltypen{% endeditable_text %}{% endcapture %}
+        %a{ href:'{{ url }}'}
           .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '400x400#' }}" }
         .fixed_title
-          %h3 Welchen Stoffwechseltyp sind Sie?
+          %h3 {{ 'page_home_metabolic_type_title' | t }}
     %br
   .col-sm-4.col-xs-12
     {% with_scope order_by: 'published_at desc', published_at.lt: today, tags: 'wichtig' %}
@@ -109,36 +112,44 @@ handle: home
         %h2.text-center{:style => "color:black;text-decoration: none;font-size:27px !important"}
           %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
           %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
-    %a{ href: '/unternehmen/selbststaendigkeit' }
+
+    {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1 %}/unternehmen/selbststaendigkeit{% endeditable_text %}{% endcapture %}
+    %a{ href: '{{ url }}' }
       .news.well
         %h3.text-center
-          {{ 'sidebar_selbststaendigkeit_title' | translate }}
+          {{ 'sidebar_education_title' | translate }}
         .text-center
-          %img{ src: "{{ 'sidebar_selbststaendigkeit.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Machen Sie sich selbstständig" }
-    %a{ href: '/produkte/paravita'}
+          %img{ src: "{{ 'sidebar_selbststandigkeit.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'sidebar_education_image_alt' | t }}" }
+
+    {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1 %}/produkte/paravita{% endeditable_text %}{% endcapture %}
+    %a{ href: '{{ url }}'}
       .institutes.well
         %h3.text-center
           {{ 'sidebar_paravita_title' | translate }}
         .text-center
-          %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "Produkte zur Ernährungsergänzung" }
+          %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'sidebar_paravita_image_alt' | t }}" }
+
     %a{ href: 'http://www.parapan.ch'}
       .institutes.well
         %h3.text-center
           {{ 'sidebar_parapan_title' | translate }}
         .text-center
-          %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Das Ballaststoffreiche Parapan Brot" }
-    %a{ href: '/abnehmen/die-methode'}
+          %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_parapan_image_alt' | t }}" }
+
+    {% capture url %}{% editable_text "sidebar_method_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/die-methode{% endeditable_text %}{% endcapture %}
+    %a{ href: '{{ url }}'}
       .institutes.well
         %h3.text-center
           {{ 'sidebar_method_title' | translate }}
         .text-center
-          %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Die ParaMediForm Methode" }
+          %img{ src: "{{ 'sidebar_methode.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_method_image_alt' | t }}" }
+
     %a{ href: '{% path_to news %}' }
       .news.well
         %h3.text-center
           {{ 'sidebar_news_title' | translate }}
         .text-center
-          %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Aktuelle Nachrichten von Paramediform" }
+          %img{ src: "{{ 'sidebar_news.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_news_image_alt' | t }}" }
 
 //%p{style: "margin-left:170px"} Tipp: Wählen Sie Ihr Institut entweder auf der Landkarte aus, oder verwenden Sie die alphabetische geordnete Liste links.
 %br

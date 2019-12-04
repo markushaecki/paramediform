@@ -26,11 +26,11 @@ handle: news
 %meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }} {{ type }} {{ this_news.tags | first }}"}/
 {% elsif params.tag %}
 %title
-  ParaMediForm - {{ params.tag }} 
+  ParaMediForm - {{ params.tag }}
 %meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }} {{ params.tag }} "}/
 {% else %}
 %title
-  ParaMediForm - Nachrichten zu Ernährung Gesundheit und Wissenschaft
+  {{ 'page_news_meta_title' | t }}
 %meta{name: "keywords", content: "{{ site.meta_keywords }} {{ page.meta_keywords }}"}/
 {% endif %}
 {% endblock %}
@@ -45,15 +45,15 @@ handle: news
 {% assign person_title = this_news.interview.person.title %}
 {% assign text_title = this_news.title %}
 {% assign text = this_news.text | truncatewords: 10 %}
-%meta{name:"description", content:"Ein Interview mit {{ person_name }} {{ person_title }}: {{ text_title }} - {{ text }}"}/
+%meta{name:"description", content:"{{ 'page_news_interview_meta_description' | t: person_name: person_name, person_title: person_title, text_title: text_title, text: text }}"}/
 {% elsif this_news.recipe %}
 {% assign rezept_title = this_news.recipe.title %}
 {% assign text = this_news.text | truncatewords: 15 %}
-%meta{name:"description", content:"Schmackhaftes ParaMediForm Rezept: {{ rezept_title }} - {{ text }}"}/
+%meta{name:"description", content:"{{ 'page_news_recipe_meta_description' | t: rezept_title: rezept_title, text: text }}"}/
 {% elsif this_news.illustrative_text %}
 {% assign article_title = this_news.illustrative_text.title %}
 {% assign text = this_news.text | truncatewords: 20 %}
-%meta{name:"description", content:"Ein Artikel zu {{ article_title }} - {{ text }}"}/
+%meta{name:"description", content:"{{ 'page_news_illustrative_text_meta_description' | t: article_title: article_title, text: text }}"}/
 {% endif %}
 {% else %}
 {% if page.meta_description %}
@@ -112,7 +112,7 @@ handle: news
     %div{:style => "margin-bottom:10px"}
       %ul.pager{:style => "{{pagerstyle}};display: inline" }
         %li
-          %a{ href: "?slug={{ before_news._slug }}&type={{ type }}" } 
+          %a{ href: "?slug={{ before_news._slug }}&type={{ type }}" }
             %table
               %tr
                 %td{:style => "padding-right:7px"} &larr;

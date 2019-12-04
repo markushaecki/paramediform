@@ -98,7 +98,7 @@ handle: institute_contact
 %legend {{ 'institute_contact_sender_title' | t }}
 .row
   .col-sm-6.col-xs-12
-    %select{ class: 'form-control', name: 'content[salutation]', placeholder: "Anrede" }
+    %select{ class: 'form-control', name: 'content[salutation]', placeholder: "{{ 'institute_contact_sender_gender_placeholder' | t }}" }
       {% for option in contents.contacts.salutation_options %}
       %option {{ option }}
       {% endfor %}
