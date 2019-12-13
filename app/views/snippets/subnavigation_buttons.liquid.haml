@@ -4,17 +4,17 @@
     %div{:style => "margin-bottom:10px"}
       %ul.pager{:style => "{{pagerstyle}};display: inline" }
         %li
-          %a{ href: "{{ before_url }}" } &larr; {{ "button_before" | translate }}
+          %a{ href: "{{ before_url }}" } &larr; {{ "snippet_subnavigation_buttons_before" | translate }}
     {% endif %}
   .col-sm-4.col-xs-12.text-center
     %div{:style => "margin-bottom:10px"}
       %ul.pager{:style => "{{pagerstyle}}; display: inline" }
         %li
-          %a{ href: "{{ path }}" } {{ "button_back" | translate }}
+          %a{ href: "{{ path }}" } {{ "snippet_subnavigation_buttons_back" | translate }}
   .col-sm-4.col-xs-12.text-center
     {% if after_url != null %}
     %div{:style => "margin-bottom:10px"}
       %ul.pager{:style => "{{pagerstyle}}; display: inline" }
         %li
-          %a{ href: "{{ after_url }}" } {{ "button_next" | translate }} &rarr;
+          %a{ href: "{{ after_url }}" } {{ "snippet_subnavigation_buttons_next" | translate }} &rarr;
     {% endif %}

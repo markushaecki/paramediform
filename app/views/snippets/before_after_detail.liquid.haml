@@ -1,12 +1,18 @@
+{% assign prename = success_story.prename %}
+{% assign name = success_story.name %}
+{% assign place = success_story.place %}
+{% assign lost_weight = success_story.lost_weight %}
+
 %div
-  %h2.story_title {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
+  %h2.story_title {{ 'snippet_before_after_detail_title' | t: prename: prename, name: name, place: place, lost_weight: lost_weight }}
+
   .thumbnail{:style => "padding:20px !important"}
     .doubleimg-box#doubleimg
       %a{ vorsrc: '{{ success_story.before_image.url }}', nachsrc: '{{ success_story.after_image.url }}' }
         .img-box
-          %img{ src: '{{ success_story.before_image.url | resize: "345x690#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} vor dem Abnehmen mit ParaMediForm" }
+          %img{ src: '{{ success_story.before_image.url | resize: "345x690#" }}', :style => "float:left;max-width:50%", alt: "{{ 'snippet_before_after_detail_before_image_alt' | t: prename: prename, name: name, place: place | strip_html }}" }
         .img-box
-          %img{ src: '{{ success_story.after_image.url | resize: "345x690#" }}', :style => "float:left;max-width:50%", alt: "{{ success_story.prename | strip_html }} {{ success_story.name | strip_html }} aus {{ success_story.place | strip_html }} nach dem Abnehmen mit ParaMediForm" }
+          %img{ src: '{{ success_story.after_image.url | resize: "345x690#" }}', :style => "float:left;max-width:50%", alt: "{{ 'snippet_before_after_detail_after_image_alt' | t: prename: prename, name: name, place: place | strip_html }}" }
     .clearfix
     %br
     {% include subnavigation_buttons %}
@@ -25,7 +31,7 @@
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-play-circle
         %td{:style => "width:35%"}
-          Programmstart:
+          {{ 'snippet_before_after_detail_program_start' | t }}
         %td{:style => "width:55%"}
           {{ success_story.start_date | localized_date: '%d.%m.%Y' }}
       {% endif %}
@@ -34,25 +40,25 @@
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-time
         %td{:style => "width:35%"}
-          Programmdauer:
+          {{ 'snippet_before_after_detail_program_duration' | t }}
         %td{:style => "width:35%"}
-          {{ success_story.programm_duration }} Wochen
+          {{ success_story.programm_duration }} {{ 'snippet_before_after_detail_weeks' | t }}
       {% endif %}
       {% if success_story.number_of_consultations != nil and success_story.number_of_consultations != '' %}
       %tr
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-dashboard
         %td{:style => "width:35%"}
-          Betreuungen:
+          {{ 'snippet_before_after_detail_support' | t }}
         %td{:style => "width:35%"}
-          {{ success_story.number_of_consultations  }} Termine à 20 min
+          {{ success_story.number_of_consultations  }} {{ 'snippet_before_after_detail_ending_at' | t }}
       {% endif %}
       {% if success_story.feeling_of_abdiction != nil and success_story.feeling_of_abdiction != '' %}
       %tr{:style => "vertical-align:top"}
         %td.text-center{:style => "width:10%"}
           %span.pink_text.glyphicon.glyphicon-eye-open
         %td{:style => "width:35%"}
-          Beobachtungen:
+          {{ 'snippet_before_after_detail_observations' | t }}
         %td{:style => "width:35%"}
           {{ success_story.feeling_of_abdiction }}
       {% endif %}

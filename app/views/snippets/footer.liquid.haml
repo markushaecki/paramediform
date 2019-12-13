@@ -2,14 +2,14 @@
   .footer{:style => "color:gray !important"}
     © {{ now | date: "%Y" }} ParaMediForm AG
     %br
-    %a{:href => "/impressum"} Impressum 
-    &nbsp; 
-    %a{:href => "/rechtliche-hinweise"} Rechtliche Hinweise 
-    &nbsp; 
-    %a{:href => "/nutzungsbedingungen"} Nutzungsbedingungen 
-    &nbsp; 
-    %a{:href => "/urheberrecht"} Urheberrecht 
-    &nbsp; 
-    %a{:href => "/disclaimer"} Disclaimer
-    &nbsp; 
-    %a{:href => "https://www.webland.ch/de-ch/Logins", :rel => "nofollow"} E-Mail login
+    %a{:href => "{{ impressum_url }}"} {{ 'snippet_footer_impressum_link' | t }}
+    &nbsp;
+    %a{:href => "{{ legal_notice_url }}"} {{ 'snippet_footer_legal_notice_link' | t }}
+    &nbsp;
+    %a{:href => "{{ terms_of_use_url }}"} {{ 'snippet_footer_terms_of_use_link' | t }}
+    &nbsp;
+    %a{:href => "{{ copyright_url }}"} {{ 'snippet_footer_copyright_link' | t }}
+    &nbsp;
+    %a{:href => "{{ disclaimer_url }}"} {{ 'snippet_footer_disclaimer_link' | t }}
+    &nbsp;
+    %a{:href => "https://www.webland.ch/de-ch/Logins", :rel => "nofollow"} {{ 'snippet_footer_email_link' | t }}

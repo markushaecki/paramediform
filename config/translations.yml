@@ -396,71 +396,99 @@ page_success_stories_og_site_name:
 page_success_stories_further_stories:
   de: "Weitere Erfolgsgeschichten finden Sie auf den jeweiligen Institutsseiten:"
 
-# === Others ===
+# === Snippet: before_after_detail ====
 
-locales_de:
-  de: Deutsch
-  en: German
+snippet_before_after_detail_title:
+  de: "{{ prename }} {{ name }} aus {{ place }} -{{ lost_weight }} kg"
 
-locales_en:
-  de: Englisch
-  en: English
+snippet_before_after_detail_before_image_alt:
+  de: "{{ prename }} {{ name }} aus {{ place }} vor dem Abnehmen mit ParaMediForm"
 
-button_back:
+snippet_before_after_detail_after_image_alt:
+  de: "{{ prename }} {{ name }} aus {{ place }} nach dem Abnehmen mit ParaMediForm"
+
+snippet_before_after_detail_program_start:
+  de: "Programmstart:"
+
+snippet_before_after_detail_program_duration:
+  de: "Programmdauer:"
+
+snippet_before_after_detail_weeks:
+  de: "Wochen"
+
+snippet_before_after_detail_support:
+  de: "Betreuungen:"
+
+snippet_before_after_detail_ending_at:
+  de: "Termine à 20 min"
+  fr: "Termine à 20 min"
+
+snippet_before_after_detail_observations:
+  de: "Beobachtungen:"
+
+# === Snippet: before_after_overview ====
+
+snippet_before_after_overview_before_image_alt:
+  de: "{{ prename }} {{ name }} aus {{ place }} vor dem Abnehmen mit ParaMediForm"
+
+snippet_before_after_overview_after_image_alt:
+  de: "{{ prename }} {{ name }} aus {{ place }} nach dem Abnehmen mit ParaMediForm"
+
+snippet_before_after_overview_text:
+  de: "{{ prename }} {{ name }} aus {{ place }} -{{ lost_weight }} kg"
+
+# === Snippet: footer ====
+
+snippet_footer_impressum_link:
+  de: "Impressum"
+
+snippet_footer_legal_notice_link:
+ de: "Rechtliche Hinweise"
+
+snippet_footer_terms_of_use_link:
+  de: "Nutzungsbedingungen"
+
+snippet_footer_copyright_link:
+  de: "Urheberrecht"
+
+snippet_footer_disclaimer_link:
+  de: "Disclaimer"
+
+snippet_footer_email_link:
+  de: "E-Mail login"
+
+# === Snippet: recipe ===
+
+snippet_recipe_header_amount:
+  de: "Menge"
+
+snippet_recipe_header_ingredient:
+  de: "Zutat"
+
+snippet_recipe_content_title:
+  de: "Inhalt:"
+
+snippet_recipe_more:
+  de: "mehr..."
+
+snippet_recipe_cart_image_alt:
+  de: "In den Warenkorb"
+
+# === Snippet: subnavigation_buttons ===
+
+snippet_subnavigation_buttons_back:
   de: Zur Übersicht
   en: Overview
 
-button_before:
+snippet_subnavigation_buttons_before:
   de: Rückwärts
   en: Before
 
-button_next:
+snippet_subnavigation_buttons_next:
   de: Vorwärts
   en: Next
 
-zoom_out:
-  de: "- zoom"
-  en: "- zoom"
-
-zoom_in:
-  de: "zoom +"
-  en: "zoom +"
-
-sidebar_share_title:
-  de: Weiterempfehlen
-  en: Share
-
-label_phone:
-  de: Tel
-  en: Tel
-
-label_fax:
-  de: Fax
-  en: Fax
-
-menu_institute_success_stories:
-  de: Erfolge
-  en: Success stories
-
-menu_institute_success_stories_slug:
-  de: erfolgsgeschichten
-  en: success_stories
-
-menu_institute_team:
-  de: Team
-  en: Team
-
-menu_institute_news:
-  de: Aktuelles
-  en: News
-
-menu_institute:
-  de: Institut
-  en: Institute
-
-navigation_loose_weight:
-  de: Abnehmen
-  en: Weight loss
+# === CONTACT FORM ===
 
 contact_label_is_required:
   de: ist erforderlich
@@ -510,3 +538,20 @@ following_errors_occured:
   de: Nachfolgende Fehler sind aufgetreten
   en: The following errors occured
 
+# === Others ===
+
+locales_de:
+  de: Deutsch
+  en: German
+
+locales_en:
+  de: Englisch
+  en: English
+
+label_phone:
+  de: Tel
+  en: Tel
+
+label_fax:
+  de: Fax
+  en: Fax
