@@ -48,7 +48,7 @@ handle: home
   .col-sm-8.col-xs-12
     .row
       .col-sm-6.col-xs-6
-        {% capture url %}{% editable_text "individual_advice_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/individuelle-beratung{% endeditable_text %}{% endcapture %}
+        {% capture url %}{% editable_text "individual_advice_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/abnehmen/individuelle-beratung{% endeditable_text %}{% endcapture %}
         %a{ href:'{{ url }}'}
           .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive{ src: "{{ 'Beratung_web.jpg' | theme_image_url | resize: '400x400#' }}" }
@@ -73,7 +73,7 @@ handle: home
         .fixed_title
           %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
       .col-sm-6.col-xs-6
-        {% capture url %}{% editable_text "metabolic_types_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/stoffwechseltypen{% endeditable_text %}{% endcapture %}
+        {% capture url %}{% editable_text "metabolic_types_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/abnehmen/stoffwechseltypen{% endeditable_text %}{% endcapture %}
         %a{ href:'{{ url }}'}
           .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '400x400#' }}" }
@@ -113,7 +113,7 @@ handle: home
           %span.glyphicon.glyphicon-earphone{:style => "text-decoration: none"}
           %span.glyphicon.glyphicon-envelope{:style => "text-decoration: none"}
 
-    {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1 %}/unternehmen/selbststaendigkeit{% endeditable_text %}{% endcapture %}
+    {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/unternehmen/selbststaendigkeit{% endeditable_text %}{% endcapture %}
     %a{ href: '{{ url }}' }
       .news.well
         %h3.text-center
@@ -121,7 +121,7 @@ handle: home
         .text-center
           %img{ src: "{{ 'sidebar_selbststandigkeit.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'sidebar_education_image_alt' | t }}" }
 
-    {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1 %}/produkte/paravita{% endeditable_text %}{% endcapture %}
+    {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/produkte/paravita{% endeditable_text %}{% endcapture %}
     %a{ href: '{{ url }}'}
       .institutes.well
         %h3.text-center
@@ -136,7 +136,7 @@ handle: home
         .text-center
           %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_parapan_image_alt' | t }}" }
 
-    {% capture url %}{% editable_text "sidebar_method_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/die-methode{% endeditable_text %}{% endcapture %}
+    {% capture url %}{% editable_text "sidebar_method_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/abnehmen/die-methode{% endeditable_text %}{% endcapture %}
     %a{ href: '{{ url }}'}
       .institutes.well
         %h3.text-center

@@ -68,7 +68,7 @@ position: 5
       / selbststaendigkeit block
       {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_selbststaendigkeit == "true" %}
-      {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1 %}/unternehmen/selbststaendigkeit{% endeditable_text %}{% endcapture %}
+      {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/unternehmen/selbststaendigkeit{% endeditable_text %}{% endcapture %}
       %a{ href: '{{ url }}' }
         .news.well
           %h3.text-center
@@ -80,7 +80,7 @@ position: 5
       / paravita block
       {% capture enable_paravita %}{% editable_control "Paravita", options: 'true=Yes,false=No', hint: "Zeigt einen Link zu den Paravita Produkten an. " %}false{% endeditable_control %}{% endcapture %}
       {% if enable_paravita == "true" %}
-      {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1 %}/produkte/paravita{% endeditable_text %}{% endcapture %}
+      {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/produkte/paravita{% endeditable_text %}{% endcapture %}
       %a{ href: '{{ url }}'}
         .institutes.well
           %h3.text-center
@@ -103,7 +103,7 @@ position: 5
       / Methode block
       {% capture enable_methode %}{% editable_control "Methode", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Methode an." %}true{% endeditable_control %}{% endcapture %}
       {% if enable_methode == "true" %}
-      {% capture url %}{% editable_text "sidebar_method_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/die-methode{% endeditable_text %}{% endcapture %}
+      {% capture url %}{% editable_text "sidebar_method_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/abnehmen/die-methode{% endeditable_text %}{% endcapture %}
       %a{ href: '{{ url }}'}
         .institutes.well
           %h3.text-center
@@ -137,7 +137,7 @@ position: 5
       / Kochbuch block
       {% capture enable_kochbuch %}{% editable_control "Kochbuch", options: 'true=Yes,false=No', hint: "Link zum Bestellen von Kochbuch" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_kochbuch == "true" %}
-      {% capture url %}{% editable_text "sidebar_cookbook_url", line_break: false, format: 'raw', rows: 1 %}/kaufen/kochbuch-zum-kaufen{% endeditable_text %}{% endcapture %}
+      {% capture url %}{% editable_text "sidebar_cookbook_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/kaufen/kochbuch-zum-kaufen{% endeditable_text %}{% endcapture %}
       %a{ href: '{{ url }}' }
         .well
           %h3.text-center
@@ -149,7 +149,7 @@ position: 5
       / Kinder block
       {% capture enable_kinder %}{% editable_control "Kinderprogramm", options: 'true=Yes,false=No', hint: "Link zum Kinderprogramm Parolino" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_kinder == "true" %}
-      {% capture url %}{% editable_text "sidebar_kids_url", line_break: false, format: 'raw', rows: 1 %}/abnehmen/parolino-das-kinderprogramm{% endeditable_text %}{% endcapture %}
+      {% capture url %}{% editable_text "sidebar_kids_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/abnehmen/parolino-das-kinderprogramm{% endeditable_text %}{% endcapture %}
       %a{ href: '{{ url }}' }
         .well
           %h3.text-center

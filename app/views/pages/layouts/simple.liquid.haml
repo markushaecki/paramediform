@@ -130,14 +130,14 @@ position: 1
           {% block content %}
           {% endblock %}
 
-          {% capture impressum_url %}{% editable_text 'footer_impressum_url', fixed: true %}/impressum{% endeditable_text %}{% endcapture %}
+          {% capture impressum_url %}{% editable_text 'footer_impressum_url', fixed: true, line_break: false, format: 'raw', rows: 1, inline_editing: false %}/impressum{% endeditable_text %}{% endcapture %}
 
-          {% capture legal_notice_url %}{% editable_text 'footer_legal_notice_url', fixed: true %}/rechtliche-hinweise{% endeditable_text %}{% endcapture %}
+          {% capture legal_notice_url %}{% editable_text 'footer_legal_notice_url', fixed: true, line_break: false, format: 'raw', rows: 1, inline_editing: false %}/rechtliche-hinweise{% endeditable_text %}{% endcapture %}
 
-          {% capture terms_of_use_url %}{% editable_text 'footer_terms_of_use_url', fixed: true %}/nutzungsbedingungen{% endeditable_text %}{% endcapture %}
+          {% capture terms_of_use_url %}{% editable_text 'footer_terms_of_use_url', fixed: true, line_break: false, format: 'raw', rows: 1, inline_editing: false %}/nutzungsbedingungen{% endeditable_text %}{% endcapture %}
 
-          {% capture copyright_url %}{% editable_text 'footer_copyright_url', fixed: true %}/urheberrecht{% endeditable_text %}{% endcapture %}
+          {% capture copyright_url %}{% editable_text 'footer_copyright_url', fixed: true, line_break: false, format: 'raw', rows: 1, inline_editing: false %}/urheberrecht{% endeditable_text %}{% endcapture %}
 
-          {% capture disclaimer_url %}{% editable_text 'footer_disclaimer_url', fixed: true %}/disclaimer{% endeditable_text %}{% endcapture %}
+          {% capture disclaimer_url %}{% editable_text 'footer_disclaimer_url', fixed: true, line_break: false, format: 'raw', rows: 1, inline_editing: false %}/disclaimer{% endeditable_text %}{% endcapture %}
 
           {% include 'footer' with impressum_url: impressum_url, legal_notice_url: legal_notice_url, terms_of_use_url: terms_of_use_url, copyright_url: copyright_url, disclaimer_url: disclaimer_url %}
