@@ -10,6 +10,8 @@ content_type: institutes
 listed: false
 
 handle: institute_layout
+
+position: 9999
 ---
 {% extends layouts/double-columns %}
 
@@ -63,7 +65,7 @@ handle: institute_layout
           {% endblock %}
     #contact_info
       %p.text-center.image_with_background
-        %img.img-responsive{ src: "https://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&scale=2&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}", :id => "google_map" }
+        %img.img-responsive{ src: "https://maps.google.com/maps/api/staticmap?center={{institute.breitengrad}},{{institute.laengengrad}}&maptype=terrain&zoom=16&size=650x200&scale=2&markers=color:0xF83CA4|{{institute.breitengrad}},{{institute.laengengrad}}&key=AIzaSyALQ0Qb0KXFmcxQAj_dd9fdBAHMrYEO2p0", :id => "google_map" }
       .row.detailed_institute_info
         .col-sm-12.col-xs-12
           %ul.pager{:style => "margin-top:0px;margin-bottom:0px" }

@@ -112,17 +112,13 @@ position: 1
                 %span.icon-bar
             .collapse.navbar-collapse#bs-example-navbar-collapse-1
               %ul.nav.navbar-nav.nav-justified
-                {% nav site, exclude: '^(layouts)', depth: 2, no_wrapper: true, bootstrap: true %}
-                %li.dropdown.dropdown--locales
-                  %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' }, role: 'button', :'aria-haspopup' => true, :'aria-expanded' => 'false' }
-                    {{ locale }}
-                    %span.caret
-                  %ul.dropdown-menu
+                {% nav site, exclude: '(^layouts|-hidden$)', depth: 2, no_wrapper: true, bootstrap: true %}
+
+                %li
+                  %div{ style: 'display: flex; justify-content: center' }
                     {% for _locale in locales %}
-                    {% if _locale != locale %}
                     %a{ href: '{% path_to page, locale: _locale %}' }
-                      {{ _locale }}
-                    {% endif %}
+                      %img{ src: "{{ _locale | append: '.png' | theme_image_url }}", style: 'width: 20px; margin: 0px 5px;' }
                     {% endfor %}
 
       #content
@@ -140,4 +136,4 @@ position: 1
 
           {% capture disclaimer_url %}{% editable_text 'footer_disclaimer_url', fixed: true, line_break: false, format: 'raw', rows: 1, inline_editing: false %}/disclaimer{% endeditable_text %}{% endcapture %}
 
-          {% include 'footer' with impressum_url: impressum_url, legal_notice_url: legal_notice_url, terms_of_use_url: terms_of_use_url, copyright_url: copyright_url, disclaimer_url: disclaimer_url %}
+          {% include 'footer' with impressum_url, impressum_url: impressum_url, legal_notice_url: legal_notice_url, terms_of_use_url: terms_of_use_url, copyright_url: copyright_url, disclaimer_url: disclaimer_url %}

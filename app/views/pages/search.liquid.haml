@@ -17,15 +17,15 @@ handle: search
 
 {% paginate contents.indexed_contents by 10 %}
 .media-list
-  {% include 'search_item' with slug: contents.indexed_contents.first._slug, highlighted_title: '<em>locomotive</em>CMS', highlighted_content: 'Lorem <em>ipsum</em> lodor.' %}
+  {% include 'search_item' with contents.indexed_contents.first._slug, slug: contents.indexed_contents.first._slug, highlighted_title: '<em>locomotive</em>CMS', highlighted_content: 'Lorem <em>ipsum</em> lodor.' %}
 
   {% for content in paginate.collection %}
-  {% include 'search_item' with slug: content._slug %}
+  {% include 'search_item' with content._slug, slug: content._slug %}
   {% endfor %}
 
 .text-center
   {% capture query_params %}&q={{ params.q | encode }}{% endcapture %}
-  {% include pagination with pagination: paginate, other_params: query_params %}
+  {% include pagination with paginate, pagination: paginate, other_params: query_params %}
 
 {% endpaginate %}
 
@@ -61,7 +61,7 @@ handle: search
 
 .media-list
   {% for result in search.results %}
-  {% include 'search_item' with slug: result._slug, highlighted_title: result.highlighted.title, highlighted_content: result.highlighted.content %}
+  {% include 'search_item' with result._slug, slug: result._slug, highlighted_title: result.highlighted.title, highlighted_content: result.highlighted.content %}
   {% endfor %}
 
   {% comment %}

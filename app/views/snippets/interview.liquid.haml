@@ -1,9 +1,8 @@
-{% assign interview = news.interview %}
 {% if interview.image.size > 0 %}
 .thumbnail
   .img-box
     %a{ href: '{{ interview.image.url }}' }
-      %img.img-responsive{ src: '{{ interview.image.url | resize: "900x380#" }}', alt: "{{ news.interview.title }}" }
+      %img.img-responsive{ src: '{{ interview.image.url | resize: "900x380#" }}', alt: "{{ interview.title }}" }
 {% endif %}
 %br
 .columnize
@@ -19,7 +18,7 @@
     {{ question.answer }}
   {% if forloop.first and interview.person and interview.image.size > 0 %}
   %hr
-  {% include interview_person with person:interview.person %}
+  {% include interview_person with interview.person, person: interview.person %}
   {% endif %}
   {% unless forloop.last %}
   %hr

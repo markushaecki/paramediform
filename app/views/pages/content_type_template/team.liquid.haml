@@ -30,7 +30,7 @@ handle: institute_team
 %ul.media-list
   {% for member in team_members %}
   %br
-  {% include person with person:member %}
+  {% include 'person' with member, person: member %}
   %hr
   {% endfor %}
 

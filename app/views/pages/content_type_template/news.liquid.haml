@@ -40,8 +40,8 @@ handle: institute_news
 
 {% include institute_news %}
 %br
-{% include generate_main_subnavigation with all:news, this:this_news %}
-{% include subnavigation_buttons with pagerstyle: "margin-top:0px" %}
+{% include 'generate_main_subnavigation' with news, all: news, this: this_news %}
+{% include 'subnavigation_buttons' with news, pagerstyle: "margin-top:0px" %}
 
 {% else %}
 
@@ -73,7 +73,7 @@ handle: institute_news
   {% capture tag_params %}&tag={{ params.tag | encode }}{% endcapture %}
   {% endif %}
   .text-center
-    {% include pagination with pagination: news_pagination, other_params: tag_params %}
+    {% include pagination with news_pagination, pagination: news_pagination, other_params: tag_params %}
 
   {% endif %}
 %hr{:style => "margin-bottom:0px"}

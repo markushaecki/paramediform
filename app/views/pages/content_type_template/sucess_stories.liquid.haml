@@ -31,7 +31,7 @@ handle: institute_success_stories
 {% assign success_story = data.success_story.first %}
 {% endconsume %}
 
-{% include generate_subnavigation with all:success_stories, this:success_story %}
+{% include 'generate_subnavigation' with success_stories, all: success_stories, this:success_story %}
 {% include before_after_detail %}
 
 {% else %}

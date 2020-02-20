@@ -75,13 +75,13 @@ handle: news
 {% include news_header %}
 
 {% if this_news.interview %}
-{% include interview with news:this_news %}
+{% include interview with this_news.interview %}
 {% assign type = "interview" %}
 {% elsif this_news.recipe %}
-{% include recipe with news:this_news %}
+{% include recipe with this_news.recipe %}
 {% assign type = "recipe" %}
 {% elsif this_news.illustrative_text %}
-{% include illustrative_text with news:this_news %}
+{% include illustrative_text with this_news.illustrative_text %}
 {% assign type = "illustrative_text" %}
 {% else %}
 
