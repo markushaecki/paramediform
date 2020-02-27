@@ -31,20 +31,23 @@ position: 5
                 %span.snipcart-total-price
 
       %div.insidebar
-        %a.warenkorb-style{:href => "#"}
-          #snipcart-shop.shop.well
-            .snipcart-spacer
-            %h3.text-center.warenkorb-link-style
-              {{ 'layout_double_columns_cart_title' | t }}
-            .snipcart-spacer
-            .text-center
-              %img{ src: "{{ 'warenkorb.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Mineralstoffe kaufen" }
-            .snipcart-summary.text-center
-              %span.snipcart-total-items
-              {{ 'layout_double_columns_cart_product' | t }}
-              %br
-              %span.snipcart-total-price
-            .snipcart-spacer
+      {% capture enable_webshop %}{{ 'sidebar_webshop_display' | translate }}{% endcapture %}
+      {% if enable_webshop == "true" %}
+      %a.warenkorb-style{:href => "#"}
+        #snipcart-shop.shop.well
+          .snipcart-spacer
+          %h3.text-center.warenkorb-link-style
+            {{ 'layout_double_columns_cart_title' | t }}
+          .snipcart-spacer
+          .text-center
+            %img{ src: "{{ 'warenkorb.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "Mineralstoffe kaufen" }
+          .snipcart-summary.text-center
+            %span.snipcart-total-items
+            {{ 'layout_double_columns_cart_product' | t }}
+            %br
+            %span.snipcart-total-price
+          .snipcart-spacer
+        {% endif %}
 
       / institutes block
       {% capture enable_institutes %}{% editable_control "Institute", options: 'true=Yes,false=No', hint: "Link zur Übersicht über alle Institute" %}true{% endeditable_control %}{% endcapture %}
@@ -68,7 +71,7 @@ position: 5
       / selbststaendigkeit block
       {% capture enable_selbststaendigkeit %}{% editable_control "Selbststaendigkeit", options: 'true=Yes,false=No', hint: "Link zur Informationsseite zum Paramediform Ausbildung und Selbstständigkeit" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_selbststaendigkeit == "true" %}
-      {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/unternehmen/selbststaendigkeit{% endeditable_text %}{% endcapture %}
+      {% capture url %}{{ 'sidebar_education_url' | translate }}{% endcapture %}
       %a{ href: '{{ url }}' }
         .news.well
           %h3.text-center
@@ -78,9 +81,9 @@ position: 5
       {% endif %}
 
       / paravita block
-      {% capture enable_paravita %}{% editable_control "Paravita", options: 'true=Yes,false=No', hint: "Zeigt einen Link zu den Paravita Produkten an. " %}false{% endeditable_control %}{% endcapture %}
+      {% capture enable_paravita %}{{ 'sidebar_paravita_display' | translate }}{% endcapture %}
       {% if enable_paravita == "true" %}
-      {% capture url %}{% editable_text "sidebar_education_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/produkte/paravita{% endeditable_text %}{% endcapture %}
+      {% capture url %}{{ 'sidebar_paravita_url' | translate }}{% endcapture %}
       %a{ href: '{{ url }}'}
         .institutes.well
           %h3.text-center
@@ -89,21 +92,10 @@ position: 5
             %img{ src: "{{ 'sidebar_paravita.png' | theme_image_url | resize: 'x100' }}", style: 'height: 50px', alt: "{{ 'sidebar_paravita_image_alt' | t }}" }
       {% endif %}
 
-      / parapan block
-      {% capture enable_parapan %}{% editable_control "Parapan", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Parapan Webseite an." %}false{% endeditable_control %}{% endcapture %}
-      {% if enable_parapan == "true" %}
-      %a{ href: 'http://www.parapan.ch'}
-        .institutes.well
-          %h3.text-center
-            {{ 'sidebar_parapan_title' | translate }}
-          .text-center
-            %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_parapan_image_alt' | t }}" }
-      {% endif %}
-
       / Methode block
       {% capture enable_methode %}{% editable_control "Methode", options: 'true=Yes,false=No', hint: "Zeigt einen Link zur Methode an." %}true{% endeditable_control %}{% endcapture %}
       {% if enable_methode == "true" %}
-      {% capture url %}{% editable_text "sidebar_method_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/abnehmen/die-methode{% endeditable_text %}{% endcapture %}
+      {% capture url %}{{ 'sidebar_method_url' | translate }}{% endcapture %}
       %a{ href: '{{ url }}'}
         .institutes.well
           %h3.text-center
@@ -137,7 +129,7 @@ position: 5
       / Kochbuch block
       {% capture enable_kochbuch %}{% editable_control "Kochbuch", options: 'true=Yes,false=No', hint: "Link zum Bestellen von Kochbuch" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_kochbuch == "true" %}
-      {% capture url %}{% editable_text "sidebar_cookbook_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/kaufen/kochbuch-zum-kaufen{% endeditable_text %}{% endcapture %}
+      {% capture url %}{{ 'sidebar_cookbook_url' | translate }}{% endcapture %}
       %a{ href: '{{ url }}' }
         .well
           %h3.text-center
@@ -149,13 +141,25 @@ position: 5
       / Kinder block
       {% capture enable_kinder %}{% editable_control "Kinderprogramm", options: 'true=Yes,false=No', hint: "Link zum Kinderprogramm Parolino" %}false{% endeditable_control %}{% endcapture %}
       {% if enable_kinder == "true" %}
-      {% capture url %}{% editable_text "sidebar_kids_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/abnehmen/parolino-das-kinderprogramm{% endeditable_text %}{% endcapture %}
+      {% capture url %}{{ 'sidebar_kids_url' | translate }}{% endcapture %}
       %a{ href: '{{ url }}' }
         .well
           %h3.text-center
             {{ 'sidebar_kids_title' | translate }}
           .text-center
             %img{ src: "{{ 'sidebar_parolino.png' | theme_image_url | resize: 'x60' }}", style: 'height: 30px', alt: "{{ 'sidebar_kids_image_alt' | t }}" }
+      {% endif %}
+	  
+      / parapan block
+      {% capture enable_parapan %}{{ 'sidebar_parapan_display' | translate }}{% endcapture %}
+      {% if enable_parapan == "true" %}
+      {% capture url %}{{ 'sidebar_parapan_url' | translate }}{% endcapture %}
+      %a{ href: '{{ url }}'}
+        .institutes.well
+          %h3.text-center
+            {{ 'sidebar_parapan_title' | translate }}
+          .text-center
+            %img{ src: "{{ 'sidebar_parapan_brot.png' | theme_image_url | resize: 'x120' }}", style: 'height: 60px', alt: "{{ 'sidebar_parapan_image_alt' | t }}" }
       {% endif %}
 
   {% endblock %}

@@ -42,7 +42,7 @@ handle: home
 .columnize3col
   .row
     .col-xs-12
-      %p {% editable_text "Kurze Einführung zu Paramediform", format: "html" %}{% endeditable_text %} Lesen Sie hier mehr zu unserer <a href="abnehmen/die-methode">Methode</a> zum <a href="abnehmen">Abnehmen</a>
+      %p {% editable_text "Kurze Einführung zu Paramediform", format: "html" %}{% endeditable_text %}
 %br
 .row
   .col-sm-8.col-xs-12
@@ -56,29 +56,29 @@ handle: home
             %h3 {{ 'page_home_individual_advice_title' | t }}
 
       .col-sm-6.col-xs-6
-        .thumbnail{:style => "margin-bottom:5px !important"}
-          %a#rezepturl{ href: "{% path_to news %}?slug={{ this_news._slug }}&type=recipe" }
+        %a#rezepturl{ href: "{% path_to news %}?slug={{ this_news._slug }}&type=recipe" }
+          .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive#rezeptbild{ src: "{{ recipy_image | resize: '400x400#' }}"}
-        .fixed_title
-          %h3 {{ 'page_home_eat_title' | t }}
+          .fixed_title
+            %h3 {{ 'page_home_eat_title' | t }}
     %br
     .row
       .col-sm-6.col-xs-6
-        %div
+        %a#success_link{ href: "{% path_to system_success_story %}" }
           .thumbnail{:style => "margin-bottom:5px !important"}
-            %a#success_link.non-link-style{ href: "{% path_to system_success_story %}" }
-              %img#before_img{ src: '{{ success_story.before_image.url | resize: "200x400" }}', :style => "float:left;max-width:50%" }
-              %img#after_img{ src: '{{ success_story.after_image.url | resize: "200x400" }}', :style => "float:left;max-width:50%" }
+            %img#before_img{ src: '{{ success_story.before_image.url | resize: "200x400" }}', :style => "float:left;max-width:50%" }
+            %img#after_img{ src: '{{ success_story.after_image.url | resize: "200x400" }}', :style => "float:left;max-width:50%" }
             .clearfix
-        .fixed_title
-          %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: " aus " | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
+          .fixed_title
+            {% capture connector %}{{ 'page_home_success_from_word' | t }}{% endcapture %}
+            %h3#success_text {{ success_story.prename | append: " " | append: success_story.name | append: connector | append: success_story.place | append: " -" | append: success_story.lost_weight | append: " kg" }}
       .col-sm-6.col-xs-6
         {% capture url %}{% editable_text "metabolic_types_url", line_break: false, format: 'raw', rows: 1, inline_editing: false %}/abnehmen/stoffwechseltypen{% endeditable_text %}{% endcapture %}
         %a{ href:'{{ url }}'}
           .thumbnail{:style => "margin-bottom:5px !important"}
             %img.img-responsive{ src: "{{ 'stoffwechseltypen.png' | theme_image_url | resize: '400x400#' }}" }
-        .fixed_title
-          %h3 {{ 'page_home_metabolic_type_title' | t }}
+          .fixed_title
+            %h3 {{ 'page_home_metabolic_type_title' | t }}
     %br
   .col-sm-4.col-xs-12
     {% with_scope order_by: 'published_at desc', published_at.lt: today, tags: 'wichtig' %}

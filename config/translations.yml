@@ -555,3 +555,47 @@ label_phone:
 label_fax:
   de: Fax
   en: Fax
+
+sidebar_method_url:
+  de: /abnehmen/die-methode
+  fr: /fr/perdre-du-poids/la-methode
+
+sidebar_parapan_url:
+  de: https://www.parapan.ch/gesundes-brot
+  fr: 
+
+sidebar_cookbook_url:
+  de: /kaufen/kochbuch-zum-kaufen
+  fr: 
+
+sidebar_kids_url:
+  de: /abnehmen/parolino-das-kinderprogramm
+  fr: 
+
+sidebar_paravita_url:
+  de: /produkte/paravita
+  fr: 
+
+sidebar_paravita_display:
+  de: 'true'
+  fr: 'false'
+
+sidebar_parapan_display:
+  de: 'true'
+  fr: 'false'
+
+sidebar_webshop_display:
+  de: 'true'
+  fr: 'false'
+
+sidebar_education_url:
+  de: /unternehmen/selbststaendigkeit
+  fr: 
+
+page_home_success_from_word:
+  de: ' aus '
+  fr: ' de '
+
+institute_title_pre_tag:
+  de: Ernährungsberatung
+  fr: perte de poids

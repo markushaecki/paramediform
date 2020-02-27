@@ -45,7 +45,7 @@ handle: institute_home
 {% endblock %}
 
 {% block content/main/title %}
-%h1.title Ernährungsberatung {{ institute.name }}
+%h1.title {{ 'institute_title_pre_tag' | translate }} {{ institute.name }}
 {% endblock %}
 
 {% block content/main/tab_pane %}

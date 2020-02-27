@@ -33,12 +33,14 @@
         %a{ href: "?slug={{ news_entry._slug }}&type={{ type }}&page={{ params.page }}" } {{ news_entry.title }}
       {% if news_entry.tags %}
       .tags{:style => "margin:7px 7px;"}
+        {% if locale != "fr" %}
         %span.glyphicon.glyphicon-tags
         &nbsp;
         {% for tag in news_entry.tags %}
         %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
         &nbsp;
         {% endfor %}
+        {% endif %}
       {% endif %}
       {% if preview_image.size > 0 %}
       .thumbnail{:style => "width:160px;float:left;margin-right:20px"}

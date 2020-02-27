@@ -120,10 +120,12 @@ handle: news
     {% endif %}
   .col-sm-4.col-xs-12.text-center{:style => "height:100%  !important;display:inline-block !important;"}
     {% if this_news.main_tag != null %}
+    {% if this_news.main_tag != "" %}
     %div{:style => "margin-bottom:10px"}
       %ul.pager{:style => "{{pagerstyle}}; display: inline" }
         %li
           %a{ href: "{{ path }}?tag={{ this_news.main_tag }}" } {{ "button_back" | translate }}
+    {% endif %}
     {% endif %}
   .col-sm-4.col-xs-12.text-center{:style => "height:100%;display:inline-block;"}
     {% if this_news.after_news != null %}

@@ -6,12 +6,14 @@
     %h2 {{ this_news.title }}
     {% if this_news.tags %}
     .tags
-      %span.glyphicon.glyphicon-tags
       &nbsp;
+      {% if locale != "fr" %}
+      %span.glyphicon.glyphicon-tags
       {% for tag in this_news.tags %}
       %a.label.label-primary.tag{ href: "?tag={{ tag }}" } {{ tag }}
       &nbsp;
       {% endfor %}
+      {% endif %}
     {% endif %}
     %b
       %p.text-justify {{ this_news.introduction }}
