@@ -64,7 +64,7 @@
   {% capture tag_params %}&tag={{ params.tag | encode }}{% endcapture %}
   {% endif %}
   .text-center
-    {% include pagination with pagination: paginate, other_params: tag_params %}
+    {% include pagination with paginate, other_params: tag_params %}
   {% endif %}
 
 {% endpaginate %}
