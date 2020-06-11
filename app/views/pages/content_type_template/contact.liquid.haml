@@ -99,9 +99,8 @@ handle: institute_contact
 .row
   .col-sm-6.col-xs-12
     %select{ class: 'form-control', name: 'content[salutation]', placeholder: "{{ 'institute_contact_sender_gender_placeholder' | t }}" }
-      {% for option in contents.contacts.salutation_options %}
-      %option {{ option }}
-      {% endfor %}
+      %option{ value: 'Frau' } {{ 'page_contact_salutation_female' | t }}
+      %option{ value: 'Herr' } {{ 'page_contact_salutation_male' | t }}
     %br
 .row
   .col-sm-6.col-xs-12

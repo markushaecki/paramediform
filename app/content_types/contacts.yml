@@ -35,7 +35,7 @@ fields:
       fr: ["Kostenlose Terminvereinbarung", "Fragen zur Methode", "Paravita Beratung", "Rückmeldung", "Möchte Unterlagen", "Anfrage neues Institut"]
     required: true
     hint: Anrede
-    localized: true
+    localized: false
 
 - salutation: # The lowercase, underscored name of the field
     label: Anrede # Human readable name of the field
@@ -45,7 +45,7 @@ fields:
       fr: ["Madame", "Monsieur"]
     required: true
     hint: Anrede
-    localized: true
+    localized: false
 
 - surname: # The lowercase, underscored name of the field
     label: Vorname # Human readable name of the field
