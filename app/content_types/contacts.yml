@@ -27,22 +27,14 @@ public_submission_enabled: true
 
 # A list describing each field
 fields:
-- subject: # The lowercase, underscored name of the field
-    label: Thema # Human readable name of the field
-    type: select
-    select_options:
-      de: ["Kostenlose Terminvereinbarung", "Fragen zur Methode", "Paravita Beratung", "Rückmeldung", "Möchte Unterlagen", "Anfrage neues Institut"]
-      fr: ["Kostenlose Terminvereinbarung", "Fragen zur Methode", "Paravita Beratung", "Rückmeldung", "Möchte Unterlagen", "Anfrage neues Institut"]
+- subject_new:
+    label: Thema
     required: true
-    hint: Anrede
+    hint: Thema
     localized: false
 
-- salutation: # The lowercase, underscored name of the field
-    label: Anrede # Human readable name of the field
-    type: select
-    select_options:
-      de: ["Frau", "Herr"]
-      fr: ["Madame", "Monsieur"]
+- salutation_new:
+    label: Anrede
     required: true
     hint: Anrede
     localized: false

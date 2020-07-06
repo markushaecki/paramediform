@@ -44,7 +44,6 @@ handle: institute_contact
 {% endif %}
 
 {% model_form 'contacts', class: 'form-horizontal', success: path %}
-
 %input{ type: 'hidden', name: 'notified_accounts', value: 'to-be-repl-by-js' }
 
 %h2 {{ 'institute_contact_subtitle' | t: name: institute.name }}
@@ -78,27 +77,27 @@ handle: institute_contact
 %legend {{ 'institute_contact_subject_title' | t }}
 .row{:style => "margin-bottom: 20px"}
   .col-sm-6.col-xs-12
-    %input{:type => "hidden", :name => "content[subject]", :value => "Möchte Unterlagen"}
-    %input{:type => "hidden", :name => "content[subject]", :value => "Anfrage neues Institut"}
+    %input{:type => "hidden", :name => "content[subject_new]", :value => "Möchte Unterlagen"}
+    %input{:type => "hidden", :name => "content[subject_new]", :value => "Anfrage neues Institut"}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Kostenlose Terminvereinbarung", :checked => "true"} {{ 'institute_contact_subject_1' | t }}
+        %input{:type => "radio", :name => "content[subject_new]", :value => "Kostenlose Terminvereinbarung", :checked => "true"} {{ 'institute_contact_subject_1' | t }}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Fragen zur Methode"} {{ 'institute_contact_subject_2' | t }}
+        %input{:type => "radio", :name => "content[subject_new]", :value => "Fragen zur Methode"} {{ 'institute_contact_subject_2' | t }}
 
   .col-sm-6.col-xs-12
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Paravita Beratung"} {{ 'institute_contact_subject_3' | t }}
+        %input{:type => "radio", :name => "content[subject_new]", :value => "Paravita Beratung"} {{ 'institute_contact_subject_3' | t }}
     .radio
       %label
-        %input{:type => "radio", :name => "content[subject]", :value => "Rückmeldung"} {{ 'institute_contact_subject_4' | t }}
+        %input{:type => "radio", :name => "content[subject_new]", :value => "Rückmeldung"} {{ 'institute_contact_subject_4' | t }}
 
 %legend {{ 'institute_contact_sender_title' | t }}
 .row
   .col-sm-6.col-xs-12
-    %select{ class: 'form-control', name: 'content[salutation]', placeholder: "{{ 'institute_contact_sender_gender_placeholder' | t }}" }
+    %select{ class: 'form-control', name: 'content[salutation_new]', placeholder: "{{ 'institute_contact_sender_gender_placeholder' | t }}" }
       %option{ value: 'Frau' } {{ 'page_contact_salutation_female' | t }}
       %option{ value: 'Herr' } {{ 'page_contact_salutation_male' | t }}
     %br
