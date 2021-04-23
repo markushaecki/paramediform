@@ -6,3 +6,5 @@ config/deploy.yml
 .DS_Store
 scripts/settings.yml
 .sass-cache
+
+Gemfile.lock
