@@ -41,7 +41,7 @@ handle: institute_news
 {% include institute_news %}
 %br
 {% include 'generate_main_subnavigation' with news, all: news, this: this_news %}
-{% include 'subnavigation_buttons' with news, pagerstyle: "margin-top:0px" %}
+{% include 'subnavigation_buttons' with this_news, pagerstyle: "margin-top:0px" %}
 
 {% else %}
 
