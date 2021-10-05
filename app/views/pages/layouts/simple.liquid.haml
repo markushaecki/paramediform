@@ -137,3 +137,7 @@ position: 1
           {% capture disclaimer_url %}{% editable_text 'footer_disclaimer_url', fixed: true, line_break: false, format: 'raw', rows: 1, inline_editing: false %}/disclaimer{% endeditable_text %}{% endcapture %}
 
           {% include 'footer' with impressum_url, impressum_url: impressum_url, legal_notice_url: legal_notice_url, terms_of_use_url: terms_of_use_url, copyright_url: copyright_url, disclaimer_url: disclaimer_url %}
+
+    / Start of HubSpot Embed Code
+    %script#hs-script-loader{:async => "", :defer => "defer", :src => "//js-na1.hs-scripts.com/20451418.js", :type => "text/javascript"}
+    / End of HubSpot Embed Code
